@@ -1,192 +1,272 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hawaiʻi Names Project</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hawaiʻi Place Names</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  color: #222;
-}
+  <style>
+    :root{
+      --text:#111;
+      --muted:#555;
+      --line:#e5e7eb;
+      --panel:#f5f7fb;
+      --panel2:#eef2ff;
+      --max:1100px;
+      --radius:14px;
+    }
 
-.topnav {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 20px 0;
-  font-size: 16px;
-  font-weight: 500;
-}
+    *{ box-sizing:border-box; }
 
-.topnav a {
-  text-decoration: none;
-  color: #111;
-}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.35;
+      overflow-x:hidden; /* prevents horizontal scroll if anything goes full-bleed */
+    }
 
-.topnav a:hover {
-  text-decoration: underline;
-}
+    a{ color:inherit; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
 
-.hero-banner img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+    /* NAV */
+    .topbar{
+      border-bottom:1px solid var(--line);
+      background:#fff;
+    }
+    .container{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 16px;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      padding:12px 0;
+      font-weight:600;
+      flex-wrap:wrap;
+    }
+    .nav a{ padding:6px 10px; border-radius:10px; }
+    .nav a.active{ background:var(--panel2); }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
+    /* FULL-WIDTH BANNER (cropped to fixed height) */
+    .hero-banner{
+      width:100%;
+      height:240px;           /* <-- desktop banner height */
+      overflow:hidden;
+      background:#fff;
+    }
+    .hero-banner img{
+      width:100%;
+      height:100%;
+      object-fit:cover;       /* <-- crop instead of giant tall image */
+      object-position:center; /* <-- keep center of image */
+      display:block;
+    }
 
-h1 {
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 10px;
-}
+    /* Header text area */
+    header{
+      padding:18px 0 10px;
+    }
+    h1{
+      margin:0;
+      font-size:26px;
+      letter-spacing:-0.2px;
+    }
+    .subhead{
+      margin-top:8px;
+      color:var(--muted);
+      max-width:75ch;
+    }
 
-.tagline {
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 40px;
-  color: #555;
-}
+    /* Filters */
+    .filters{
+      margin:18px 0;
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:#fff;
+    }
+    .filters-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      align-items:center;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:var(--panel);
+      font-size:14px;
+      white-space:nowrap;
+    }
+    .chip input{ margin:0; }
+    .filters select{
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:#fff;
+      font-size:14px;
+    }
 
-.section-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 40px;
-}
+    /* Map placeholder */
+    .map{
+      height:420px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:var(--panel2);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      font-size:56px;
+      letter-spacing:2px;
+      user-select:none;
+    }
 
-.section-grid h2 {
-  border-bottom: 2px solid #eee;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
+    /* Three columns */
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:22px;
+      margin:26px 0 40px;
+    }
+    .col h2{
+      margin:0 0 12px;
+      font-size:15px;
+      text-transform:uppercase;
+      letter-spacing:0.1em;
+    }
+    .card{
+      display:flex;
+      gap:12px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:#fff;
+      padding:12px;
+      margin-bottom:14px;
+      align-items:flex-start;
+    }
+    .thumb{
+      width:90px;
+      height:60px;
+      border-radius:12px;
+      background:var(--panel2);
+      border:1px solid var(--line);
+      flex-shrink:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      font-weight:700;
+      color:#334155;
+    }
+    .card-title{ margin:0; font-size:14px; font-weight:700; }
+    .card-meta{ margin-top:6px; font-size:13px; color:var(--muted); }
 
-.card {
-  margin-bottom: 25px;
-}
+    footer{
+      border-top:1px solid var(--line);
+      padding:18px 0;
+      font-size:13px;
+      color:var(--muted);
+    }
 
-.card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.card-title {
-  font-weight: bold;
-  margin-bottom: 4px;
-}
-
-.card-desc {
-  font-size: 14px;
-  color: #666;
-}
-
-@media (max-width: 900px) {
-  .section-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+    /* Mobile banner height */
+    @media (max-width: 900px){
+      .hero-banner{ height:160px; } /* <-- smaller banner on phones */
+      .map{ font-size:40px; height:360px; }
+      .grid3{ grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="topnav">
-  <a href="#">Home</a>
-  <a href="#">Places We Lost</a>
-  <a href="#">Place Name Profiles</a>
-  <a href="#">Stories</a>
-  <a href="#">About</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<div class="hero-banner">
-  <img src="Banner.jpg" alt="Hawaiʻi Names Project Banner">
-</div>
-
-<div class="container">
-
-<h1>Hawaiʻi Place Names</h1>
-<div class="tagline">
-A Map of Hawaiʻi’s Memory — Explore the stories behind the names that shape our islands.
-</div>
-
-<!-- Placeholder Map Area -->
-<div style="background:#f2f2f2; height:400px; display:flex; align-items:center; justify-content:center; font-size:20px; margin-bottom:60px;">
-MAP WILL LIVE HERE
-</div>
-
-<div class="section-grid">
-
-  <div>
-    <h2>Places We Lost</h2>
-
-    <div class="card">
-      <div class="card-title">Aloha Stadium</div>
-      <div class="card-desc">The rise and quiet fall of Hawaiʻi’s largest civic gathering place.</div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Ooka’s Supermarket</div>
-      <div class="card-desc">A family name that once anchored Wailuku’s daily life.</div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Wahaʻula Heiau</div>
-      <div class="card-desc">A temple overtaken by lava, but not erased from memory.</div>
+  <div class="topbar">
+    <div class="container">
+      <nav class="nav">
+        <a class="active" href="index.html">Home</a>
+        <a href="places-we-lost.html">Places We Lost</a>
+        <a href="place-name-profiles.html">Place Name Profiles</a>
+        <a href="stories.html">Stories</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
     </div>
   </div>
 
-  <div>
-    <h2>Place Name Profiles</h2>
-
-    <div class="card">
-      <div class="card-title">ʻIolani Palace</div>
-      <div class="card-desc">A name tied to monarchy, governance, and sovereignty.</div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Nahuku (Thurston Lava Tube)</div>
-      <div class="card-desc">Two names reflecting shifting authority and narrative.</div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Parker Ranch</div>
-      <div class="card-desc">One of the largest ranches in America, rooted in paniolo history.</div>
-    </div>
+  <div class="hero-banner">
+    <img src="Banner.jpg" alt="Hawaiʻi Names Project banner">
   </div>
 
-  <div>
-    <h2>Stories</h2>
+  <main class="container">
+    <header>
+      <h1>Hawaiʻi Place Names: A Map of Hawaiʻi’s Memory</h1>
+      <div class="subhead">
+        Explore the stories behind the names that shape our islands.
+      </div>
+    </header>
 
-    <div class="card">
-      <div class="card-title">Kaʻahumanu Broke the Mold</div>
-      <div class="card-desc">The moment religious order shifted in Hawaiʻi.</div>
-    </div>
+    <section class="filters">
+      <div class="filters-row">
+        <label class="chip"><input type="checkbox">Monarchy</label>
+        <label class="chip"><input type="checkbox">Hawaiian</label>
+        <label class="chip"><input type="checkbox">Politics</label>
+        <label class="chip"><input type="checkbox">Sports</label>
+        <label class="chip"><input type="checkbox">Plantation</label>
+        <label class="chip"><input type="checkbox">Missionary</label>
+        <label class="chip"><input type="checkbox">Places We Lost</label>
+        <label class="chip"><input type="checkbox">Random Pin</label>
 
-    <div class="card">
-      <div class="card-title">How Does One Own an Island?</div>
-      <div class="card-desc">Land, power, and shifting definitions of ownership.</div>
-    </div>
+        <select>
+          <option>Select by Island</option>
+          <option>Oʻahu</option>
+          <option>Maui</option>
+          <option>Hawaiʻi</option>
+          <option>Kauaʻi</option>
+          <option>Molokaʻi</option>
+          <option>Lānaʻi</option>
+          <option>Kahoʻolawe</option>
+          <option>Offshore</option>
+        </select>
+      </div>
+    </section>
 
-    <div class="card">
-      <div class="card-title">David Malo</div>
-      <div class="card-desc">Why do we not honor him more visibly today?</div>
-    </div>
-  </div>
+    <section class="map">MAP IS HERE</section>
 
-</div>
+    <section class="grid3">
+      <div class="col">
+        <h2>Places We Lost</h2>
+        <div class="card"><div class="thumb">Thumb</div><div><p class="card-title">Aloha Stadium</p><div class="card-meta">Short tagline</div></div></div>
+        <div class="card"><div class="thumb">Thumb</div><div><p class="card-title">Oʻoka’s</p><div class="card-meta">Short tagline</div></div></div>
+        <div class="card"><div class="thumb">Thumb</div><div><p class="card-title">Wahaʻula Heiau</p><div class="card-meta">Short tagline</div></div></div>
+      </div>
 
-</div>
+      <div class="col">
+        <h2>Place Name Profiles</h2>
+        <div class="card"><div class="thumb">Thumb</div><div><p class="card-title">ʻIolani Palace</p><div class="card-meta">Short tagline</div></div></div>
+        <div class="card"><div class="thumb">Thumb</div><div><p class="card-title">Nāhuku (Thurston Lava Tube)</p><div class="card-meta">Short tagline</div></div></div>
+        <div class="card"><div class="thumb">Thumb</div><div><p class="card-title">Parker Ranch</p><div class="card-meta">Short tagline</div></div></div>
+      </div>
+
+      <div class="col">
+        <h2>Stories</h2>
+        <div class="card"><div class="thumb">Thumb</div><div><p class="card-title">Kaʻahumanu Broke the Mold</p><div class="card-meta">Short tagline</div></div></div>
+        <div class="card"><div class="thumb">Thumb</div><div><p class="card-title">How Does One Own an Island?</p><div class="card-meta">Short tagline</div></div></div>
+        <div class="card"><div class="thumb">Thumb</div><div><p class="card-title">David Malo: Why Don’t We Honor Him?</p><div class="card-meta">Short tagline</div></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Draft site — structure first, polish later.</div>
+  </footer>
 
 </body>
 </html>
