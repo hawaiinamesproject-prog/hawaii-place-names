@@ -16,7 +16,19 @@
       --max:1100px;
       --radius:14px;
     }
+.banner-full{
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* makes it “full-bleed” outside the container */
+  margin-right: calc(50% - 50vw);
+  margin-top: 0;
+  margin-bottom: 18px;
+}
 
+.banner-full img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
     * { box-sizing: border-box; }
 
     body{
@@ -237,11 +249,9 @@
 
     <!-- HEADER -->
     <header>
-      <img
-        src="Banner.jpg"
-        alt="Hawaiʻi Names Project"
-        class="banner"
-      />
+      <div class="banner-full">
+  <img src="Banner.jpg" alt="Hawaiʻi Names Project banner">
+</div>
 
       <h1>Hawaiʻi Place Names: A Map of Hawaiʻi’s Memory</h1>
       <div class="subhead">
