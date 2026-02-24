@@ -57,7 +57,11 @@
 
   /* Hamburger + mobile menu */
   .nav-toggle{
-    display:none; /* hidden on desktop */
+    /* keep it in DOM for toggle; visually hidden below */
+    position:absolute;
+    opacity:0;
+    width:1px;
+    height:1px;
   }
 
   .hamburger{
@@ -97,7 +101,7 @@
     border-bottom:none;
   }
 
-  /* When checkbox is checked, show menu */
+  /* When checkbox is checked, show menu (works because input is sibling of .mobile-menu) */
   #nav-toggle:checked ~ .mobile-menu{
     display:block;
   }
@@ -114,13 +118,6 @@
 
     .hamburger{
       display:block;
-    }
-
-    .nav-toggle{
-      display:block;
-      position:absolute;
-      opacity:0;
-      pointer-events:none;
     }
   }
 
@@ -229,10 +226,10 @@
 
 <!-- NAV (Option A) -->
 <nav>
-  <div class="nav-inner">
-    <!-- Hidden checkbox controls the mobile menu -->
-    <input class="nav-toggle" type="checkbox" id="nav-toggle" />
+  <!-- IMPORTANT: input must be sibling of .mobile-menu for the CSS selector to work -->
+  <input class="nav-toggle" type="checkbox" id="nav-toggle" />
 
+  <div class="nav-inner">
     <!-- Desktop nav links -->
     <div class="nav-links">
       <a href="#">Home</a>
