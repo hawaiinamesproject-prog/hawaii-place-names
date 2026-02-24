@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Places We Lost | Hawai‘i Names Project</title>
 
-  <link rel="icon" href="clean-favicon.ico">
+<link rel="icon" href="clean-favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="clean-favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="clean-favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
@@ -38,7 +38,7 @@ nav a:hover{
   color:#2b6cb0;
 }
 
-/* BANNER (matches your current size) */
+/* BANNER */
 .hero-banner{
   background:white;
   display:flex;
@@ -111,13 +111,24 @@ h1{
 }
 
 /* FOOTER */
-footer{
-  text-align:center;
-  padding:25px 15px;
+.footer{
   background:white;
+  text-align:center;
+  padding:40px 0;
   border-top:1px solid #ddd;
-  color:#555;
-  font-size:0.95rem;
+  margin-top:80px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{
+  color:#2b6cb0;
 }
 </style>
 </head>
@@ -129,18 +140,17 @@ footer{
   <a href="places-we-lost.html">Places We Lost</a>
   <a href="place-name-profiles.html">Place Name Profiles</a>
   <a href="stories.html">Stories</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact Us</a>
 </nav>
 
 <div class="hero-banner">
-  <img src="Banner.jpg" alt="Hawaiʻi Place Names Banner">
+  <img src="Banner.jpg" alt="Hawaiʻi Names Project Banner">
 </div>
 
 <div class="container">
   <h1>Places We Lost</h1>
   <div class="subhead">
-    Places that once anchored everyday life that are gone, buried, or transformed beyond recognition. These aren’t just “old places.” They’re memory, identity, and change.
+    Places that once anchored everyday life that are gone, buried, or transformed beyond recognition.
+    These aren’t just “old places.” They’re memory, identity, and change.
   </div>
 
   <div class="grid">
@@ -148,7 +158,8 @@ footer{
     <div class="card">
       <h2>Aloha Stadium</h2>
       <p>
-        A statewide gathering place that faded while still standing — the memories remain, even as the future is uncertain.
+        A statewide gathering place that faded while still standing — the memories remain,
+        even as the future is uncertain.
       </p>
       <a href="#">Read</a>
     </div>
@@ -156,7 +167,8 @@ footer{
     <div class="card">
       <h2>Ooka’s Supermarket</h2>
       <p>
-        A Wailuku institution — routine, community, and “everyday Maui” — gone, but still a shared reference point.
+        A Wailuku institution — routine, community, and “everyday Maui” — gone,
+        but still a shared reference point.
       </p>
       <a href="#">Read</a>
     </div>
@@ -164,7 +176,8 @@ footer{
     <div class="card">
       <h2>Wahaʻula Heiau</h2>
       <p>
-        A sacred site on the Puna-Kāʻu coast — abandoned, threatened, and ultimately buried beneath lava.
+        A sacred site on the Puna-Kāʻu coast — abandoned, threatened,
+        and ultimately buried beneath lava.
       </p>
       <a href="#">Read</a>
     </div>
@@ -172,8 +185,9 @@ footer{
   </div>
 </div>
 
-<footer>
-  © Hawai‘i Names Project
+<footer class="footer">
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact Us</a>
 </footer>
 
 </body>
