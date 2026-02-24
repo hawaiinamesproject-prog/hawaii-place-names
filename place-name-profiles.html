@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Place Name Profiles | Hawai‘i Names Project</title>
 
-  <link rel="icon" href="clean-favicon.ico">
+<link rel="icon" href="clean-favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="clean-favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="clean-favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
@@ -127,13 +127,24 @@ h1{
 }
 
 /* FOOTER */
-footer{
-  text-align:center;
-  padding:25px 15px;
+.footer{
   background:white;
+  text-align:center;
+  padding:40px 0;
   border-top:1px solid #ddd;
-  color:#555;
-  font-size:0.95rem;
+  margin-top:80px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{
+  color:#2b6cb0;
 }
 </style>
 </head>
@@ -145,12 +156,10 @@ footer{
   <a href="places-we-lost.html">Places We Lost</a>
   <a href="place-name-profiles.html">Place Name Profiles</a>
   <a href="stories.html">Stories</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact Us</a>
 </nav>
 
 <div class="hero-banner">
-  <img src="Banner.jpg" alt="Hawaiʻi Place Names Banner">
+  <img src="Banner.jpg" alt="Hawaiʻi Names Project Banner">
 </div>
 
 <div class="container">
@@ -162,7 +171,6 @@ footer{
 
   <div class="grid">
 
-    <!-- ORDERED: 1) ʻIolani Palace, 2) Nāhuku, 3) Parker Ranch, then the rest -->
     <div class="card">
       <div class="thumb">Thumbnail</div>
       <div class="card-inner">
@@ -256,8 +264,9 @@ footer{
   </div>
 </div>
 
-<footer>
-  © Hawai‘i Names Project
+<footer class="footer">
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact Us</a>
 </footer>
 
 </body>
