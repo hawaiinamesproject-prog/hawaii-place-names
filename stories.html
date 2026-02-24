@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stories | Hawai‘i Names Project</title>
 
-  <link rel="icon" href="clean-favicon.ico">
+<link rel="icon" href="clean-favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="clean-favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="clean-favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
@@ -38,7 +38,7 @@ nav a:hover{
   color:#2b6cb0;
 }
 
-/* BANNER (matches your current size) */
+/* BANNER */
 .hero-banner{
   background:white;
   display:flex;
@@ -99,7 +99,7 @@ h1{
   color:#333;
 }
 
-/* “Read” button-like link */
+/* “Read” link */
 .card a{
   display:inline-block;
   text-decoration:none;
@@ -111,14 +111,25 @@ h1{
   text-decoration:underline;
 }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:25px 15px;
+/* FOOTER LINKS (centered + bold like nav) */
+.footer{
   background:white;
+  text-align:center;
+  padding:40px 0;
   border-top:1px solid #ddd;
-  color:#555;
-  font-size:0.95rem;
+  margin-top:80px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{
+  color:#2b6cb0;
 }
 </style>
 </head>
@@ -130,12 +141,10 @@ footer{
   <a href="places-we-lost.html">Places We Lost</a>
   <a href="place-name-profiles.html">Place Name Profiles</a>
   <a href="stories.html">Stories</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact Us</a>
 </nav>
 
 <div class="hero-banner">
-  <img src="Banner.jpg" alt="Hawaiʻi Place Names Banner">
+  <img src="Banner.jpg" alt="Hawaiʻi Names Project Banner">
 </div>
 
 <div class="container">
@@ -149,33 +158,28 @@ footer{
 
     <div class="card">
       <h2>How Does One Own an Island?</h2>
-      <p>
-        Land, power, and control.
-      </p>
+      <p>Land, power, and control.</p>
       <a href="#">Read</a>
     </div>
 
     <div class="card">
       <h2>Kaʻahumanu Broke the Mold</h2>
-      <p>
-        A leader who refused to fit the pattern and the contradictions that shaped the Kingdom.
-      </p>
+      <p>A leader who refused to fit the pattern and the contradictions that shaped the Kingdom.</p>
       <a href="#">Read</a>
     </div>
 
     <div class="card">
       <h2>David Malo: Why Do We Not Honor Him?</h2>
-      <p>
-        A historian at the center of cultural memory and the question of why some names fade.
-      </p>
+      <p>A historian at the center of cultural memory and the question of why some names fade.</p>
       <a href="#">Read</a>
     </div>
 
   </div>
 </div>
 
-<footer>
-  © Hawai‘i Names Project
+<footer class="footer">
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact Us</a>
 </footer>
 
 </body>
