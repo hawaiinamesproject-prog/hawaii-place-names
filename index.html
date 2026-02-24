@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Hawaiʻi Names Project</title>
 
 <link rel="icon" href="clean-favicon.ico">
@@ -11,144 +11,251 @@
 <link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
 
 <style>
-body{
-  margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  background:#f7f7f7;
-  color:#222;
-}
+  body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f7f7f7;
+    color:#222;
+  }
 
-/* NAVIGATION */
-nav{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  padding:20px 0;
-  font-weight:600;
-  background:white;
-  border-bottom:1px solid #ddd;
-}
+  /* =========================
+     NAVIGATION (Option A)
+     Desktop: normal horizontal links
+     Mobile: hamburger menu
+     ========================= */
 
-nav a{
-  text-decoration:none;
-  color:#222;
-}
+  nav{
+    background:#fff;
+    border-bottom:1px solid #ddd;
+  }
 
-nav a:hover{
-  color:#2b6cb0;
-}
+  .nav-inner{
+    max-width:1200px;
+    margin:0 auto;
+    padding:14px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:center; /* centered links on desktop */
+    position:relative;
+  }
 
-/* BANNER */
-.hero-banner{
-  width:100%;
-  background:white;
-  display:flex;
-  justify-content:center;
-  padding:20px 0;
-}
+  /* Desktop links */
+  .nav-links{
+    display:flex;
+    gap:40px;
+    font-weight:600;
+  }
 
-.hero-banner{
-  background:white;
-  display:flex;
-  justify-content:center;
-  padding:30px 0;
-}
+  nav a{
+    text-decoration:none;
+    color:#222;
+  }
 
-.hero-banner img{
-  width:600px;       /* Controls size */
-  max-width:90%;     /* Responsive */
-  height:auto;       /* Keeps proportions */
-}
+  nav a:hover{
+    color:#2b6cb0;
+  }
 
-/* TAGLINE */
-.tagline{
-  text-align:center;
-  padding:30px 20px;
-  font-size:1.2rem;
-  background:white;
-}
+  /* Hamburger + mobile menu */
+  .nav-toggle{
+    display:none; /* hidden on desktop */
+  }
 
-/* FILTER SECTION */
-.filters{
-  text-align:center;
-  padding:20px;
-  background:white;
-  border-top:1px solid #eee;
-  border-bottom:1px solid #eee;
-}
+  .hamburger{
+    display:none; /* shown on mobile */
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+    border:0;
+    background:transparent;
+    padding:10px;
+  }
 
-.filters label{
-  margin:0 10px;
-}
+  .hamburger span{
+    display:block;
+    width:24px;
+    height:2px;
+    background:#222;
+    margin:5px 0;
+  }
 
-/* MAP PLACEHOLDER */
-.map{
-  height:500px;
-  background:#d9e6f2;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:1.3rem;
-  font-weight:600;
-}
+  .mobile-menu{
+    display:none; /* shown when toggled on mobile */
+    border-top:1px solid #eee;
+    background:#fff;
+  }
 
-/* SECTION GRID */
-.section{
-  padding:60px 20px;
-  max-width:1200px;
-  margin:auto;
-}
+  .mobile-menu a{
+    display:block;
+    padding:14px 18px;
+    border-bottom:1px solid #f0f0f0;
+    font-weight:600;
+  }
 
-.section h2{
-  text-align:center;
-  margin-bottom:40px;
-}
+  .mobile-menu a:last-child{
+    border-bottom:none;
+  }
 
-.grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap:30px;
-}
+  /* When checkbox is checked, show menu */
+  #nav-toggle:checked ~ .mobile-menu{
+    display:block;
+  }
 
-.card{
-  background:white;
-  padding:20px;
-  border-radius:6px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.05);
-}
+  /* Mobile breakpoint */
+  @media (max-width: 768px){
+    .nav-inner{
+      justify-content:flex-start; /* leave room for hamburger */
+    }
 
-.card h3{
-  margin-top:0;
-}
+    .nav-links{
+      display:none; /* hide desktop links */
+    }
+
+    .hamburger{
+      display:block;
+    }
+
+    .nav-toggle{
+      display:block;
+      position:absolute;
+      opacity:0;
+      pointer-events:none;
+    }
+  }
+
+  /* =========================
+     BANNER
+     ========================= */
+
+  .hero-banner{
+    width:100%;
+    background:white;
+    display:flex;
+    justify-content:center;
+    padding:30px 0;
+  }
+
+  .hero-banner img{
+    width:600px;
+    max-width:90%;
+    height:auto;
+  }
+
+  /* TAGLINE */
+  .tagline{
+    text-align:center;
+    padding:30px 20px;
+    font-size:1.2rem;
+    background:white;
+  }
+
+  /* FILTER SECTION */
+  .filters{
+    text-align:center;
+    padding:20px;
+    background:white;
+    border-top:1px solid #eee;
+    border-bottom:1px solid #eee;
+  }
+
+  .filters label{
+    margin:0 10px;
+  }
+
+  /* MAP PLACEHOLDER */
+  .map{
+    height:500px;
+    background:#d9e6f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1.3rem;
+    font-weight:600;
+  }
+
+  /* SECTION GRID */
+  .section{
+    padding:60px 20px;
+    max-width:1200px;
+    margin:auto;
+  }
+
+  .section h2{
+    text-align:center;
+    margin-bottom:40px;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap:30px;
+  }
+
+  .card{
+    background:white;
+    padding:20px;
+    border-radius:6px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .card h3{
+    margin-top:0;
+  }
+
   .footer{
-  background:white;
-  text-align:center;
-  padding:40px 0;
-  border-top:1px solid #ddd;
-  margin-top:60px;
-  font-weight:600;
-  font-size:1.1rem;
-}
+    background:white;
+    text-align:center;
+    padding:40px 0;
+    border-top:1px solid #ddd;
+    margin-top:60px;
+    font-weight:600;
+    font-size:1.1rem;
+  }
 
-.footer a{
-  text-decoration:none;
-  color:#222;
-  margin:0 20px;
-}
+  .footer a{
+    text-decoration:none;
+    color:#222;
+    margin:0 20px;
+  }
 
-.footer a:hover{
-  color:#2b6cb0;
-}
+  .footer a:hover{
+    color:#2b6cb0;
+  }
 </style>
 </head>
 
 <body>
 
+<!-- NAV (Option A) -->
 <nav>
-  <a href="#">Home</a>
-  <a href="places-we-lost.html">Places We Lost</a>
-  <a href="place-name-profiles.html">Place Name Profiles</a>
-  <a href="stories.html">Stories</a>
+  <div class="nav-inner">
+    <!-- Hidden checkbox controls the mobile menu -->
+    <input class="nav-toggle" type="checkbox" id="nav-toggle" />
+
+    <!-- Desktop nav links -->
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="places-we-lost.html">Places We Lost</a>
+      <a href="place-name-profiles.html">Place Name Profiles</a>
+      <a href="stories.html">Stories</a>
+    </div>
+
+    <!-- Hamburger button (label toggles checkbox) -->
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu">
+    <a href="#">Home</a>
+    <a href="places-we-lost.html">Places We Lost</a>
+    <a href="place-name-profiles.html">Place Name Profiles</a>
+    <a href="stories.html">Stories</a>
+  </div>
 </nav>
 
 <div class="hero-banner">
@@ -211,11 +318,10 @@ nav a:hover{
   </div>
 </div>
 
-  <footer class="footer">
-    <a href="about.html">About</a> |
-    <a href="contact.html">Contact Us</a>
-  </p>
+<footer class="footer">
+  <a href="about.html">About</a> |
+  <a href="contact.html">Contact Us</a>
 </footer>
-  
+
 </body>
 </html>
