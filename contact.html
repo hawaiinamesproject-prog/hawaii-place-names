@@ -18,15 +18,29 @@ body{
   color:#222;
 }
 
-/* NAV */
+/* =========================
+   NAVIGATION (Option A)
+   ========================= */
+
 nav{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  padding:20px 0;
-  font-weight:600;
-  background:white;
+  background:#fff;
   border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
 }
 
 nav a{
@@ -38,7 +52,74 @@ nav a:hover{
   color:#2b6cb0;
 }
 
-/* BANNER */
+/* Hidden checkbox toggle */
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+/* Hamburger */
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{
+  border-bottom:none;
+}
+
+#nav-toggle:checked ~ .mobile-menu{
+  display:block;
+}
+
+@media (max-width:768px){
+  .nav-inner{
+    justify-content:flex-start;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hamburger{
+    display:block;
+  }
+}
+
+/* =========================
+   BANNER
+   ========================= */
+
 .hero-banner{
   background:white;
   display:flex;
@@ -52,7 +133,10 @@ nav a:hover{
   height:auto;
 }
 
-/* CONTENT */
+/* =========================
+   CONTENT
+   ========================= */
+
 .content{
   max-width:800px;
   margin:60px auto;
@@ -71,7 +155,19 @@ nav a:hover{
   font-weight:600;
 }
 
-/* FOOTER */
+.email a{
+  text-decoration:none;
+  color:#2b6cb0;
+}
+
+.email a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
 .footer{
   background:white;
   text-align:center;
@@ -96,11 +192,31 @@ nav a:hover{
 
 <body>
 
+<!-- NAV -->
 <nav>
-  <a href="index.html">Home</a>
-  <a href="places-we-lost.html">Places We Lost</a>
-  <a href="place-name-profiles.html">Place Name Profiles</a>
-  <a href="stories.html">Stories</a>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="places-we-lost.html">Places We Lost</a>
+      <a href="place-name-profiles.html">Place Name Profiles</a>
+      <a href="stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="places-we-lost.html">Places We Lost</a>
+    <a href="place-name-profiles.html">Place Name Profiles</a>
+    <a href="stories.html">Stories</a>
+  </div>
 </nav>
 
 <div class="hero-banner">
