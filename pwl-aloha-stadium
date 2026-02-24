@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aloha Stadium | Places We Lost | Hawai‘i Names Project</title>
+
+<link rel="icon" href="clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+}
+
+/* =========================
+   NAVIGATION (Option A)
+   ========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{
+  color:#2b6cb0;
+}
+
+/* Hidden checkbox toggle */
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+/* Hamburger */
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{
+  border-bottom:none;
+}
+
+#nav-toggle:checked ~ .mobile-menu{
+  display:block;
+}
+
+@media (max-width:768px){
+  .nav-inner{
+    justify-content:flex-start;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hamburger{
+    display:block;
+  }
+}
+
+/* =========================
+   BANNER
+   ========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:600px;
+  max-width:90%;
+  height:auto;
+}
+
+/* =========================
+   ARTICLE LAYOUT
+   ========================= */
+
+.article{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 20px;
+}
+
+.breadcrumb{
+  max-width:900px;
+  margin:0 auto;
+  padding:22px 20px 0;
+  font-size:0.95rem;
+  color:#555;
+}
+
+.breadcrumb a{
+  color:#2b6cb0;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.breadcrumb a:hover{
+  text-decoration:underline;
+}
+
+.article h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+  text-align:left;
+}
+
+.subtitle{
+  margin:0 0 22px;
+  color:#444;
+  font-weight:600;
+}
+
+.lede{
+  font-size:1.1rem;
+  line-height:1.75;
+  color:#222;
+}
+
+.article p{
+  line-height:1.75;
+  font-size:1.05rem;
+  color:#222;
+  margin:18px 0;
+}
+
+.pull{
+  margin:22px 0;
+  padding:16px 18px;
+  border-left:4px solid #2b6cb0;
+  background:#ffffff;
+  border-radius:8px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.04);
+  font-style:italic;
+  color:#333;
+}
+
+/* Image placeholders (optional) */
+.figure{
+  margin:26px 0;
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,0.04);
+}
+
+.figure .img{
+  height:260px;
+  background:#e9eef5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#666;
+  font-weight:700;
+}
+
+.caption{
+  padding:12px 14px;
+  font-size:0.95rem;
+  color:#555;
+  line-height:1.5;
+}
+
+hr{
+  border:none;
+  border-top:1px solid #e6e6e6;
+  margin:30px 0;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:80px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{
+  color:#2b6cb0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="places-we-lost.html">Places We Lost</a>
+      <a href="place-name-profiles.html">Place Name Profiles</a>
+      <a href="stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="places-we-lost.html">Places We Lost</a>
+    <a href="place-name-profiles.html">Place Name Profiles</a>
+    <a href="stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="Banner.jpg" alt="Hawai‘i Names Project Banner">
+</div>
+
+<div class="breadcrumb">
+  <a href="places-we-lost.html">← Places We Lost</a>
+</div>
+
+<main class="article">
+  <h1>Aloha Stadium</h1>
+  <div class="subtitle">Oʻahu — Hālawa</div>
+
+  <!-- OPTIONAL: image block (replace placeholder with <img src="..."> later) -->
+  <div class="figure">
+    <div class="img">Image Placeholder</div>
+    <div class="caption">
+      View from the upper deck inside Aloha Stadium, Hālawa, Oʻahu.
+      Photo by Quintin Soloviev / CC BY-SA 4.0 (Wikimedia Commons).
+    </div>
+  </div>
+
+  <p class="lede">
+    Aloha Stadium is still standing, for the time being, but it is no longer what it was.
+  </p>
+
+  <p>
+    For decades, it functioned as one of Hawaiʻi’s few truly shared civic spaces. It wasn’t just a football stadium.
+    It was where families gathered for graduations, where high school championships mattered, where concerts filled the
+    night air, and where people from every island came together for events that felt genuinely statewide.
+  </p>
+
+  <p>
+    Its origins reach back to the late 1960s, during planning and construction. Hawaiʻi was changing quickly, and Aloha
+    Stadium was built to replace another lost place, Honolulu Stadium in Mōʻiliʻili, which had served the state for
+    generations but was falling into disrepair. In many ways, Aloha Stadium represented a step forward, not just for
+    University of Hawaiʻi football, but for the state as a whole.
+  </p>
+
+  <p>
+    From 1975 through 2020, it served as the home of the Hawaiʻi Rainbow Warriors. Coach Larry Price led the first teams
+    to take the field there, followed by Dick Tomey, whose tenure coincided with UH’s entry into the Western Athletic
+    Conference and a rise in national visibility. It was at Aloha Stadium that UH defeated BYU led by Heisman Trophy
+    winner Ty Detmer, where quarterbacks shattered NCAA passing records, and where fans witnessed a 12–0 season and a
+    trip to a BCS bowl.
+  </p>
+
+  <div class="pull">
+    But Aloha Stadium was never only about UH football.
+  </div>
+
+  <p>
+    It hosted AAA minor league baseball for nearly a decade, international soccer matches, and appearances by some of
+    the most recognizable figures in global sport, including Pelé. Musicians crossed the ocean to perform there across
+    generations, from The Police (1984) to Michael Jackson (1997), Mariah Carey (1998), U2 (2006), and Bruno Mars (2018).
+  </p>
+
+  <p>
+    Kamaʻāina from the neighbor islands flew to Oʻahu and, for many, experienced their first—and sometimes only—UH game,
+    major concert, or large-scale graduation there. For a long time, Aloha Stadium functioned as the heartbeat of
+    large-scale entertainment for the state.
+  </p>
+
+  <!-- OPTIONAL: second image block -->
+  <div class="figure">
+    <div class="img">Image Placeholder</div>
+    <div class="caption">
+      The NFL Pro Bowl at Aloha Stadium, one of many events that drew visitors from across the islands.
+      U.S. Navy photo by MC1 James E. Foehl / Public Domain (via Wikimedia Commons).
+    </div>
+  </div>
+
+  <p>
+    That role weakened over time. Games stopped. Crowds thinned. The building aged. What remains today is a structure
+    without its former purpose, surrounded by parking lots that still host activity, even as the stadium itself waits
+    for its future.
+  </p>
+
+  <p>
+    Aloha Stadium shows how a place can be lost without disappearing. The name remains. The memories remain. But the
+    function that once gave it meaning does not. In Hawaiʻi, loss is not always sudden or dramatic. Sometimes it arrives
+    slowly, while the place is still standing.
+  </p>
+
+  <p>
+    Many still drive past it on the freeway and remember nights spent there with friends, family, and complete strangers—
+    moments when thousands gathered in one place and, for a while, shared the same space and time.
+  </p>
+
+  <!-- OPTIONAL: third image block -->
+  <div class="figure">
+    <div class="img">Image Placeholder</div>
+    <div class="caption">
+      Participants cross the finish line of the Great Aloha Run at Aloha Stadium, one of many community events that used
+      the venue as a shared civic space. U.S. Army photo by Sgt. 1st Class Joe Battle / Public Domain (via Wikimedia Commons).
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
