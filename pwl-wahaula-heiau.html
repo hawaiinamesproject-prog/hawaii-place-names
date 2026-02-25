@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wahaʻula Heiau | Places We Lost | Hawai‘i Names Project</title>
+
+<link rel="icon" href="clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+}
+
+/* =========================
+   NAVIGATION (Option A)
+   ========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{
+  color:#2b6cb0;
+}
+
+/* Hidden checkbox toggle */
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+/* Hamburger */
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{
+  border-bottom:none;
+}
+
+#nav-toggle:checked ~ .mobile-menu{
+  display:block;
+}
+
+@media (max-width:768px){
+  .nav-inner{
+    justify-content:flex-start;
+  }
+  .nav-links{
+    display:none;
+  }
+  .hamburger{
+    display:block;
+  }
+}
+
+/* =========================
+   BANNER
+   ========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:600px;
+  max-width:90%;
+  height:auto;
+}
+
+/* =========================
+   ARTICLE LAYOUT
+   ========================= */
+
+.article{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 20px;
+}
+
+.breadcrumb{
+  max-width:900px;
+  margin:0 auto;
+  padding:22px 20px 0;
+  font-size:0.95rem;
+  color:#555;
+}
+
+.breadcrumb a{
+  color:#2b6cb0;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.breadcrumb a:hover{
+  text-decoration:underline;
+}
+
+.article h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+  text-align:left;
+}
+
+.subtitle{
+  margin:0 0 22px;
+  color:#444;
+  font-weight:600;
+}
+
+.lede{
+  font-size:1.1rem;
+  line-height:1.75;
+  color:#222;
+}
+
+.article p{
+  line-height:1.75;
+  font-size:1.05rem;
+  color:#222;
+  margin:18px 0;
+}
+
+.pull{
+  margin:22px 0;
+  padding:16px 18px;
+  border-left:4px solid #2b6cb0;
+  background:#ffffff;
+  border-radius:8px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.04);
+  font-style:italic;
+  color:#333;
+}
+
+/* Image blocks */
+.figure{
+  margin:26px 0;
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,0.04);
+}
+
+.figure img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* Desktop image size control (match your Aloha Stadium tweak) */
+@media (min-width:769px){
+  .figure{
+    max-width:550px;
+    margin:26px auto;
+  }
+}
+
+.caption{
+  padding:12px 14px;
+  font-size:0.95rem;
+  color:#555;
+  line-height:1.5;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:80px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{
+  color:#2b6cb0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="places-we-lost.html">Places We Lost</a>
+      <a href="place-name-profiles.html">Place Name Profiles</a>
+      <a href="stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="places-we-lost.html">Places We Lost</a>
+    <a href="place-name-profiles.html">Place Name Profiles</a>
+    <a href="stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="Banner.jpg" alt="Hawai‘i Names Project Banner">
+</div>
+
+<div class="breadcrumb">
+  <a href="places-we-lost.html">← Places We Lost</a>
+</div>
+
+<main class="article">
+  <h1>Wahaʻula Heiau</h1>
+  <div class="subtitle">Hawaiʻi Island — Puna</div>
+
+  <!-- IMAGE 1 -->
+  <div class="figure">
+    <img src="images/pwl/wahaula-heiau-archive.jpg" alt="Archive view of Wahaʻula Heiau on the coast of Hawaiʻi Volcanoes National Park before burial by lava">
+    <div class="caption">
+      Archive view of Wahaʻula Heiau on the coast of Hawaiʻi Volcanoes National Park, before burial by lava.
+      Photo courtesy of National Park Service / Public Domain (via Wikimedia Commons).
+    </div>
+  </div>
+
+  <p class="lede">
+    Wahaʻula Heiau is gone, but not in the way most places are lost.
+  </p>
+
+  <p>
+    Wahaʻula disappeared the way it had always existed — in relationship to the land beneath it. Lava did not erase it so much as reclaim it.
+  </p>
+
+  <p>
+    Built sometime in the 13th century, Wahaʻula Heiau stood along the rugged coastline of Puna, dedicated to Kū-wahaʻula (Kū of the red mouth) to serve the god associated with war, power, and sacrifice. The temple was built under the influence of Paʻao, the priest from Kahiki (scholars often believe this is Tahiti or broadly central Polynesia) credited with introducing a new religious order to Hawaiʻi. His arrival marked a break from earlier ʻIʻo-centered belief systems and helped formalize the kapu system, elevating Kū and luakini heiau (a heiau where human and animal sacrifices were offered).
+  </p>
+
+  <p>
+    Oral traditions surrounding Paʻao’s arrival are among the most dramatic in Hawaiian history, filled with conflict, prophecy, and rupture, stories that mirror the upheaval his religious system represented. In this telling, Wahaʻula was not just a temple, but a physical expression of a reordered world.
+  </p>
+
+  <p>
+    The mana (spiritual power) of Wahaʻula endured for nearly five centuries. By the end of 1819, temple rituals had ceased as Liholiho (Kamehameha II) and Kaʻahumanu formally dismantled the kapu system. In 1824, a royal decree ordered the destruction of heiau throughout the islands, marking the end of the religious order that had defined chiefly power for generations.
+  </p>
+
+  <p>
+    Wahaʻula was desecrated but not erased. The site remained visible for more than a century, its stone platforms exposed along the Puna coast. In 1938, the surrounding lands were incorporated into Hawaiʻi National Park, later Hawaiʻi Volcanoes National Park, and the National Park Service built a small visitor center nearby.
+  </p>
+
+  <!-- IMAGE 2 -->
+  <div class="figure">
+    <img src="images/pwl/wahaula-heiau-aerial.jpg" alt="Aerial view of the former site of Wahaʻula Heiau and the Wahaʻula Visitor Center in Hawaiʻi Volcanoes National Park">
+    <div class="caption">
+      Aerial view of the former site of Wahaʻula Heiau and the Wahaʻula Visitor Center, Hawaiʻi Volcanoes National Park.
+      National Park Service photo, public domain.
+    </div>
+  </div>
+
+  <div class="pull">
+    Then came Kīlauea — more specifically, Puʻu ʻŌʻō.
+  </div>
+
+  <p>
+    In 1989, lava flows advanced toward the heiau. Witnesses reported that the lava reached the outer walls and then split, flowing around the structure and leaving it temporarily untouched. Many saw meaning in the pause, a moment where the volcano seemed to acknowledge the sacred ground.
+  </p>
+
+  <p>
+    Eight years later, in 1997, the lava returned. This time it did not divert. Wahaʻula Heiau was buried completely.
+  </p>
+
+  <!-- IMAGE 3 -->
+  <div class="figure">
+    <img src="images/pwl/wahaula-heiau-1997-flow.jpg" alt="1997 lava flow from Puʻu ʻŌʻō advancing over the Wahaʻula Heiau site">
+    <div class="caption">
+      1997 lava flow from Pu‘u ‘Ō‘ō advancing over the Wahaʻula Heiau site, now buried under hardened pāhoehoe.
+      Photo courtesy of National Park Service / Public Domain (via Wikimedia Commons).
+    </div>
+  </div>
+
+  <p>
+    What remains today is not a ruin, not a foundation, not even a visible trace. The heiau lies beneath hardened pāhoehoe, inaccessible and unseen. There are no stones to walk among, no structure to mark. Only the name persists, fixed to a place where the land itself was taken.
+  </p>
+
+  <p>
+    Wahaʻula represents a kind of loss unique to Hawaiʻi. It was not erased by conquest. It was overtaken by the same volcanic forces that created the island, forces tied to the gods the temple was built to appease.
+  </p>
+
+  <p>
+    In a landscape shaped by fire, permanence is never guaranteed. Yet names endure longer than stone. Wahaʻula Heiau is no longer visible, but it has not vanished. It survives in memory, language, and story, a reminder that some places are lost not to time or people, but to the land itself.
+  </p>
+
+</main>
+
+<footer class="footer">
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
