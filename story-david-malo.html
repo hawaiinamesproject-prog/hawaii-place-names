@@ -19,7 +19,7 @@ body{
 }
 
 /* =========================
-   NAVIGATION (Option A)
+   NAVIGATION
    ========================= */
 nav{
   background:#fff;
@@ -122,7 +122,7 @@ nav a:hover{
 }
 
 /* =========================
-   ARTICLE LAYOUT
+   ARTICLE
    ========================= */
 .breadcrumb{
   max-width:900px;
@@ -145,13 +145,12 @@ nav a:hover{
 .article{
   max-width:900px;
   margin:0 auto;
-  padding:40px 20px 20px;
+  padding:40px 20px;
 }
 
 .article h1{
   margin:10px 0 6px;
   font-size:2.2rem;
-  text-align:left;
 }
 
 .subtitle{
@@ -163,63 +162,63 @@ nav a:hover{
 .article p{
   line-height:1.75;
   font-size:1.05rem;
-  color:#222;
   margin:18px 0;
 }
 
-/* Pull quotes (boxed sentences) */
+/* Pull Quotes */
 .pull{
-  margin:26px 0;
-  padding:16px 18px;
+  margin:30px 0;
+  padding:18px 20px;
   border-left:4px solid #2b6cb0;
-  background:#ffffff;
+  background:#fff;
   border-radius:8px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.04);
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
   font-style:italic;
-  color:#333;
   font-size:1.15rem;
   line-height:1.6;
 }
 
 /* Images */
 .figure{
-  margin:26px 0;
-  background:#fff;
-  border:1px solid #eee;
-  border-radius:10px;
-  overflow:hidden;
-  box-shadow:0 2px 10px rgba(0,0,0,0.04);
+  margin:32px auto;
+  text-align:center;
 }
 
 .figure img{
   width:100%;
+  max-width:550px;
   height:auto;
-  display:block;
+  border-radius:8px;
 }
 
-/* Desktop sizing like your PWL pages */
-@media (min-width:769px){
-  .figure{
-    max-width:550px;
-    margin:26px auto;
-  }
-}
-
-/* Make portrait smaller than other images */
-.figure.portrait{
-  max-width:420px;
-}
-@media (min-width:769px){
-  .figure.portrait{
-    max-width:360px; /* portrait smaller on desktop */
-  }
+.figure.portrait img{
+  max-width:360px; /* keeps portrait from dominating desktop */
 }
 
 .caption{
-  padding:12px 14px;
   font-size:0.95rem;
   color:#555;
+  margin-top:8px;
   line-height:1.5;
+}
+
+/* =========================
+   MOBILE TYPOGRAPHY TUNING
+   ========================= */
+@media (max-width:768px){
+  .article{
+    padding:32px 24px;
+  }
+
+  .article p{
+    font-size:1rem;
+    line-height:1.85;
+  }
+
+  .pull{
+    font-size:1.1rem;
+    margin:34px 0;
+  }
 }
 
 /* =========================
@@ -305,9 +304,8 @@ nav a:hover{
     It prompts a quiet question that lingers for a minute:
   </p>
 
-  <!-- PULL QUOTE 1 -->
   <div class="pull">
-    How can someone so central to Hawaiian history be remembered so faintly today?
+    How can someone so central to Hawaiian history be remembered so faintly today.
   </div>
 
   <p>
@@ -366,7 +364,6 @@ nav a:hover{
     In a time when oral knowledge keepers were dying faster than they could teach, Malo’s writing became a bridge. One that couldn’t be built fast enough.
   </p>
 
-  <!-- PULL QUOTE 2 -->
   <div class="pull">
     Ka Moʻolelo Hawaiʻi stands today not only as a historical text but as a monument to one man's determination to preserve what could still be saved.
   </div>
@@ -415,9 +412,8 @@ nav a:hover{
     When I was growing up, my grandfather mentioned David Malo from time to time. He had graduated from Lahainaluna, and the name meant something to him in a way it didn’t yet mean anything to me. In school, Malo was usually a sentence or two — a brief mention that he was an important Hawaiian historian — and then the class moved on. The curriculum focused on sandalwood, whaling, sugar, and the later plantation economy.
   </p>
 
-  <!-- PULL QUOTE 3 -->
   <div class="pull">
-    We were taught the history of Hawaiʻi, but not Hawaiian history.
+    We were taught the history of Hawaiʻi but not Hawaiian history.
   </div>
 
   <p>
