@@ -10,6 +10,12 @@
 <link rel="icon" type="image/png" sizes="16x16" href="clean-favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
 
+<!-- Leaflet CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
 <style>
   body{
     margin:0;
@@ -160,15 +166,10 @@
     margin:0 10px;
   }
 
-  /* MAP PLACEHOLDER */
+  /* MAP (Leaflet container) */
   .map{
     height:500px;
-    background:#d9e6f2;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:1.3rem;
-    font-weight:600;
+    width:100%;
   }
 
   /* SECTION GRID */
@@ -282,9 +283,8 @@
   <label><input type="checkbox"> Random Pin</label>
 </div>
 
-<div class="map">
-  MAP WILL GO HERE
-</div>
+<!-- Leaflet map container -->
+<div id="map" class="map"></div>
 
 <div class="section">
   <h2>Places We Lost</h2>
@@ -296,10 +296,10 @@
     </div>
 
     <div class="card">
-  <h3>Wahaʻula Heiau</h3>
-  <p>Buried beneath lava, but not forgotten.</p>
-  <a href="pwl-wahaula-heiau.html">Read</a>
-</div>
+      <h3>Wahaʻula Heiau</h3>
+      <p>Buried beneath lava, but not forgotten.</p>
+      <a href="pwl-wahaula-heiau.html">Read</a>
+    </div>
   </div>
 </div>
 
@@ -324,14 +324,12 @@
       <h3>How Does One Own an Island?</h3>
       <p>Power, land, and identity.</p>
     </div>
+
     <div class="card">
-<div class="card">
-  <h3>Kaʻahumanu Broke the Mold</h3>
-  <p>
-    Power, reform, and the reshaping of the Hawaiian Kingdom.
-  </p>
-  <a href="story-kaahumanu.html">Read</a>
-</div>
+      <h3>Kaʻahumanu Broke the Mold</h3>
+      <p>Power, reform, and the reshaping of the Hawaiian Kingdom.</p>
+      <a href="story-kaahumanu.html">Read</a>
+    </div>
   </div>
 </div>
 
@@ -339,6 +337,19 @@
   <a href="about.html">About</a> |
   <a href="contact.html">Contact Us</a>
 </footer>
+
+<!-- Leaflet JS + map init -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  var map = L.map('map', {
+    zoomControl: true,
+    scrollWheelZoom: false
+  }).setView([20.8, -157.5], 7); // Centered on Hawaiʻi
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+</script>
 
 </body>
 </html>
