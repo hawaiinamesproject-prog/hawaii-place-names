@@ -6,6 +6,9 @@
 <title>David Malo: The Scholar Hawaiʻi Forgot | Stories | Hawai‘i Names Project</title>
 
 <link rel="icon" href="clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
 
 <style>
 body{
@@ -15,8 +18,9 @@ body{
   color:#222;
 }
 
-/* NAV */
-
+/* =========================
+   NAVIGATION (Option A)
+   ========================= */
 nav{
   background:#fff;
   border-bottom:1px solid #ddd;
@@ -29,6 +33,7 @@ nav{
   display:flex;
   align-items:center;
   justify-content:center;
+  position:relative;
 }
 
 .nav-links{
@@ -46,8 +51,63 @@ nav a:hover{
   color:#2b6cb0;
 }
 
-/* BANNER */
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
 
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{
+  border-bottom:none;
+}
+
+#nav-toggle:checked ~ .mobile-menu{
+  display:block;
+}
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+   BANNER
+   ========================= */
 .hero-banner{
   background:white;
   display:flex;
@@ -61,14 +121,9 @@ nav a:hover{
   height:auto;
 }
 
-/* ARTICLE */
-
-.article{
-  max-width:900px;
-  margin:0 auto;
-  padding:40px 20px;
-}
-
+/* =========================
+   ARTICLE LAYOUT
+   ========================= */
 .breadcrumb{
   max-width:900px;
   margin:0 auto;
@@ -83,38 +138,57 @@ nav a:hover{
   font-weight:700;
 }
 
+.breadcrumb a:hover{
+  text-decoration:underline;
+}
+
+.article{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 20px;
+}
+
 .article h1{
-  font-size:2.4rem;
-  margin-bottom:10px;
+  margin:10px 0 6px;
+  font-size:2.2rem;
+  text-align:left;
+}
+
+.subtitle{
+  margin:0 0 22px;
+  color:#444;
+  font-weight:600;
 }
 
 .article p{
-  line-height:1.8;
+  line-height:1.75;
   font-size:1.05rem;
-  margin:20px 0;
+  color:#222;
+  margin:18px 0;
 }
 
-/* Pull Quotes */
-
+/* Pull quotes (boxed sentences) */
 .pull{
-  margin:40px 0;
-  padding:20px 24px;
-  border-left:5px solid #2b6cb0;
-  background:#fff;
-  font-size:1.2rem;
-  font-weight:600;
+  margin:26px 0;
+  padding:16px 18px;
+  border-left:4px solid #2b6cb0;
+  background:#ffffff;
+  border-radius:8px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.04);
+  font-style:italic;
+  color:#333;
+  font-size:1.15rem;
   line-height:1.6;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
 /* Images */
-
 .figure{
-  margin:30px 0;
+  margin:26px 0;
   background:#fff;
+  border:1px solid #eee;
   border-radius:10px;
   overflow:hidden;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  box-shadow:0 2px 10px rgba(0,0,0,0.04);
 }
 
 .figure img{
@@ -123,21 +197,34 @@ nav a:hover{
   display:block;
 }
 
+/* Desktop sizing like your PWL pages */
 @media (min-width:769px){
   .figure{
-    max-width:600px;
-    margin:30px auto;
+    max-width:550px;
+    margin:26px auto;
+  }
+}
+
+/* Make portrait smaller than other images */
+.figure.portrait{
+  max-width:420px;
+}
+@media (min-width:769px){
+  .figure.portrait{
+    max-width:360px; /* portrait smaller on desktop */
   }
 }
 
 .caption{
-  padding:12px 16px;
+  padding:12px 14px;
   font-size:0.95rem;
   color:#555;
+  line-height:1.5;
 }
 
-/* Footer */
-
+/* =========================
+   FOOTER
+   ========================= */
 .footer{
   background:white;
   text-align:center;
@@ -145,13 +232,27 @@ nav a:hover{
   border-top:1px solid #ddd;
   margin-top:80px;
   font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{
+  color:#2b6cb0;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
   <div class="nav-inner">
     <div class="nav-links">
       <a href="index.html">Home</a>
@@ -159,6 +260,17 @@ nav a:hover{
       <a href="place-name-profiles.html">Place Name Profiles</a>
       <a href="stories.html">Stories</a>
     </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="places-we-lost.html">Places We Lost</a>
+    <a href="place-name-profiles.html">Place Name Profiles</a>
+    <a href="stories.html">Stories</a>
   </div>
 </nav>
 
@@ -171,75 +283,156 @@ nav a:hover{
 </div>
 
 <main class="article">
+  <h1>David Malo: The Scholar Hawaiʻi Forgot</h1>
 
-<h1>David Malo: The Scholar Hawaiʻi Forgot</h1>
-
-<div class="figure">
-  <img src="images/stories/david-malo-portrait.jpg" alt="Portrait of David Malo, Hawaiian scholar and Lahainaluna alumnus">
-  <div class="caption">
-    David Malo, Hawaiian scholar and Lahainaluna alumnus (Public Domain).
+  <!-- IMAGE 1 (portrait) -->
+  <div class="figure portrait">
+    <img src="images/stories/david-malo-portrait.jpg" alt="Portrait of David Malo, Hawaiian scholar and Lahainaluna alumnus">
+    <div class="caption">
+      David Malo, Hawaiian scholar and Lahainaluna alumnus (Public Domain).
+    </div>
   </div>
-</div>
 
-<p>
-High above the red roofs of Lahainaluna, on a quiet slope overlooking West Maui, rests the grave of David Malo...
-</p>
+  <p>
+    High above the red roofs of Lahainaluna, on a quiet slope overlooking West Maui, rests the grave of David Malo. The stone is simple and unadorned, set against a wide view of the ʻAuʻau Channel and the outline of Lānaʻi. Below, the campus spreads across its terraces — classrooms, dormitories, and the printing traditions that helped shape Hawaiian literacy.
+  </p>
 
-<div class="pull">
-How can someone so central to Hawaiian history be remembered so faintly today.
-</div>
+  <p>
+    Each April, students and alumni climb the hill carrying lei to honor a man whose influence they may sense more than understand. The sounds of campus and everyday life fall away, leaving only the weight of Malo’s legacy.
+  </p>
 
-<p>
-David Malo was born around 1793 in Keauhou...
-</p>
+  <p>
+    It prompts a quiet question that lingers for a minute:
+  </p>
 
-<p>
-...Lahainaluna did not strip Malo of his identity. It gave him a mission to save his culture.
-</p>
-
-<div class="figure">
-  <img src="images/stories/david-malo-lahainaluna-1847.jpg" alt="Lahainaluna Seminary as depicted in 1847">
-  <div class="caption">
-    Lahainaluna as depicted in 1847, from <em>Residence of Twenty-One Kings</em> (Public Domain).
+  <!-- PULL QUOTE 1 -->
+  <div class="pull">
+    How can someone so central to Hawaiian history be remembered so faintly today?
   </div>
-</div>
 
-<p>
-Malo’s most enduring work, Ka Moʻolelo Hawaiʻi...
-</p>
+  <p>
+    David Malo was born around 1793 in Keauhou (near Kona on Hawaiʻi Island) at a time when Hawaiʻi was governed by its own rhythms, genealogies, and gods. The world of his childhood was one of communal labor, ʻoli and moʻolelo carried from memory, and a social order shaped by aliʻi, kahuna, and the responsibilities that bound people to land and to the gods. Malo grew up in this pre-Western influenced, Hawaiian universe, learning the practices and stories that would later become the foundation of his life’s work.
+  </p>
 
-<div class="pull">
-Ka Moʻolelo Hawaiʻi stands today not only as a historical text but as a monument to one man's determination to preserve what could still be saved.
-</div>
+  <p>
+    These were years of profound transition. Malo’s early life overlapped with the final battles of unification under Kamehameha, the ending of ancient kapu systems, and the first sustained arrival of Western ships, languages, and beliefs. He witnessed, as a young man, the beginning of a cultural transformation that would accelerate rapidly in the decades to come and the carnage brought in the form of disease that would decimate his people and his world.
+  </p>
 
-<p>
-...His brief time in politics was another way he tried to guide Hawaiians through a changing world.
-</p>
+  <p>
+    It is this combination, a childhood rooted in traditional knowledge and an adulthood shaped by rapid change, that positioned Malo to become Hawaiʻi’s first great historian, able to straddle two worlds as they merged. His youth and formative years were in the world he would later describe, and he saw the forces that threatened to erase it as an adult.
+  </p>
 
-<div class="figure">
-  <img src="images/stories/david-malo-puu-paaupau.jpg" alt="Puʻu Paʻupaʻu hillside above Lahainaluna with the large L visible">
-  <div class="caption">
-    Puʻu Paʻupaʻu hillside above Lahainaluna (Forest & Kim Starr, CC BY 3.0 US).
+  <p>
+    By the time he reached adulthood, Malo had become known for his sharp memory, disciplined mind, and understanding of chiefly traditions. This reputation brought him into circles of aliʻi advisors, placing him closely with both Hawaiian leaders and missionaries who were beginning to shape education in Hawaiʻi.
+  </p>
+
+  <p>
+    Lahainaluna Seminary opened in 1831, as a training ground for Hawaiian intellectuals. Malo, then in his late thirties, was invited to join its first class as a Hawaiian scholar the missionaries hoped to train as a teacher and recorder of traditional knowledge. Missionaries, despite seeking to replace Hawaiian religion, also believed in literacy and record-keeping and they needed knowledgeable Hawaiians like Malo to help document the world that was disappearing.
+  </p>
+
+  <p>
+    When Malo arrived at Lahainaluna Seminary in 1831, he entered a place unlike anything that had existed in Hawaiʻi before. Perched above Lāhainā, the school gathered the greatest minds of the era, Hawaiians from across the islands brought together by a shared urgency to learn, to record, and to make sense of a world in upheaval. Malo joined the school’s first class, quickly distinguishing himself through discipline, sharp memory, and an instinct for organizing knowledge.
+  </p>
+
+  <p>
+    At Lahainaluna, he was taught reading (in English), printing technology, world geography, and Christian theology, but he brought something the missionaries could not teach: a lived understanding of pre-contact Hawaiian society. Malo became both student and teacher, eventually serving as a school master. He translated between worlds, linguistically and culturally, working to preserve the Hawaiian past within the new educational system.
+  </p>
+
+  <p>
+    The Seminary’s printing press was central to the mission. It was here that Malo and his peers began writing down what had previously lived only in memory: genealogies, ʻoli, political structures, agricultural practices, and the meaning of names and places. In classrooms where whale-oil lamps flickered, Hawaiians who had grown up in the old world worked to rescue it before it disappeared entirely using the technologies and assistance of the new world. Lahainaluna did not strip Malo of his identity. It gave him a mission to save his culture.
+  </p>
+
+  <!-- IMAGE 2 -->
+  <div class="figure">
+    <img src="images/stories/david-malo-lahainaluna-1847.jpg" alt="Lahainaluna as depicted in 1847">
+    <div class="caption">
+      Lahainaluna as depicted in 1847, from <em>Residence of Twenty-One Kings</em> (Public Domain, Internet Archive).
+    </div>
   </div>
-</div>
 
-<p>
-Malo’s influence should have made him one of the most familiar names in Hawaiʻi...
-</p>
+  <p>
+    Malo’s most enduring work, Ka Moʻolelo Hawaiʻi, developed from the urgency he felt during his years at Lahainaluna. It was cultural preservation written by someone who could feel his lived world slipping away. Malo understood that the knowledge carried through chants, genealogies, and ritual memory would not survive the demographic collapse that was ripping through Kānaka Maoli. If it was not written down, it would be lost and never recaptured.
+  </p>
 
-<div class="pull">
-We were taught the history of Hawaiʻi but not Hawaiian history.
-</div>
+  <p>
+    Ka Moʻolelo Hawaiʻi is striking in both scope and clarity. Malo cataloged the structure of chiefs and commoners, the origins of the Hawaiian people, religious practices, agricultural cycles, social responsibilities, and the meaning behind names, symbols, and customs. He wrote from firsthand knowledge. His prose carries the tone of a man trying to explain a complete world to future generations who would never see it.
+  </p>
 
-<p>
-It wasn’t until much later, reading on my own...
-</p>
+  <p>
+    The work also reflects the tension of Malo’s era. He had embraced Christianity, yet he wrote about traditional religion with respect and detail. He was documenting the old ways so future Hawaiians could understand the past.
+  </p>
+
+  <p>
+    In a time when oral knowledge keepers were dying faster than they could teach, Malo’s writing became a bridge. One that couldn’t be built fast enough.
+  </p>
+
+  <!-- PULL QUOTE 2 -->
+  <div class="pull">
+    Ka Moʻolelo Hawaiʻi stands today not only as a historical text but as a monument to one man's determination to preserve what could still be saved.
+  </div>
+
+  <p>
+    When Malo left Lahainaluna, he remained in Lāhainā (the Kingdom’s capital) teaching, advising, and earning a reputation for discipline and clarity. His standing grew in a town where aliʻi, missionaries, and Hawaiian intellectuals were building the Kingdom’s future.
+  </p>
+
+  <p>
+    This was also the era of Kamehameha III, Kauikeaouli, whose 1840 Constitution established Hawaiʻi’s first formal legislature. The Constitutional Monarchy was new and the Kingdom needed representatives for the legislature who understood both Hawaiian governance and the changing world around it. In 1841, Maui elected Malo to the first House of Representatives because he was a voice people trusted to guide the Kingdom.
+  </p>
+
+  <p>
+    He served only a short term, but his presence mattered. Malo represented a connection between eras: trained at Lahainaluna, fluent in the legal and cultural logic of the Hawaiian Kingdom, yet shaped by the values and realities of pre-contact Hawaiʻi. His brief time in politics was another way he tried to guide Hawaiians through a changing world.
+  </p>
+
+  <p>
+    Malo spent his later years in Kalepolepo, along the Kīhei shoreline, far from the politics of Lāhainā. He had watched Hawaiian society change faster than anyone could understand, and he worried openly about the direction of the Kingdom. Population collapse, alcohol abuse, foreign influence, and political infighting made him fear that Hawaiians were losing not just stability, but the moral foundations. Essentially, he was reflecting on what it meant to be Hawaiian.
+  </p>
+
+  <p>
+    In Kalepolepo, he lived simply, farmed, advised his small community, and continued writing. Friends who visited noted he was carrying a sense of weariness. He couldn’t fight the tide. Malo believed that Hawaiians were losing purpose and would struggle to retain their identity.
+  </p>
+
+  <p>
+    Before his death in 1853, Malo made one request: to be buried on the hill above Lahainaluna. Away from the world but overlooking the place where he had done his most important work. The climb to his grave is steep, sitting above the large ‘L’ on the hill. It is a resting place chosen by someone who understood both the weight of the past and the uncertainty of the future.
+  </p>
+
+  <!-- IMAGE 3 -->
+  <div class="figure">
+    <img src="images/stories/david-malo-puu-paaupau.jpg" alt="Puʻu Paʻupaʻu hillside above Lahainaluna, with the large ‘L’ visible on the slope">
+    <div class="caption">
+      Puʻu Paʻupaʻu hillside above Lahainaluna, with the large ‘L’ visible on the slope (photo: Forest &amp; Kim Starr, CC BY 3.0 US, cropped by author).
+    </div>
+  </div>
+
+  <p>
+    Malo’s influence should have made him one of the most familiar names in Hawaiʻi. His writings shaped how later scholars understood genealogy, religion, political structure, and the daily life of pre-contact Hawaiians. Yet over time, his presence in public memory faded. We can attribute part of this to the demographic collapse he feared. Part of it came from the pace of change in the Kingdom after his death, when new political battles and new crises pushed earlier voices into the background, most notably the Great Māhele, the Reciprocity Treaty, and eventually the overthrow of the Kingdom. Politics and turmoil moved quickly, and Hawaiʻi blew past its earliest scholar.
+  </p>
+
+  <p>
+    Some of the forgetting was structural. Malo wrote in Hawaiian at a time when literacy was shifting toward English. As fewer people read Hawaiian fluently, fewer people read Malo. His work was foundational, but it wasn’t always accessible. Other figures, aliʻi, missionaries, political leaders, took up more space in the written histories that emerged in the late nineteenth and early twentieth centuries, leaving scholars like Malo acknowledged but rarely centered. Today, his legacy sits in an unusual place: essential to understanding Hawaiʻi, yet invisible to most.
+  </p>
+
+  <p>
+    When I was growing up, my grandfather mentioned David Malo from time to time. He had graduated from Lahainaluna, and the name meant something to him in a way it didn’t yet mean anything to me. In school, Malo was usually a sentence or two — a brief mention that he was an important Hawaiian historian — and then the class moved on. The curriculum focused on sandalwood, whaling, sugar, and the later plantation economy.
+  </p>
+
+  <!-- PULL QUOTE 3 -->
+  <div class="pull">
+    We were taught the history of Hawaiʻi, but not Hawaiian history.
+  </div>
+
+  <p>
+    That entire transition period, the world Malo was trying to capture as it unraveled, was barely covered at all.
+  </p>
+
+  <p>
+    It wasn’t until much later, reading on my own, that I started to understand who he was, what he tried to save, and why my grandfather talked about him with deep admiration. It made me wonder why we don’t teach him more. Why someone who wrote the first Hawaiian history and tried so hard to preserve a disappearing world sits mostly at the edges of our memory. Malo didn’t disappear. We just stopped looking in his direction.
+  </p>
 
 </main>
 
 <footer class="footer">
   <a href="about.html">About</a> |
-  <a href="contact.html">Contact</a>
+  <a href="contact.html">Contact Us</a>
 </footer>
 
 </body>
