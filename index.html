@@ -13,6 +13,10 @@
 <!-- Leaflet CSS -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
+<!-- MarkerCluster (clustering) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+
 <style>
   body{
     margin:0;
@@ -144,13 +148,43 @@
   /* FILTER SECTION */
   .filters{
     text-align:center;
-    padding:20px;
+    padding:18px 20px;
     background:white;
     border-top:1px solid #eee;
     border-bottom:1px solid #eee;
   }
 
-  .filters label{ margin:0 10px; }
+  .filters strong{ display:inline-block; margin-bottom:10px; }
+
+  .filters-row{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+
+  .filters label{
+    margin:0;
+    font-weight:600;
+    display:flex;
+    gap:8px;
+    align-items:center;
+  }
+
+  .btn{
+    appearance:none;
+    border:1px solid #ddd;
+    background:#fff;
+    padding:10px 14px;
+    border-radius:999px;
+    font-weight:700;
+    cursor:pointer;
+  }
+
+  .btn:hover{ background:#f3f3f3; }
+
+  .btn:active{ transform:translateY(1px); }
 
   /* MAP (Leaflet container) */
   .map{
@@ -307,9 +341,11 @@
 </div>
 
 <div class="filters">
-  <strong>Filter by:</strong><br><br>
-  <label><input type="checkbox"> Places We Lost</label>
-  <label><input type="checkbox"> Random Pin</label>
+  <strong>Filter by:</strong>
+  <div class="filters-row">
+    <label><input type="checkbox" id="filter-pwl"> Places We Lost</label>
+    <button class="btn" type="button" id="random-pin">Random Pin</button>
+  </div>
 </div>
 
 <!-- Leaflet map container -->
@@ -367,23 +403,23 @@
   <a href="contact.html">Contact Us</a>
 </footer>
 
-<!-- Leaflet JS + map init -->
+<!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- MarkerCluster (clustering) -->
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
 <script>
-  // --- Default "home" view ---
-  var HOME_CENTER = [20.8, -157.5];
-  var HOME_ZOOM = 6.6; // pulled back slightly
+  // --- Default "home" bounds ---
+  var HOME_BOUNDS = [
+    [18.75, -160.45], // SW
+    [22.45, -154.65]  // NE
+  ];
 
   var map = L.map('map', {
     zoomControl: true,
     scrollWheelZoom: false
-  }).setView(HOME_CENTER, HOME_ZOOM);
-
-  // Prefer fitBounds so Kauaʻi + Hawaiʻi Island don't crop on mobile
-  map.fitBounds([
-    [18.75, -160.45], // SW
-    [22.45, -154.65]  // NE
-  ], { padding: [10, 10] });
+  });
 
   // --- Base layers ---
   var streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -405,6 +441,9 @@
     { position: "topright" }
   ).addTo(map);
 
+  // Fit view so Kauaʻi + Hawaiʻi Island don't crop on mobile
+  map.fitBounds(HOME_BOUNDS, { padding: [10, 10] });
+
   // --- Custom control: Reset/Home ---
   var HomeControl = L.Control.extend({
     options: { position: 'topleft' },
@@ -418,10 +457,7 @@
       L.DomEvent.disableClickPropagation(container);
       L.DomEvent.on(link, 'click', function (e) {
         L.DomEvent.preventDefault(e);
-        map.fitBounds([
-          [18.75, -160.45],
-          [22.45, -154.65]
-        ], { padding: [10, 10] });
+        map.fitBounds(HOME_BOUNDS, { padding: [10, 10] });
       });
 
       return container;
@@ -491,6 +527,123 @@
       else map.scrollWheelZoom.disable();
     }
   });
+
+  // =========================
+  // CLUSTERING + FILTERS + RANDOM
+  // =========================
+
+  // You already have a big list elsewhere. Paste/keep it here.
+  // IMPORTANT: add `type: "PWL"` for your Places We Lost pins as you go.
+  // If a pin has no type, it will be treated as a normal pin.
+  const places = [
+    // ---- EXAMPLES (keep/delete; add your real list below) ----
+    // {
+    //   name: "Wahaʻula Heiau",
+    //   island: "Hawaiʻi (Big Island)",
+    //   coords: [19.324515, -155.029435],
+    //   who: "Kū (god of war, as Kū-wahaʻula)",
+    //   type: "PWL",
+    //   url: "pwl-wahaula-heiau.html",
+    //   relevance: "..."
+    // },
+  ];
+
+  function makePopupHTML(p){
+    var readLink = (p.url && typeof p.url === "string" && p.url.trim() !== "")
+      ? `<div style="margin-top:8px;"><a href="${p.url}" style="font-weight:700;color:#0b3d91;text-decoration:none;">Read</a></div>`
+      : "";
+
+    return `
+      <div style="font-family: system-ui, sans-serif; max-width: 260px; line-height: 1.4;">
+        <h3 style="margin: 0 0 4px; font-size: 15px; color: #0b3d91;">
+          ${p.name || ""}
+        </h3>
+        <div style="font-size: 13px; color: #444; margin-bottom: 6px;">
+          <strong>${p.island || ""}</strong><br>
+          <em>${p.who || ""}</em>
+        </div>
+        <div style="font-size: 13px; color: #222; background: #f7f7f9; padding: 6px 8px; border-left: 3px solid #0b3d91; border-radius: 4px;">
+          ${p.relevance || ""}
+        </div>
+        ${readLink}
+      </div>
+    `;
+  }
+
+  // Cluster groups
+  const allClusters = L.markerClusterGroup({
+    showCoverageOnHover: false,
+    spiderfyOnMaxZoom: true,
+    maxClusterRadius: 45
+  });
+
+  const pwlClusters = L.markerClusterGroup({
+    showCoverageOnHover: false,
+    spiderfyOnMaxZoom: true,
+    maxClusterRadius: 45
+  });
+
+  // Marker arrays for Random Pin
+  const allMarkers = [];
+  const pwlMarkers = [];
+
+  places.forEach(p => {
+    if(!p || !p.coords) return;
+
+    const m = L.marker(p.coords).bindPopup(makePopupHTML(p));
+
+    allClusters.addLayer(m);
+    allMarkers.push(m);
+
+    if ((p.type || "").toUpperCase() === "PWL"){
+      pwlClusters.addLayer(m);
+      pwlMarkers.push(m);
+    }
+  });
+
+  // Default: show all pins (if any)
+  map.addLayer(allClusters);
+
+  function showAllPins(){
+    if(map.hasLayer(pwlClusters)) map.removeLayer(pwlClusters);
+    if(!map.hasLayer(allClusters)) map.addLayer(allClusters);
+  }
+
+  function showPWLOnly(){
+    if(map.hasLayer(allClusters)) map.removeLayer(allClusters);
+    if(!map.hasLayer(pwlClusters)) map.addLayer(pwlClusters);
+  }
+
+  function randomPin(){
+    const usingPWL = map.hasLayer(pwlClusters) && !map.hasLayer(allClusters);
+    const list = usingPWL ? pwlMarkers : allMarkers;
+
+    if(!list.length){
+      // nothing to do
+      return;
+    }
+
+    const m = list[Math.floor(Math.random() * list.length)];
+    const ll = m.getLatLng();
+
+    // zoom in a bit and open popup
+    map.setView(ll, Math.max(map.getZoom(), 11), { animate: true });
+    m.openPopup();
+  }
+
+  // Hook up UI
+  const pwlCheckbox = document.getElementById("filter-pwl");
+  if(pwlCheckbox){
+    pwlCheckbox.addEventListener("change", function(){
+      if(this.checked) showPWLOnly();
+      else showAllPins();
+    });
+  }
+
+  const randomBtn = document.getElementById("random-pin");
+  if(randomBtn){
+    randomBtn.addEventListener("click", randomPin);
+  }
 </script>
 
 </body>
