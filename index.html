@@ -183,7 +183,6 @@
   }
 
   .btn:hover{ background:#f3f3f3; }
-
   .btn:active{ transform:translateY(1px); }
 
   /* MAP (Leaflet container) */
@@ -532,20 +531,40 @@
   // CLUSTERING + FILTERS + RANDOM
   // =========================
 
-  // You already have a big list elsewhere. Paste/keep it here.
-  // IMPORTANT: add `type: "PWL"` for your Places We Lost pins as you go.
-  // If a pin has no type, it will be treated as a normal pin.
+  // Four example pins (TEXT UNCHANGED)
   const places = [
-    // ---- EXAMPLES (keep/delete; add your real list below) ----
-    // {
-    //   name: "Wahaʻula Heiau",
-    //   island: "Hawaiʻi (Big Island)",
-    //   coords: [19.324515, -155.029435],
-    //   who: "Kū (god of war, as Kū-wahaʻula)",
-    //   type: "PWL",
-    //   url: "pwl-wahaula-heiau.html",
-    //   relevance: "..."
-    // },
+    {
+      name: "Nāhuku (Thurston Lava Tube)",
+      island: "Hawaiʻi (Big Island)",
+      coords: [19.41349744, -155.2387908],
+      who: "Lorrin Andrews Thurston",
+      relevance:
+        "Nāhuku means 'bumps' (stalactites/stalagmites). Thurston (1858–1931) was a publisher and political figure involved in the 1893 overthrow and a key advocate for creating Hawaiʻi Volcanoes National Park. The site now bears both names."
+    },
+    {
+      name: "Parker Ranch",
+      island: "Hawaiʻi (Big Island)",
+      coords: [20.019937124463727, -155.68197981029473],
+      who: "John Palmer Parker",
+      relevance:
+        "Founded in 1847 by John Palmer Parker, who helped Kamehameha I control the island’s wild cattle and was granted land in return. Now spanning about 130,000 acres, the ranch operates as a charitable trust supporting North Hawaiʻi Community Hospital, Hawaiʻi Preparatory Academy, Parker School, and the Hawaiʻi Community Foundation."
+    },
+    {
+      name: "Hale Pōhaku (Onizuka Center for International Astronomy)",
+      island: "Hawaiʻi (Big Island)",
+      coords: [19.76140109380089, -155.45569723769464],
+      who: "Ellison Shoji Onizuka",
+      relevance:
+        "Perched at 9,200 feet on the slopes of Maunakea at Hale Pōhaku, the center honors astronaut Ellison Onizuka of Kealakekua — the first person of Japanese ancestry to fly in space. A Konawaena High School graduate and U.S. Air Force test pilot, Onizuka joined NASA’s 1978 astronaut class and died aboard the Challenger mission in 1986. The facility serves as a visitor hub for the Maunakea observatories, linking the summit’s modern exploration to his legacy of curiosity, discipline, and Hawaiʻi pride. A second namesake site — the Ellison Onizuka Kona International Airport — honors his hometown connection and lasting inspiration."
+    },
+    {
+      name: "Māmalahoa Highway",
+      island: "Hawaiʻi (Big Island)",
+      coords: [19.907449, -155.705128],
+      who: "Kānāwai Māmalahoe — “The Law of the Splintered Paddle”",
+      relevance:
+        "The name Māmalahoa Highway appears and disappears along the Big Island’s western and southern roads — from Kawaihae to Kaʻū — stitched across modern routes that trace older coastal trails. It recalls Kānāwai Māmalahoe, the “Law of the Splintered Paddle,” declared by Kamehameha I, around 1792, to protect travelers and the defenseless. Its spirit endures as a cornerstone of Hawaiian justice — even enshrined in the state constitution — and the highway’s name carries that ancient call for safety and compassion into the modern landscape."
+    }
   ];
 
   function makePopupHTML(p){
@@ -601,7 +620,7 @@
     }
   });
 
-  // Default: show all pins (if any)
+  // Default: show all pins
   map.addLayer(allClusters);
 
   function showAllPins(){
@@ -619,14 +638,12 @@
     const list = usingPWL ? pwlMarkers : allMarkers;
 
     if(!list.length){
-      // nothing to do
       return;
     }
 
     const m = list[Math.floor(Math.random() * list.length)];
     const ll = m.getLatLng();
 
-    // zoom in a bit and open popup
     map.setView(ll, Math.max(map.getZoom(), 11), { animate: true });
     m.openPopup();
   }
