@@ -19,6 +19,12 @@ body{
   -webkit-text-size-adjust:100%;
 }
 
+/* =========================
+   NAVIGATION (Option A)
+   Desktop: normal horizontal links
+   Mobile: hamburger menu
+   ========================= */
+
 nav{
   background:#fff;
   border-bottom:1px solid #ddd;
@@ -29,7 +35,9 @@ nav{
   margin:0 auto;
   padding:14px 18px;
   display:flex;
+  align-items:center;
   justify-content:center;
+  position:relative;
 }
 
 .nav-links{
@@ -45,6 +53,62 @@ nav a{
 
 nav a:hover{ color:#2b6cb0; }
 
+/* Hidden checkbox toggle */
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+/* Hamburger */
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+   BANNER
+   ========================= */
+
 .hero-banner{
   background:white;
   display:flex;
@@ -58,11 +122,16 @@ nav a:hover{ color:#2b6cb0; }
   height:auto;
 }
 
+/* =========================
+   BREADCRUMB + PROFILE
+   ========================= */
+
 .breadcrumb{
   max-width:900px;
   margin:0 auto;
   padding:22px 20px 0;
   font-size:0.95rem;
+  color:#555;
 }
 
 .breadcrumb a{
@@ -71,6 +140,8 @@ nav a:hover{ color:#2b6cb0; }
   font-weight:700;
 }
 
+.breadcrumb a:hover{ text-decoration:underline; }
+
 .profile{
   max-width:900px;
   margin:0 auto;
@@ -78,7 +149,8 @@ nav a:hover{ color:#2b6cb0; }
 }
 
 .profile h1{
-  margin-bottom:6px;
+  margin:10px 0 6px;
+  font-size:2.2rem;
 }
 
 .island{
@@ -93,8 +165,9 @@ nav a:hover{ color:#2b6cb0; }
   margin:18px 0;
 }
 
+/* Images */
 .figure{
-  margin:30px auto;
+  margin:32px auto;
   text-align:center;
 }
 
@@ -103,6 +176,8 @@ nav a:hover{ color:#2b6cb0; }
   max-width:650px;
   height:auto;
   border-radius:8px;
+  display:block;
+  margin:0 auto;
 }
 
 .caption{
@@ -116,6 +191,7 @@ nav a:hover{ color:#2b6cb0; }
   margin-right:auto;
 }
 
+/* Pull quote */
 .pull-quote{
   margin:40px 0;
   padding:18px 22px;
@@ -125,7 +201,19 @@ nav a:hover{ color:#2b6cb0; }
   font-size:1.15rem;
   line-height:1.6;
   font-style:italic;
+  color:#333;
 }
+
+/* Mobile readability tweaks */
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+  .pull-quote{ font-size:1.08rem; }
+}
+
+/* =========================
+   FOOTER (matches other pages)
+   ========================= */
 
 .footer{
   background:white;
@@ -134,13 +222,25 @@ nav a:hover{ color:#2b6cb0; }
   border-top:1px solid #ddd;
   margin-top:60px;
   font-weight:600;
+  font-size:1.1rem;
 }
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
   <div class="nav-inner">
     <div class="nav-links">
       <a href="index.html">Home</a>
@@ -148,6 +248,17 @@ nav a:hover{ color:#2b6cb0; }
       <a href="place-name-profiles.html">Place Name Profiles</a>
       <a href="stories.html">Stories</a>
     </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="places-we-lost.html">Places We Lost</a>
+    <a href="place-name-profiles.html">Place Name Profiles</a>
+    <a href="stories.html">Stories</a>
   </div>
 </nav>
 
@@ -196,7 +307,8 @@ For most locals, “Thurston Lava Tube” is still the common reference, but “
 </main>
 
 <footer class="footer">
-  Hawai‘i Names Project
+  <a href="about.html">About</a> |
+  <a href="contact.html">Contact Us</a>
 </footer>
 
 </body>
