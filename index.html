@@ -11,10 +11,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
 
 <!-- Leaflet CSS -->
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 <style>
   body{
@@ -29,7 +26,6 @@
      Desktop: normal horizontal links
      Mobile: hamburger menu
      ========================= */
-
   nav{
     background:#fff;
     border-bottom:1px solid #ddd;
@@ -41,11 +37,10 @@
     padding:14px 18px;
     display:flex;
     align-items:center;
-    justify-content:center; /* centered links on desktop */
+    justify-content:center;
     position:relative;
   }
 
-  /* Desktop links */
   .nav-links{
     display:flex;
     gap:40px;
@@ -57,13 +52,9 @@
     color:#222;
   }
 
-  nav a:hover{
-    color:#2b6cb0;
-  }
+  nav a:hover{ color:#2b6cb0; }
 
-  /* Hamburger + mobile menu */
   .nav-toggle{
-    /* keep it in DOM for toggle; visually hidden below */
     position:absolute;
     opacity:0;
     width:1px;
@@ -71,7 +62,7 @@
   }
 
   .hamburger{
-    display:none; /* shown on mobile */
+    display:none;
     position:absolute;
     right:18px;
     top:50%;
@@ -91,7 +82,7 @@
   }
 
   .mobile-menu{
-    display:none; /* shown when toggled on mobile */
+    display:none;
     border-top:1px solid #eee;
     background:#fff;
   }
@@ -103,34 +94,19 @@
     font-weight:600;
   }
 
-  .mobile-menu a:last-child{
-    border-bottom:none;
-  }
+  .mobile-menu a:last-child{ border-bottom:none; }
 
-  /* When checkbox is checked, show menu (works because input is sibling of .mobile-menu) */
-  #nav-toggle:checked ~ .mobile-menu{
-    display:block;
-  }
+  #nav-toggle:checked ~ .mobile-menu{ display:block; }
 
-  /* Mobile breakpoint */
   @media (max-width: 768px){
-    .nav-inner{
-      justify-content:flex-start; /* leave room for hamburger */
-    }
-
-    .nav-links{
-      display:none; /* hide desktop links */
-    }
-
-    .hamburger{
-      display:block;
-    }
+    .nav-inner{ justify-content:flex-start; }
+    .nav-links{ display:none; }
+    .hamburger{ display:block; }
   }
 
   /* =========================
      BANNER
      ========================= */
-
   .hero-banner{
     width:100%;
     background:white;
@@ -145,12 +121,24 @@
     height:auto;
   }
 
-  /* TAGLINE */
+  /* TAGLINE (compressed) */
   .tagline{
     text-align:center;
-    padding:30px 20px;
+    padding:18px 20px;
     font-size:1.2rem;
     background:white;
+  }
+
+  .tagline p{
+    margin:0;
+    line-height:1.35;
+  }
+
+  @media (max-width:768px){
+    .tagline{
+      padding:12px 18px;
+      font-size:1.05rem;
+    }
   }
 
   /* FILTER SECTION */
@@ -162,9 +150,7 @@
     border-bottom:1px solid #eee;
   }
 
-  .filters label{
-    margin:0 10px;
-  }
+  .filters label{ margin:0 10px; }
 
   /* MAP (Leaflet container) */
   .map{
@@ -174,9 +160,7 @@
 
   /* Desktop: make it dominate more */
   @media (min-width:1024px){
-    .map{
-      height:750px; /* ~50% taller */
-    }
+    .map{ height:750px; }
   }
 
   /* Leaflet custom controls */
@@ -192,9 +176,7 @@
     background:#fff;
   }
 
-  .leaflet-control.custom-btn a:hover{
-    background:#f3f3f3;
-  }
+  .leaflet-control.custom-btn a:hover{ background:#f3f3f3; }
 
   /* Fullscreen behavior */
   #map.is-fullscreen{
@@ -205,9 +187,7 @@
     z-index:9999;
   }
 
-  body.map-fullscreen{
-    overflow:hidden;
-  }
+  body.map-fullscreen{ overflow:hidden; }
 
   /* SECTION GRID */
   .section{
@@ -232,11 +212,31 @@
     padding:20px;
     border-radius:6px;
     box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    position:relative;
+    overflow:hidden;
   }
 
-  .card h3{
-    margin-top:0;
+  /* Card “top strip” accent */
+  .card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:6px;
+    background:transparent;
   }
+
+  /* PWL = black */
+  .section-pwl .card::before{ background:#111; }
+
+  /* PNP = green */
+  .section-pnp .card::before{ background:#2f7d4a; }
+
+  /* Stories = blue */
+  .section-stories .card::before{ background:#2b6cb0; }
+
+  .card h3{ margin-top:0; }
 
   /* Read link styling */
   .card a{
@@ -247,9 +247,7 @@
     margin-top:10px;
   }
 
-  .card a:hover{
-    text-decoration:underline;
-  }
+  .card a:hover{ text-decoration:underline; }
 
   .footer{
     background:white;
@@ -267,9 +265,7 @@
     margin:0 20px;
   }
 
-  .footer a:hover{
-    color:#2b6cb0;
-  }
+  .footer a:hover{ color:#2b6cb0; }
 </style>
 </head>
 
@@ -277,11 +273,9 @@
 
 <!-- NAV (Option A) -->
 <nav>
-  <!-- IMPORTANT: input must be sibling of .mobile-menu for the CSS selector to work -->
   <input class="nav-toggle" type="checkbox" id="nav-toggle" />
 
   <div class="nav-inner">
-    <!-- Desktop nav links -->
     <div class="nav-links">
       <a href="#">Home</a>
       <a href="places-we-lost.html">Places We Lost</a>
@@ -289,7 +283,6 @@
       <a href="stories.html">Stories</a>
     </div>
 
-    <!-- Hamburger button (label toggles checkbox) -->
     <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
       <span></span>
       <span></span>
@@ -297,7 +290,6 @@
     </label>
   </div>
 
-  <!-- Mobile menu -->
   <div class="mobile-menu">
     <a href="#">Home</a>
     <a href="places-we-lost.html">Places We Lost</a>
@@ -323,7 +315,7 @@
 <!-- Leaflet map container -->
 <div id="map" class="map"></div>
 
-<div class="section">
+<div class="section section-pwl">
   <h2>Places We Lost</h2>
   <div class="grid">
     <div class="card">
@@ -340,7 +332,7 @@
   </div>
 </div>
 
-<div class="section">
+<div class="section section-pnp">
   <h2>Place Name Profiles</h2>
   <div class="grid">
     <div class="card">
@@ -354,7 +346,7 @@
   </div>
 </div>
 
-<div class="section">
+<div class="section section-stories">
   <h2>Stories</h2>
   <div class="grid">
     <div class="card">
@@ -380,12 +372,18 @@
 <script>
   // --- Default "home" view ---
   var HOME_CENTER = [20.8, -157.5];
-  var HOME_ZOOM = 7;
+  var HOME_ZOOM = 6.6; // pulled back slightly
 
   var map = L.map('map', {
     zoomControl: true,
     scrollWheelZoom: false
   }).setView(HOME_CENTER, HOME_ZOOM);
+
+  // Prefer fitBounds so Kauaʻi + Hawaiʻi Island don't crop on mobile
+  map.fitBounds([
+    [18.75, -160.45], // SW
+    [22.45, -154.65]  // NE
+  ], { padding: [10, 10] });
 
   // --- Base layers ---
   var streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -420,7 +418,10 @@
       L.DomEvent.disableClickPropagation(container);
       L.DomEvent.on(link, 'click', function (e) {
         L.DomEvent.preventDefault(e);
-        map.setView(HOME_CENTER, HOME_ZOOM);
+        map.fitBounds([
+          [18.75, -160.45],
+          [22.45, -154.65]
+        ], { padding: [10, 10] });
       });
 
       return container;
@@ -441,7 +442,6 @@
         map.scrollWheelZoom.enable();
       }
 
-      // tell Leaflet to recalc size after layout change
       setTimeout(function(){ map.invalidateSize(); }, 150);
     } else {
       document.body.classList.remove('map-fullscreen');
