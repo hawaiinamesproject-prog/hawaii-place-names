@@ -168,8 +168,45 @@
 
   /* MAP (Leaflet container) */
   .map{
-    height:500px;
+    height:500px;   /* mobile/tablet default */
     width:100%;
+  }
+
+  /* Desktop: make it dominate more */
+  @media (min-width:1024px){
+    .map{
+      height:750px; /* ~50% taller */
+    }
+  }
+
+  /* Leaflet custom controls */
+  .leaflet-control.custom-btn a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:34px;
+    height:34px;
+    text-decoration:none;
+    font-weight:700;
+    color:#222;
+    background:#fff;
+  }
+
+  .leaflet-control.custom-btn a:hover{
+    background:#f3f3f3;
+  }
+
+  /* Fullscreen behavior */
+  #map.is-fullscreen{
+    position:fixed !important;
+    inset:0 !important;
+    height:auto !important;
+    width:auto !important;
+    z-index:9999;
+  }
+
+  body.map-fullscreen{
+    overflow:hidden;
   }
 
   /* SECTION GRID */
@@ -341,14 +378,119 @@
 <!-- Leaflet JS + map init -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
+  // --- Default "home" view ---
+  var HOME_CENTER = [20.8, -157.5];
+  var HOME_ZOOM = 7;
+
   var map = L.map('map', {
     zoomControl: true,
     scrollWheelZoom: false
-  }).setView([20.8, -157.5], 7); // Centered on Hawaiʻi
+  }).setView(HOME_CENTER, HOME_ZOOM);
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  // --- Base layers ---
+  var streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
+  });
+
+  // Satellite (Esri World Imagery)
+  var satellite = L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    { attribution: 'Tiles &copy; Esri' }
+  );
+
+  streets.addTo(map);
+
+  // Layer toggle control (top-right)
+  L.control.layers(
+    { "Streets": streets, "Satellite": satellite },
+    null,
+    { position: "topright" }
+  ).addTo(map);
+
+  // --- Custom control: Reset/Home ---
+  var HomeControl = L.Control.extend({
+    options: { position: 'topleft' },
+    onAdd: function () {
+      var container = L.DomUtil.create('div', 'leaflet-control custom-btn');
+      var link = L.DomUtil.create('a', '', container);
+      link.href = '#';
+      link.title = 'Reset view';
+      link.innerHTML = '⟲';
+
+      L.DomEvent.disableClickPropagation(container);
+      L.DomEvent.on(link, 'click', function (e) {
+        L.DomEvent.preventDefault(e);
+        map.setView(HOME_CENTER, HOME_ZOOM);
+      });
+
+      return container;
+    }
+  });
+  map.addControl(new HomeControl());
+
+  // --- Fullscreen toggle helper ---
+  function setFullscreen(on){
+    var mapEl = document.getElementById('map');
+
+    if(on){
+      document.body.classList.add('map-fullscreen');
+      mapEl.classList.add('is-fullscreen');
+
+      // enable scroll wheel zoom ONLY when fullscreen on desktop
+      if(window.innerWidth >= 1024){
+        map.scrollWheelZoom.enable();
+      }
+
+      // tell Leaflet to recalc size after layout change
+      setTimeout(function(){ map.invalidateSize(); }, 150);
+    } else {
+      document.body.classList.remove('map-fullscreen');
+      mapEl.classList.remove('is-fullscreen');
+
+      map.scrollWheelZoom.disable();
+      setTimeout(function(){ map.invalidateSize(); }, 150);
+    }
+  }
+
+  function isFullscreen(){
+    return document.getElementById('map').classList.contains('is-fullscreen');
+  }
+
+  // --- Custom control: Fullscreen button ---
+  var FullscreenControl = L.Control.extend({
+    options: { position: 'topleft' },
+    onAdd: function () {
+      var container = L.DomUtil.create('div', 'leaflet-control custom-btn');
+      var link = L.DomUtil.create('a', '', container);
+      link.href = '#';
+      link.title = 'Toggle fullscreen';
+      link.innerHTML = '⛶';
+
+      L.DomEvent.disableClickPropagation(container);
+      L.DomEvent.on(link, 'click', function (e) {
+        L.DomEvent.preventDefault(e);
+        setFullscreen(!isFullscreen());
+      });
+
+      return container;
+    }
+  });
+  map.addControl(new FullscreenControl());
+
+  // ESC exits fullscreen
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && isFullscreen()){
+      setFullscreen(false);
+    }
+  });
+
+  // Keep wheel zoom behavior sane on resize
+  window.addEventListener('resize', function(){
+    if(isFullscreen()){
+      if(window.innerWidth >= 1024) map.scrollWheelZoom.enable();
+      else map.scrollWheelZoom.disable();
+    }
+  });
 </script>
 
 </body>
