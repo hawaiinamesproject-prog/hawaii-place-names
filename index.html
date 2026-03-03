@@ -25,11 +25,6 @@
     color:#222;
   }
 
-  /* =========================
-     NAVIGATION (Option A)
-     Desktop: normal horizontal links
-     Mobile: hamburger menu
-     ========================= */
   nav{
     background:#fff;
     border-bottom:1px solid #ddd;
@@ -108,9 +103,6 @@
     .hamburger{ display:block; }
   }
 
-  /* =========================
-     BANNER (shrink ~30%)
-     ========================= */
   .hero-banner{
     width:100%;
     background:white;
@@ -125,7 +117,6 @@
     height:auto;
   }
 
-  /* TAGLINE (call to action + compressed) */
   .tagline{
     text-align:center;
     padding:14px 20px;
@@ -145,9 +136,6 @@
     }
   }
 
-  /* =========================
-     MAP WRAP + TOOLBAR OVERLAY (smaller box)
-     ========================= */
   .map-wrap{
     position:relative;
   }
@@ -171,7 +159,6 @@
 
   body.map-fullscreen{ overflow:hidden; }
 
-  /* Smaller toolbar: bottom-left, fit-content */
   .map-toolbar{
     position:absolute;
     left:12px;
@@ -190,6 +177,14 @@
     box-shadow:0 6px 18px rgba(0,0,0,0.12);
     z-index:600;
     backdrop-filter: blur(6px);
+  }
+
+  /* === FULLSCREEN TOOLBAR FIX === */
+  body.map-fullscreen .map-toolbar{
+    position:fixed;     /* detach from normal flow so it sits above the fullscreen map */
+    left:12px;
+    bottom:12px;
+    z-index:10001;      /* higher than the map (9999) */
   }
 
   .map-toolbar .label{
@@ -216,7 +211,6 @@
   .btn:hover{ background:#f3f3f3; }
   .btn:active{ transform:translateY(1px); }
 
-  /* Leaflet custom controls */
   .leaflet-control.custom-btn a{
     display:flex;
     align-items:center;
@@ -230,12 +224,9 @@
   }
   .leaflet-control.custom-btn a:hover{ background:#f3f3f3; }
 
-  /* =========================
-     POPUP: no "Read more", just scroll; size ~8-ish lines when NOT fullscreen
-     ========================= */
   .leaflet-popup-content{
     margin:10px 12px;
-    max-height:190px;   /* ~8-10 lines depending on device */
+    max-height:190px;
     overflow:auto;
   }
 
@@ -243,10 +234,6 @@
     max-height:60vh;
   }
 
-  /* =========================
-     CLUSTER: force it NOT to be the default circle, render our pin HTML
-     ========================= */
-  /* Nuke the default MarkerCluster "circle" styling */
   .marker-cluster,
   .marker-cluster div{
     background:transparent !important;
@@ -295,9 +282,6 @@
   .cluster-pin.pwl .head{ background:#111; }
   .cluster-pin.pwl .tip{ border-top-color:#111; }
 
-  /* =========================
-     SECTIONS
-     ========================= */
   .section{
     padding:60px 20px;
     max-width:1200px;
@@ -479,17 +463,13 @@
   <a href="contact.html">Contact Us</a>
 </footer>
 
-<!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-<!-- MarkerCluster (clustering) -->
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
 <script>
-  // --- Default "home" bounds ---
   var HOME_BOUNDS = [
-    [18.75, -160.45], // SW
-    [22.45, -154.65]  // NE
+    [18.75, -160.45],
+    [22.45, -154.65]
   ];
 
   var map = L.map('map', {
@@ -497,7 +477,6 @@
     scrollWheelZoom: false
   });
 
-  // --- Base layers ---
   var streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
   });
@@ -517,7 +496,6 @@
 
   map.fitBounds(HOME_BOUNDS, { padding: [10, 10] });
 
-  // --- Custom control: Reset/Home ---
   var HomeControl = L.Control.extend({
     options: { position: 'topleft' },
     onAdd: function () {
@@ -538,7 +516,6 @@
   });
   map.addControl(new HomeControl());
 
-  // --- Fullscreen toggle helper ---
   function setFullscreen(on){
     var mapEl = document.getElementById('map');
 
@@ -597,7 +574,6 @@
     }
   });
 
-  // Keep toolbar clicks from dragging/zooming the map
   (function lockToolbar(){
     var tb = document.getElementById("map-toolbar");
     if(!tb) return;
@@ -605,9 +581,6 @@
     L.DomEvent.disableScrollPropagation(tb);
   })();
 
-  // =========================
-  // ICONS (no inner white circle)
-  // =========================
   function svgPinDataURI(color){
     var svg = `
       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="44" viewBox="0 0 30 44">
@@ -631,9 +604,6 @@
     popupAnchor: [0, -38]
   });
 
-  // =========================
-  // CLUSTER ICONS (pin-shaped + number)
-  // =========================
   function clusterIconCreateFunction(colorClass){
     return function(cluster){
       var count = cluster.getChildCount();
@@ -645,7 +615,7 @@
       `;
       return L.divIcon({
         html: html,
-        className: "cluster-pin-wrap",  // important: avoid default styles
+        className: "cluster-pin-wrap",
         iconSize: [34, 44],
         iconAnchor: [17, 44]
       });
@@ -666,9 +636,6 @@
     iconCreateFunction: clusterIconCreateFunction("pwl")
   });
 
-  // =========================
-  // POPUP HTML (no "Read more"; just scroll)
-  // =========================
   function escapeHTML(str){
     return String(str || "")
       .replace(/&/g,"&amp;")
@@ -694,9 +661,6 @@
     `;
   }
 
-  // =========================
-  // FOUR EXAMPLE PINS (TEXT UNCHANGED)
-  // =========================
   const places = [
     {
       name: "Nāhuku (Thurston Lava Tube)",
@@ -741,10 +705,7 @@
     var isPWL = (String(p.type || "").toUpperCase() === "PWL");
     var marker = L.marker(p.coords, { icon: isPWL ? iconBlack : iconBlue });
 
-    marker.bindPopup(popupHTML(p), {
-      autoPan: true,
-      closeButton: true
-    });
+    marker.bindPopup(popupHTML(p), { autoPan: true, closeButton: true });
 
     if(isPWL){
       pwlClusters.addLayer(marker);
@@ -755,12 +716,8 @@
     }
   });
 
-  // Default: show regular pins
   map.addLayer(regularClusters);
 
-  // =========================
-  // FILTER: PWL adds alongside existing (not replace)
-  // =========================
   function setPWLVisible(visible){
     if(visible){
       if(!map.hasLayer(pwlClusters)) map.addLayer(pwlClusters);
@@ -769,9 +726,6 @@
     }
   }
 
-  // =========================
-  // RANDOM PIN: choose from currently visible sets
-  // =========================
   function getActiveMarkerList(){
     var list = [];
     if(map.hasLayer(regularClusters)) list = list.concat(regularMarkers);
@@ -779,15 +733,37 @@
     return list;
   }
 
+  /* === RANDOM PIN FIX (mobile popup reliably opens after move) === */
+  function flyToAndOpen(marker){
+    if(!marker) return;
+
+    map.closePopup();
+
+    var ll = marker.getLatLng();
+    var targetZoom = Math.max(map.getZoom(), 11);
+
+    // Wait for the move animation to finish, then open popup
+    var opened = false;
+    function openNow(){
+      if(opened) return;
+      opened = true;
+      marker.openPopup();
+      map.off("moveend", openNow);
+    }
+
+    map.on("moveend", openNow);
+    map.flyTo(ll, targetZoom, { animate: true, duration: 0.8 });
+
+    // Safety fallback in case moveend doesn't fire (rare mobile edge cases)
+    setTimeout(openNow, 900);
+  }
+
   function randomPin(){
     var list = getActiveMarkerList();
     if(!list.length) return;
 
     var m = list[Math.floor(Math.random() * list.length)];
-    var ll = m.getLatLng();
-
-    map.setView(ll, Math.max(map.getZoom(), 11), { animate: true });
-    m.openPopup();
+    flyToAndOpen(m);
   }
 
   const pwlCheckbox = document.getElementById("filter-pwl");
