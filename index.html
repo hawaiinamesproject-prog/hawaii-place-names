@@ -116,11 +116,11 @@
     background:white;
     display:flex;
     justify-content:center;
-    padding:18px 0; /* a bit tighter */
+    padding:18px 0;
   }
 
   .hero-banner img{
-    width:420px;   /* ~30% smaller than 600 */
+    width:420px;
     max-width:88%;
     height:auto;
   }
@@ -146,24 +146,21 @@
   }
 
   /* =========================
-     MAP WRAP + TOOLBAR OVERLAY (moved below map, stays in fullscreen)
+     MAP WRAP + TOOLBAR OVERLAY (smaller box)
      ========================= */
   .map-wrap{
     position:relative;
   }
 
-  /* MAP (Leaflet container) */
   .map{
-    height:500px;   /* mobile/tablet default */
+    height:500px;
     width:100%;
   }
 
-  /* Desktop: make it dominate more */
   @media (min-width:1024px){
     .map{ height:750px; }
   }
 
-  /* Fullscreen behavior */
   #map.is-fullscreen{
     position:fixed !important;
     inset:0 !important;
@@ -174,23 +171,24 @@
 
   body.map-fullscreen{ overflow:hidden; }
 
-  /* Bottom toolbar inside map */
+  /* Smaller toolbar: bottom-left, fit-content */
   .map-toolbar{
     position:absolute;
     left:12px;
-    right:12px;
     bottom:12px;
-    display:flex;
-    gap:12px;
-    justify-content:center;
+    right:auto;
+    width:auto;
+    display:inline-flex;
+    gap:10px;
+    justify-content:flex-start;
     align-items:center;
-    flex-wrap:wrap;
-    padding:10px 12px;
+    flex-wrap:nowrap;
+    padding:8px 10px;
     background:rgba(255,255,255,0.92);
     border:1px solid rgba(0,0,0,0.10);
-    border-radius:14px;
+    border-radius:12px;
     box-shadow:0 6px 18px rgba(0,0,0,0.12);
-    z-index:600; /* above map tiles */
+    z-index:600;
     backdrop-filter: blur(6px);
   }
 
@@ -201,16 +199,18 @@
     gap:8px;
     align-items:center;
     white-space:nowrap;
+    font-size:0.95rem;
   }
 
   .btn{
     appearance:none;
     border:1px solid #ddd;
     background:#fff;
-    padding:10px 14px;
+    padding:8px 12px;
     border-radius:999px;
     font-weight:800;
     cursor:pointer;
+    font-size:0.95rem;
   }
 
   .btn:hover{ background:#f3f3f3; }
@@ -228,42 +228,36 @@
     color:#222;
     background:#fff;
   }
-
   .leaflet-control.custom-btn a:hover{ background:#f3f3f3; }
 
   /* =========================
-     POPUP: prevent glitch + preview when NOT fullscreen
+     POPUP: no "Read more", just scroll; size ~8-ish lines when NOT fullscreen
      ========================= */
-  /* cap popup height and allow scroll */
   .leaflet-popup-content{
     margin:10px 12px;
-    max-height:240px;
+    max-height:190px;   /* ~8-10 lines depending on device */
     overflow:auto;
   }
 
   body.map-fullscreen .leaflet-popup-content{
-    max-height:60vh; /* allow bigger in fullscreen */
+    max-height:60vh;
   }
-
-  .popup-readmore{
-    display:inline-block;
-    margin-top:8px;
-    font-weight:800;
-    color:#0b3d91;
-    text-decoration:none;
-    cursor:pointer;
-  }
-
-  .popup-readmore:hover{ text-decoration:underline; }
 
   /* =========================
-     CLUSTER: make it look like a pin (keep number)
+     CLUSTER: force it NOT to be the default circle, render our pin HTML
      ========================= */
+  /* Nuke the default MarkerCluster "circle" styling */
+  .marker-cluster,
+  .marker-cluster div{
+    background:transparent !important;
+    border:none !important;
+    box-shadow:none !important;
+  }
+
   .cluster-pin{
     position:relative;
     width:34px;
-    height:34px;
-    transform: translateY(-2px);
+    height:44px;
   }
 
   .cluster-pin .head{
@@ -298,12 +292,11 @@
     filter: drop-shadow(0 3px 6px rgba(0,0,0,0.20));
   }
 
-  /* Dark version for PWL clusters */
   .cluster-pin.pwl .head{ background:#111; }
   .cluster-pin.pwl .tip{ border-top-color:#111; }
 
   /* =========================
-     SECTION GRID + card accents
+     SECTIONS
      ========================= */
   .section{
     padding:60px 20px;
@@ -340,7 +333,6 @@
     overflow:hidden;
   }
 
-  /* Card “top strip” accent */
   .card::before{
     content:"";
     position:absolute;
@@ -351,18 +343,12 @@
     background:transparent;
   }
 
-  /* PWL = black */
   .section-pwl .card::before{ background:#111; }
-
-  /* PNP = green */
   .section-pnp .card::before{ background:#2f7d4a; }
-
-  /* Stories = blue */
   .section-stories .card::before{ background:#2b6cb0; }
 
   .card h3{ margin-top:0; }
 
-  /* Read link styling */
   .card a{
     display:inline-block;
     text-decoration:none;
@@ -395,7 +381,6 @@
 
 <body>
 
-<!-- NAV (Option A) -->
 <nav>
   <input class="nav-toggle" type="checkbox" id="nav-toggle" />
 
@@ -430,7 +415,6 @@
   <p>Start with the map — tap a pin and follow the name.</p>
 </div>
 
-<!-- MAP + toolbar overlay -->
 <div class="map-wrap">
   <div id="map" class="map"></div>
 
@@ -518,7 +502,6 @@
     attribution: '&copy; OpenStreetMap contributors'
   });
 
-  // Satellite (Esri World Imagery)
   var satellite = L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
     { attribution: 'Tiles &copy; Esri' }
@@ -526,14 +509,12 @@
 
   streets.addTo(map);
 
-  // Layer toggle control (top-right)
   L.control.layers(
     { "Streets": streets, "Satellite": satellite },
     null,
     { position: "topright" }
   ).addTo(map);
 
-  // Fit view so Kauaʻi + Hawaiʻi Island don't crop on mobile
   map.fitBounds(HOME_BOUNDS, { padding: [10, 10] });
 
   // --- Custom control: Reset/Home ---
@@ -565,7 +546,6 @@
       document.body.classList.add('map-fullscreen');
       mapEl.classList.add('is-fullscreen');
 
-      // enable scroll wheel zoom ONLY when fullscreen on desktop
       if(window.innerWidth >= 1024){
         map.scrollWheelZoom.enable();
       }
@@ -584,7 +564,6 @@
     return document.getElementById('map').classList.contains('is-fullscreen');
   }
 
-  // --- Custom control: Fullscreen button ---
   var FullscreenControl = L.Control.extend({
     options: { position: 'topleft' },
     onAdd: function () {
@@ -605,14 +584,12 @@
   });
   map.addControl(new FullscreenControl());
 
-  // ESC exits fullscreen
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape' && isFullscreen()){
       setFullscreen(false);
     }
   });
 
-  // Keep wheel zoom behavior sane on resize
   window.addEventListener('resize', function(){
     if(isFullscreen()){
       if(window.innerWidth >= 1024) map.scrollWheelZoom.enable();
@@ -620,7 +597,7 @@
     }
   });
 
-  // Ensure toolbar clicks don't drag/zoom the map
+  // Keep toolbar clicks from dragging/zooming the map
   (function lockToolbar(){
     var tb = document.getElementById("map-toolbar");
     if(!tb) return;
@@ -629,14 +606,13 @@
   })();
 
   // =========================
-  // ICONS (regular + PWL black)
+  // ICONS (no inner white circle)
   // =========================
   function svgPinDataURI(color){
     var svg = `
       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="44" viewBox="0 0 30 44">
-        <path d="M15 43 C15 43 2 27.6 2 17 C2 8.7 8.7 2 17 2 C25.3 2 28 8.7 28 17 C28 27.6 15 43 15 43Z"
+        <path d="M15 43 C15 43 2 27.6 2 17 C2 8.7 8.7 2 15 2 C21.3 2 28 8.7 28 17 C28 27.6 15 43 15 43Z"
               fill="${color}" stroke="#ffffff" stroke-width="2" />
-        <circle cx="17" cy="16.5" r="6.2" fill="#ffffff" opacity="0.9"/>
       </svg>`;
     return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg.trim());
   }
@@ -656,56 +632,7 @@
   });
 
   // =========================
-  // POPUP: preview when NOT fullscreen
-  // =========================
-  function escapeHTML(str){
-    return String(str || "")
-      .replace(/&/g,"&amp;")
-      .replace(/</g,"&lt;")
-      .replace(/>/g,"&gt;")
-      .replace(/"/g,"&quot;")
-      .replace(/'/g,"&#039;");
-  }
-
-  function makePreviewText(fullText, maxChars){
-    var t = String(fullText || "");
-    if(t.length <= maxChars) return { text: t, truncated: false };
-    var cut = t.slice(0, maxChars);
-    // avoid cutting in the middle of a word
-    cut = cut.replace(/\s+\S*$/, "");
-    return { text: cut + "…", truncated: true };
-  }
-
-  function popupHTML(p, expanded){
-    var full = String(p.relevance || "");
-    var inFullscreen = isFullscreen();
-
-    // In non-fullscreen, preview long text
-    var usePreview = (!inFullscreen && !expanded);
-    var preview = usePreview ? makePreviewText(full, 420) : { text: full, truncated: false };
-
-    var readMore = (usePreview && preview.truncated)
-      ? `<a class="popup-readmore" href="#" data-action="readmore">Read more</a>`
-      : "";
-
-    return `
-      <div style="font-family: system-ui, sans-serif; max-width: 260px; line-height: 1.4;">
-        <h3 style="margin: 0 0 4px; font-size: 15px; color: #0b3d91;">
-          ${escapeHTML(p.name || "")}
-        </h3>
-        <div style="font-size: 13px; color: #444; margin-bottom: 6px;">
-          <strong>${escapeHTML(p.who || "")}</strong>
-        </div>
-        <div style="font-size: 13px; color: #222; background: #f7f7f9; padding: 6px 8px; border-left: 3px solid #0b3d91; border-radius: 4px;">
-          ${escapeHTML(preview.text)}
-        </div>
-        ${readMore}
-      </div>
-    `;
-  }
-
-  // =========================
-  // CLUSTERING (pin-shaped clusters, keep number)
+  // CLUSTER ICONS (pin-shaped + number)
   // =========================
   function clusterIconCreateFunction(colorClass){
     return function(cluster){
@@ -718,14 +645,13 @@
       `;
       return L.divIcon({
         html: html,
-        className: "",
+        className: "cluster-pin-wrap",  // important: avoid default styles
         iconSize: [34, 44],
         iconAnchor: [17, 44]
       });
     };
   }
 
-  // Regular clusters (blue pin)
   const regularClusters = L.markerClusterGroup({
     showCoverageOnHover: false,
     spiderfyOnMaxZoom: true,
@@ -733,13 +659,40 @@
     iconCreateFunction: clusterIconCreateFunction("")
   });
 
-  // PWL clusters (black pin)
   const pwlClusters = L.markerClusterGroup({
     showCoverageOnHover: false,
     spiderfyOnMaxZoom: true,
     maxClusterRadius: 48,
     iconCreateFunction: clusterIconCreateFunction("pwl")
   });
+
+  // =========================
+  // POPUP HTML (no "Read more"; just scroll)
+  // =========================
+  function escapeHTML(str){
+    return String(str || "")
+      .replace(/&/g,"&amp;")
+      .replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;")
+      .replace(/"/g,"&quot;")
+      .replace(/'/g,"&#039;");
+  }
+
+  function popupHTML(p){
+    return `
+      <div style="font-family: system-ui, sans-serif; max-width: 260px; line-height: 1.4;">
+        <h3 style="margin: 0 0 4px; font-size: 15px; color: #0b3d91;">
+          ${escapeHTML(p.name || "")}
+        </h3>
+        <div style="font-size: 13px; color: #444; margin-bottom: 6px;">
+          <strong>${escapeHTML(p.who || "")}</strong>
+        </div>
+        <div style="font-size: 13px; color: #222; background: #f7f7f9; padding: 6px 8px; border-left: 3px solid #0b3d91; border-radius: 4px;">
+          ${escapeHTML(p.relevance || "")}
+        </div>
+      </div>
+    `;
+  }
 
   // =========================
   // FOUR EXAMPLE PINS (TEXT UNCHANGED)
@@ -779,10 +732,6 @@
     }
   ];
 
-  // If you later tag entries as PWL, set: type: "PWL"
-  // For now, this is just the demo:
-  // We'll treat none as PWL unless you add p.type = "PWL"
-
   const regularMarkers = [];
   const pwlMarkers = [];
 
@@ -792,10 +741,7 @@
     var isPWL = (String(p.type || "").toUpperCase() === "PWL");
     var marker = L.marker(p.coords, { icon: isPWL ? iconBlack : iconBlue });
 
-    // store data for popup expansion
-    marker._hpnp = { data: p, expanded: false };
-
-    marker.bindPopup(popupHTML(p, false), {
+    marker.bindPopup(popupHTML(p), {
       autoPan: true,
       closeButton: true
     });
@@ -813,7 +759,7 @@
   map.addLayer(regularClusters);
 
   // =========================
-  // FILTER: PWL should ADD alongside existing (not replace)
+  // FILTER: PWL adds alongside existing (not replace)
   // =========================
   function setPWLVisible(visible){
     if(visible){
@@ -844,7 +790,6 @@
     m.openPopup();
   }
 
-  // Hook up UI
   const pwlCheckbox = document.getElementById("filter-pwl");
   if(pwlCheckbox){
     pwlCheckbox.addEventListener("change", function(){
@@ -856,34 +801,6 @@
   if(randomBtn){
     randomBtn.addEventListener("click", randomPin);
   }
-
-  // =========================
-  // POPUP "Read more" click handling
-  // =========================
-  map.on("popupopen", function(e){
-    var popupEl = e.popup.getElement();
-    if(!popupEl) return;
-
-    popupEl.addEventListener("click", function(ev){
-      var t = ev.target;
-      if(t && t.dataset && t.dataset.action === "readmore"){
-        ev.preventDefault();
-        ev.stopPropagation();
-
-        var src = e.popup._source;
-        if(!src || !src._hpnp || !src._hpnp.data) return;
-
-        src._hpnp.expanded = true;
-        e.popup.setContent(popupHTML(src._hpnp.data, true));
-
-        // keep popup open & stable
-        setTimeout(function(){
-          try { e.popup.update(); } catch(_) {}
-        }, 0);
-      }
-    }, { once: true });
-  });
-
 </script>
 
 </body>
