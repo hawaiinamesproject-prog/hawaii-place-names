@@ -109,27 +109,27 @@
   }
 
   /* =========================
-     BANNER
+     BANNER (shrink ~30%)
      ========================= */
   .hero-banner{
     width:100%;
     background:white;
     display:flex;
     justify-content:center;
-    padding:30px 0;
+    padding:18px 0; /* a bit tighter */
   }
 
   .hero-banner img{
-    width:600px;
-    max-width:90%;
+    width:420px;   /* ~30% smaller than 600 */
+    max-width:88%;
     height:auto;
   }
 
-  /* TAGLINE (compressed) */
+  /* TAGLINE (call to action + compressed) */
   .tagline{
     text-align:center;
-    padding:18px 20px;
-    font-size:1.2rem;
+    padding:14px 20px;
+    font-size:1.15rem;
     background:white;
   }
 
@@ -140,50 +140,17 @@
 
   @media (max-width:768px){
     .tagline{
-      padding:12px 18px;
-      font-size:1.05rem;
+      padding:10px 18px;
+      font-size:1.03rem;
     }
   }
 
-  /* FILTER SECTION */
-  .filters{
-    text-align:center;
-    padding:18px 20px;
-    background:white;
-    border-top:1px solid #eee;
-    border-bottom:1px solid #eee;
+  /* =========================
+     MAP WRAP + TOOLBAR OVERLAY (moved below map, stays in fullscreen)
+     ========================= */
+  .map-wrap{
+    position:relative;
   }
-
-  .filters strong{ display:inline-block; margin-bottom:10px; }
-
-  .filters-row{
-    display:flex;
-    gap:16px;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-  }
-
-  .filters label{
-    margin:0;
-    font-weight:600;
-    display:flex;
-    gap:8px;
-    align-items:center;
-  }
-
-  .btn{
-    appearance:none;
-    border:1px solid #ddd;
-    background:#fff;
-    padding:10px 14px;
-    border-radius:999px;
-    font-weight:700;
-    cursor:pointer;
-  }
-
-  .btn:hover{ background:#f3f3f3; }
-  .btn:active{ transform:translateY(1px); }
 
   /* MAP (Leaflet container) */
   .map{
@@ -195,6 +162,59 @@
   @media (min-width:1024px){
     .map{ height:750px; }
   }
+
+  /* Fullscreen behavior */
+  #map.is-fullscreen{
+    position:fixed !important;
+    inset:0 !important;
+    height:auto !important;
+    width:auto !important;
+    z-index:9999;
+  }
+
+  body.map-fullscreen{ overflow:hidden; }
+
+  /* Bottom toolbar inside map */
+  .map-toolbar{
+    position:absolute;
+    left:12px;
+    right:12px;
+    bottom:12px;
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    padding:10px 12px;
+    background:rgba(255,255,255,0.92);
+    border:1px solid rgba(0,0,0,0.10);
+    border-radius:14px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.12);
+    z-index:600; /* above map tiles */
+    backdrop-filter: blur(6px);
+  }
+
+  .map-toolbar .label{
+    margin:0;
+    font-weight:700;
+    display:flex;
+    gap:8px;
+    align-items:center;
+    white-space:nowrap;
+  }
+
+  .btn{
+    appearance:none;
+    border:1px solid #ddd;
+    background:#fff;
+    padding:10px 14px;
+    border-radius:999px;
+    font-weight:800;
+    cursor:pointer;
+  }
+
+  .btn:hover{ background:#f3f3f3; }
+  .btn:active{ transform:translateY(1px); }
 
   /* Leaflet custom controls */
   .leaflet-control.custom-btn a{
@@ -211,18 +231,80 @@
 
   .leaflet-control.custom-btn a:hover{ background:#f3f3f3; }
 
-  /* Fullscreen behavior */
-  #map.is-fullscreen{
-    position:fixed !important;
-    inset:0 !important;
-    height:auto !important;
-    width:auto !important;
-    z-index:9999;
+  /* =========================
+     POPUP: prevent glitch + preview when NOT fullscreen
+     ========================= */
+  /* cap popup height and allow scroll */
+  .leaflet-popup-content{
+    margin:10px 12px;
+    max-height:240px;
+    overflow:auto;
   }
 
-  body.map-fullscreen{ overflow:hidden; }
+  body.map-fullscreen .leaflet-popup-content{
+    max-height:60vh; /* allow bigger in fullscreen */
+  }
 
-  /* SECTION GRID */
+  .popup-readmore{
+    display:inline-block;
+    margin-top:8px;
+    font-weight:800;
+    color:#0b3d91;
+    text-decoration:none;
+    cursor:pointer;
+  }
+
+  .popup-readmore:hover{ text-decoration:underline; }
+
+  /* =========================
+     CLUSTER: make it look like a pin (keep number)
+     ========================= */
+  .cluster-pin{
+    position:relative;
+    width:34px;
+    height:34px;
+    transform: translateY(-2px);
+  }
+
+  .cluster-pin .head{
+    position:absolute;
+    top:0;
+    left:0;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#2b6cb0;
+    border:2px solid #fff;
+    box-shadow:0 3px 10px rgba(0,0,0,0.25);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-weight:900;
+    font-size:13px;
+    line-height:1;
+  }
+
+  .cluster-pin .tip{
+    position:absolute;
+    left:50%;
+    top:26px;
+    width:0;
+    height:0;
+    transform:translateX(-50%);
+    border-left:8px solid transparent;
+    border-right:8px solid transparent;
+    border-top:12px solid #2b6cb0;
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.20));
+  }
+
+  /* Dark version for PWL clusters */
+  .cluster-pin.pwl .head{ background:#111; }
+  .cluster-pin.pwl .tip{ border-top-color:#111; }
+
+  /* =========================
+     SECTION GRID + card accents
+     ========================= */
   .section{
     padding:60px 20px;
     max-width:1200px;
@@ -231,7 +313,16 @@
 
   .section h2{
     text-align:center;
-    margin-bottom:40px;
+    margin-bottom:10px;
+  }
+
+  .section-sub{
+    text-align:center;
+    margin:0 auto 34px;
+    max-width:780px;
+    color:#555;
+    line-height:1.5;
+    font-size:1.02rem;
   }
 
   .grid{
@@ -275,7 +366,7 @@
   .card a{
     display:inline-block;
     text-decoration:none;
-    font-weight:700;
+    font-weight:800;
     color:#2b6cb0;
     margin-top:10px;
   }
@@ -336,22 +427,22 @@
 </div>
 
 <div class="tagline">
-  <p>Explore the stories behind the names that shape our islands.</p>
+  <p>Start with the map — tap a pin and follow the name.</p>
 </div>
 
-<div class="filters">
-  <strong>Filter by:</strong>
-  <div class="filters-row">
-    <label><input type="checkbox" id="filter-pwl"> Places We Lost</label>
+<!-- MAP + toolbar overlay -->
+<div class="map-wrap">
+  <div id="map" class="map"></div>
+
+  <div class="map-toolbar" id="map-toolbar">
+    <label class="label"><input type="checkbox" id="filter-pwl"> Places We Lost</label>
     <button class="btn" type="button" id="random-pin">Random Pin</button>
   </div>
 </div>
 
-<!-- Leaflet map container -->
-<div id="map" class="map"></div>
-
 <div class="section section-pwl">
   <h2>Places We Lost</h2>
+  <p class="section-sub">Places that vanished — but still deserve to be remembered. Click a card, or find them on the map.</p>
   <div class="grid">
     <div class="card">
       <h3>Aloha Stadium</h3>
@@ -369,6 +460,7 @@
 
 <div class="section section-pnp">
   <h2>Place Name Profiles</h2>
+  <p class="section-sub">Short profiles on familiar names — what they mean, who they honor, and why they matter.</p>
   <div class="grid">
     <div class="card">
       <h3>ʻIolani Palace</h3>
@@ -383,6 +475,7 @@
 
 <div class="section section-stories">
   <h2>Stories</h2>
+  <p class="section-sub">Long-form chapters where a single name opens into politics, culture, loss, and continuity.</p>
   <div class="grid">
     <div class="card">
       <h3>How Does One Own an Island?</h3>
@@ -527,14 +620,134 @@
     }
   });
 
-  // =========================
-  // CLUSTERING + FILTERS + RANDOM
-  // =========================
+  // Ensure toolbar clicks don't drag/zoom the map
+  (function lockToolbar(){
+    var tb = document.getElementById("map-toolbar");
+    if(!tb) return;
+    L.DomEvent.disableClickPropagation(tb);
+    L.DomEvent.disableScrollPropagation(tb);
+  })();
 
-  // Four example pins (TEXT UNCHANGED)
+  // =========================
+  // ICONS (regular + PWL black)
+  // =========================
+  function svgPinDataURI(color){
+    var svg = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="44" viewBox="0 0 30 44">
+        <path d="M15 43 C15 43 2 27.6 2 17 C2 8.7 8.7 2 17 2 C25.3 2 28 8.7 28 17 C28 27.6 15 43 15 43Z"
+              fill="${color}" stroke="#ffffff" stroke-width="2" />
+        <circle cx="17" cy="16.5" r="6.2" fill="#ffffff" opacity="0.9"/>
+      </svg>`;
+    return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg.trim());
+  }
+
+  var iconBlue = L.icon({
+    iconUrl: svgPinDataURI("#2b6cb0"),
+    iconSize: [30, 44],
+    iconAnchor: [15, 44],
+    popupAnchor: [0, -38]
+  });
+
+  var iconBlack = L.icon({
+    iconUrl: svgPinDataURI("#111111"),
+    iconSize: [30, 44],
+    iconAnchor: [15, 44],
+    popupAnchor: [0, -38]
+  });
+
+  // =========================
+  // POPUP: preview when NOT fullscreen
+  // =========================
+  function escapeHTML(str){
+    return String(str || "")
+      .replace(/&/g,"&amp;")
+      .replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;")
+      .replace(/"/g,"&quot;")
+      .replace(/'/g,"&#039;");
+  }
+
+  function makePreviewText(fullText, maxChars){
+    var t = String(fullText || "");
+    if(t.length <= maxChars) return { text: t, truncated: false };
+    var cut = t.slice(0, maxChars);
+    // avoid cutting in the middle of a word
+    cut = cut.replace(/\s+\S*$/, "");
+    return { text: cut + "…", truncated: true };
+  }
+
+  function popupHTML(p, expanded){
+    var full = String(p.relevance || "");
+    var inFullscreen = isFullscreen();
+
+    // In non-fullscreen, preview long text
+    var usePreview = (!inFullscreen && !expanded);
+    var preview = usePreview ? makePreviewText(full, 420) : { text: full, truncated: false };
+
+    var readMore = (usePreview && preview.truncated)
+      ? `<a class="popup-readmore" href="#" data-action="readmore">Read more</a>`
+      : "";
+
+    return `
+      <div style="font-family: system-ui, sans-serif; max-width: 260px; line-height: 1.4;">
+        <h3 style="margin: 0 0 4px; font-size: 15px; color: #0b3d91;">
+          ${escapeHTML(p.name || "")}
+        </h3>
+        <div style="font-size: 13px; color: #444; margin-bottom: 6px;">
+          <strong>${escapeHTML(p.who || "")}</strong>
+        </div>
+        <div style="font-size: 13px; color: #222; background: #f7f7f9; padding: 6px 8px; border-left: 3px solid #0b3d91; border-radius: 4px;">
+          ${escapeHTML(preview.text)}
+        </div>
+        ${readMore}
+      </div>
+    `;
+  }
+
+  // =========================
+  // CLUSTERING (pin-shaped clusters, keep number)
+  // =========================
+  function clusterIconCreateFunction(colorClass){
+    return function(cluster){
+      var count = cluster.getChildCount();
+      var html = `
+        <div class="cluster-pin ${colorClass}">
+          <div class="head">${count}</div>
+          <div class="tip"></div>
+        </div>
+      `;
+      return L.divIcon({
+        html: html,
+        className: "",
+        iconSize: [34, 44],
+        iconAnchor: [17, 44]
+      });
+    };
+  }
+
+  // Regular clusters (blue pin)
+  const regularClusters = L.markerClusterGroup({
+    showCoverageOnHover: false,
+    spiderfyOnMaxZoom: true,
+    maxClusterRadius: 48,
+    iconCreateFunction: clusterIconCreateFunction("")
+  });
+
+  // PWL clusters (black pin)
+  const pwlClusters = L.markerClusterGroup({
+    showCoverageOnHover: false,
+    spiderfyOnMaxZoom: true,
+    maxClusterRadius: 48,
+    iconCreateFunction: clusterIconCreateFunction("pwl")
+  });
+
+  // =========================
+  // FOUR EXAMPLE PINS (TEXT UNCHANGED)
+  // =========================
   const places = [
     {
       name: "Nāhuku (Thurston Lava Tube)",
+      island: "Hawaiʻi (Big Island)",
       coords: [19.41349744, -155.2387908],
       who: "Lorrin Andrews Thurston",
       relevance:
@@ -542,6 +755,7 @@
     },
     {
       name: "Parker Ranch",
+      island: "Hawaiʻi (Big Island)",
       coords: [20.019937124463727, -155.68197981029473],
       who: "John Palmer Parker",
       relevance:
@@ -549,95 +763,82 @@
     },
     {
       name: "Hale Pōhaku (Onizuka Center for International Astronomy)",
+      island: "Hawaiʻi (Big Island)",
       coords: [19.76140109380089, -155.45569723769464],
       who: "Ellison Shoji Onizuka",
       relevance:
-        "Perched at 9,200 feet on the slopes of Maunakea at Hale Pōhaku, the center honors astronaut Ellison Onizuka of Kealakekua, the first person of Japanese ancestry to fly in space. A Konawaena High School graduate Onizuka joined NASA’s 1978 astronaut class and died aboard the Challenger mission in 1986. The facility serves as a visitor hub for the Maunakea observatories, linking the summit’s modern exploration to his legacy of curiosity, discipline, and Hawaiʻi pride."
+        "Perched at 9,200 feet on the slopes of Maunakea at Hale Pōhaku, the center honors astronaut Ellison Onizuka of Kealakekua — the first person of Japanese ancestry to fly in space. A Konawaena High School graduate and U.S. Air Force test pilot, Onizuka joined NASA’s 1978 astronaut class and died aboard the Challenger mission in 1986. The facility serves as a visitor hub for the Maunakea observatories, linking the summit’s modern exploration to his legacy of curiosity, discipline, and Hawaiʻi pride. A second namesake site — the Ellison Onizuka Kona International Airport — honors his hometown connection and lasting inspiration."
     },
     {
       name: "Māmalahoa Highway",
+      island: "Hawaiʻi (Big Island)",
       coords: [19.907449, -155.705128],
       who: "Kānāwai Māmalahoe — “The Law of the Splintered Paddle”",
       relevance:
-        "The name Māmalahoa Highway appears and disappears along the Big Island’s western and southern roads, from Kawaihae to Kaʻū, stitched across modern routes that trace older coastal trails. It recalls Kānāwai Māmalahoe, the “Law of the Splintered Paddle,” declared by Kamehameha I, around 1792, to protect travelers and the defenseless. It's enshrined in the state constitution and the highway’s name carries that call for safety and compassion into the modern landscape."
+        "The name Māmalahoa Highway appears and disappears along the Big Island’s western and southern roads — from Kawaihae to Kaʻū — stitched across modern routes that trace older coastal trails. It recalls Kānāwai Māmalahoe, the “Law of the Splintered Paddle,” declared by Kamehameha I, around 1792, to protect travelers and the defenseless. Its spirit endures as a cornerstone of Hawaiian justice — even enshrined in the state constitution — and the highway’s name carries that ancient call for safety and compassion into the modern landscape."
     }
   ];
 
-  function makePopupHTML(p){
-    var readLink = (p.url && typeof p.url === "string" && p.url.trim() !== "")
-      ? `<div style="margin-top:8px;"><a href="${p.url}" style="font-weight:700;color:#0b3d91;text-decoration:none;">Read</a></div>`
-      : "";
+  // If you later tag entries as PWL, set: type: "PWL"
+  // For now, this is just the demo:
+  // We'll treat none as PWL unless you add p.type = "PWL"
 
-    return `
-      <div style="font-family: system-ui, sans-serif; max-width: 260px; line-height: 1.4;">
-        <h3 style="margin: 0 0 4px; font-size: 15px; color: #0b3d91;">
-          ${p.name || ""}
-        </h3>
-        <div style="font-size: 13px; color: #444; margin-bottom: 6px;">
-          <strong>${p.who || ""}</strong></em>
-        </div>
-        <div style="font-size: 13px; color: #222; background: #f7f7f9; padding: 6px 8px; border-left: 3px solid #0b3d91; border-radius: 4px;">
-          ${p.relevance || ""}
-        </div>
-        ${readLink}
-      </div>
-    `;
-  }
-
-  // Cluster groups
-  const allClusters = L.markerClusterGroup({
-    showCoverageOnHover: false,
-    spiderfyOnMaxZoom: true,
-    maxClusterRadius: 45
-  });
-
-  const pwlClusters = L.markerClusterGroup({
-    showCoverageOnHover: false,
-    spiderfyOnMaxZoom: true,
-    maxClusterRadius: 45
-  });
-
-  // Marker arrays for Random Pin
-  const allMarkers = [];
+  const regularMarkers = [];
   const pwlMarkers = [];
 
   places.forEach(p => {
     if(!p || !p.coords) return;
 
-    const m = L.marker(p.coords).bindPopup(makePopupHTML(p));
+    var isPWL = (String(p.type || "").toUpperCase() === "PWL");
+    var marker = L.marker(p.coords, { icon: isPWL ? iconBlack : iconBlue });
 
-    allClusters.addLayer(m);
-    allMarkers.push(m);
+    // store data for popup expansion
+    marker._hpnp = { data: p, expanded: false };
 
-    if ((p.type || "").toUpperCase() === "PWL"){
-      pwlClusters.addLayer(m);
-      pwlMarkers.push(m);
+    marker.bindPopup(popupHTML(p, false), {
+      autoPan: true,
+      closeButton: true
+    });
+
+    if(isPWL){
+      pwlClusters.addLayer(marker);
+      pwlMarkers.push(marker);
+    } else {
+      regularClusters.addLayer(marker);
+      regularMarkers.push(marker);
     }
   });
 
-  // Default: show all pins
-  map.addLayer(allClusters);
+  // Default: show regular pins
+  map.addLayer(regularClusters);
 
-  function showAllPins(){
-    if(map.hasLayer(pwlClusters)) map.removeLayer(pwlClusters);
-    if(!map.hasLayer(allClusters)) map.addLayer(allClusters);
+  // =========================
+  // FILTER: PWL should ADD alongside existing (not replace)
+  // =========================
+  function setPWLVisible(visible){
+    if(visible){
+      if(!map.hasLayer(pwlClusters)) map.addLayer(pwlClusters);
+    } else {
+      if(map.hasLayer(pwlClusters)) map.removeLayer(pwlClusters);
+    }
   }
 
-  function showPWLOnly(){
-    if(map.hasLayer(allClusters)) map.removeLayer(allClusters);
-    if(!map.hasLayer(pwlClusters)) map.addLayer(pwlClusters);
+  // =========================
+  // RANDOM PIN: choose from currently visible sets
+  // =========================
+  function getActiveMarkerList(){
+    var list = [];
+    if(map.hasLayer(regularClusters)) list = list.concat(regularMarkers);
+    if(map.hasLayer(pwlClusters)) list = list.concat(pwlMarkers);
+    return list;
   }
 
   function randomPin(){
-    const usingPWL = map.hasLayer(pwlClusters) && !map.hasLayer(allClusters);
-    const list = usingPWL ? pwlMarkers : allMarkers;
+    var list = getActiveMarkerList();
+    if(!list.length) return;
 
-    if(!list.length){
-      return;
-    }
-
-    const m = list[Math.floor(Math.random() * list.length)];
-    const ll = m.getLatLng();
+    var m = list[Math.floor(Math.random() * list.length)];
+    var ll = m.getLatLng();
 
     map.setView(ll, Math.max(map.getZoom(), 11), { animate: true });
     m.openPopup();
@@ -647,8 +848,7 @@
   const pwlCheckbox = document.getElementById("filter-pwl");
   if(pwlCheckbox){
     pwlCheckbox.addEventListener("change", function(){
-      if(this.checked) showPWLOnly();
-      else showAllPins();
+      setPWLVisible(this.checked);
     });
   }
 
@@ -656,6 +856,34 @@
   if(randomBtn){
     randomBtn.addEventListener("click", randomPin);
   }
+
+  // =========================
+  // POPUP "Read more" click handling
+  // =========================
+  map.on("popupopen", function(e){
+    var popupEl = e.popup.getElement();
+    if(!popupEl) return;
+
+    popupEl.addEventListener("click", function(ev){
+      var t = ev.target;
+      if(t && t.dataset && t.dataset.action === "readmore"){
+        ev.preventDefault();
+        ev.stopPropagation();
+
+        var src = e.popup._source;
+        if(!src || !src._hpnp || !src._hpnp.data) return;
+
+        src._hpnp.expanded = true;
+        e.popup.setContent(popupHTML(src._hpnp.data, true));
+
+        // keep popup open & stable
+        setTimeout(function(){
+          try { e.popup.update(); } catch(_) {}
+        }, 0);
+      }
+    }, { once: true });
+  });
+
 </script>
 
 </body>
