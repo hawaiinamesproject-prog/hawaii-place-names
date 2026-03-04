@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Parker Ranch | Place Name Profile</title>
+
+<link rel="icon" href="clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
+
+<style>
+  body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f7f7f7;
+    color:#222;
+  }
+
+  nav{
+    background:#fff;
+    border-bottom:1px solid #ddd;
+  }
+
+  .nav-inner{
+    max-width:1200px;
+    margin:0 auto;
+    padding:14px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+  }
+
+  .nav-links{
+    display:flex;
+    gap:40px;
+    font-weight:600;
+  }
+
+  nav a{
+    text-decoration:none;
+    color:#222;
+  }
+
+  nav a:hover{ color:#2b6cb0; }
+
+  .nav-toggle{
+    position:absolute;
+    opacity:0;
+    width:1px;
+    height:1px;
+  }
+
+  .hamburger{
+    display:none;
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+    border:0;
+    background:transparent;
+    padding:10px;
+  }
+
+  .hamburger span{
+    display:block;
+    width:24px;
+    height:2px;
+    background:#222;
+    margin:5px 0;
+  }
+
+  .mobile-menu{
+    display:none;
+    border-top:1px solid #eee;
+    background:#fff;
+  }
+
+  .mobile-menu a{
+    display:block;
+    padding:14px 18px;
+    border-bottom:1px solid #f0f0f0;
+    font-weight:600;
+  }
+
+  .mobile-menu a:last-child{ border-bottom:none; }
+
+  #nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+  @media (max-width: 768px){
+    .nav-inner{ justify-content:flex-start; }
+    .nav-links{ display:none; }
+    .hamburger{ display:block; }
+  }
+
+  .wrap{
+    max-width:900px;
+    margin:0 auto;
+    padding:34px 18px 60px;
+  }
+
+  header{
+    background:#fff;
+    border:1px solid #e7e7e7;
+    border-radius:10px;
+    padding:22px 22px 18px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.04);
+  }
+
+  .kicker{
+    margin:0 0 6px;
+    font-weight:800;
+    letter-spacing:.2px;
+    color:#2f7d4a;
+    font-size:0.95rem;
+  }
+
+  h1{
+    margin:0 0 6px;
+    font-size:1.8rem;
+    line-height:1.2;
+  }
+
+  .sub{
+    margin:0;
+    color:#555;
+    font-weight:700;
+  }
+
+  .content{
+    margin-top:18px;
+    background:#fff;
+    border:1px solid #e7e7e7;
+    border-radius:10px;
+    padding:22px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.04);
+  }
+
+  .content p{
+    margin:0 0 14px;
+    line-height:1.65;
+    font-size:1.02rem;
+  }
+
+  figure{
+    margin:18px 0;
+    padding:0;
+  }
+
+  figure img{
+    width:100%;
+    height:auto;
+    border-radius:10px;
+    border:1px solid #ececec;
+    display:block;
+  }
+
+  figcaption{
+    margin-top:8px;
+    color:#666;
+    font-size:0.95rem;
+    line-height:1.45;
+  }
+
+  /* BOXED QUOTE */
+  .pull-quote{
+    margin:18px 0;
+    padding:14px 16px;
+    border-left:5px solid #2f7d4a;
+    background:#f7fbf8;
+    border-radius:8px;
+    font-weight:800;
+    line-height:1.5;
+  }
+
+  .footer{
+    background:white;
+    text-align:center;
+    padding:40px 0;
+    border-top:1px solid #ddd;
+    margin-top:60px;
+    font-weight:600;
+    font-size:1.1rem;
+  }
+
+  .footer a{
+    text-decoration:none;
+    color:#222;
+    margin:0 20px;
+  }
+
+  .footer a:hover{ color:#2b6cb0; }
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle" />
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="places-we-lost.html">Places We Lost</a>
+      <a href="place-name-profiles.html">Place Name Profiles</a>
+      <a href="stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="places-we-lost.html">Places We Lost</a>
+    <a href="place-name-profiles.html">Place Name Profiles</a>
+    <a href="stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">Place Name Profile</p>
+    <h1>Parker Ranch</h1>
+    <p class="sub">Hawaiʻi Island — Waimea</p>
+  </header>
+
+  <article class="content">
+
+    <!-- NOTE: Update image filenames/paths if yours differ -->
+    <figure>
+      <img src="parker-ranch.jpg" alt="Parker Ranch Heritage Center, Waimea, Hawaiʻi Island">
+      <figcaption>Parker Ranch Heritage Center, Waimea, Hawaiʻi Island (Photo: Blake Handley – CC BY 2.0)</figcaption>
+    </figure>
+
+    <p>Parker Ranch is one of the most storied landscapes in Hawaiʻi — a highland expanse of rolling grassland in Waimea that defines cattle culture across the Pacific. Like much of history it’s a complex story: a ranch shaped by Hawaiian aliʻi, a foreign sailor adopted into a chiefly household, and generations of paniolo who blended Native Hawaiian knowledge with vaquero tradition. Parker Ranch remains one of the oldest and largest ranches in the United States, influencing life in Waimea for more than 175 years.</p>
+
+    <p>The ranch is named after John Palmer Parker (1790–1868), an American sailor who arrived in the early 1800s and married into a prominent aliʻi family. The lands themselves sit within the broader Waimea region, historically rich in upland agriculture and bird catching. The older Hawaiian district name Kamoku still appears in maps and moʻolelo.</p>
+
+    <p>The story begins, oddly enough, with a British explorer.  In 1793 and 1794, Kamehameha I received gifts of cattle from Captain George Vancouver. Kamehameha placed a kapu on the animals to allow the herd to grow. By the 1810s, wild cattle numbered in the thousands and became a danger to people. Kamehameha lifted the kapu and sought hunters and ranchers.</p>
+
+    <p>John Palmer Parker, a sailor from Massachusetts who deserted his ship, built a life in Hawaiʻi as a hunter, interpreter, and rancher. After proving himself, he married Kipikane, granddaughter of Kamanawa II, an adviser to Kamehameha I. Through this aliʻi connection Parker gained access to land held in chiefly trusts, political protection, and legitimacy within Hawaiian communities. These land grants from Kamehameha I and later Kamehameha III formed the core of Parker Ranch. Without such support, no rancher could have operated on this scale.</p>
+
+    <div class="pull-quote">Hawaiians adopted the term “paniolo” from the Spanish español, shaped through Hawaiian pronunciation, and made ranching distinctly their own — creating Hawaiian-language ranching terms, slack-key guitar traditions, saddle styles, and rodeo culture.</div>
+
+    <p>Ranching culture expanded further in 1832 when Mexican vaqueros were brought to Hawaiʻi to teach horse handling and roping. Hawaiians adopted the term “paniolo” from the Spanish español, shaped through Hawaiian pronunciation, and made ranching distinctly their own — creating Hawaiian-language ranching terms, slack-key guitar traditions, saddle styles, and rodeo culture. Paniolo identity became central to Waimea.</p>
+
+    <p>Under multiple Parker generations, notably Samuel Parker, the ranch grew dramatically. Samuel Parker (c.1853–1920) led the ranch during the late Kingdom and early Territorial period, expanding it to more than 225,000 acres and turning Parker Ranch into one of the Kingdom’s major commercial enterprises. He later served as Minister of Foreign Affairs and played a major role in shaping Waimea’s early infrastructure. His prominence is also why the town’s postal name, Kamuela, uses the Hawaiian form of “Samuel,” adopted when the U.S. Post Office required a unique name to distinguish it from other Waimeas on Oʻahu and Kauaʻi.</p>
+
+    <p>In the 20th century, Richard Smart created the Parker Ranch Foundation Trust to ensure the ranch benefited the community after his passing. Today its beneficiaries include Queen’s North Hawaiʻi Community Hospital, Hawaiʻi Preparatory Academy, and Parker School.</p>
+
+    <p>Though smaller than its peak, Parker Ranch remains a major landholder and cultural anchor for Waimea. Its modern work includes cattle operations, conservation, renewable energy, and residential and commercial leasing. Waimea’s cool climate, open pastures, paniolo traditions, and annual rodeos are inseparable from Parker Ranch’s influence. Much of the region’s open upland landscape — often assumed to be “natural” — reflects centuries of grazing and ranching.</p>
+
+    <!-- NOTE: Update image filenames/paths if yours differ -->
+    <figure>
+      <img src="parker-ranch-1.jpg" alt="Parker Ranch pastures, Waimea, Hawaiʻi Island">
+      <figcaption>Parker Ranch pastures, Waimea, Hawaiʻi Island (Photo: Blake Handley – CC BY 2.0)</figcaption>
+    </figure>
+
+    <p>Parker Ranch stands at the confluence of aliʻi lineage, immigrant arrival, paniolo culture, and the modern Hawaiʻi economy — a place where Hawaiian and Western practices blended into something uniquely Waimea. Though the ranch carries the Parker name, its story is inseparable from the Hawaiian families and paniolo whose work shaped the region and spread ranching culture across the islands.</p>
+
+  </article>
+</div>
+
+<footer class="footer">
+  <a href="about.html">About</a> |
+  <a href="contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
