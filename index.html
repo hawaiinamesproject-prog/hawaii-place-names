@@ -224,17 +224,16 @@
   }
   .leaflet-control.custom-btn a:hover{ background:#f3f3f3; }
 
+  /* === POPUP: consistent size, no outer scroll (prevents scroll-within-scroll) === */
   .leaflet-popup-content{
     margin:10px 12px;
-    max-height:190px;
-    overflow:auto;
+    width:260px;          /* keeps popup size consistent */
+    max-width:260px;
+    overflow:visible;     /* no outer scrollbar */
   }
 
-  body.map-fullscreen .leaflet-popup-content{
-    max-height:60vh;
-  }
-
-  /* === POPUP LINE CAP (normal: ~8 lines, fullscreen: ~12 lines) === */
+  /* === POPUP LINE CAP (normal: ~8 lines, fullscreen: ~12 lines) ===
+     Use overflow:auto so the scrollbar appears ONLY when needed. */
   .relevance-text{
     max-height: calc(1.4em * 8);
     overflow: auto;
