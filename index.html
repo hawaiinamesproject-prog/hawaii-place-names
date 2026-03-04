@@ -828,28 +828,28 @@
 
   /* === RANDOM PIN FIX (cluster + mobile reliably opens) === */
   function flyToAndOpen(marker){
-    if(!marker) return;
+  if(!marker) return;
 
-    map.closePopup();
+  map.closePopup();
 
-    var ll = marker.getLatLng();
-    var targetZoom = Math.max(map.getZoom(), 11);
+  var ll = marker.getLatLng();
+  var targetZoom = Math.max(map.getZoom(), 11);
 
-    var cg = marker.__clusterGroup;
-    if(cg && typeof cg.zoomToShowLayer === "function"){
-      cg.zoomToShowLayer(marker, function(){
-        var opened = false;
-        function openNow(){
-          if(opened) return;
-          opened = true;
-          marker.openPopup();
-          map.off("moveend", openNow);
-        }
+  // Wait for the move animation to finish, then open popup
+  var opened = false;
+  function openNow(){
+    if(opened) return;
+    opened = true;
+    marker.openPopup();
+    map.off("moveend", openNow);
+  }
 
-        map.on("moveend", openNow);
-        map.flyTo(ll, targetZoom, { animate: true, duration: 0.8 });
-        setTimeout(openNow, 900);
-      });
+  map.on("moveend", openNow);
+  map.flyTo(ll, targetZoom, { animate: true, duration: 0.8 });
+
+  // Safety fallback in case moveend doesn't fire (rare mobile edge cases)
+  setTimeout(openNow, 900);
+}
       return;
     }
 
