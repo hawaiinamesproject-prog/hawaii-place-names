@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -234,6 +234,15 @@
     max-height:60vh;
   }
 
+  /* === POPUP LINE CAP (normal: ~8 lines, fullscreen: ~12 lines) === */
+  .relevance-text{
+    max-height: calc(1.4em * 8);
+    overflow: auto;
+  }
+  body.map-fullscreen .relevance-text{
+    max-height: calc(1.4em * 12);
+  }
+
   .marker-cluster,
   .marker-cluster div{
     background:transparent !important;
@@ -370,7 +379,7 @@
 
   <div class="nav-inner">
     <div class="nav-links">
-      <a href="#">Home</a>
+      <a href="index.html" data-home>Home</a>
       <a href="places-we-lost.html">Places We Lost</a>
       <a href="place-name-profiles.html">Place Name Profiles</a>
       <a href="stories.html">Stories</a>
@@ -384,7 +393,7 @@
   </div>
 
   <div class="mobile-menu">
-    <a href="#">Home</a>
+    <a href="index.html" data-home>Home</a>
     <a href="places-we-lost.html">Places We Lost</a>
     <a href="place-name-profiles.html">Place Name Profiles</a>
     <a href="stories.html">Stories</a>
@@ -654,7 +663,7 @@
         <div style="font-size: 13px; color: #444; margin-bottom: 6px;">
           <strong>${escapeHTML(p.who || "")}</strong>
         </div>
-        <div style="font-size: 13px; color: #222; background: #f7f7f9; padding: 6px 8px; border-left: 3px solid #0b3d91; border-radius: 4px;">
+        <div class="relevance-text" style="font-size: 13px; color: #222; background: #f7f7f9; padding: 6px 8px; border-left: 3px solid #0b3d91; border-radius: 4px; line-height:1.4;">
           ${escapeHTML(p.relevance || "")}
         </div>
       </div>
@@ -788,6 +797,9 @@
 
     marker.bindPopup(popupHTML(p), { autoPan: true, closeButton: true });
 
+    // === CLUSTER-AWARE RANDOM PIN SUPPORT ===
+    marker.__clusterGroup = isPWL ? pwlClusters : regularClusters;
+
     if(isPWL){
       pwlClusters.addLayer(marker);
       pwlMarkers.push(marker);
@@ -814,7 +826,7 @@
     return list;
   }
 
-  /* === RANDOM PIN FIX (mobile popup reliably opens after move) === */
+  /* === RANDOM PIN FIX (cluster + mobile reliably opens) === */
   function flyToAndOpen(marker){
     if(!marker) return;
 
@@ -823,7 +835,24 @@
     var ll = marker.getLatLng();
     var targetZoom = Math.max(map.getZoom(), 11);
 
-    // Wait for the move animation to finish, then open popup
+    var cg = marker.__clusterGroup;
+    if(cg && typeof cg.zoomToShowLayer === "function"){
+      cg.zoomToShowLayer(marker, function(){
+        var opened = false;
+        function openNow(){
+          if(opened) return;
+          opened = true;
+          marker.openPopup();
+          map.off("moveend", openNow);
+        }
+
+        map.on("moveend", openNow);
+        map.flyTo(ll, targetZoom, { animate: true, duration: 0.8 });
+        setTimeout(openNow, 900);
+      });
+      return;
+    }
+
     var opened = false;
     function openNow(){
       if(opened) return;
@@ -834,8 +863,6 @@
 
     map.on("moveend", openNow);
     map.flyTo(ll, targetZoom, { animate: true, duration: 0.8 });
-
-    // Safety fallback in case moveend doesn't fire (rare mobile edge cases)
     setTimeout(openNow, 900);
   }
 
@@ -858,6 +885,18 @@
   if(randomBtn){
     randomBtn.addEventListener("click", randomPin);
   }
+
+  // === HOME CLICK: if already on home, refresh ===
+  document.querySelectorAll('a[data-home]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var path = (location.pathname || "").toLowerCase();
+      var onHome = path.endsWith("/index.html") || path.endsWith("/") || path === "";
+      if(onHome){
+        e.preventDefault();
+        location.reload();
+      }
+    });
+  });
 </script>
 
 </body>
