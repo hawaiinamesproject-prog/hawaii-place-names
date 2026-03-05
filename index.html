@@ -223,6 +223,7 @@
   }
   .leaflet-control.custom-btn a:hover{ background:#f3f3f3; }
 
+  /* POPUP */
   .leaflet-popup-content{
     margin:10px 12px;
     width:260px;
@@ -238,16 +239,17 @@
     max-height: calc(1.4em * 12);
   }
 
-  /* "Discover more" link styling */
   .more-link{
+    display:inline-block;
     margin-top:10px;
     font-weight:800;
-    display:inline-block;
     color:#2b6cb0;
     text-decoration:none;
+    font-size:13px;
   }
   .more-link:hover{ text-decoration:underline; }
 
+  /* Clusters */
   .marker-cluster,
   .marker-cluster div{
     background:transparent !important;
@@ -661,16 +663,12 @@
   }
 
   function popupHTML(p){
-    var linkHTML = "";
-    if(p.link && p.link.href){
-      linkHTML = `
-        <div style="margin-top:10px;">
-          <a class="more-link" href="${escapeHTML(p.link.href)}">
-            ${escapeHTML(p.link.text || "Discover more →")}
-          </a>
-        </div>
-      `;
-    }
+    var href = p && p.link ? String(p.link) : "";
+    var linkHTML = href ? `
+      <div style="margin-top:10px;">
+        <a class="more-link" href="${escapeHTML(href)}">Discover more →</a>
+      </div>
+    ` : "";
 
     return `
       <div style="font-family: system-ui, sans-serif; max-width: 260px; line-height: 1.4;">
@@ -688,6 +686,9 @@
     `;
   }
 
+  // =========================
+  // PINS (RESTORED) + CHANGES
+  // =========================
   const places = [
     {
       name: "Nāhuku (Thurston Lava Tube)",
@@ -696,7 +697,7 @@
       who: "Lorrin Andrews Thurston",
       relevance:
         "Nāhuku means 'bumps' (stalactites/stalagmites). Thurston (1858–1931) was a publisher and political figure involved in the 1893 overthrow and a key advocate for creating Hawaiʻi Volcanoes National Park. The site now bears both names.",
-      link: { href: "pnp-nahuku-thurston-lava-tube.html", text: "Discover more →" }
+      link: "pnp-nahuku-thurston-lava-tube.html"   /* placeholder */
     },
     {
       name: "Parker Ranch",
@@ -705,7 +706,7 @@
       who: "John Palmer Parker",
       relevance:
         "Founded in 1847 by John Palmer Parker, who helped Kamehameha I control the island’s wild cattle and was granted land in return. Now spanning about 130,000 acres, the ranch operates as a charitable trust supporting North Hawaiʻi Community Hospital, Hawaiʻi Preparatory Academy, Parker School, and the Hawaiʻi Community Foundation.",
-      link: { href: "pnp-parker-ranch.html", text: "Discover more →" }
+      link: "pnp-parker-ranch.html"
     },
     {
       name: "Hale Pōhaku (Onizuka Center for International Astronomy)",
@@ -722,8 +723,10 @@
       who: "Kānāwai Māmalahoe — “The Law of the Splintered Paddle”",
       relevance:
         "The name Māmalahoa Highway appears and disappears along the Big Island’s western and southern roads, from Kawaihae to Kaʻū, stitched across modern routes that trace older trails. It recalls Kānāwai Māmalahoe, the “Law of the Splintered Paddle,” declared by Kamehameha I, around 1792, to protect travelers and the defenseless. Its spirit endures in the state constitution and the highway’s name carries that call for safety and compassion on the road.",
-      link: { href: "pnp-mamalahoa-highway.html", text: "Discover more →" }
+      link: "pnp-mamalahoa-highway.html"            /* placeholder */
     },
+
+    /* PWL: black + hidden unless checkbox checked */
     {
       name: "Jaggar Museum",
       island: "Hawaiʻi (Big Island)",
@@ -733,6 +736,7 @@
         "Volcanologist who helped found the Hawaiian Volcano Observatory. Pioneered modern monitoring of seismicity and lava chemistry. Museum closed after 2018 Kīlauea eruption due to damage.",
       type: "PWL"
     },
+
     {
       name: "Captain Cook (town)",
       island: "Hawaiʻi (Big Island)",
@@ -749,6 +753,8 @@
       relevance:
         "The stadium honors Edith Kanaka‘ole (1913–1979), revered kumu hula, composer, Nā Hōkū Hanohano award winner, and teacher. Through chant, dance, and language she carried forward ancestral knowledge at a time when Hawaiian culture was often suppressed, shaping a renaissance that continues today. As a pioneering instructor of Hawaiian Studies at the University of Hawai‘i at Hilo, she helped bring that knowledge into classrooms and public life. The stadium that bears her name hosts the annual Merrie Monarch Festival, a celebration of the living art she championed."
     },
+
+    /* PWL + link */
     {
       name: "Wahaʻula Heiau",
       island: "Hawaiʻi (Big Island)",
@@ -757,8 +763,9 @@
       relevance:
         "Wahaʻula, “red mouth,” was among the oldest temples in Hawaiʻi, built by the priest Paʻao around the 13th century. It marked the shift from the ancient ʻIʻo faith to the new gods and laws that bound chiefs to the kapu system. Dedicated to Kū-wahaʻula—Kū of the red mouth—it became a model for temple design throughout the islands. In 1989, lava flows reached its stone walls but split and diverted around them. Eight years later, the volcano reclaimed it entirely. Though buried now, the land still holds the name and the god it once served.",
       type: "PWL",
-      link: { href: "pwl-wahaula-heiau.html", text: "Discover more →" }
+      link: "pwl-wahaula-heiau.html"
     },
+
     {
       name: "Coach Soichi Sakamoto Pool",
       island: "Maui",
@@ -773,7 +780,7 @@
       coords: [20.850546648239114, -156.3211290960027],
       who: "Samuel Enoka Kalama",
       relevance:
-        "Samuel Enoka Kalama (1869–1933) was a Hawaiian public servant whose life and career were closely tied to Upcountry Maui. Born in Honolulu, he later settled in Makawao, where he served as a clerk, tax assessor, deputy sheriff, and member of the Territorial Legislature. In 1902 he was elected to the Territorial House, moved to the Senate in 1904, and later became chairman of the Maui County Board of Supervisors, the island’s highest local office, during the early Territorial era. He was part of the Kalama family of Upcountry Maui, a family name tied to Queen Kalama, the wife of King Kamehameha III. When the school opened in 1985, the Makawao community selected his name to recognize a longtime resident and civic leader whose decades of service shaped life throughout Upcountry Maui."
+        "Samuel Enoka Kalama (1869–1933) was a Hawaiian public servant whose life and career were closely tied to Upcountry Maui. Born in Honolulu, he later settled in Makawao, where he served as a clerk, tax assessor, deputy sheriff, and member of the Territorial Legislature. In 1902 he was elected to the Territorial House, moved to the Senate in 1904, and later became chairman of the Maui County Board of Supervisors, the island’s highest local office, during the early Territorial era. He was part of the Kalama family of Upcountry Maui, a family name tied to Queen Kalama, the wife of King Kamehameha III.  When the school opened in 1985, the Makawao community selected his name to recognize a longtime resident and civic leader whose decades of service shaped life throughout Upcountry Maui."
     },
     {
       name: "Olinda (town)",
@@ -783,6 +790,8 @@
       relevance:
         "High above Makawao, the upland community of Olinda takes its name, many believe, from the Portuguese phrase “ó linda,” meaning “oh beautiful,” or from “o linda vista,” “beautiful view.” The name is often credited to Samuel T. Baldwin, who admired the area’s cool air and sweeping pastures in the late 1800s. At the time, Portuguese families were settling nearby to work on nearby ranches and plantations, and their language likely shaped how the name took root. The region later became part of Haleakalā Ranch, home to reforestation projects and small dairies. Olinda’s forests and fields reflect how ranching, reforestation, and reform once intersected under a foreign word made local."
     },
+
+    /* Story link to Stories section */
     {
       name: "David Malo Dorm (Lāhaināluna)",
       island: "Maui",
@@ -790,8 +799,10 @@
       who: "David Malo",
       relevance:
         "David Malo (c.1793–1853) is among the most influential Hawaiian scholars, a foundational voice whose writings shaped how Hawaiʻi understands its own past. Born in Keauhou, he entered the first class of Lāhaināluna Seminary in 1831 and later served as a school master, helping establish the institution’s early culture. His major work, Ka Moʻolelo Hawaiʻi, remains one of the most important texts documenting Hawaiian traditions, genealogy, governance, and religious practice. In 1841, he represented Maui in the first House of Representatives of the Hawaiian Kingdom, reflecting his prominence in both educational and political life. The Lāhaināluna dormitory named for him honors that legacy. Malo’s grave sits on the hillside above the campus, overlooking West Maui, and each April the school community celebrates his enduring impact on Hawaiian scholarship and identity.",
-      link: { href: "stories.html#david-malo", text: "Discover more →" }
+      link: "stories.html#david-malo"               /* placeholder anchor */
     },
+
+    /* PWL: black + hidden unless checkbox checked */
     {
       name: "King Kamehameha III Elementary School",
       island: "Maui",
@@ -801,6 +812,7 @@
         "Established in 1913 and named for Kauikeaouli, King Kamehameha III, who ruled from 1825 to 1854. Raised in Lāhainā with his sister Nāhiʻenaʻena, he led Hawaiʻi through sweeping changes, just to name a few, drafting its first constitution and founding the kingdom’s fire department and Royal Hawaiian Band. In 1845 he moved the capital from Lāhainā to Honolulu, marking a new era of central rule and diplomacy. The school stood for over a century near sites tied to his youth and court life. Destroyed in the 2023 Lāhainā fire, it remains a symbol of continuity between the kingdom’s formative years and the town that shaped its young king. This pin marks the original Front Street campus, destroyed in the tragic August 2023 Lāhainā fire. Classes now operate from a temporary campus in Kāʻanapali.",
       type: "PWL"
     },
+
     {
       name: "Kahului Airport (OGG)",
       island: "Maui",
@@ -808,8 +820,10 @@
       who: "Captain Bertram J. “Jimmy” Hogg",
       relevance:
         "Built during World War II and opened to civilian travel in 1952, Kahului Airport became Maui’s main airfield as inter-island flying modernized. In 1957 the Civil Aeronautics Authority assigned the code “OGG” to honor Captain Bertram James “Jimmy” Hogg, a pioneering Hawaiian Airlines pilot from Kauaʻi who helped test Maui’s new radio-navigation equipment. The code “HOG” was already taken, the agency used “OGG,” preserving his name in altered form. Nearly every traveler to Maui still passes through an airport that carries his initials, a small tribute to the aviator.",
-      link: { href: "pnp-kahului-airport-ogg.html", text: "Discover more →" }
+      link: "pnp-ogg-airport.html"                  /* placeholder */
     },
+
+    /* Kaʻahumanu pin should only point to PNP */
     {
       name: "Queen Kaʻahumanu Center",
       island: "Maui",
@@ -817,11 +831,139 @@
       who: "Queen Kaʻahumanu",
       relevance:
         "Built in the early 1970s on part of the former Kahului Cannery site, the center was named for Queen Kaʻahumanu, the favored wife of Kamehameha I and later Kuhina Nui, a co-regent who shared authority with his successor, Kamehameha II (Liholiho). Kaʻahumanu guided the kingdom through the end of the kapu system and the arrival of Christianity. She spent time in nearby Wailuku, where her influence shaped Maui’s early Christian institutions. The mall’s use of her name, later managed by plantation-era companies, reflects Maui’s evolving relationship between commerce, land, and legacy.",
-      link: { href: "pnp-kaahumanu-center.html", text: "Discover more →" }
+      link: "pnp-kaahumanu-center.html"             /* placeholder */
     },
 
-    /* --- the rest of your pins unchanged EXCEPT the ones below where we add links --- */
+    {
+      name: "Kamehameha V Highway",
+      island: "Molokaʻi",
+      coords: [21.111132, -156.742469],
+      who: "King Lot Kapuāiwa (Kamehameha V)",
+      relevance:
+        "The island’s main east–west highway honors the Hawaiian monarch raised partly on Molokaʻi, and known for his commitment to Hawaiian sovereignty and cultural renewal. As Kamehameha V, he revived traditional practices, restored ʻIolani Palace, and codified laws that shaped the Kingdom’s governance. The road connecting Kaunakakai to Hālawa reflects his vision of continuity between rural communities and the seat of power."
+    },
+    {
+      name: "St. Damien of Molokai Church",
+      island: "Molokaʻi",
+      coords: [21.09113688716181, -157.02000256390676],
+      who: "Saint Damien de Veuster",
+      relevance:
+        "Father Damien arrived in Hawaiʻi in 1864 (from Belgium) and volunteered in 1873 to serve those exiled for Hansen’s Disease at Kalaupapa. Over sixteen years he built homes, churches, and hospitals while organizing medical care and advocating for humane treatment. He contracted the disease himself and died there in 1889, later canonized as Saint Damien of Molokaʻi in 2009.  The Kaunakakai church honors his service to Molokaʻi’s people and courage that made him a symbol of compassion."
+    },
+    {
+      name: "Meyer Lake",
+      island: "Molokaʻi",
+      coords: [21.164809925468862, -156.9810210645244],
+      who: "Rudolph Wilhelm Meyer",
+      relevance:
+        "A German ship carpenter who settled on Molokaʻi in the 1850s, Meyer became the island’s leading rancher, miller, and agricultural innovator. He married Kalama Waha, a relative of Kamehameha V, and served as both ranch manager and government agent at Kalaupapa during the early years of the Hansen’s Disease settlement. His estate grew into one of the island’s key ranching centers, with the stone-built Meyer House now part of the Molokaʻi Museum & Cultural Center. The lake and parklands bearing his name preserve the layered history of colonial enterprise, Hawaiian alliance, and local resilience."
+    },
+    {
+      name: "St. Philomena Church",
+      island: "Molokaʻi",
+      coords: [21.177175165566275, -156.94826873422565],
+      who: "Saint Philomena, early Roman martyr",
+      relevance:
+        "Built around 1872 by Father Modeste Favens and named for Saint Philomena, a young Roman martyr revered in the 19th century as a patron of the sick and suffering. When Father Damien arrived in 1873, he rebuilt and expanded the structure, adding stone walls, twin naves, and a bell tower. Though not named for him, the church became known as Father Damien’s Church, its name and mission reflecting the compassion he embodied at Kalaupapa."
+    },
+    {
+      name: "Duke Maliu Regional Park",
+      island: "Molokaʻi",
+      coords: [21.086897914599458, -157.01588081125502],
+      who: "Duke Maliu",
+      relevance:
+        "Duke Maliu was a beloved Molokaʻi community leader, coach, and long-time Maui County parks official who championed youth athletics, especially baseball and softball. He organized leagues, maintained fields, and helped expand interscholastic sports programs across the island.  After his passing, the County named the regional park in Kaunakakai after him, honoring a life rooted in service, recreation, and community pride."
+    },
+    {
+      name: "Siloama Church",
+      island: "Molokaʻi",
+      coords: [21.178081097360064, -156.94880102060267],
+      who: "The Pool of Siloam (John 9:7, Bible)",
+      relevance:
+        "Founded in 1866 by Protestant patients exiled to Kalawao, Siloama Church was the first congregation established within the leprosy settlement. Its name comes from the biblical pool where Jesus healed the blind, reflecting faith in both spiritual and physical renewal. Built and led by Native Hawaiian members of the Hawaiian Evangelical Association, it stands as a record of resilience, fellowship, and belief."
+    },
+    {
+      name: "George Murphy Park",
+      island: "Molokaʻi",
+      coords: [21.10456083703182, -156.749915017208],
+      who: "George Murphy",
+      relevance:
+        "Once part of privately held pastureland, the site became known locally as Murphy’s after George Murphy, a rancher who maintained and informally shared access to the shoreline. Families gathered here for fishing, picnics, and small community events long before the County of Maui developed it as a park in the 1970s. Longtime residents still refer to it by other familiar names including: Kumimi Beach Park, Jaycees Park, or simply 20 Mile Beach, a nod to its location near Mile Marker 20. The county retained the Murphy name in recognition of his openness and the park’s role as a community shoreline connecting  Molokaʻi families."
+    },
+    {
+      name: "Hale O Lono Harbor",
+      island: "Molokaʻi",
+      coords: [21.086140265395027, -157.24893410153402],
+      who: "Lono, Hawaiian god of agriculture and peace",
+      relevance:
+        "Meaning “House of Lono,” the harbor takes its name from the Hawaiian god associated with harvest, fertility, and the Makahiki season of peace. The surrounding area once held a major heiau dedicated to Lono and served as a Makahiki ceremony site where offerings marked the end of the harvest season. Much of the original structure was disturbed when Molokaʻi Ranch excavated the area in the 1970s to build a private harbor for agricultural shipping. Today, the site is best known as the starting point of the Molokaʻi Hoe canoe race to Oʻahu."
+    },
+    {
+      name: "Dole Park",
+      island: "Lānaʻi",
+      coords: [20.825327306336675, -156.91995591899476],
+      who: "James Dole",
+      relevance:
+        "At the heart of Lānaʻi City, Dole Park forms the open square around which the island’s plantation town was built in the 1920s. Designed under James Dole, founder of the Hawaiian Pineapple Company, the park was part of a master plan for a model company town that would house thousands of workers brought to harvest pineapple. Its tidy grid and neat lawns reflected order and ambition but the community around it was divided by race and rank, with separate camps and conditions. Today, the park remains the town's quiet center, surrounded not by fields but by visitors bound for Lānaʻi’s luxury resorts, a reminder that the island continues to reinvent itself, even as the name “Dole” sits in the center."
+    },
+    {
+      name: "Munro Trail",
+      island: "Lānaʻi",
+      coords: [20.807296601848154, -156.86755561227102],
+      who: "George Campbell Munro",
+      relevance:
+        "Munro Trail runs along the high ridge near the summit of Lānaʻi and is named after George Campbell Munro, a New Zealand born forester and rancher hired to manage livestock on multiple islands before working in the early 20th century to address erosion and water loss caused by decades of overgrazing. Under his direction, large-scale reforestation reshaped the island’s uplands, including the widespread planting of Cook pines. The trail follows routes originally used for forest management. Today, it passes through one of Lānaʻi’s coolest and wettest areas and offers expansive views toward Maui, Molokaʻi, and Oʻahu on clear days."
+    },
+    {
+      name: "Cavendish Golf Course",
+      island: "Lānaʻi",
+      coords: [20.831632313732275, -156.9190058439687],
+      who: "Edwin B. Cavendish",
+      relevance:
+        "Cavendish Golf Course is a par-36, nine-hole public course built in 1947 by the Dole plantation for its employees. It was designed by Edwin B. Cavendish, a Dole employee, and was the first golf course on Lānaʻi. The course was intentionally modest, created as a recreational space for plantation workers. Golfers traditionally show up, may place a donation in a wooden box near the first tee, and play. Five holes include secondary tees that allow an 18-hole routing, with the modified back nine slightly shorter. Cook pines line most fairways, and all nine bunkers are greenside."
+    },
+    {
+      name: "Pedro Bay",
+      island: "Kahoʻolawe",
+      coords: [20.591517507793984, -156.60664645339887],
+      who: "Manuel Pedro",
+      relevance:
+        "Pedro Bay (also known as Kūheia Bay) was named by fishermen and hunters after Manuel Pedro, the longtime foreman of Kahoʻolawe Ranch and, for years, its only full-time resident. Born in the Azores in 1875, Pedro came to Hawaiʻi as a child and worked under rancher Angus McPhee beginning in the 1920s. Pedro lived alone on the island for much of the year, maintaining water troughs, repairing fences, hunting goats, and tending cattle. Fishermen and hunters who regularly visited Kahoʻolawe started calling the area around the ranch headquarters “Pedro Bay.” The bay later became one of several landing points used during efforts to reclaim Kahoʻolawe in the 1970s."
+    },
+    {
+      name: "Penguin Bank",
+      island: "Offshore Hawaiʻi ",
+      coords: [21.03389342251492, -157.4999571429068],
+      who: "HMS Penguin",
+      relevance:
+        "Penguin Bank is a broad, shallow submarine platform west of Molokaʻi, part of the submerged volcanic landscape once connected as Maui Nui, a prehistoric landmass that joined Maui, Molokaʻi, Lānaʻi, and Kahoʻolawe before rising sea levels separated the islands. The feature was named after HMS Penguin, a British Royal Navy survey ship that charted Hawaiian waters in the late 19th century. At the time, it was common for hydrographic surveys to name newly mapped offshore features after their vessels. Penguin Bank reflects how naming power extended beyond land, assigning names to underwater places that were significant for navigation and mapping."
+    },
+    {
+      name: "Blanche Pope Elementary School",
+      island: "Oʻahu",
+      coords: [21.328068, -157.69516],
+      who: "Blanche Kelso Pope",
+      relevance:
+        "Matron/teacher at Kamehameha Schools for Girls; later funded education and health efforts in Waimānalo. Opened 1932; one of few Hawaiʻi schools named for a non-Hawaiian woman."
+    },
+    {
+      name: "Tantalus Drive",
+      island: "Oʻahu",
+      coords: [21.327174, -157.826046],
+      who: "Tantalus (Greek mythology)",
+      relevance:
+        "Named for the myth figure forever reaching. Early 1900s road up the ridge above Puowaina (Punchbowl); the climb felt 'always just out of reach,' hence the name."
+    },
+    {
+      name: "Carleton E. Weimer Field",
+      island: "Kahoʻolawe",
+      coords: [21.675145976634365, -157.9489315262358],
+      who: "Carleton E. Weimer",
+      relevance:
+        "At Kahuku High & Intermediate School, generations of Red Raiders have taken the field beneath a name few recognize, Carleton E. Weimer. A longtime principal during the mid-20th century, Weimer helped guide the school through its early years, strengthening both academics and athletics in a plantation community finding its identity.  Today, Kahuku stands among the nation’s elite high school football programs, a multiple-time Hawaiʻi state champion that has defeated mainland powers like St. John Bosco (CA), sending alumni such as Chris Naeole and the Kemoeatu brothers to the NFL. Its field still bears the name of the administrator who believed in education first."
+    },
 
+    /* PWL + link */
     {
       name: "Aloha Stadium",
       island: "Oʻahu",
@@ -830,8 +972,9 @@
       relevance:
         "Aloha Stadium opened in 1975 in Hālawa as a state-owned, multi-purpose venue built to replace Honolulu Stadium and give University of Hawaiʻi athletics a larger stage. Championed by Governor John A. Burns, it was part of Hawaiʻi’s post-statehood push to modernize major civic facilities and create a venue state residents could enjoy for decades. The stadium became home to UH football and hosted concerts, graduations, high school football games, the Pro Bowl, and other large public events. The name “Aloha” was chosen deliberately, emphasizing welcome and shared identity. Even when corporate sponsors held naming rights for the playing field, the venue itself retained the name Aloha Stadium, reinforcing its role as a statewide public space.",
       type: "PWL",
-      link: { href: "pwl-aloha-stadium.html", text: "Discover more →" }
+      link: "pwl-aloha-stadium.html"
     },
+
     {
       name: "ʻIolani Palace",
       island: "Oʻahu",
@@ -839,17 +982,18 @@
       who: "King Kamehameha IV (Alexander Liholiho Keawenui ʻIolani)",
       relevance:
         "The original royal residence on this site was known as Hale Aliʻi. During Kamehameha V’s reign (1863), he renamed it ʻIolani Palace to honor his brother Kamehameha IV (Alexander Liholiho Keawenui ʻIolani). Kamehameha IV’s ʻIolani name references the ʻio, the chiefly Hawaiian hawk, a symbol associated with aliʻi. King Kalākaua later demolished the original residence and constructed the modern palace in 1882. The palace grounds also contain Hale Koa (ʻIolani Barracks), a bandstand, and two archive buildings. Today the palace stands as one of Hawaiʻi’s most important cultural landmarks, and its name carries the legacy of the aliʻi.",
-      link: { href: "pnp-iolani-palace.html", text: "Discover more →" }
+      link: "pnp-iolani-palace.html"                /* placeholder */
     },
     {
-      name: "Daniel K. Inouye International Airport",
+      name: "Duke Paoa Kahanamoku Statue",
       island: "Oʻahu",
-      coords: [21.3325, -157.92076835],
-      who: "Senator Daniel K. Inouye",
+      coords: [21.2755255808588, -157.82532455178392],
+      who: "Olympian Duke Paoa Kahanamoku",
       relevance:
-        "Named in 2017 for Senator Daniel K. Inouye (1924–2012), Hawaiʻi’s highest-ranking public servant and a Medal of Honor recipient for his service with the 442nd Regimental Combat Team. Born to Japanese immigrant parents in Honolulu, Inouye fought in World War II and was severely wounded in combat, returning home as part of a generation whose service reshaped Hawaiʻi’s place in the nation. After the war he rose through Hawaiʻi’s political life to serve nearly fifty years in Congress, acquiring funding for the islands’ infrastructure, military community, and cultural institutions. Renaming Honolulu International Airport in his honor linked Hawaiʻi’s primary gateway to a life defined by sacrifice, persistence, and national service.",
-      link: { href: "pnp-hnl-airport.html", text: "Discover more →" }
+        "Duke Paoa Kahanamoku (1890–1968), descended from aliʻi who served and advised the Kamehameha line. Raised near today’s Hilton Hawaiian Village, he grew up in the waters of old Waikīkī. Kahanamoku won five Olympic medals in swimming, introduced surfing to audiences from California to Australia, and became the first person inducted into both the Swimming and Surfing Halls of Fame. This statue honors his legacy as a waterman, sheriff of Honolulu, and global symbol of aloha. His name and legend spread with many roads, beaches and statues, reflecting how one Hawaiian athlete reshaped the world’s understanding of surfing and Hawaiian culture."
     },
+
+    /* CORP PNP link */
     {
       name: "Patsy T. Mink Central Oʻahu Regional Park",
       island: "Oʻahu",
@@ -857,8 +1001,87 @@
       who: "Congresswoman Patsy Takemoto Mink",
       relevance:
         "Spread across hundreds of acres in Waipiʻo, this park bears the name of Patsy Takemoto Mink, the first woman of color elected to the U.S. Congress and a co-author of Title IX, the landmark 1972 law prohibiting sex discrimination in education and athletics.  A Maui-born attorney who broke barriers at every turn, Mink’s career spanned decades of advocacy for equity, education, and environmental protection. Her name now graces one of Oʻahu’s largest public parks. The park’s open fields carry the name of a woman whose work reshaped opportunity across the nation, a legacy rooted in Hawaiʻi but felt far beyond.",
-      link: { href: "pnp-corp.html", text: "Discover more →" }
+      link: "pnp-corp.html"                         /* placeholder */
     },
+
+    {
+      name: "Kapiʻolani Medical Center for Women & Children",
+      island: "Oʻahu",
+      coords: [21.3001568728348, -157.83397323933036],
+      who: "Queen Kapiʻolani",
+      relevance:
+        "Queen Kapiʻolani (1834–1899), spent much of her life caring for Hawaiian families. As a young woman she served Queen Emma and helped care for Prince Albert, and later, with King Kalākaua, she hānai-raised her nephews—future princes Kawānanakoa and Kūhiō. These experiences, along with visiting hospitals at Kakaʻako, shaped her concern for women, children, and those most vulnerable. In 1884 she traveled to Kalaupapa, meeting Father Damien and hearing directly from patients about the plight of healthy children born to parents with leprosy. In 1890 she founded the Kapiʻolani Maternity Home, dedicated to improving Native Hawaiian maternal and infant health. The modern medical center continues that mission, reflecting her compassion and belief that Hawaiʻi’s future depended on caring for its families."
+    },
+    {
+      name: "Alapaʻi Street",
+      island: "Oʻahu",
+      coords: [21.304860648070882, -157.8528990921355],
+      who: "Julia Alapaʻi, a 19th-century aliʻi chiefess",
+      relevance:
+        "Alapaʻi Street honors Julia Alapaʻi (1814–1849), a high-ranking aliʻi chiefess and granddaughter of Alapaʻinui, the 18th-century ruler who once unified much of Hawaiʻi Island. She served as an attendant to Princess Nāhiʻenaʻena and the sacred chiefess Keōpūolani, and later moved within the close household surrounding Kamehameha III and Queen Kalama. Julia served in both the House of Nobles and the Privy Council during a period when aliʻi women held governing authority. Her extensive lands, inherited through the Alapaʻi line, later passed to Queen Emma and helped form the endowment that supports The Queen’s Medical Center today. Alapaʻi Street reflects her lineage, influence, and role in shaping the kingdom’s political and social life."
+    },
+    {
+      name: "Princess Ruth Keʻelikōlani Middle School",
+      island: "Oʻahu",
+      coords: [21.31183840090256, -157.85706488785726],
+      who: "Princess Ruth Keʻelikōlani",
+      relevance:
+        "Princess Ruth Keʻelikōlani (1826–1883) was one of the most influential aliʻi of the 19th century and a protector of Hawaiian language, land, and cultural practice during a time of rapid change. A granddaughter of Kamehameha I, Keʻelikōlani held vast lands across Hawaiʻi Island and served as Governor of Hawaiʻi Island and as Kuhina Nui (premier). She insisted on speaking Hawaiian, conducting state business in Hawaiian, and maintaining traditional practices even as the kingdom westernized. Her support later enabled Bernice Pauahi Bishop to found the Bishop Estate and Kamehameha Schools.  The former Royal School was renamed in her honor to recognize a leader whose identity, loyalty to her people, and defense of Hawaiian culture left a lasting legacy."
+    },
+    {
+      name: "Burmeister Overpass",
+      island: "Oʻahu",
+      coords: [21.36694533298396, -157.8411693874078],
+      who: "George Burmeister",
+      relevance:
+        "Deep along Likelike Highway, a concrete bridge rises from the trees and disappears just as quickly. I’ve driven under it for years without realizing it was called the Burmeister Overpass. The name traces to a landowner and businessman who, in the late 1950s, struck a deal with the government: when the new highway cut through his property, he secured an overpass to preserve access to his land. Years later, George Burmeister shot and killed a trespasser, and many years later, assaulted Christmas tree poachers on the same grounds. Thousands still drive beneath his bridge, a relic of private will turned infrastructure. Few know the name; fewer still know the story."
+    },
+
+    /* HNL PNP link */
+    {
+      name: "Daniel K. Inouye International Airport",
+      island: "Oʻahu",
+      coords: [21.3325, -157.92076835],
+      who: "Senator Daniel K. Inouye",
+      relevance:
+        "Named in 2017 for Senator Daniel K. Inouye (1924–2012), Hawaiʻi’s highest-ranking public servant and a Medal of Honor recipient for his service with the 442nd Regimental Combat Team. Born to Japanese immigrant parents in Honolulu, Inouye fought in World War II and was severely wounded in combat, returning home as part of a generation whose service reshaped Hawaiʻi’s place in the nation. After the war he rose through Hawaiʻi’s political life to serve nearly fifty years in Congress, acquiring funding for the islands’ infrastructure, military community, and cultural institutions. Renaming Honolulu International Airport in his honor linked Hawaiʻi’s primary gateway to a life defined by sacrifice, persistence, and national service.",
+      link: "pnp-hnl-airport.html"                  /* placeholder */
+    },
+
+    {
+      name: "Aki's Beach",
+      island: "Oʻahu",
+      coords: [21.4684229, -158.2174923],
+      who: "Aki Family",
+      relevance:
+        "Named for the Aki family, whose home once stood nearby. Walter Aki purchased the surrounding land in 1948; his son, James Aki, later served as a Hawaiʻi state senator, including a brief term as Senate President."
+    },
+    {
+      name: "Elepaio Street",
+      island: "Oʻahu",
+      coords: [21.264071911768074, -157.78989824686238],
+      who: "The ʻelepaio, a native Hawaiian forest bird",
+      relevance:
+        "Elepaio Street is part of a cluster of Kāhala roads named for native Hawaiian birds, a theme chosen by early 20th-century developers to anchor the new neighborhood in the natural and cultural heritage of the islands. The ʻelepaio is one of Hawaiʻi’s most storied forest birds, long regarded by Hawaiian canoe builders as a guardian and guide. The bird’s habit of pecking at decayed koa helped carvers identify which trees were sound, making the ʻelepaio a symbol of discernment and craftsmanship.  Naming a street after the ʻelepaio reflects an era when developers sought to embed Hawaiian ecological themes into suburban planning, even far from the bird’s native forest habitat."
+    },
+    {
+      name: "Middle Street",
+      island: "Oʻahu",
+      coords: [21.337858874642553, -157.88346578097838],
+      who: "Named by territorial surveyors",
+      relevance:
+        "First appearing on maps in the 1890s, Middle Street was named for its position linking King Street and the Oʻahu Railway & Land Company line. It once connected Honolulu town to the agricultural lands of Kalihi Kai and later evolved into a major industrial corridor. By the mid-20th century it housed stockyards, cold-storage facilities, and transport depots. Since 1971, it has served as the principal transit base for Oʻahu Transit Services, mirroring Honolulu’s own growth from streetcars to city buses, and now trains again."
+    },
+    {
+      name: "Jackass Ginger Pool",
+      island: "Oʻahu",
+      coords: [21.346201404702732, -157.82442024417458],
+      who: "Donkey and Ginger plants",
+      relevance:
+        "Jackass Ginger Pool is a well-known swimming spot in Nuʻuanu Valley, known today by a name that emerged informally. Jackass refers to a donkey that was once tethered nearby, while ginger comes from the yellow ginger plants that grow along the pool’s banks. The combination stuck through repeated use, eventually overtaking the original name. The pool’s original name is Kahuailanawai, which translates as \"pool of tranquil water.\" The contrast between the two names shows how places in Hawaiʻi often accumulate layers of meaning over time, with informal names sometimes replacing original ones."
+    },
+
+    /* Fort Weaver PNP link */
     {
       name: "Fort Weaver Road",
       island: "Oʻahu",
@@ -866,8 +1089,10 @@
       who: "Fort Weaver, named for General Erasmus Morgan Weaver Jr.",
       relevance:
         "Fort Weaver Road takes its name from Fort Weaver, a coastal defense installation established in 1899 near what is now Kapilina Beach Homes. The fort guarded the approaches to Pearl Harbor and was renamed in 1922 for General Erasmus Morgan Weaver Jr., the first Chief of the U.S. Army Coast Artillery Corps. Though Weaver never served in Hawaiʻi, Army practice at the time honored national officers whose policies shaped coastal defenses across U.S. territories. The roadway itself was developed and expanded over the 20th century, with its modern form completed in 1982. Today, it serves as the main corridor linking H-1 to ʻEwa Beach, carrying forward a military legacy long after the fort vanished from the shoreline.",
-      link: { href: "pnp-fort-weaver-road.html", text: "Discover more →" }
+      link: "pnp-fort-weaver-road.html"             /* placeholder */
     },
+
+    /* Byodo-In PNP link */
     {
       name: "Byodo-In Temple",
       island: "Oʻahu",
@@ -875,14 +1100,74 @@
       who: "Named after the Byōdō-in Temple (Uji, Japan)",
       relevance:
         "Opened in 1968 to commemorate the 100th anniversary of the first Japanese immigrants to Hawaiʻi, the Byodo-In Temple was built as a replica of the 10th-century Byōdō-in in Uji, Japan. Its name was chosen to honor ancestral ties and reflect the cultural traditions carried by issei and nisei families who helped shape modern Hawaiʻi. The temple has become a widely recognized landmark, visited for reflection, ceremonies, and moments of quiet connection. Over the decades, Byodo-In’s familiar form and borrowed name have taken root in island memory, symbolizing the bridge between immigrant heritage and its place in Windward Oʻahu.",
-      link: { href: "pnp-byodo-in-temple.html", text: "Discover more →" }
-    }
+      link: "pnp-byodo-in-temple.html"              /* placeholder */
+    },
 
-    /* NOTE:
-       - Kaʻahumanu pin already links ONLY to her PNP above.
-       - Other pins remain as-is.
-       - Add more link objects later by copying the same pattern.
-    */
+    {
+      name: "Thomas Square",
+      island: "Oʻahu",
+      coords: [21.302598266714575, -157.84919107680346],
+      who: "Admiral Richard Thomas",
+      relevance:
+        "Named for British Admiral Richard Thomas, who in 1843 sailed to Hawaiʻi to investigate the unlawful British seizure of the islands. He restored sovereignty to King Kamehameha III, who declared, “Ua mau ke ea o ka ʻāina i ka pono” — “The life of the land is perpetuated in righteousness.” The event is commemorated at Thomas Square, established in 1850 and renovated in 2018 with a bronze statue of the king in his military regalia."
+    },
+    {
+      name: "Les Murakami Stadium",
+      island: "Oʻahu",
+      coords: [21.293089, -157.815964],
+      who: "Leslie Satoshi Murakami",
+      relevance:
+        "Opened in 1984 and named for the University of Hawaiʻi’s longtime baseball coach. From 1971 to 2000, Murakami built the program through patience and discipline, guiding it from modest beginnings to the 1980 College World Series and earning more than 1,000 career wins. His players included Sid Fernandez (’86 Mets) and Lenn Sakata (’83 Orioles), whose success reflected the steady, methodical spirit of their coach."
+    },
+
+    {
+      name: "Wilcox Medical Center",
+      island: "Kauaʻi",
+      coords: [21.985627242327205, -159.36570493755275],
+      who: "Wilcox family — most notably George Norton Wilcox, civil engineer, sugar planter, and longtime Līhue Plantation manager",
+      relevance:
+        "Built in 1938 on 17 acres of former sugar lands donated by Līhue Plantation at the urging of the Wilcox family, Wilcox Medical Center was established to serve all of Kauaʻi, marking a shift from plantation dispensaries to a community hospital. Its location reflected both plantation-era philanthropy and the need for a centralized, island-wide facility. The Wilcox name, endures through an institution that continues to provide and support healthcare on Kauaʻi."
+    },
+    {
+      name: "Menehune Ditch (Kīkīaola)",
+      island: "Kauaʻi",
+      coords: [21.9701047794952, -159.65659566356246],
+      who: "Traditionally attributed to the Menehune — the legendary master builders of Hawaiian tradition",
+      relevance:
+        "On the inland edge of Waimea, a line of hand-fitted basalt stones channels water from the river to the old taro lands, known today as the Menehune Ditch. Archaeologists date the stonework to as early as the 14th century, making it one of Hawaiʻi’s oldest surviving feats of engineering. Legend says the Menehune, Hawaiʻi’s hidden people, built it in a single night; archaeology credits skilled Hawaiian engineers of the pre-contact era. Much of the ditch now lies beneath Menehune Road, covered during early 20th-century road construction, a time when progress often meant paving over the past."
+    },
+    {
+      name: "Prince Kūhiō Highway",
+      island: "Kauaʻi",
+      coords: [22.109777618750204, -159.3021292179956],
+      who: "Prince Jonah Kūhiō Kalanianaʻole",
+      relevance:
+        "Stretching along Kauaʻi’s east and north shores, far from his birthplace in Kōloa, the highway honors Prince Jonah Kūhiō Kalanianaʻole (1871–1922). A high-ranking aliʻi within Hawaiʻi’s elected monarchy, Kūhiō came of age as the kingdom fell and the islands entered U.S. rule. Educated in England and raised partly on Oʻahu, he turned from royal succession to public service, mastering the politics of Washington as Hawaiʻi’s delegate to Congress. His work on the 1920 Hawaiian Homes Commission Act sought to restore land and dignity to Hawaiians."
+    },
+    {
+      name: "Princeville",
+      island: "Kauaʻi",
+      coords: [22.22154586401508, -159.48096816151107],
+      who: "Prince Albert, son of Kamehameha IV and Queen Emma",
+      relevance:
+        "Princeville sits on Kauaʻi’s north shore, a master-planned resort community whose name reaches back to the Hawaiian monarchy. The area was named in 1860 after Prince Albert, the infant son of Kamehameha IV and Queen Emma. The royal couple visited the then-plantation lands, and the site was christened “Princeville” in his honor. Prince Albert died only two years later, giving the name an unexpected poignancy. Long before the resorts, this region formed part of the traditional ahupuaʻa of Hanalei, known for taro cultivation. Today, Princeville’s condos, golf courses, and vacation rentals sit on land with a royal history, a name left behind for a child once hailed as the kingdom’s future."
+    },
+    {
+      name: "Vidinha Stadium",
+      island: "Kauaʻi",
+      coords: [21.972592911094253, -159.35598705925224],
+      who: "Antone \"Kona\" Vidinha Jr.",
+      relevance:
+        "Built in the early 1970s, the complex was named the Antone “Kona” Vidinha Jr. Memorial Stadium in honor of Kauaʻi’s first mayor, who served from 1969 to 1972. A former police officer and later Chief of Police, Vidinha moved into public office with a focus on safety, modernization, and community unity during Kauaʻi’s first decade of county governance. The stadium hosts football, track, and civic gatherings that continue the sense of service and connection he embodied."
+    },
+    {
+      name: "H.P. Faye Park",
+      island: "Kauaʻi",
+      coords: [21.97063986977572, -159.71672211625378],
+      who: "Hans Peter Faye",
+      relevance:
+        "H. P. Faye Park in Kekaha is named for Hans Peter (H. P.) Faye, a Norwegian-born entrepreneur who arrived on Kauaʻi in 1880 and developed sugarcane plantation agriculture. Faye bored artesian wells and cleared rocky coastal plains for cane cultivation, founding his own plantation business before becoming a leading manager and stockholder in the Kekaha Sugar Company, which dominated the economy of west Kauaʻi for decades. The name H. P. Faye is a reminder of the island’s transformation from coastal dunes to irrigated cane fields, and now to mixed community and recreational use. "
+    }
   ];
 
   const regularMarkers = [];
@@ -896,6 +1181,7 @@
 
     marker.bindPopup(popupHTML(p), { autoPan: true, closeButton: true });
 
+    // Track cluster group for robust random-pin open
     marker.__clusterGroup = isPWL ? pwlClusters : regularClusters;
 
     if(isPWL){
@@ -907,6 +1193,7 @@
     }
   });
 
+  // DEFAULT: show regular pins only
   map.addLayer(regularClusters);
 
   function setPWLVisible(visible){
@@ -917,6 +1204,7 @@
     }
   }
 
+  // Random pin must only consider what’s visible
   function getActiveMarkerList(){
     var list = [];
     if(map.hasLayer(regularClusters)) list = list.concat(regularMarkers);
