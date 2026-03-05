@@ -859,7 +859,7 @@
       // If clustered at this zoom, force uncluster THEN open
       if(cg && typeof cg.zoomToShowLayer === "function"){
         cg.zoomToShowLayer(marker, function(){
-          setTimeout(function(){ marker.openPopup(); }, 60);
+          setTimeout(function(){ marker.openPopup(); }, 180);
         });
         return;
       }
