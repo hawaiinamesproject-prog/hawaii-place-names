@@ -11,6 +11,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
 
 <style>
+
 body{
   margin:0;
   font-family: Arial, Helvetica, sans-serif;
@@ -20,8 +21,8 @@ body{
 }
 
 /* =========================
-   NAVIGATION
-   ========================= */
+NAVIGATION
+========================= */
 
 nav{
   background:#fff;
@@ -102,8 +103,8 @@ nav a:hover{ color:#2b6cb0; }
 }
 
 /* =========================
-   BANNER
-   ========================= */
+BANNER
+========================= */
 
 .hero-banner{
   background:white;
@@ -119,26 +120,8 @@ nav a:hover{ color:#2b6cb0; }
 }
 
 /* =========================
-   BREADCRUMBS + PROFILE
-   ========================= */
-
-.breadcrumb{
-  max-width:900px;
-  margin:0 auto;
-  padding:22px 20px 0;
-  font-size:0.95rem;
-  color:#555;
-}
-
-.breadcrumb a{
-  color:#2b6cb0;
-  text-decoration:none;
-  font-weight:700;
-  display:inline-block;
-  margin-right:18px;
-}
-
-.breadcrumb a:hover{ text-decoration:underline; }
+PROFILE LAYOUT
+========================= */
 
 .profile{
   max-width:900px;
@@ -163,7 +146,9 @@ nav a:hover{ color:#2b6cb0; }
   margin:18px 0;
 }
 
-/* Images */
+/* =========================
+IMAGES
+========================= */
 
 .figure{
   margin:32px auto;
@@ -190,7 +175,9 @@ nav a:hover{ color:#2b6cb0; }
   margin-right:auto;
 }
 
-/* Pull quote */
+/* =========================
+PULL QUOTE
+========================= */
 
 .pull-quote{
   margin:40px 0;
@@ -204,15 +191,33 @@ nav a:hover{ color:#2b6cb0; }
   color:#333;
 }
 
-@media (max-width:768px){
-  .profile{ padding:32px 24px 60px; }
-  .profile p{ font-size:1rem; line-height:1.85; }
-  .pull-quote{ font-size:1.08rem; }
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
 }
 
 /* =========================
-   FOOTER
-   ========================= */
+FOOTER
+========================= */
 
 .footer{
   background:white;
@@ -231,37 +236,48 @@ nav a:hover{ color:#2b6cb0; }
 }
 
 .footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+  .pull-quote{ font-size:1.08rem; }
+}
+
 </style>
 </head>
 
 <body>
 
 <nav>
-  <input class="nav-toggle" type="checkbox" id="nav-toggle">
 
-  <div class="nav-inner">
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="places-we-lost.html">Places We Lost</a>
-      <a href="place-name-profiles.html">Place Name Profiles</a>
-      <a href="stories.html">Stories</a>
-    </div>
+<input class="nav-toggle" type="checkbox" id="nav-toggle">
 
-    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </label>
-  </div>
+<div class="nav-inner">
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="places-we-lost.html">Places We Lost</a>
+<a href="place-name-profiles.html">Place Name Profiles</a>
+<a href="stories.html">Stories</a>
+</div>
 
-  <div class="mobile-menu">
-    <a href="index.html">Home</a>
-    <a href="places-we-lost.html">Places We Lost</a>
-    <a href="place-name-profiles.html">Place Name Profiles</a>
-    <a href="stories.html">Stories</a>
-  </div>
+<label class="hamburger" for="nav-toggle">
+<span></span>
+<span></span>
+<span></span>
+</label>
+</div>
+
+<div class="mobile-menu">
+<a href="index.html">Home</a>
+<a href="places-we-lost.html">Places We Lost</a>
+<a href="place-name-profiles.html">Place Name Profiles</a>
+<a href="stories.html">Stories</a>
+</div>
+
 </nav>
 
 <div class="hero-banner">
-  <img src="Banner.jpg" alt="Hawai‘i Names Project Banner">
+<img src="Banner.jpg" alt="Hawai‘i Names Project Banner">
 </div>
 
 <main class="profile">
@@ -270,10 +286,11 @@ nav a:hover{ color:#2b6cb0; }
 <div class="island">Maui Island — Kahului</div>
 
 <div class="figure">
-  <img src="images/pnp/ogg.jpg" alt="Kahului Airport (OGG), Maui aerial view showing the main runway and terminal">
-  <div class="caption">
-    Kahului Airport (OGG), Maui — aerial view showing the main runway and terminal. (photo: Forest &amp; Kim Starr, CC BY 2.0 US, cropped by author).
-  </div>
+<img src="images/pnp/ogg.jpg">
+<div class="caption">
+Kahului Airport (OGG), Maui — aerial view showing the main runway and terminal.
+(photo: Forest &amp; Kim Starr, CC BY 2.0 US, cropped by author).
+</div>
 </div>
 
 <p>Kahului Airport is Maui’s primary flight hub. Its code, OGG, doesn’t refer to geography or any place name but to a person: Bertram J. Hogg, a pioneering early inter-island aviator. Hogg flew for Inter-Island Airways, which later became Hawaiian Airlines (now part of Alaska Airlines) and served as one of its key flight instructors. The Kauaʻi-born pilot earned the “OGG” designation for his work testing Maui’s new radio-navigation equipment, a rare tribute.</p>
@@ -285,27 +302,29 @@ nav a:hover{ color:#2b6cb0; }
 <p>Most people who pass through OGG today, residents returning home, families visiting, travelers connecting across the Pacific, have little sense of the airport’s wartime origins or why its code carries a double “G.” Although “HOG” would’ve made more sense, the air traffic code was already taken by Holguin, Cuba. As such OGG became the moniker.</p>
 
 <div class="pull-quote">
-  Kahului Airport remains both practical and symbolic.
+Kahului Airport remains both practical and symbolic.
 </div>
 
 <p>It is Maui’s link to the rest of Hawaiʻi and the broader world, built on wartime foundations and carrying the legacy of a local aviator. Every departure and arrival through OGG continues a story that began long before the modern terminal — with a pilot whose initials still greet every traveler who comes to Maui. Near Gate 19, the State of Hawaiʻi installed an 8-foot-tall, 42-foot-wide display honoring Hogg, from his childhood watching planes land near Nāwiliwili, Kauaʻi to flying Hawaiian Airlines’ first trans-Pacific service in a DC-6. It’s worth a visit to appreciate the pilot who helped push local aviation forward.</p>
 
 <div class="figure">
-  <img src="images/pnp/ogg-1.jpg" alt="Hawaiian Airlines Boeing 717 at Kahului Airport (OGG), Maui">
-  <div class="caption">
-    Hawaiian Airlines Boeing 717 at Kahului Airport (OGG), Maui (photo: Aero Icarus, CC BY-SA 2.0).
-  </div>
-  
+<img src="images/pnp/ogg-1.jpg">
+<div class="caption">
+Hawaiian Airlines Boeing 717 at Kahului Airport (OGG), Maui
+(photo: Aero Icarus, CC BY-SA 2.0).
+</div>
+</div>
+
 <div class="return-links">
-  <a href="place-name-profiles.html">← Return to Place Name Profiles</a>
-  <a href="index.html#map">← Return to Map</a>
+<a href="place-name-profiles.html">← Return to Place Name Profiles</a>
+<a href="index.html#map">← Return to Map</a>
 </div>
 
 </main>
 
 <footer class="footer">
-  <a href="about.html">About</a> |
-  <a href="contact.html">Contact Us</a>
+<a href="about.html">About</a> |
+<a href="contact.html">Contact Us</a>
 </footer>
 
 </body>
