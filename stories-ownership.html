@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Does One Own an Island? | Stories | Hawai‘i Names Project</title>
+
+<link rel="icon" href="clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{
+  color:#2b6cb0;
+}
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{
+  border-bottom:none;
+}
+
+#nav-toggle:checked ~ .mobile-menu{
+  display:block;
+}
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+   BANNER
+   ========================= */
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+   ARTICLE
+   ========================= */
+.breadcrumb{
+  max-width:900px;
+  margin:0 auto;
+  padding:22px 20px 0;
+  font-size:0.95rem;
+  color:#555;
+}
+
+.breadcrumb a{
+  color:#2b6cb0;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.breadcrumb a:hover{
+  text-decoration:underline;
+}
+
+.article{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px;
+}
+
+.article h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.subtitle{
+  margin:0 0 22px;
+  color:#444;
+  font-weight:600;
+}
+
+.article p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* Pull Quotes */
+.pull{
+  margin:30px 0;
+  padding:18px 20px;
+  border-left:4px solid #2b6cb0;
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  font-style:italic;
+  font-size:1.15rem;
+  line-height:1.6;
+}
+
+/* Images */
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:560px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:8px;
+  line-height:1.5;
+  text-align:center;
+  max-width:760px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* Return links */
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+   MOBILE TYPOGRAPHY
+   ========================= */
+@media (max-width:768px){
+  .article{
+    padding:32px 24px;
+  }
+
+  .article p{
+    font-size:1rem;
+    line-height:1.85;
+  }
+
+  .pull{
+    font-size:1.1rem;
+    margin:34px 0;
+  }
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:80px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{
+  color:#2b6cb0;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="places-we-lost.html">Places We Lost</a>
+      <a href="place-name-profiles.html">Place Name Profiles</a>
+      <a href="stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="places-we-lost.html">Places We Lost</a>
+    <a href="place-name-profiles.html">Place Name Profiles</a>
+    <a href="stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="Banner.jpg" alt="Hawai‘i Names Project Banner">
+</div>
+
+<div class="breadcrumb">
+  <a href="stories.html">← Stories</a>
+</div>
+
+<main class="article">
+  <h1>How Does One Own an Island?</h1>
+
+  <p>Across the world, wealthy individuals have purchased small islands as private retreats. Richard Branson owns Necker Island in the British Virgin Islands. Dozens of smaller islands in the Caribbean, Mediterranean, and South Pacific have passed into private hands. The idea of owning an island itself sounds bizarre but we have, in some regard, become desensitized to it and it isn’t particularly shocking anymore to hear about.</p>
+
+  <p>But Hawaiʻi’s story is different.</p>
+
+  <div class="figure">
+    <img src="images/stories/ownership-hawaii-map.jpg" alt="A Map of the Hawaiian Islands, 1838 (Lahainaluna)">
+    <div class="caption">
+      A Map of the Hawaiian Islands, 1838 (Lahainaluna). Courtesy of the Royal Geographical Society, via Wikimedia Commons
+    </div>
+  </div>
+
+  <p>At one point in the nineteenth century, three of the nine major Hawaiian Islands were controlled almost in their entirety by a single owner or authority.</p>
+
+  <p>Lānaʻi.<br>
+  Niʻihau.<br>
+  Kahoʻolawe.</p>
+
+  <p>Not smaller offshore islets.<br>
+  Entire islands. The smallest of which, Kahoʻolawe, is roughly 29,000 acres. Islands where people lived, raised families, and built communities. Each one shaped by decisions made for it as a single unit.</p>
+
+  <p>In some cases, that meant private ownership.<br>
+  In others, it meant control.</p>
+
+  <p>Together they represent roughly one-third of the major islands in the Hawaiian chain, a startling concentration of land under private control. Each island followed a different path to that outcome, but the forces behind those paths were deeply connected.</p>
+
+  <p>Geography played a role. All three islands sit in the rain shadow of larger neighbors and struggle with reliable fresh water. Their dry landscapes supported smaller populations, where agriculture and fresh water access was (and still is today) challenging to manage.</p>
+
+  <p>History played a role as well. Each island carried its own stories: legends, warfare, and depopulation on Lānaʻi, chronic water scarcity on Kahoʻolawe, and the isolated conditions that shaped life on Niʻihau.</p>
+
+  <p>But the most important factor, really the only one that made this possible, was politics.</p>
+
+  <div class="pull">
+    But the most important factor, really the only one that made this possible, was politics.
+  </div>
+
+  <p>The Hawaiian Kingdom fundamentally changed the relationship between people and land in the mid-nineteenth century (1845-1850) through a series of reforms known as the Great Māhele. Those reforms introduced a system that allowed land to be divided, surveyed, transferred, and eventually sold.</p>
+
+  <p>Once that system existed, the stage was set for something that would have been unthinkable in earlier centuries: the transfer of entire islands into private ownership, even to individuals who were not royalty and not indigenous to the islands.</p>
+
+  <p>To understand how that happened, we need to step back into the world before the Māhele, when land in Hawaiʻi functioned very differently.</p>
+
+  <p>Before the Māhele, land in Hawaiʻi was not something that could be bought, sold, or otherwise owned in the modern sense.</p>
+
+  <p>Land functioned within a system of stewardship and responsibility overseen by the aliʻi, the ruling chiefs of the islands. Authority flowed downward from the mō‘ī, the king, through high-ranking aliʻi, district chiefs, and local konohiki who managed land divisions known as ahupuaʻa. Typically, these were long wedges of land stretching from the mountains to the sea, designed to give communities access to forests, fresh water, farmland, and fishing grounds.</p>
+
+  <div class="figure">
+    <img src="images/stories/ownership-oahu-ahupuaa.jpg" alt="Traditional ahupuaʻa divisions on Oʻahu">
+    <div class="caption">
+      Traditional ahupuaʻa divisions on Oʻahu, reflecting how land and resources were managed before the Māhele. Ahupuaʻa divisions of Oʻahu (2019), by Mliu92, via Wikimedia Commons.
+    </div>
+  </div>
+
+  <p>Commoners, the makaʻāinana, lived and worked within these ahupuaʻa. They farmed kalo in irrigated valleys, cultivated dryland crops where conditions allowed, and fished along the coast. In exchange, they owed labor, tribute, and would fight on behalf of the chiefs who oversaw the land.</p>
+
+  <p>Land was tied to responsibility, not possession. Chiefs managed it, people lived from it, and both were bound by obligations to each other, and to the gods, to preserve social order.</p>
+
+  <p>What the system did not allow was selling or gifting of land. It was not a commodity.</p>
+
+  <p>A chief could control land, administer it, or lose it through political change, but he could not sell it. Land was embedded in genealogy, governance, and the spiritual relationship between people and place. The idea that an entire island might permanently pass into the hands of a private individual did not make sense in pre-Māhele times.</p>
+
+  <p>But by the 1840s, Hawaiʻi was changing rapidly.</p>
+
+  <p>Foreign ships were arriving in growing numbers. Western merchants, missionaries, and diplomats were pushing the Kingdom to adopt legal systems they recognized. The monarchy, in an effort to strengthen its position internationally, sought to resemble other recognized nations with formal laws, treaties, and defined institutions of government. In many ways, Hawaiʻi succeeded in doing so.</p>
+
+  <p>Land tenure, however, remained one of the most pressing issues.</p>
+
+  <p>Without clearly defined ownership, foreigners argued, property rights were uncertain and investment was risky.</p>
+
+  <p>Hawaiian leaders faced a difficult choice. They could maintain the traditional system and risk foreign powers claiming Hawaiʻi was legally backward and therefore required foreign intervention. Or they could adapt the Kingdom’s laws to resemble Western property systems in hopes of protecting Hawaiian sovereignty.</p>
+
+  <p>King Kamehameha III, Kauikeaouli, chose the second path.</p>
+
+  <p>The result would become maybe the most consequential political decision in Hawaiian history.</p>
+
+  <p>The Great Māhele.</p>
+
+  <div class="pull">
+    The result would become maybe the most consequential political decision in Hawaiian history. The Great Māhele.
+  </div>
+
+  <p>The Māhele, meaning “division,” was designed to transform a system based on chiefly stewardship into one based on legally recognized property rights.</p>
+
+  <p>In 1848, the king and leading chiefs began formally dividing the lands of the kingdom between themselves. This initial division created three land classifications.</p>
+
+  <p>Crown Lands, reserved for the monarch and intended to support the office of the king.<br>
+  Government Lands, held by the kingdom itself to support public administration.<br>
+  Konohiki Lands, granted to the chiefs who had traditionally overseen large land divisions.</p>
+
+  <p>For the first time, these lands were recorded, surveyed, and documented within a Western-style legal framework. Chiefs who had once administered land through status and responsibility now received legal, transferable title to specific tracts.</p>
+
+  <p>The Māhele also included provisions for commoners.</p>
+
+  <p>Through the Kuleana Act of 1850, makaʻāinana were allowed to claim small parcels of land (within the existing three classifications) where they lived and farmed. In theory, this ensured that the people who had long worked the land could retain a portion of it.</p>
+
+  <p>The process proved difficult. Claims required surveys, written petitions, and formal recognition through a legal system that many Hawaiians didn’t understand. Approximately 30,000 acres of kuleana parcels were eventually awarded. Unfortunately, that was out of about 4.1 million acres representing commoner ownership of only about 0.73% of all lands in the kingdom. The vast majority of land remained in the hands of the crown, the government, and the aliʻi.</p>
+
+  <div class="pull">
+    Approximately 30,000 acres of kuleana parcels were eventually awarded. Unfortunately, that was out of about 4.1 million acres representing commoner ownership of only about 0.73% of all lands in the kingdom.
+  </div>
+
+  <p>Another change followed soon after.</p>
+
+  <p>Also in 1850, the Hawaiian Kingdom legalized the sale of land to foreigners.</p>
+
+  <p>What had begun as a reform meant to stabilize Hawaiian sovereignty now opened the door to something new. Land could be bought, transferred, consolidated, and accumulated. This shift was a major catalyst for economic development, especially in agriculture and water infrastructure.</p>
+
+  <div class="figure">
+    <img src="images/stories/ownership-hawaii-map-1.jpg" alt="Survey map of Hawaiʻi Island (1901)">
+    <div class="caption">
+      Survey map of Hawaiʻi Island (1901), illustrating how land was classified and divided following the Māhele.
+      Drawn by John M. Donn. Courtesy of Geographicus Rare Antique Maps, via Wikimedia Commons.
+    </div>
+  </div>
+
+  <p>In certain, rare cases, an entire island could be purchased.</p>
+
+  <p>Most of the islands remained far too large and valuable to pass easily into private hands. Oʻahu, Maui, Moloka‘i, Kaua‘i and Hawaiʻi Island supported large populations and extensive agriculture. Their lands were divided among many chiefs, communities, and government holdings.</p>
+
+  <p>A few islands, however, were different.</p>
+
+  <p>Dry.<br>
+  Sparsely populated.<br>
+  Difficult to cultivate.<br>
+  And far easier to acquire en masse.</p>
+
+  <p><strong>Lānaʻi</strong></p>
+
+  <p>Lānaʻi was never an easy place to live.</p>
+
+  <p>It carried a reputation that set it apart. In Hawaiian moʻolelo, Lānaʻi was once known as a place of spirits, where hostile forces made settlement difficult. The island’s population fluctuated over time, shaped not just by environment, but by conflict.</p>
+
+  <p>One of the most significant events came during the late 18th century. After a defeat at the hands of Kahekili II at the Battle of Kalaeokaʻīlio (near Kaupō, Maui), forces aligned with Kalaniʻōpuʻu (including his nephew, Kamehameha) launched retaliatory raids on Lānaʻi. Many of the island’s inhabitants were killed. Food systems were depleted and agricultural networks destroyed. What remained was an island with limited water, fewer people, and less agricultural potential.</p>
+
+  <p>Records from Captain Cook’s third voyage note that populations were significant on Kauaʻi and Hawaiʻi, but far smaller on Lānaʻi. Captain George Vancouver later noted that he bypassed the island due to the lack of settlements and visible population.</p>
+
+  <p>Geography played the most decisive role.</p>
+
+  <p>Lānaʻi sits in the rain shadow of Maui, leaving much of the island dry and dependent on inconsistent water sources. Large-scale agriculture that could support large populations was difficult to sustain. At its height, the population is estimated to have been around 6,000. By 1838, it had declined to roughly 1,200.</p>
+
+  <div class="figure">
+    <img src="images/stories/ownership-lanai.jpg" alt="Lānaʻi northwest coast">
+    <div class="caption">
+      Lānaʻi (northwest coast), photograph by Bill Abbott (2019), via Wikimedia Commons.
+    </div>
+  </div>
+
+  <p>By the mid-19th century, those conditions made it uniquely vulnerable to consolidation.</p>
+
+  <p>After the Māhele, land on Lānaʻi was gradually assembled into large holdings. The Mormons arrived in the mid-1850s and leased a large tract of land. Not long after, a Mormon leader, Walter Murray Gibson, purchased the vast majority of Lānaʻi using Mormon funds, but registered the land in his own name.</p>
+
+  <p>He was later excommunicated for a variety of reasons, most notably the misuse of church funds. Over the following decades, Gibson consolidated control. By his death in 1888, most of Lānaʻi was in his possession. His heirs inherited roughly 90% of the island, along with a substantial ranching operation that included thousands of sheep, goats, and horses.</p>
+
+  <p>Ownership changed hands several times in the following decades, with ranching operations shifting from sheep to cattle as conditions and markets evolved.</p>
+
+  <p>But Lānaʻi’s defining transformation came in the early 20th century, when James Dole acquired nearly the entire island (from the Baldwin family of Maui) and turned it into the world’s largest pineapple plantation.</p>
+
+  <div class="figure">
+    <img src="images/stories/ownership-lanai-pineapple.jpg" alt="Pineapple fields on Lānaʻi during the plantation era">
+    <div class="caption">
+      Pineapple fields on Lānaʻi during the plantation era. Photograph via Wikimedia Commons.
+    </div>
+  </div>
+
+  <p>Lānaʻi was not just privately owned. It was functionally a company-run island. Developed, built, mapped, and named by a single owner.</p>
+
+  <p>Today, the island has entered another phase. Purchased by Larry Ellison in 2012 (from David Murdock), much of Lānaʻi remains under single ownership, continuing a pattern that began in the decades following the Māhele. The trajectory has shifted again. Today, the island is centered on luxury tourism. A far cry from traditional farming, sheep and cattle ranching, and pineapple. Eras and industries that no longer appealed to the island’s current owner.</p>
+
+  <p>An island shaped by isolation, scarcity, and history became one of the clearest examples of how land reform could change the landscape, the people, everything about an island.</p>
+
+  <p><strong>Niʻihau</strong></p>
+
+  <p>Niʻihau followed a very different path.</p>
+
+  <p>It is dry, isolated, and sits in the rain shadow of Kauaʻi. Fresh water has always been limited. Agriculture was possible, but never on the scale seen on Hawaiʻi Island or Maui. The population peaked around 1853 at roughly 800 people and has gradually declined to about 75 today. The island developed a reputation for its remoteness and isolation.</p>
+
+  <p>Those same characteristics that limited growth would later make Niʻihau uniquely suited for consolidation.</p>
+
+  <p>Niʻihau had fewer competing claims, less agricultural value, and a smaller population than the major islands. It could be transferred almost entirely as a single unit in a way that places like Oʻahu or Maui could not.</p>
+
+  <p>In 1864, King Kamehameha V sold the vast majority of the island (and parts of Kaua‘i) to Elizabeth Sinclair, a Scottish-born plantation owner arriving from New Zealand, for $10,000 in gold.</p>
+
+  <p>The decision reflected both the new legal framework created by the Māhele and Niʻihau’s unique conditions.</p>
+
+  <p>At the time of the agreement, Kamehameha IV is said to have remarked, “Niʻihau is yours… But the day may come when Hawaiians are not as strong in Hawaiʻi as they are now. When that day comes, please do what you can to help them.” (While Kamehameha IV supported the transaction, it was completed under Kamehameha V).</p>
+
+  <p>The island passed to the Robinson family, Sinclair’s descendants, who continue to own Niʻihau today.</p>
+
+  <p>Unlike Lānaʻi, Niʻihau was never transformed into a large-scale plantation economy. Ranching became the primary activity, supplemented by small-scale agriculture and the harvesting of shells.</p>
+
+  <p>But the defining feature of Niʻihau was access, or lack thereof.</p>
+
+  <div class="figure">
+    <img src="images/stories/ownership-niihau.jpg" alt="Niʻihau remains privately owned and largely closed to outside access">
+    <div class="caption">
+      Niʻihau remains privately owned and largely closed to outside access.
+      Niʻihau (aerial view), photograph by Christopher P. Becker (Polihale), 2007, via Wikimedia Commons.
+    </div>
+  </div>
+
+  <p>Access to the island became tightly controlled. For much of its modern history, Niʻihau has been closed to outside visitors, with entry limited to residents, invited guests, and those with permission. The island developed a reputation as the “Forbidden Island,” a place where Hawaiian language and traditions persisted.</p>
+
+  <p>Over time, the Robinson family established strict rules governing life on the island. These reportedly included bans on alcohol and cigarettes, restrictions on speaking to the media, limits on extended absences, and expectations around personal appearance.</p>
+
+  <p>Ownership, in this case, did not lead to large-scale industrial transformation. The Robinson family attempts to honor the request of Kamehameha IV by preserving a way of life.</p>
+
+  <div class="pull">
+    Ownership, in this case, did not lead to large-scale industrial transformation. The Robinson family attempts to honor the request of Kamehameha IV by preserving a way of life.
+  </div>
+
+  <p>It led to something else. Control.</p>
+
+  <p>An island shaped by scarcity and isolation became one of the most enduring examples of private ownership in Hawaiʻi through the restriction of access.</p>
+
+  <p><strong>Kahoʻolawe</strong></p>
+
+  <p>Kahoʻolawe was always the most difficult of the three. Unlike Lānaʻi and Niʻihau, it was never fully privately owned. It was still controlled, managed, leased, and ultimately shaped by decisions made for it as a single unit. The most consequential of those decisions were made by outsiders.</p>
+
+  <p>Smaller, lower in elevation, and sitting in the deep rain shadow of Haleakalā, the island struggled with one problem more than any other: water. Fresh water sources were scarce and unreliable. Without consistent rainfall or streams, large-scale agriculture was never sustainable. The island supported small populations, but its growth was always constrained by its environment.</p>
+
+  <p>Much like Lānaʻi, Kahoʻolawe’s villages were destroyed by Kalaniʻōpuʻu’s forces during the broader conflict with Kahekili II.</p>
+
+  <p>Even before the Māhele, Kahoʻolawe was already being used in ways that reflected its limitations.</p>
+
+  <p>Kamehameha III turned the island into a men’s penal colony in the 1830s. Food and water were so scarce that some prisoners starved, while others attempted to swim to Maui in search of food.</p>
+
+  <p>After the Māhele, Kahoʻolawe remained government land and was leased several times for ranching. Most efforts struggled due to water limitations and poor vegetation.</p>
+
+  <p>From 1918 to 1953, the Territory of Hawaiʻi leased the island to Angus MacPhee and Harry Baldwin. By the 1930s, the operation saw moderate success following aggressive goat culling and the construction of water retention systems.</p>
+
+  <p>During World War II, the United States military took control of the island and began using it as a training ground. Bombing exercises, artillery testing, and live-fire drills became routine. What had already been an environmentally fragile island was transformed into something else entirely.</p>
+
+  <p>A target.</p>
+
+  <div class="figure">
+    <img src="images/stories/ownership-kahoolawe.jpg" alt="Kahoʻolawe during the mid-20th century">
+    <div class="caption">
+      Kahoʻolawe during the mid-20th century, when the island was used for military training and bombing exercises. Hawaii – Kahoolawe Island, U.S. Army Air Forces aerial photograph (Record Group 18), 
+      National Archives and Records Administration, via Wikimedia Commons.
+    </div>
+  </div>
+
+  <p>For decades, the bombing continued. The land was scarred, unexploded ordnance scattered across its surface, and access to the island was almost entirely restricted.</p>
+
+  <p>The use of Kahoʻolawe in this way did not go unchallenged.</p>
+
+  <div class="pull">
+    The use of Kahoʻolawe in this way did not go unchallenged.
+  </div>
+
+  <p>Beginning in the 1970s, a growing movement of Native Hawaiian activists challenged the military’s use of the island. Their efforts reframed Kahoʻolawe not as expendable land, but as a place of cultural and spiritual importance. After years of protest and legal action, the bombing stopped. In 1994, the island was transferred back to the State of Hawaiʻi, to be held in trust for future restoration and eventual return to a sovereign Hawaiian entity.</p>
+
+  <p>Today, Kahoʻolawe remains uninhabited.</p>
+
+  <p>Restoration efforts continue, but the damage, both environmental and cultural, is still visible and extensive.</p>
+
+  <p>An island once limited by nature became one reshaped by deliberate human destruction.</p>
+
+  <p>Owning an island is not as unusual as it once sounded.</p>
+
+  <p>But controlling one, shaping its economy, its people, its access, its landscape, and ultimately its future, is something else entirely.</p>
+
+  <p>In Hawaiʻi, that control took different forms.</p>
+
+  <p>On Lānaʻi, it meant transformation. It was molded into a ranch, then retooled into a plantation, then reimagined again for luxury and exclusivity.</p>
+
+  <p>On Niʻihau, it meant restriction. A closed island where access was limited and a way of life preserved under private, strict authority.</p>
+
+  <p>On Kahoʻolawe, it meant something far more destructive. An island used, damaged, and only later reclaimed through activism and restoration.</p>
+
+  <p>Each followed a different path, but all were made possible by the same shift: a moment when land in Hawaiʻi became something that could be divided, transferred, and consolidated.</p>
+
+  <p>The Great Māhele did not intend to create privately controlled islands.</p>
+
+  <p>But it made them possible.</p>
+
+  <p>And once that possibility existed, geography, economics, and circumstance did the rest.</p>
+
+  <p>Three islands.<br>
+  Three outcomes.<br>
+  And one lingering question.</p>
+
+  <p>Not just how one owns an island.</p>
+
+  <p>But what it means to dominate one.</p>
+
+  <div class="return-links">
+    <a href="stories.html">← Return to Stories</a>
+    <a href="index.html#map">← Return to Map</a>
+  </div>
+</main>
+
+<footer class="footer">
+  <a href="about.html">About</a> |
+  <a href="contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
