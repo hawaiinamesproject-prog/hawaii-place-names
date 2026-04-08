@@ -500,9 +500,13 @@
     [22.45, -154.65]
   ];
 
+  function shouldUseScrollZoom(){
+    return window.innerWidth >= 1024;
+  }
+
   var map = L.map('map', {
     zoomControl: true,
-    scrollWheelZoom: false
+    scrollWheelZoom: shouldUseScrollZoom()
   });
 
   var streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -544,25 +548,28 @@
   });
   map.addControl(new HomeControl());
 
+  function setMapScrollZoom(){
+    if(shouldUseScrollZoom()){
+      map.scrollWheelZoom.enable();
+    } else {
+      map.scrollWheelZoom.disable();
+    }
+  }
+
   function setFullscreen(on){
     var mapEl = document.getElementById('map');
 
     if(on){
       document.body.classList.add('map-fullscreen');
       mapEl.classList.add('is-fullscreen');
-
-      if(window.innerWidth >= 1024){
-        map.scrollWheelZoom.enable();
-      }
-
       setTimeout(function(){ map.invalidateSize(); }, 150);
     } else {
       document.body.classList.remove('map-fullscreen');
       mapEl.classList.remove('is-fullscreen');
-
-      map.scrollWheelZoom.disable();
       setTimeout(function(){ map.invalidateSize(); }, 150);
     }
+
+    setMapScrollZoom();
   }
 
   function isFullscreen(){
@@ -596,11 +603,13 @@
   });
 
   window.addEventListener('resize', function(){
+    setMapScrollZoom();
     if(isFullscreen()){
-      if(window.innerWidth >= 1024) map.scrollWheelZoom.enable();
-      else map.scrollWheelZoom.disable();
+      map.invalidateSize();
     }
   });
+
+  setMapScrollZoom();
 
   (function lockToolbar(){
     var tb = document.getElementById("map-toolbar");
