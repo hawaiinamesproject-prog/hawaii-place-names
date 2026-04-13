@@ -385,6 +385,108 @@
   }
 
   .footer a:hover{ color:#2b6cb0; }
+  .email-popup-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  z-index:20000;
+}
+
+.email-popup-overlay.active{
+  display:flex;
+}
+
+.email-popup{
+  position:relative;
+  width:100%;
+  max-width:460px;
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.22);
+  padding:28px 24px 22px;
+  text-align:center;
+}
+
+.email-popup h3{
+  margin:0 0 10px;
+  font-size:1.5rem;
+}
+
+.email-popup p{
+  margin:0 0 18px;
+  color:#444;
+  line-height:1.55;
+}
+
+.email-popup-form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.email-popup-form input[type="email"]{
+  width:100%;
+  box-sizing:border-box;
+  padding:12px 14px;
+  border:1px solid #ccc;
+  border-radius:10px;
+  font-size:1rem;
+}
+
+.email-popup-form input[type="submit"]{
+  appearance:none;
+  border:1px solid #2b6cb0;
+  background:#2b6cb0;
+  color:#fff;
+  padding:12px 14px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+.email-popup-form input[type="submit"]:hover{
+  background:#245a92;
+  border-color:#245a92;
+}
+
+.email-popup-note{
+  margin-top:12px;
+  font-size:0.9rem;
+  color:#666;
+}
+
+.email-popup-close{
+  position:absolute;
+  top:10px;
+  right:10px;
+  border:0;
+  background:transparent;
+  font-size:1.8rem;
+  line-height:1;
+  cursor:pointer;
+  color:#666;
+  padding:4px 8px;
+}
+
+.email-popup-close:hover{
+  color:#222;
+}
+
+@media (max-width:768px){
+  .email-popup{
+    padding:24px 18px 18px;
+  }
+
+  .email-popup h3{
+    font-size:1.3rem;
+  }
+}
+  
 </style>
 </head>
 
@@ -1395,6 +1497,72 @@
       }
     });
   });
+</script>
+
+  <div class="email-popup-overlay" id="email-popup-overlay" aria-hidden="true">
+  <div class="email-popup" role="dialog" aria-labelledby="email-popup-title" aria-modal="true">
+    <button class="email-popup-close" id="email-popup-close" aria-label="Close email signup popup">×</button>
+
+    <h3 id="email-popup-title">Follow the Hawaiʻi Names Project</h3>
+    <p>Get new place names, stories, and updates as they are added.</p>
+
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/hawaiinamesproject"
+      method="post"
+      class="email-popup-form"
+      target="popupwindow"
+      onsubmit="window.open('https://buttondown.com/hawaiinamesproject', 'popupwindow')"
+    >
+      <input
+        type="email"
+        name="email"
+        id="bd-email-popup"
+        placeholder="Enter your email"
+        required
+      />
+      <input type="submit" value="Sign Up" />
+    </form>
+
+    <div class="email-popup-note">No spam. Just new stories and updates.</div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    var overlay = document.getElementById('email-popup-overlay');
+    var closeBtn = document.getElementById('email-popup-close');
+    var popupSeenKey = 'hnp_email_popup_seen';
+
+    if(!overlay || !closeBtn) return;
+    if(sessionStorage.getItem(popupSeenKey) === 'yes') return;
+
+    function openPopup(){
+      overlay.classList.add('active');
+      overlay.setAttribute('aria-hidden', 'false');
+      sessionStorage.setItem(popupSeenKey, 'yes');
+    }
+
+    function closePopup(){
+      overlay.classList.remove('active');
+      overlay.setAttribute('aria-hidden', 'true');
+    }
+
+    setTimeout(openPopup, 5000);
+
+    closeBtn.addEventListener('click', closePopup);
+
+    overlay.addEventListener('click', function(e){
+      if(e.target === overlay){
+        closePopup();
+      }
+    });
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && overlay.classList.contains('active')){
+        closePopup();
+      }
+    });
+  })();
 </script>
 
 </body>
