@@ -388,16 +388,22 @@
   .email-popup-overlay{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.45);
-  display:none;
+  background:rgba(0,0,0,0.0);
+  display:flex;
   align-items:center;
   justify-content:center;
   padding:20px;
   z-index:20000;
+
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.35s ease, background 0.35s ease;
 }
 
 .email-popup-overlay.active{
-  display:flex;
+  opacity:1;
+  pointer-events:auto;
+  background:rgba(0,0,0,0.45);
 }
 
 .email-popup{
@@ -409,6 +415,15 @@
   box-shadow:0 10px 30px rgba(0,0,0,0.22);
   padding:28px 24px 22px;
   text-align:center;
+
+  transform:translateY(12px);
+  opacity:0;
+  transition:transform 0.35s ease, opacity 0.35s ease;
+}
+
+.email-popup-overlay.active .email-popup{
+  transform:translateY(0);
+  opacity:1;
 }
 
 .email-popup h3{
