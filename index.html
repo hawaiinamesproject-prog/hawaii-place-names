@@ -545,8 +545,8 @@
   <div id="map" class="map"></div>
 
   <div class="map-toolbar" id="map-toolbar">
-    <label class="label"><input type="checkbox" id="filter-pwl"> Places We Lost</label>
-    <button class="btn" type="button" id="random-pin">Random Pin</button>
+    <label class="label"><input type="checkbox" id="filter-pwl" checked> Places We Lost</label>
+    <button class="btn" type="button" id="random-pin">Holo Holo (Explore)</button>
   </div>
 </div>
 
@@ -1426,16 +1426,17 @@
     }
   });
 
-  // DEFAULT: show regular pins only
-  map.addLayer(regularClusters);
+ // DEFAULT: show regular pins and PWL pins
+map.addLayer(regularClusters);
+map.addLayer(pwlClusters);
 
-  function setPWLVisible(visible){
-    if(visible){
-      if(!map.hasLayer(pwlClusters)) map.addLayer(pwlClusters);
-    } else {
-      if(map.hasLayer(pwlClusters)) map.removeLayer(pwlClusters);
-    }
+function setPWLVisible(visible){
+  if(visible){
+    if(!map.hasLayer(pwlClusters)) map.addLayer(pwlClusters);
+  } else {
+    if(map.hasLayer(pwlClusters)) map.removeLayer(pwlClusters);
   }
+}
 
   // Random pin must only consider what’s visible
   function getActiveMarkerList(){
