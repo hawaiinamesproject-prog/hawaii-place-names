@@ -635,15 +635,25 @@
     { attribution: 'Tiles &copy; Esri' }
   );
 
-  streets.addTo(map);
+streets.addTo(map);
 
-  L.control.layers(
-    { "Streets": streets, "Satellite": satellite },
-    null,
-    { position: "topright" }
-  ).addTo(map);
+L.control.layers(
+  { "Streets": streets, "Satellite": satellite },
+  null,
+  { position: "topright" }
+).addTo(map);
 
+// URL-driven map view for pin pages
+const params = new URLSearchParams(window.location.search);
+const lat = parseFloat(params.get("lat"));
+const lng = parseFloat(params.get("lng"));
+const zoom = parseInt(params.get("zoom"), 10);
+
+if (!isNaN(lat) && !isNaN(lng)) {
+  map.setView([lat, lng], !isNaN(zoom) ? zoom : 15);
+} else {
   map.fitBounds(HOME_BOUNDS, { padding: [10, 10] });
+}
 
   var HomeControl = L.Control.extend({
     options: { position: 'topleft' },
