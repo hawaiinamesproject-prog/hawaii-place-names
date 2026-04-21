@@ -112,45 +112,55 @@
     .hamburger{ display:block; }
   }
 
+ .hero-banner{
+  width:100%;
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:10px 0 6px;
+}
+
+.hero-banner img{
+  width:320px;
+  max-width:72%;
+  height:auto;
+}
+
+  .tagline{
+  text-align:center;
+  padding:6px 20px 8px;
+  font-size:1rem;
+  background:white;
+}
+
+.tagline p{
+  margin:0;
+  line-height:1.3;
+}
+
+@media (max-width:768px){
+  .tagline{
+    padding:4px 16px 6px;
+    font-size:0.95rem;
+  }
+}
+  @media (max-width:768px){
   .hero-banner{
-    width:100%;
-    background:white;
-    display:flex;
-    justify-content:center;
-    padding:18px 0;
+    padding:8px 0 4px;
   }
 
   .hero-banner img{
-    width:420px;
-    max-width:88%;
-    height:auto;
+    width:280px;
+    max-width:70%;
   }
-
-  .tagline{
-    text-align:center;
-    padding:14px 20px;
-    font-size:1.15rem;
-    background:white;
-  }
-
-  .tagline p{
-    margin:0;
-    line-height:1.35;
-  }
-
-  @media (max-width:768px){
-    .tagline{
-      padding:10px 18px;
-      font-size:1.03rem;
-    }
-  }
+}
 
   .map-wrap{
     position:relative;
   }
 
   .map{
-    height:500px;
+    height:440px;
     width:100%;
   }
 
@@ -169,24 +179,24 @@
   body.map-fullscreen{ overflow:hidden; }
 
   .map-toolbar{
-    position:absolute;
-    left:12px;
-    bottom:12px;
-    right:auto;
-    width:auto;
-    display:inline-flex;
-    gap:10px;
-    justify-content:flex-start;
-    align-items:center;
-    flex-wrap:nowrap;
-    padding:8px 10px;
-    background:rgba(255,255,255,0.92);
-    border:1px solid rgba(0,0,0,0.10);
-    border-radius:12px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.12);
-    z-index:600;
-    backdrop-filter: blur(6px);
-  }
+  position:absolute;
+  left:12px;
+  bottom:12px;
+  right:auto;
+  width:auto;
+  display:inline-flex;
+  gap:10px;
+  justify-content:flex-start;
+  align-items:center;
+  flex-wrap:wrap;
+  padding:8px 10px;
+  background:rgba(255,255,255,0.92);
+  border:1px solid rgba(0,0,0,0.10);
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
+  z-index:600;
+  backdrop-filter: blur(6px);
+}
 
   body.map-fullscreen .map-toolbar{
     position:fixed;
@@ -195,15 +205,36 @@
     z-index:10001;
   }
 
-  .map-toolbar .label{
-    margin:0;
-    font-weight:700;
-    display:flex;
-    gap:8px;
-    align-items:center;
-    white-space:nowrap;
-    font-size:0.95rem;
-  }
+  .map-legend{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  font-size:0.9rem;
+  color:#333;
+  white-space:nowrap;
+}
+
+.legend-item{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.legend-dot{
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  display:inline-block;
+}
+
+.legend-dot.blue{
+  background:#2b6cb0;
+}
+
+.legend-dot.black{
+  background:#111111;
+}
+  
 
   .btn{
     appearance:none;
@@ -308,10 +339,10 @@
   .cluster-pin.pwl .tip{ border-top-color:#111; }
 
   .section{
-    padding:60px 20px;
-    max-width:1200px;
-    margin:auto;
-  }
+  padding:38px 20px;
+  max-width:1200px;
+  margin:auto;
+}
 
   .section h2{
     text-align:center;
@@ -319,13 +350,13 @@
   }
 
   .section-sub{
-    text-align:center;
-    margin:0 auto 34px;
-    max-width:780px;
-    color:#555;
-    line-height:1.5;
-    font-size:1.02rem;
-  }
+  text-align:center;
+  margin:0 auto 22px;
+  max-width:780px;
+  color:#555;
+  line-height:1.45;
+  font-size:1rem;
+}
 
   .grid{
     display:grid;
@@ -501,6 +532,17 @@
     font-size:1.3rem;
   }
 }
+
+@media (max-width:768px){
+  .map-legend{
+    font-size:0.8rem;
+    gap:8px;
+  }
+
+  .legend-item{
+    gap:4px;
+  }
+}
   
 </style>
 </head>
@@ -545,9 +587,14 @@
   <div id="map" class="map"></div>
 
   <div class="map-toolbar" id="map-toolbar">
-    <label class="label"><input type="checkbox" id="filter-pwl" checked> Places We Lost</label>
-    <button class="btn" type="button" id="random-pin">Holo Holo (Explore)</button>
+
+  <div class="map-legend">
+    <span class="legend-item"><span class="legend-dot blue"></span> Place Names</span>
+    <span class="legend-item"><span class="legend-dot black"></span> Lost Places</span>
   </div>
+
+   <button class="btn" type="button" id="random-pin">Holo Holo (Explore)</button>
+</div>
 </div>
 
 <div class="section section-pwl">
