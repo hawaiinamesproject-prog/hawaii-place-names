@@ -167,12 +167,6 @@
   @media (min-width:1024px){
     .map{ height:680px; }
   }
-  
-  @media (min-width:1024px){
-  .map-toolbar{
-    bottom:40px;
-  }
-}
 
   #map.is-fullscreen{
     position:fixed !important;
@@ -184,7 +178,7 @@
 
   body.map-fullscreen{ overflow:hidden; }
 
-  .map-toolbar{
+ .map-toolbar{
   position:absolute;
   left:12px;
   bottom:8px;
@@ -202,6 +196,12 @@
   box-shadow:0 6px 18px rgba(0,0,0,0.12);
   z-index:600;
   backdrop-filter: blur(6px);
+}
+
+@media (min-width:1024px){
+  .map-toolbar{
+    bottom:40px;
+  }
 }
 
   body.map-fullscreen .map-toolbar{
