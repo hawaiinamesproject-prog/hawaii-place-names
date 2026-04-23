@@ -845,7 +845,7 @@ if (!isNaN(lat) && !isNaN(lng)) {
   }
 
  const regularClusters = L.markerClusterGroup({
-  pane: 'placePane',
+  clusterPane: 'placePane',
     showCoverageOnHover: false,
     spiderfyOnMaxZoom: true,
     maxClusterRadius: 48,
@@ -854,7 +854,7 @@ if (!isNaN(lat) && !isNaN(lng)) {
   });
 
   const pwlClusters = L.markerClusterGroup({
-  pane: 'pwlPane',
+  clusterPane: 'pwlPane'
     showCoverageOnHover: false,
     spiderfyOnMaxZoom: true,
     maxClusterRadius: 48,
