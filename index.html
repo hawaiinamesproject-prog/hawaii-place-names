@@ -844,18 +844,22 @@ if (!isNaN(lat) && !isNaN(lng)) {
     };
   }
 
-  const regularClusters = L.markerClusterGroup({
+ const regularClusters = L.markerClusterGroup({
+  pane: 'placePane',
     showCoverageOnHover: false,
     spiderfyOnMaxZoom: true,
     maxClusterRadius: 48,
-    iconCreateFunction: clusterIconCreateFunction("")
+    iconCreateFunction: clusterIconCreateFunction(""),
+   disableClusteringAtZoom: 10,
   });
 
   const pwlClusters = L.markerClusterGroup({
+  pane: 'pwlPane',
     showCoverageOnHover: false,
     spiderfyOnMaxZoom: true,
     maxClusterRadius: 48,
-    iconCreateFunction: clusterIconCreateFunction("pwl")
+    iconCreateFunction: clusterIconCreateFunction("pwl"),
+    disableClusteringAtZoom: 10,
   });
 
   function escapeHTML(str){
