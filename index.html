@@ -849,21 +849,23 @@ if (!isNaN(lat) && !isNaN(lng)) {
 
  const regularClusters = L.markerClusterGroup({
   clusterPane: 'placePane',
-    showCoverageOnHover: false,
-    spiderfyOnMaxZoom: true,
-    maxClusterRadius: 40,
-    iconCreateFunction: clusterIconCreateFunction(""),
-   disableClusteringAtZoom: 10,
-  });
+  showCoverageOnHover: false,
+  spiderfyOnMaxZoom: false,
+  zoomToBoundsOnClick: true,
+  maxClusterRadius: 40,
+  iconCreateFunction: clusterIconCreateFunction(""),
+  disableClusteringAtZoom: 10
+});
 
-  const pwlClusters = L.markerClusterGroup({
+const pwlClusters = L.markerClusterGroup({
   clusterPane: 'pwlPane',
-    showCoverageOnHover: false,
-    spiderfyOnMaxZoom: true,
-    maxClusterRadius: 40,
-    iconCreateFunction: clusterIconCreateFunction("pwl"),
-    disableClusteringAtZoom: 10,
-  });
+  showCoverageOnHover: false,
+  spiderfyOnMaxZoom: false,
+  zoomToBoundsOnClick: true,
+  maxClusterRadius: 40,
+  iconCreateFunction: clusterIconCreateFunction("pwl"),
+  disableClusteringAtZoom: 10
+});
 
   function escapeHTML(str){
     return String(str || "")
