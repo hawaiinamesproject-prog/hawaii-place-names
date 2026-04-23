@@ -678,6 +678,11 @@
     zoomControl: true,
     scrollWheelZoom: shouldUseScrollZoom()
   });
+  map.createPane('pwlPane');
+map.getPane('pwlPane').style.zIndex = 400;
+
+map.createPane('placePane');
+map.getPane('placePane').style.zIndex = 500;
 
   var streets = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
@@ -1570,7 +1575,10 @@ if (!isNaN(lat) && !isNaN(lng)) {
     if(!p || !p.coords) return;
 
     var isPWL = (String(p.type || "").toUpperCase() === "PWL");
-    var marker = L.marker(p.coords, { icon: isPWL ? iconBlack : iconBlue });
+    var marker = L.marker(p.coords, { 
+  icon: isPWL ? iconBlack : iconBlue,
+  pane: isPWL ? 'pwlPane' : 'placePane'
+});
 
     marker.bindPopup(popupHTML(p), { autoPan: true, closeButton: true });
 
