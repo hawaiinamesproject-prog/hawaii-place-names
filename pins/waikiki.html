@@ -10,18 +10,245 @@
 <link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
 
-<meta name="description" content="Learn about Waikīkī, Oʻahu — a place once defined by freshwater springs and wetlands, now transformed into one of Hawaiʻi’s most recognized shorelines.">
+<meta name="description" content="Learn about Waikīkī on Oʻahu, a place once defined by freshwater springs and wetlands, later transformed into one of Hawaiʻi’s most recognized shorelines.">
 
-<!-- Google tag -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-41NCGZLGNJ');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
 </script>
 
-<link rel="stylesheet" href="../styles.css">
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:560px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
 </head>
 
 <body>
@@ -37,7 +264,7 @@ gtag('config', 'G-41NCGZLGNJ');
       <a href="../stories.html">Stories</a>
     </div>
 
-    <label class="hamburger" for="nav-toggle">
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
       <span></span>
       <span></span>
       <span></span>
@@ -64,28 +291,27 @@ gtag('config', 'G-41NCGZLGNJ');
 <div class="quick-facts">
   <p><strong>Place:</strong> Waikīkī, Oʻahu</p>
   <p><strong>Type:</strong> Shoreline / neighborhood / cultural landscape</p>
-  <p><strong>Story it tells:</strong> A place transformed from wetlands and freshwater springs into one of Hawaiʻi’s most recognizable shorelines.</p>
+  <p><strong>Story it tells:</strong> A place transformed from freshwater wetlands into one of Hawaiʻi’s most recognized shorelines.</p>
 </div>
 
-<div class="figure">
-  <img src="../images/pins/waikiki.jpg" alt="Waikiki Beach with Diamond Head in the distance.">
-  <div class="caption">
-    Waikīkī Beach, March 2, 2024, looking toward Diamond Head. Photo by Frank Schulenburg (CC BY-SA 4.0).
+  <div class="figure">
+    <img src="../images/pins/waikiki.jpg" alt="Waikīkī Beach, March 2, 2024, looking toward Diamond Head.">
+    <div class="caption">
+      Waikīkī Beach, March 2, 2024, looking toward Diamond Head. Photo by Frank Schulenburg (CC BY-SA 4.0).
+    </div>
   </div>
-</div>
 
-<p>Waikīkī means “spouting fresh water,” referring to the springs and streams that once fed wetlands between the shoreline and inland Honolulu. Before it became a resort district, Waikīkī was a place of water—fishponds, loʻi kalo, and royal recreation, including surfing.</p>
+ <p>Waikīkī means “spouting fresh water,” referring to the springs and streams that once fed wetlands between the shoreline and inland Honolulu. Before it became a resort district, Waikīkī was a place of water—fishponds, loʻi kalo, and royal recreation, including surfing. </p>
 
-<p>In the late 1800s and early 1900s, Waikīkī began to change. Wetlands were drained, most notably through the construction of the Ala Wai Canal between 1921 and 1928. What had been a landscape shaped by freshwater flow was gradually remade for development.</p>
+<p>In the late 1800s and early 1900s, Waikīkī began to change. Wetlands were drained, most notably through the construction of the Ala Wai Canal between 1921 and 1928. What had been a landscape shaped by freshwater flow was gradually remade for development. </p>
 
-<p>Hotels, seawalls, and imported sand altered the shoreline. Much of Waikīkī Beach today is engineered, maintained through ongoing restoration projects that preserve the wide sandy shore visitors now associate with the area.</p>
+<p>Hotels, seawalls, and imported sand altered the shoreline. Much of Waikīkī Beach today is engineered, maintained through ongoing restoration projects that preserve the wide sandy shore visitors now associate with the area. </p>
 
-<p>Despite these changes, Waikīkī has long been a place of gathering and recreation. It served as an early center of the Hawaiian Kingdom, and later became central to the global spread of surfing through figures like Olympic gold medalist and ambassador of aloha Duke Kahanamoku.</p>
+<p>Despite these changes, Waikīkī has long been a place of gathering and recreation. It served as an early center of the Hawaiian Kingdom, and later became central to the global spread of surfing through figures like Olympic gold medalist and ambassador of aloha Duke Kahanamoku. </p>
 
-<p>The name Waikīkī preserves what the landscape once was: not just a beach, but a place defined by freshwater flowing toward the sea.</p>
-
-<div class="return-links">
-  <a href="../index.html?lat=21.27664&lng=-157.82723&zoom=14">← Return to Map</a>
+<p>The name Waikīkī preserves what the landscape once was: not just a beach, but a place defined by freshwater flowing toward the sea. </p>  
+  <div class="return-links">
+<a href="../index.html?lat=21.2772&lng=-157.8264&zoom=15">← Return to Map</a>
   <a href="../index.html#map">← Explore More Places</a>
 </div>
 
