@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Makapuʻu Point | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Learn about Makapuʻu Point on Oʻahu, the island's easternmost headland. The name Makapuʻu, meaning 'bulging eyes,' is tied to a traditional stone associated with a legendary woman and today extends to the lighthouse, beach, and surrounding coastal landscape.">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:560px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+<main class="profile">
+
+<h1>Makapuʻu Point</h1>
+<div class="island">Oʻahu</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Makapuʻu Point, East Oʻahu</p>
+  <p><strong>Type:</strong> Coastal headland / scenic landmark / historic landscape</p>
+  <p><strong>Story it tells:</strong> Oʻahu's easternmost point, preserving a name tied to a legendary figure, a vanished stone, and one of Hawaiʻi's most recognizable coastal views.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/makapuu-point.jpg" alt="Makapuʻu Point and lighthouse on Oʻahu's southeastern coast.">
+  <div class="caption">
+    Makapuʻu Point and lighthouse on Oʻahu's southeastern coast. Photo by Daniel Ramirez, licensed under CC BY 2.0 via Wikimedia Commons.
+  </div>
+</div>
+
+<p>Makapuʻu Point marks the easternmost point of Oʻahu and is one of the island's most recognizable coastal landmarks. The name <em>Makapuʻu</em> is commonly translated as "bulging eyes." Traditional accounts describe a stone at the point with eye-like protrusions that was associated with a legendary woman named Makapuʻu. The stone was regarded as a <em>kinolau</em>, or physical manifestation, of this figure, though it is no longer present.</p>
+
+<p>The headland forms part of Oʻahu's rugged Kaʻiwi coastline, where steep sea cliffs rise above the Kaʻiwi Channel. Makapuʻu is a remnant of an ancient volcanic ridge and provides sweeping views of the island's southeastern shore, nearby offshore islets, and, on clear days, the islands of Molokaʻi and Lānaʻi.</p>
+
+<p>In 1909, Makapuʻu Point became home to the Makapuʻu Lighthouse, built after years of concern about maritime navigation along Oʻahu's eastern coast. The active lighthouse stands 46 feet tall and contains one of the largest hyper-radiant Fresnel lenses ever installed in the United States. Together, the lighthouse and headland became enduring symbols of East Oʻahu.</p>
+
+<p>The area also contains important cultural and natural sites. Below the cliffs, Makapuʻu Beach became known for powerful waves and bodyboarding, while nearby Kū Heiau preserves connections to the region's Hawaiian past. During World War II, military installations were constructed along portions of the coastline, remnants of which can still be seen today.</p>
+
+<p>Today, Makapuʻu Point is one of Oʻahu's most visited scenic destinations. The paved lighthouse trail attracts hikers, whale watchers, and photographers, while the name Makapuʻu continues to identify the point, beach, lighthouse, surf breaks, and surrounding coastal landscape. Although the original stone associated with the name has disappeared, the place name remains one of the most enduring on Oʻahu's southeastern shore.</p>
+
+<p><a href="sandy-beach.html">Related: Sandy Beach →</a></p>
+
+<p><a href="hawaii-kai.html">Related: Hawaiʻi Kai →</a></p>
+  
+<div class="return-links">
+  <a href="../index.html?lat=21.30923&lng=-157.65061&zoom=15">← Return to Map</a>
+  <a href="../index.html#map">← Explore More Places</a>
+</div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
