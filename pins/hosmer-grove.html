@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hosmer Grove | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Learn about Hosmer Grove on Maui, an experimental forest named for Territorial Forester Ralph Hosmer, where introduced trees, native ecosystems, and rare Hawaiian honeycreepers meet on the slopes of Haleakalā.">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:560px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+<h1>Hosmer Grove</h1>
+<div class="island">Maui — Haleakalā National Park</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Hosmer Grove, Haleakalā National Park, Maui</p>
+  <p><strong>Type:</strong> Experimental forest / birdwatching site / hiking area</p>
+  <p><strong>Story it tells:</strong> A forestry experiment that transformed part of Haleakalā's slopes and now serves as a meeting point between introduced forests and native Hawaiian ecosystems.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/hosmer-grove.jpg" alt="ʻIʻiwi at Hosmer Grove in Haleakalā National Park on Maui.">
+  <div class="caption">
+    ʻIʻiwi at Hosmer Grove in Haleakalā National Park. Photo by Kanalu Chock, licensed under CC BY 2.0 via Wikimedia Commons.
+  </div>
+</div>
+
+<p>Hosmer Grove is a small forest and campground located near the summit district of <a href="haleakala.html">Haleakalā</a> National Park. The grove is named for Ralph Hosmer, Hawaiʻi's first Territorial Forester, who sought to determine whether introduced trees could support a future timber industry in the islands.</p>
+
+<p>Beginning in 1909, Hosmer imported and planted dozens of tree species from around the world, including pines, cedars, spruce, and eucalyptus. Of the 86 species introduced, only about 20 survived long term. Some were unable to adapt to Haleakalā's climate and soils, while others were damaged by storms or failed to reproduce successfully.</p>
+
+<p>A few species proved remarkably successful. Monterey pine, Mexican weeping pine, eucalyptus, and other introduced trees spread beyond the original planting area and are now considered threats to native ecosystems within the national park. As a result, Hosmer Grove has become an unusual place where visitors can observe both the successes and unintended consequences of Hawaiʻi's early forestry experiments.</p>
+
+<p>The grove is also one of the best birdwatching locations on Maui. Native honeycreepers such as the ʻiʻiwi, ʻapapane, Hawaiʻi ʻamakihi, and Maui alauahio are regularly seen among the trees. Their presence highlights the importance of Haleakalā's remaining native habitats and watersheds.</p>
+
+<p>A short interpretive trail leads visitors from the introduced forest into native Hawaiian shrubland, creating a striking contrast between landscapes shaped by human intervention and those that more closely resemble the mountain's historic ecology. Along the route, visitors can see ʻōhiʻa, koa, and other native species that once covered much of the mountain.</p>
+
+<p>Today, Hosmer Grove serves as both a recreational area and a living lesson in conservation. The grove preserves the legacy of Ralph Hosmer's forestry experiment while illustrating the ongoing effort to protect and restore Haleakalā's native ecosystems.</p>
+
+<p><a href="polipoli.html">Related: Polipoli Spring State Recreation Area →</a></p>
+
+<div class="return-links">
+  <a href="../index.html?lat=20.7645&lng=-156.2457&zoom=15">← Return to Map</a>
+  <a href="../index.html#map">← Explore More Places</a>
+</div>
+
+</main>
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
