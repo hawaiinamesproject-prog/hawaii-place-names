@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halemauʻu Trail | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Learn about Halemauʻu Trail in Haleakalā National Park, a historic route named for a traditional grass house that once guided travelers into Koʻolau Gap and across the crater of Haleakalā.">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:560px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+<h1>Halemauʻu Trail</h1>
+<div class="island">Maui — Haleakalā National Park</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Halemauʻu Trail, Haleakalā National Park, Maui</p>
+  <p><strong>Type:</strong> Historic trail / wilderness route / cultural landscape</p>
+  <p><strong>Story it tells:</strong> A trail named for a long-vanished grass house that once served as a landmark, shelter, and gateway into the crater of Haleakalā.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/halemauu-trail.jpg" alt="Hikers on Halemauʻu Trail near Koʻolau Gap in Haleakalā National Park.">
+  <div class="caption">
+    Halemauʻu Trail climbing through the cliffs of Koʻolau Gap. Photo by Forest and Kim Starr, licensed under CC BY 3.0 via Wikimedia Commons.
+  </div>
+</div>
+
+<p>Halemauʻu Trail is one of the primary routes into <a href="haleakala.html">Haleakalā</a> Crater, descending through the dramatic northern wall of the volcano via Koʻolau Gap. The trail is best known for its steep cliffside switchbacks, which zigzag across sheer basalt slopes before reaching the crater floor below.</p>
+
+<p>The name <em>Halemauʻu</em> means “grass house.” Centuries ago, a traditional thatched shelter stood near the original entrance to the trail on the crater rim. Travelers crossing the mountain used the structure as a place to rest, seek shelter from sudden storms, and locate the correct route into the crater. Over time, the pathway became known simply as the trail by the <em>hale mauʻu</em>, preserving the memory of a landmark that disappeared long before the modern trail was built.</p>
+
+<p>Before the arrival of automobiles and modern roads, Native Hawaiians used this route to travel across Haleakalā for cultural, religious, and practical purposes. The trail provided access to the crater interior, resource gathering areas, and communities connected by mountain footpaths. The grass house itself likely served generations of travelers navigating the difficult terrain and unpredictable weather.</p>
+
+<p>The route also played a role during Maui's ranching era. Paniolo and cattle drives crossed portions of the crater while moving livestock between different parts of the island. Rather than traveling around the base of the volcano, ranchers often used Haleakalā's interior as a shortcut, making trails such as Halemauʻu and <a href="keoneheehee-trail.html">Keoneheʻeheʻe Trail</a> important paths to save time.</p>
+
+<p>Much of the modern trail was engineered by the Civilian Conservation Corps during the 1930s. Workers carved the switchbacks directly into the cliffs of Koʻolau Gap using hand tools and constructed extensive dry-stone retaining walls to stabilize the route. Many of those original walls remain visible today. The trail's steep grades, exposure, and frequent fog make it a memorable hiking experience with beautiful views into the vast crater below.</p>
+
+<p>Near the bottom of the switchbacks, hikers reach the crater floor and continue towards <a href="holua-cabin.html">Hōlua Cabin</a>, <a href="silversword-loop.html">Silversword Loop</a>, and <a href="paliku-cabin.html">Palikū Cabin</a>.</p>
+
+<p>Today, Halemauʻu Trail remains both a scenic wilderness route and a reminder of an earlier landmark. Although the grass house itself has vanished, its name continues to guide travelers into the crater just as it did generations ago.</p>
+
+<div class="return-links">
+  <a href="../index.html?lat=20.753000&lng=-156.213071&zoom=15">← Return to Map</a>
+  <a href="../index.html#map">← Explore More Places</a>
+</div>
+
+</main>
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
