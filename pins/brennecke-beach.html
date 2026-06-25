@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brennecke Beach | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Learn about Brennecke Beach on Kauaʻi, named for plantation physician Dr. Marvin Brennecke, whose beachfront property became part of Poʻipū Beach Park and one of Hawaiʻi's most famous bodyboarding breaks.">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>  
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+
+<h1>Brennecke Beach</h1> 
+<div class="island">Kauaʻi — Poʻipū</div> 
+  
+<div class="quick-facts"> 
+  <p><strong>Place:</strong> Brennecke Beach, Poʻipū, Kauaʻi</p> 
+  <p><strong>Type:</strong> Beach / public park / surfing landmark</p> 
+  <p><strong>Story it tells:</strong> A beach named for plantation physician Dr. Marvin Brennecke, whose former oceanfront home became part of Poʻipū Beach Park and later one of Hawaiʻi's premier bodyboarding destinations.</p> 
+</div> 
+  
+<div class="figure"> 
+  <img src="../images/pins/brennecke-beach.jpg" alt="Brennecke Beach in Poʻipū on Kauaʻi."> 
+  <div class="caption"> 
+    Brennecke Beach in Poʻipū, Kauaʻi. Photo by author. 
+  </div> 
+</div> 
+  
+<p>Brennecke Beach is one of Kauaʻi's best-known south shore beaches, recognized for its powerful shorebreak, clear water, and close connection to bodyboarding. The beach is named after Dr. Marvin Brennecke, a Missouri-trained physician who spent more than four decades serving Kauaʻi's plantation communities.</p> 
+  
+<p>Dr. Brennecke graduated from Washington University School of Medicine in St. Louis in 1930 before moving to Kauaʻi the next year. He initially served as an assistant plantation physician before becoming the doctor for several of the island's major sugar operations, including McBryde, Kōloa, Waimea, Kekaha, and others. During an era when plantation doctors cared for entire workforces and their families, Brennecke became a familiar figure across western and southern Kauaʻi.</p> 
+  
+<p>In 1934 he purchased an oceanfront parcel near Poʻipū from then sheriff deputy Anthony Vidinha (who would later become Kauaʻi mayor) and built a beach cottage two years later. A major renovation and protective seawall were completed on the morning of December 7, 1941, only hours before news of the attack on Pearl Harbor reached Kauaʻi.</p> 
+  
+<p>Like many shoreline homes of its era, Brennecke's cottage was protected by a vertical masonry seawall built at the edge of the beach. At the time, hard seawalls were considered the best defense against erosion. Decades later, engineers would learn that such walls often accelerated beach loss.</p> 
+  
+<p>Everything changed when Hurricane ʻIwa struck Kauaʻi on November 23, 1982. The storm completely destroyed the Brennecke home. Instead of rebuilding, Dr. Brennecke chose a different legacy. Having no children, he donated the property to his alma mater, Washington University, with the understanding that it would eventually be sold to the County of Kauaʻi for public use. The county completed the purchase in 1991, incorporating the property into the expanding Poʻipū Beach Park. The proceeds also established the Marvin Brennecke Professorship in Biological Chemistry at Washington University, allowing the land to benefit both medical research and the public.</p> 
+  
+<p>The shoreline continued to evolve. By the late 1990s, heavy surf had destroyed the old seawall. The county replaced it with a sloped boulder revetment that dissipated wave energy instead of reflecting it. The redesign helped stabilize the shoreline and encouraged the gradual recovery of the beach's shallow sandbar.</p> 
+  
+<p>Meanwhile, Brennecke Beach earned an entirely different reputation. During the 1970s and 1980s it became one of the proving grounds for bodyboarding, attracting pioneers including Mike Stewart, Ben Severson, and Jack "The Ripper" Lindholm. Because the cove is compact and wave riders often launch directly from the shorebreak, traditional hard surfboards have long been prohibited, leaving the break almost exclusively for bodyboarders and bodysurfers.</p> 
+  
+<p>Today, Brennecke Beach reflects several chapters of Kauaʻi's history at once. It recalls the plantation era through the physician whose name it bears, demonstrates changing approaches to coastal engineering and shoreline management, and remains one of Hawaiʻi's iconic bodyboarding beaches, where a private family property became a public place enjoyed by generations of residents and visitors.</p> 
+  
+  <div class="return-links"> 
+    <a href="../index.html?lat=21.87305&lng=-159.45113&zoom=16">← Return to Map</a> 
+    <a href="../index.html#map">← Explore More Places</a> 
+  </div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
