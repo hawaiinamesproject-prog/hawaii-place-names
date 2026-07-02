@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kīlauea Lighthouse | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Learn about Kīlauea Lighthouse on Kauaʻi, the 1913 beacon that guided Pacific shipping, survived World War II blackouts, and today overlooks the Daniel K. Inouye Kīlauea Point National Wildlife Refuge.">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>  
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+
+<h1>Kīlauea Lighthouse</h1>
+<div class="island">Kauaʻi — Kīlauea Point</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Kīlauea Lighthouse, Kīlauea Point, Kauaʻi</p>
+  <p><strong>Type:</strong> Lighthouse / historic landmark / wildlife refuge</p>
+  <p><strong>Story it tells:</strong> A lighthouse built to protect Pacific shipping that later became a symbol of conservation, connecting Hawaiʻi's maritime history, World War II, and one of the islands' most important seabird sanctuaries.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/kilauea-lighthouse.jpg" alt="Kīlauea Lighthouse overlooking the cliffs of Kīlauea Point on Kauaʻi.">
+  <div class="caption">
+    Kīlauea Lighthouse and Kīlauea Point on Kauaʻi. Photograph by Ron Cogswell, licensed under Creative Commons Attribution 2.0.
+  </div>
+</div>
+
+<p>Kīlauea Lighthouse stands atop Kīlauea Point at the northernmost tip of Kauaʻi. Completed in 1913 as the Kīlauea Point Light Station, it was built to guide ships safely around the rugged coastline during an era when interisland commerce and Pacific shipping were rapidly expanding. The lighthouse takes its name from the surrounding ahupuaʻa of Kīlauea, generally translated as "much spreading" or "spewing." While the name is most famously associated with the active volcano on Hawaiʻi Island, on Kauaʻi it likely refers to the broad volcanic landscape and dramatic cliffs that rise above the ocean.</p>
+
+<p>The federal government purchased the thirty-one-acre peninsula from the Kīlauea Sugar Plantation Company in 1909 for the token price of one dollar before Congress appropriated $75,000 to construct the station. Building on the isolated point presented extraordinary challenges. With no roads reaching the site, every load of cement, lumber, iron, and machinery arrived aboard the lighthouse tender <em>Kukui</em>. Because ships could not land directly on the rocky shoreline, workers erected a massive boom derrick nearly ninety feet above the surf to lift supplies from boats below before hauling them inland on a narrow-gauge railway. The 52-foot light tower itself was built of reinforced concrete, then considered a cutting-edge construction technique.</p>
+
+<p>The station's most remarkable feature was its massive four-ton third-order Fresnel lens manufactured in Paris. Capable of projecting a beam roughly twenty-two miles out to sea (some claimed up to ninety miles when viewed from the air), the lens became one of the most powerful navigational aids in the Hawaiian Islands. When the intricate glass apparatus arrived, however, the instructions were in French, requiring an engineer to travel from Honolulu by steamship and horseback to translate and oversee its installation.</p>
+
+<p>The lighthouse functioned as a small self-contained community. Three keeper's houses built from local blue volcanic stone stood beside the tower, where lighthouse keepers and their families lived year-round. Every three and a half hours, day and night, the keepers manually wound the weight-driven clockwork mechanism that slowly rotated the four-ton lens on a bed of liquid mercury. Samuel Apollo Amalu, the station's longest-serving keeper, later remarked that lighthouse keepers had to be mechanics, engineers, carpenters, painters, gardeners, and problem-solvers, maintaining every aspect of the isolated station without outside assistance.</p>
+
+<p>Life at Kīlauea Point changed dramatically following the attack on Pearl Harbor. On December 7, 1941, the official station log recorded that "Condition One is in order… Kilauea Point light blacked out." Extinguishing the beacon prevented enemy ships and submarines from using it as a navigational aid. The lighthouse grounds became part of Hawaiʻi's coastal defense system, with military personnel occupying nearby bunkers to monitor the Pacific and test early radar and navigation equipment. Ironically, the technologies refined during World War II would eventually reduce the need for traditional lighthouses altogether.</p>
+
+<p>The station remained staffed until 1976, when the Coast Guard automated the light and retired the original Fresnel lens. Around the same time, scientists recognized that the powerful rotating beacon unintentionally endangered native seabirds. Species such as the ʻAʻo (Newell's Shearwater) and ʻUaʻu Kani (Wedge-tailed Shearwater), which navigate by moonlight and stars, frequently became disoriented by the brilliant light, circling until they collapsed from exhaustion. The lower-intensity automated beacon greatly reduced this problem, and in 1985 the area became the Kīlauea Point National Wildlife Refuge to protect nesting seabirds and other native wildlife.</p>
+
+<p>Native Hawaiians traditionally used the peninsula's rocky shoreline to gather ʻopihi and harvest sea salt from natural kāheka (salt pans) carved into the lava. The surrounding cliffs also provided nesting habitat for seabirds whose feathers were collected for chief regalia, while nearby lands supported the cultivation of kō (sugar cane) centuries before commercial plantations transformed the landscape.</p>
+
+<p>In 2013, the historic light station was formally renamed the Daniel K. Inouye Kīlauea Point Lighthouse in honor of the longtime United States senator whose support helped secure funding for its preservation. Today the property is jointly managed by the U.S. Fish and Wildlife Service, which oversees the historic lighthouse and refuge, and the U.S. Coast Guard, which continues to operate the modern navigational beacon. Visitors now come for nesting Red-footed Boobies, Laysan Albatrosses, and spectacular coastal views  instead of just for the lighthouse itself, making Kīlauea Point one of the few places where Hawaiʻi's maritime history and natural history stand shoulder to shoulder both with preservation on the forefront.</p>
+
+<p><a href="prineville.html">Related: Princeville →</a></p>
+<p><a href="hanapepe.html">Related: Hanapēpē →</a></p>
+  
+  <div class="return-links"> 
+    <a href="../index.html?lat=22.23161&lng=-159.4020&zoom=16">← Return to Map</a> 
+    <a href="../index.html#map">← Explore More Places</a> 
+  </div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
