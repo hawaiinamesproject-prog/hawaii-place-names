@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anini Beach | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Learn about Anini Beach on Kauaʻi's North Shore, where Hawaiʻi's longest fringing reef, ancient Hawaiian fishing traditions, freshwater springs, and the evolving story of the name Wainini shaped one of the island's safest lagoons.">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>  
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+
+<h1>Anini Beach</h1>
+<div class="island">Kauaʻi — North Shore</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Anini Beach, Kauaʻi</p>
+  <p><strong>Type:</strong> Beach / fringing reef / traditional fishing landscape</p>
+  <p><strong>Story it tells:</strong> A protected lagoon where Hawaiʻi's largest fringing reef shaped centuries of fishing, navigation, and community life, while the beach's name evolved from the older place name Wainini.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/anini-beach.jpg" alt="Anini Beach and its protected lagoon on Kauaʻi's North Shore.">
+  <div class="caption">
+    Anini Beach on Kauaʻi's North Shore. Photo by author.
+  </div>
+</div>
+  
+<p>Anini Beach stretches for nearly two miles along Kauaʻi's North Shore beneath towering coastal bluffs. Offshore lies Hawaiʻi's longest and widest fringing reef, a natural barrier that absorbs the power of incoming Pacific swells before they reach shore. Behind the reef, a broad lagoon of calm, shallow water has made Anini one of the island's safest places for swimming and snorkeling, even while neighboring beaches experience dangerous surf.</p>
+
+<p>The beach's modern name has an unusual history. Older records and local traditions identify the area as <em>Wainini</em> or <em>Wanini</em>, a name believed to refer to the freshwater springs that once seeped from the cliffs behind the shoreline. Over time, the name evolved through everyday speech, and local lore adds another twist: after an early road sign misspelled the name, an angry resident reportedly blasted the leading "W" off the sign with a shotgun, leaving only "Anini." Whether through changing pronunciation, damaged signage, or both, the shortened name eventually became the one used on maps, roads, and official records for the beach, road, and stream.</p>
+
+<p>Although today's name means "small," "stunted," or "inferior" in Hawaiian, the landscape itself is anything but. The immense reef created one of Kauaʻi's most valuable coastal environments. Protected from heavy surf, the lagoon became an ideal place for teaching children to swim, paddle canoes, and learn to read the ocean. Families gathered fish with throw nets, harvested limu (seaweed), and worked together during hukilau fishing events that supplied entire communities.</p>
+
+<p>The reef demands respect. While the lagoon appears calm, enormous volumes of seawater continually wash over the coral before escaping through deep openings in the reef. These channels generate powerful rip currents capable of sweeping swimmers far offshore. Hawaiian fishermen understood these currents well, using them to their advantage by fishing along the channel edges, where reef fish and larger predators naturally concentrated as water rushed back to sea.</p>
+
+<p>The mixing of freshwater from Anini Stream and historic cliffside springs with the sheltered lagoon created an exceptionally productive marine habitat. Green sea turtles (honu) regularly graze on beds of native limu, while juvenile reef fish, mullet, bonefish, and other species use the protected shallows as nursery grounds before venturing into deeper water. Hawaiian monk seals also frequently haul out on Anini's quiet shoreline, taking advantage of the calm lagoon to rest and teach young pups to hunt.</p>
+
+<p>Today Anini remains one of Kauaʻi's most beloved beaches. Ironwood trees line much of the shoreline, providing shade above the sand, while the offshore reef continues to define both the beauty and character of the coast. Although modern runoff and sediment now threaten parts of the coral ecosystem, the beach still reflects the remarkable relationship between Hawaiian place names, geology, and the generations of people who learned to live within the rhythms of the reef.</p>
+
+<p><a href="hanalei.html">Related: Hanalei →</a></p>
+<p><a href="princeville.html">Related: Princeville →</a></p>
+  
+  <div class="return-links"> 
+    <a href="../index.html?lat=22.22495&lng=-159.4491&zoom=15">← Return to Map</a> 
+    <a href="../index.html#map">← Explore More Places</a> 
+  </div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
