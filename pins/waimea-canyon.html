@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waimea Canyon | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Learn about Waimea Canyon on Kauaʻi, whose name means 'reddish water,' and discover how volcanic collapse, erosion, Native Hawaiian resource management, and conservation shaped Hawaiʻi's most famous canyon.">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>  
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+
+<h1>Waimea Canyon</h1>
+<div class="island">Kauaʻi — West Side</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Waimea Canyon, Kauaʻi</p>
+  <p><strong>Type:</strong> Canyon / geological landmark / watershed</p>
+  <p><strong>Story it tells:</strong> A canyon named for its reddish waters, where volcanic collapse, millions of years of erosion, and centuries of Native Hawaiian stewardship created one of Hawaiʻi's most remarkable landscapes.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/waimea-canyon.jpg" alt="View across the colorful cliffs of Waimea Canyon on Kauaʻi.">
+  <div class="caption">
+    View across Waimea Canyon on Kauaʻi. Photograph by Aaronbernstein via Wikimedia Commons (CC BY-SA 3.0).
+  </div>
+</div>
+  
+<p>Waimea Canyon stretches across Kauaʻi's west side for roughly fourteen miles, reaching nearly a mile wide and plunging as much as 3,600 feet deep. Its towering cliffs display vivid bands of red, orange, brown, and green that have earned it the popular nickname "The Grand Canyon of the Pacific." Despite the comparison, Waimea formed very differently. The canyon began with the collapse of Kauaʻi's ancient shield volcano nearly four million years ago before millions of years of erosion sculpted the dramatic landscape seen today.</p>
+
+<p>The canyon takes its name from the Waimea River. In Hawaiian, <em>wai</em> means "water" and <em>mea</em> means "reddish," referring to the iron-rich volcanic sediment washed from the canyon walls after heavy rains. During storms, runoff from Mount Waiʻaleʻale and the Alakaʻi Plateau carries red clay downstream, turning the river and its mouth at Waimea Bay a reddish color. The name is part of a living watershed stretching from one of the wettest places on Earth to the island's dry southwestern coast.</p>
+
+<p>The canyon served as an important resource landscape for Native Hawaiians. The surrounding upland forests supplied massive koa trees used to build voyaging canoes, while skilled bird catchers harvested feathers from native forest birds for the cloaks and helmets worn by aliʻi. Mountain trails crossed the ridges, linking the Waimea lowlands with the isolated valleys of the <a href="na-pali-coast.html">Nā Pali Coast</a>, and small communities occupied portions of the inner valleys where streams supported agriculture.</p>
+
+<p>The waters flowing through the canyon also sustained life far downstream. Just above the canyon mouth, Native Hawaiian engineers constructed <a href="../pnp-menehune-ditch.html">Kīkīaola</a>, better known today as the Menehune Ditch, one of the finest examples of pre-contact hydraulic engineering in Hawaiʻi. By carefully diverting water from the Waimea River along the canyon wall, the system irrigated extensive loʻi kalo on the coastal plain below. The remarkable precision required to build the stone-lined ʻauwai gave rise to traditions that credited the work to the legendary Menehune.</p>
+
+<p>The arrival of Western commerce transformed the canyon. During the sandalwood boom of the early nineteenth century, workers hauled heavy ʻiliahi logs down steep mountain trails to waiting ships anchored at Waimea Bay. As sandalwood disappeared, extensive logging removed many of the upland koa forests, while cattle, goats, and sheep stripped native vegetation from the slopes. Plantation agriculture further altered the watershed through irrigation ditches and water diversions that carried mountain streams toward sugar fields of Kekaha and Southwestern Kauaʻi .</p>
+
+<p>Recognition of the canyon's importance eventually shifted priorities from extraction to conservation. In the early twentieth century, territorial officials established forest reserves to protect Kauaʻi's critical watershed, and Waimea Canyon State Park was later created to preserve the landscape while making it accessible to visitors. During the 1930s, Civilian Conservation Corps crews built many of the roads, trails, retaining walls, and facilities that still define the park today, opening the high country to travelers while helping stabilize the fragile slopes.</p>
+
+<p>Today, Waimea Canyon remains one of Hawaiʻi's defining landscapes. Visitors come for its sweeping overlooks, waterfalls, hiking trails, and colorful cliffs, but the canyon tells a much deeper story. Its name preserves the reddish waters that continue to carve the valley, its forests once supplied the materials that powered Hawaiian society, and its rivers remain essential to the island below. Waimea Canyon is a reminder that Hawaiʻi's most spectacular places are inseparable from the history, language, and stewardship that have shaped them for centuries.</p>
+
+<p><a href="kaumualii-highway.html">Related: Kaumualiʻi Highway →</a></p>
+  
+  <div class="return-links"> 
+    <a href="../index.html?lat=22.07175&lng=-159.6622&zoom=15">← Return to Map</a> 
+    <a href="../index.html#map">← Explore More Places</a> 
+  </div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
