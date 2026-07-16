@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poʻipū | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Learn about Poʻipū on Kauaʻi's South Shore, where an ancient Hawaiian cultural landscape centered on Kāneiolouma evolved into one of Hawaiʻi's best-known resort communities while preserving remarkable archaeological treasures.">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>  
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+
+<h1>Poʻipū</h1>
+<div class="island">Kauaʻi — South Shore</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Poʻipū, Kauaʻi</p>
+  <p><strong>Type:</strong> Coastal community / resort district / cultural landscape</p>
+  <p><strong>Story it tells:</strong> A South Shore community whose name reflects the crashing surf while preserving one of Hawaiʻi's most important surviving Hawaiian cultural complexes at nearby Kāneiolouma.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/poipu.jpg" alt="Aerial view of Poʻipū on Kauaʻi's South Shore.">
+  <div class="caption">
+    Aerial view of Poʻipū on Kauaʻi's South Shore. Photograph by Antonio Zugaldia via Wikimedia Commons (CC BY 2.0).
+  </div>
+</div>
+  
+<p>Poʻipū occupies a sunny stretch of Kauaʻi's South Shore between Kōloa and <a href="mahaulepu-heritage-trail.html">Māhāʻulepū</a>. The name <em>Poʻipū</em> is commonly translated as "crashing waves" or "covered by sea spray," reflecting the powerful surf that pounds much of the area's rocky coastline. While today it is one of Hawaiʻi's best-known resort destinations, the landscape has supported Hawaiian communities for centuries.</p>
+
+<p>Historically, Poʻipū formed part of a productive Hawaiian ahupuaʻa that combined agriculture, aquaculture, and fishing. Freshwater flowing from Waikomo Stream was carried through an extensive network of <em>ʻauwai</em> (irrigation ditches) that supplied loʻi kalo, sweet potato fields, sugarcane, bananas, and other crops across the surrounding plain. Offshore reefs, fishponds, and canoe landings connected the community to the rich marine resources of Kauaʻi's south coast.</p>
+
+<p>At the heart of this landscape lies Kāneiolouma, one of the island's most significant archaeological sites. Occupied since at least the fifteenth century, the 13-acre complex contains the remains of heiau, house platforms, fishponds, agricultural terraces, and the sacred Waiʻōhai spring. The site is perhaps best known for preserving what many scholars believe to be Hawaiʻi's only intact Makahiki sporting arena, where athletes gathered to compete in wrestling, spear throwing, boxing, and other contests during the annual season honoring the god Lono.</p>
+
+<p>The modern wooden kiʻi standing tall at Kāneiolouma represent the four principal Hawaiian gods: Kāne, Lono, Kū, and Kanaloa. Installed as part of ongoing cultural restoration, they overlook a landscape that is once again revealing its ancient foundations after decades hidden beneath overgrowth. Hui Mālama O Kāneiolouma continues restoring the complex, reconnecting the community with one of Kauaʻi's most important cultural treasures.</p>
+
+<p>Poʻipū changed dramatically after the establishment of Hawaiʻi's first successful commercial sugar plantation in nearby Kōloa in 1835. Sugar fields gradually replaced almost all of the traditional agricultural system, while immigrant laborers from around the world reshaped the surrounding communities. During the second half of the twentieth century, tourism replaced sugar as the region's dominant industry, and Poʻipū evolved into one of Hawaiʻi's premier resort destinations.</p>
+
+<p>Despite that transformation, Kauaʻi chose a different path from many resort areas elsewhere in Hawaiʻi. Strict building height limits keep structures below the height of mature palm trees, preserving open views of the coastline and preventing the skyline from becoming dominated by high-rise hotels.</p>
+
+<p>Today, Poʻipū blends world-famous beaches with centuries of Hawaiian history. Few places on Kauaʻi better demonstrate how cultural preservation and modern recreation can exist side by side, allowing visitors to enjoy the coast while discovering the remarkable legacy of Kāneiolouma and the thriving Hawaiian community that once centered around it.</p>
+
+<p><a href="spouting-horn.html">Related: Spouting Horn →</a></p>
+<p><a href="brennecke-beach.html">Related: Brennecke Beach →</a></p>
+
+  
+  <div class="return-links"> 
+    <a href="../index.html?lat=21.8794&lng=-159.4635&zoom=15">← Return to Map</a> 
+    <a href="../index.html#map">← Explore More Places</a> 
+  </div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
