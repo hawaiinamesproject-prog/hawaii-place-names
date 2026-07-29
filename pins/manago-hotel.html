@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manago Hotel | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Discover the Manago Hotel in Captain Cook, a South Kona institution founded by Japanese immigrants Kinzo and Osame Manago in 1917 that grew from a tiny coffee shop and boarding house into a landmark hotel and James Beard Award-winning restaurant.">
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+
+<h1>Manago Hotel</h1>
+<div class="island">Hawaiʻi Island — South Kona</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Manago Hotel, Captain Cook, South Kona, Hawaiʻi Island</p>
+  <p><strong>Type:</strong> Historic hotel and restaurant</p>
+  <p><strong>Namesake:</strong> Kinzo and Osame Manago, Japanese immigrants who opened a small coffee shop and boarding house in 1917</p>
+  <p><strong>Story it tells:</strong> How an immigrant family's two-room home grew alongside Kona's coffee industry and became one of Hawaiʻi's most enduring local institutions.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/manago-hotel.jpg" alt="The Manago Hotel viewed from Māmalahoa Highway in Captain Cook, Hawaiʻi Island.">
+  <div class="caption">
+    The Manago Hotel along Māmalahoa Highway in Captain Cook. Photograph by Ivtorov, Wikimedia Commons, CC BY 4.0. Cropped from the original.
+  </div>
+</div>
+
+<p>Along Māmalahoa Highway in Captain Cook stands a plain, three-story building that looks nothing like the resorts along the Kona coast. The Manago Hotel took a different path for its customers. For more than a century, the Manago Hotel offered modest rooms, home-style food, cool South Kona breezes, and a slower pace to enjoy your temporary retreat.</p>
+
+<p>The hotel is named after <strong>Kinzo and Osame Manago</strong>, whose unlikely journey to South Kona began thousands of miles away. Kinzo reportedly left Japan intending to travel to Canada and study English. During a stop in Honolulu, however, a traveling companion gambled away their money. Stranded in the islands, Kinzo traveled to Hawaiʻi Island, where he hoped to locate a relative and find employment.</p>
+
+<p>Kinzo initially expected to work in the sugar industry, as thousands of Japanese immigrants had done before him. He took a different path. Kinzo spent years chopping firewood and also worked as a cook for the Wallace family in South Kona.</p>
+
+<p>Osame arrived from Fukuoka in 1913 as a <strong>picture bride</strong>, one of thousands of Japanese women who came to Hawaiʻi to marry men they knew primarily through photographs and letters. She and Kinzo reportedly met for the first time at the Honolulu immigration station and married soon afterward.</p>
+
+<p>Their early life together reflected the difficult circumstances faced by many immigrant families. Osame sorted coffee beans for the Captain Cook Coffee Mill, embroidered linens, and completed other jobs to supplement their income. She even collected horse manure to fertilize the land. Their labor placed them directly within the agricultural economy of South Kona, where small coffee farms, mills, stores, and family businesses stretched along the slopes above Kealakekua Bay.</p>
+
+<p>The Manago's business grew gradually and almost accidentally from a small home.</p>
+
+<p>In 1917, Kinzo's employer recognized his ability as a cook and encouraged him to open a coffee shop. He loaned Kinzo $100 for a stove and kitchen equipment. Kinzo and Osame opened a small eatery in their two-room home, serving coffee, homemade bread, jam, udon noodles, and other simple food to residents and travelers.</p>
+
+<p>Its location proved important. Captain Cook sat along the principal overland route through South Kona, and many regularly stopped for meals. Some arrived too tired to continue their journeys and began asking whether they could remain overnight.</p>
+
+<p>Osame made space where she could. Travelers slept on cots, tatami mats, or futons, usually paying between fifty cents and one dollar for lodging. What began as an informal convenience became a boarding house, and the boarding house, over time, gradually became a hotel.</p>
+
+<p>They expanded their home as their family and business grew. A second story was added, followed by more rooms and additional structures. </p>
+
+<p>During World War II, the hotel became part of the local war effort. The military occupied nearby Konawaena School, and the Manago family was contracted to prepare meals for soldiers stationed in the area. Their kitchen reportedly operated around the clock, feeding troops while the war disrupted the lives and livelihoods of Japanese American families throughout Hawaiʻi.</p>
+
+<p>In 1942, Kinzo and Osame retired and their son <strong>Harold Manago</strong> and his wife, Nancy took over. Harold managed the hotel for more than four decades and oversaw its transformation from a simple roadside boarding house into a larger mid-century hotel.</p>
+
+<p>After the war, Harold acquired neighboring parcels and developed a modern three-story wing. Its 42 rooms included private bathrooms and lanais, with higher floors providing increasingly broad views of the Kona coastline. The property retained its older, more affordable rooms, allowing travelers to choose between basic shared-bath accommodations and the relative comfort of the newer wings.</p>
+
+<p>Harold and Nancy also created landscaped grounds, a Japanese garden, and a koi pond. A specially designed Japanese room included tatami mats, a futon, and a traditional <em>furo</em>, or soaking tub, preserving a connection to the family's cultural heritage and provided a unique hospitality experience to the area.</p>
+
+<p>Even as the hotel expanded, it remained intentionally simple. Rooms were known for lacking televisions, telephones, and air conditioning. Ceiling fans and open windows allowed the cooler air of South Kona's uplands to circulate. The absence of modern amenities became part of the hotel's identity, preserving the atmosphere of an earlier era of interisland travel.</p>
+
+<p>The restaurant ultimately became as important as the hotel itself. Generations of customers came for local breakfasts, fresh fish, and traditional comfort food, but the best-known dish was the Manago Hotel's pork chops.</p>
+
+<p>The thin pork chops were cooked in heavily seasoned cast-iron skillets that had prepared thousands of meals over many decades. Served with onions and simple local side dishes, they became inseparable from the restaurant's reputation. </p>
+
+<p>The restaurant's food was never intended to be elaborate. Its appeal came from consistency, affordability, and the familiarity of meals served much as they had been for generations. Farmers, workers, families, and visitors ate together in a dining room that felt less like a tourist attraction than a long-running community gathering place or cafeteria.</p>
+
+<p>In 1984, Harold and Nancy's son <strong>Dwight Manago</strong> and his wife, Cheryl, became the third generation to run the family business. They continued balancing the hotel's increasing reputation among travelers with its long-standing role in the local community.</p>
+
+<p>While large resorts transformed the economies of Kailua-Kona and the Kohala Coast, the Manago Hotel remained inexpensive and largely unchanged. Its operators deliberately kept rates and restaurant prices accessible to local residents.</p>
+
+<p>The family also credited the hotel's longevity to employees who remained for decades and were treated as part of an extended Manago family. Later generations, including Dwight and Cheryl's daughters, became involved in a business.</p>
+
+<p>National recognition arrived in 2023, when the James Beard Foundation named the Manago Hotel Restaurant one of its <strong>America's Classics</strong>. The award honors long-standing, locally owned restaurants that reflect the character of their communities. For the Manago Hotel, it recognized an institution created by immigrant labor and sustained by more than a century of family and community support.</p>
+
+<p>After four generations of family operation, the Manago family placed the property for sale. The hotel portion closed while the family sought a buyer, although the restaurant continues operating.</p>
+
+<p>Whatever happens next, the Manago Hotel's importance extends beyond the survival of a business. Its buildings preserve the story of Japanese immigration, picture brides, Kona coffee, early travel, wartime service, family labor, and an older form of Hawaiʻi hospitality built around affordability.</p>
+
+<p>The hotel did not begin through a major investment or an ambitious tourism plan. It grew because hungry travelers stopped for noodles and coffee, tired drivers asked for somewhere to sleep, and Kinzo and Osame Manago repeatedly made room for them.</p>
+
+<p>More than a century later, their family name remains attached to one of South Kona's most recognizable landmarks. The Manago Hotel demonstrates how an ordinary home, built and expanded through hospitality, can gradually become part of the identity of an entire community.</p>
+
+<p><a href="captain-cook.html">Related: Captain Cook →</a></p>
+<p><a href="kona.html">Related: Kona →</a></p>
+
+<div class="return-links">
+  <a href="../index.html?lat=19.4892&lng=-155.9105&zoom=15">← Return to Map</a>
+  <a href="../index.html#map">← Explore More Places</a>
+</div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
