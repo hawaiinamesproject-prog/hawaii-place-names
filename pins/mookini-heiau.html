@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moʻokini Heiau | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Discover Moʻokini Heiau on Hawaiʻi Island, one of the oldest and most sacred temples in Hawaiʻi, where the Moʻokini priestly lineage, Kamehameha I, and more than 1,500 years of Hawaiian history converge.">
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+
+<h1>Moʻokini Heiau</h1>
+<div class="island">Hawaiʻi Island — North Kohala</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Moʻokini Heiau, Kohala Historical Sites State Monument, North Kohala</p>
+  <p><strong>Type:</strong> Ancient luakini (state temple)</p>
+  <p><strong>Namesake:</strong> The Moʻokini priestly lineage, hereditary guardians of the temple for more than 1,500 years</p>
+  <p><strong>Story it tells:</strong> How one of Hawaiʻi's oldest temples became the spiritual heart of ancient Kohala, the war temple of Kamehameha I, and one of the few major heiau to survive the end of the traditional Hawaiian religion.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/mookini-heiau.jpg" alt="The Holehole Stone outside the walls of Moʻokini Heiau on Hawaiʻi Island.">
+  <div class="caption">
+    The Holehole Stone at Moʻokini Heiau, traditionally associated with ceremonies performed at the temple during its centuries as a luakini dedicated to Kū. Photograph by Audrey Whitmer, Wikimedia Commons, CC BY 4.0.
+  </div>
+</div>
+
+<p>Standing on the northern tip of Hawaiʻi Island, Moʻokini Heiau is one of the oldest surviving temples in the Hawaiian Islands. This place served as one of the most sacred centers of political and religious authority in Hawaiʻi for an extensive part of its history.</p>
+
+<p>Unlike many archaeological sites, Moʻokini remains remarkably intact. Massive dry-stacked basalt walls still enclose the temple, giving visitors an unusual sense of its original scale and power. For more than fifteen centuries, the site has remained connected to a single hereditary priestly family, the Moʻokini lineage, making it not only one of Hawaiʻi's oldest sacred places, but one of its longest continuously cared-for cultural sites.</p>
+
+<p>According to Hawaiian oral tradition, the first temple was built around the fifth century by the high priest <strong>Kuamoʻo Moʻokini</strong>. While archaeologists cannot confirm the exact date, few dispute the site's extraordinary antiquity. Generation after generation of descendants maintained and expanded the heiau, preserving its sacred traditions through centuries of political change.</p>
+
+<p>The temple's construction has two stories. One tells of 18,000 people forming a human chain stretching from Pololū Valley to Upolu Point, passing stones hand-to-hand until the temple was completed in a single night. Another attributes the feat to the legendary Menehune, master builders said to accomplish impossible engineering under the cover of darkness. Whether understood literally or symbolically, both traditions express the same idea: Moʻokini Heiau represented an undertaking beyond ordinary human effort.</p>
+
+<p>Sometime between the eleventh and fourteenth centuries, the influential Tahitian priest <strong>Paʻao</strong> is said to have dramatically enlarged the temple. He is credited with raising the walls, formalizing its role as a <em>luakini heiau</em>, and dedicating it to <strong>Kūkaʻilimoku</strong>, the powerful god of war. From that point forward, Moʻokini became one of the highest-ranking temples in Hawaiʻi, reserved almost exclusively for the ruling aliʻi and the highest-ranking kahuna.</p>
+
+<p>As a luakini, the temple served as the spiritual center for ceremonies connected to warfare, succession, purification, and the maintenance of political authority. Before military campaigns, ruling chiefs sought the favor of Kū within these walls, believing proper ritual observance would ensure victory in battle.</p>
+
+<p>Just outside the temple walls rests the large flat basalt slab now known as the <strong>Holehole Stone</strong>. Oral traditions identify it as one of the locations associated with rituals performed during the temple's centuries as a luakini. Human sacrifice formed part of the religious practices associated with temples of this rank, typically involving prisoners of war or individuals selected according to strict ceremonial protocols. These rituals reflected the religious and political system that governed ancient Hawaiʻi before Western contact.</p>
+
+<p>Moʻokini Heiau is perhaps most closely associated with <strong>Kamehameha I</strong>. Only a short distance south of the temple lies the traditional birthplace of the future king, where he was born during a violent storm while Halley's Comet crossed the night sky. As Kamehameha matured into a military leader, he returned repeatedly to Moʻokini to seek spiritual guidance before the campaigns that ultimately united the Hawaiian Islands.</p>
+
+<p>The temple's location of North Kohala was one of the great chiefly centers of ancient Hawaiʻi, producing powerful ruling families and serving as the ancestral homeland of Kamehameha's lineage. </p>
+
+<p>Moʻokini's survival is almost as remarkable as its construction. In 1819, following the death of Kamehameha I, King Liholiho (Kamehameha II) and Queen Regent Kaʻahumanu abolished the ancient kapu system during the ʻAi Noa. Across Hawaiʻi, temples were dismantled, kiʻi were destroyed, and centuries of religious practice came to an abrupt end.</p>
+
+<p>Yet Moʻokini largely escaped destruction.</p>
+
+<p>Part of the reason lies in the temple's reputation. For centuries, Moʻokini had been regarded as one of the most sacred and spiritually powerful places in Hawaiʻi. Stories of its role as a luakini, combined with generations of strict kapu surrounding the site, created a deep sense of reverence and fear. Oral traditions recount that when orders came to dismantle the old temples, many people simply refused to touch Moʻokini, believing terrible spiritual consequences would follow anyone who desecrated such a sacred place. Rather than being torn down, the temple was gradually abandoned, while countless other heiau disappeared.</p>
+
+<p> Members of the Moʻokini family quietly continued to watch over the site through the nineteenth and early twentieth centuries. Their stewardship ensured that the walls remained standing and that the traditions associated with the temple survived despite the profound cultural changes that followed the arrival of Christianity and the overthrow of the ancient religion.</p>
+
+<p>In the twentieth century, those efforts became increasingly public. Heloke Moʻokini, who served as Kahuna Nui from 1930 until 1966, worked tirelessly to preserve the history. His advocacy helped shift public perception away from seeing the temple solely as a place associated with fear and sacrifice toward recognizing it as one of Hawaiʻi's greatest surviving cultural treasures.</p>
+
+<p>That growing appreciation culminated in 1963 when Moʻokini Heiau became Hawaiʻi's first National Historic Landmark. The designation acknowledged not only the remarkable preservation of the structure itself but also its extraordinary importance to Hawaiian history, religion, and architecture. While the site remains under the management of Hawaiʻi State Parks as part of the Kohala Historical Sites State Monument, descendants of the Moʻokini family continue to play an active role in its stewardship today.</p>
+
+<p>Perhaps the most significant modern chapter in the temple's history occurred on November 11, 1978. During a ceremony led by Kahuna Nui <strong>Leimomi Moʻokini Lum</strong>, a direct descendant of the original priestly lineage, the ancient restrictions governing access to the temple were formally lifted. For centuries, women, commoners, and outsiders had been forbidden from entering the sacred enclosure. Leimomi rededicated Moʻokini Heiau as a place of peace, education, and cultural renewal, inviting not only the people of Hawaiʻi but eventually what she called the "children of the world" to learn from its history.</p>
+
+<p>The ceremony reflected the broader Hawaiian Renaissance that was unfolding across the islands. Rather than reviving the temple as a place of political power or sacrifice, practitioners sought to preserve it as a living cultural landscape where future generations could better understand the beliefs, accomplishments, and worldview of their ancestors.</p>
+
+<p>The name <strong>Moʻokini</strong> is inseparable from the family that has protected this place for more than fifteen centuries. Traditions often interpret the name as referring to "many lineages" or a "long genealogy," an especially fitting description for a temple whose guardianship has passed continuously through a single hereditary priestly line. Few places in Hawaiʻi can claim such an enduring connection between a sacred site and the descendants of its original caretakers.</p>
+
+<p>More than 1,500 years after its traditional founding, the winds still blow across Upolu Point, the basalt walls still stand, and the name <strong>Moʻokini</strong> continues to connect the present with one of the deepest and most enduring chapters of Hawaiian history.</p>
+
+<p><a href="puukohola-heiau.html">Related: Puʻukoholā Heiau →</a></p>
+<p><a href="../pwl-wahaula-heiau.html">Related: Wahaʻula Heiau →</a></p>
+
+
+<div class="return-links">
+  <a href="../index.html?lat=20.2576&lng=-155.8771&zoom=15">← Return to Map</a>
+  <a href="../index.html#map">← Explore More Places</a>
+</div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
