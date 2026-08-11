@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dairy Road | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Discover the history of Dairy Road in Kahului, Maui, named for the former Puʻunēnē Dairy and transformed from a plantation road into one of Central Maui's busiest highways.">
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+
+<h1>Hāna</h1>
+<div class="island">Maui</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Dairy Road, Kahului, Maui</p>
+  <p><strong>Type:</strong> Highway / former plantation road / commercial corridor</p>
+  <p><strong>Namesake:</strong> Puʻunēnē Dairy, formerly operated by Hawaiian Commercial & Sugar Company</p>
+  <p><strong>Story it tells:</strong> How a plantation road serving a dairy, sugar operations, and worker communities evolved into one of Central Maui's busiest highways while the agricultural landscape that gave Dairy Road its name disappeared around it.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/dairy-road.jpg" alt="1955 U.S. Coast and Geodetic Survey map of Kahului and Puʻunēnē showing Dairy Road, highlighted in blue.">
+  <div class="caption">
+    <em>Dairy Road, highlighted in blue, appears on this 1955 map of Kahului and Puʻunēnē before its development into the modern highway. At the time, the route still served the plantation landscape surrounding the former Puʻunēnē Dairy. U.S. Coast and Geodetic Survey map, 1955, public domain; annotation added by Hawaiʻi Names Project.</em>
+  </div>
+</div>
+
+<p>Dairy Road was one of the busiest streets in Kahului, carrying traffic between Kahului Airport, Hāna Highway, and the major routes leading toward South and West Maui. Today, the road is lined with shopping centers, restaurants, warehouses, car dealerships, and other commercial development. Nothing about the modern layout explains its name. Dairy Road looked very different and in the past it led through plantation lands to an actual dairy.</p>
+
+<p>The name comes from <strong>Puʻunēnē Dairy</strong>, which was owned by and served Hawaiian Commercial & Sugar Company (HC&S), the enormous sugar plantation that dominated much of Central Maui during the twentieth century. HC&S operated its mill at nearby Puʻunēnē and controlled tens of thousands of acres across the central isthmus. Sugar was the company's principal business, but a plantation of that scale functioned almost like its own community, with housing, stores, transportation systems, and agricultural operations supporting thousands of workers and their families.</p>
+
+<p>Puʻunēnē Dairy supplied milk and other products while pastures occupied areas that would later become some of Kahului's busiest commercial districts. A residential community known as Puʻunēnē Dairy Camp also developed around the operation, housing workers and their families near the dairy. Beyond the compact town were broad expanses of cane fields, pastures, dirt roads, irrigation systems, and plantation facilities stretching toward Puʻunēnē and far beyond.</p>
+
+<p>Dairy Road developed within this landscape as a plantation route serving the dairy and connecting agricultural operations with the larger HC&S transportation network. It was one of numerous utilitarian roads crossing company lands, used to move workers, livestock, equipment, and agricultural products between the fields, camps, dairy, mill, and neighboring communities.</p>
+
+<p>The road's importance changed dramatically after World War II. During the war, the United States Navy had constructed Naval Air Station Kahului near the northern end of the Central Maui isthmus. After the war, commercial operations shifted to the former naval airfield in 1952, creating the modern <a href="../pnp-ogg.html">Kahului Airport</a> and placing an increasingly important transportation hub within the plantation vicinity.</p>
+
+<p>A 1955 map of Kahului already shows Dairy Road extending through the area between the airport and the plantation lands toward Puʻunēnē. The dairy itself was already disappearing. HC&S sold the Puʻunēnē Dairy operation to Haleakalā Dairy in 1951, ending the sugar company's direct involvement in the business. </p>
+
+<p>Haleakalā Dairy was a familiar Maui name in its own right and later associated with the development and popularization of POG, the passion-orange-guava drink that became a Hawaiʻi favorite. The old Puʻunēnē Dairy site, however, did not survive as a recognizable historic complex and the structures that lined Dairy Road were torn down shortly after its acquisition.</p>
+
+<p>The surrounding plantation community disappeared as well. As HC&S consolidated its operations and Maui's economy changed, plantation camps were gradually closed and their residents relocated. Families who had once lived in communities such as Dairy Camp moved into newly developing residential neighborhoods, including the planned subdivisions of Kahului. Buildings were removed, agricultural facilities disappeared, and land that had supported workers, cattle, and crops began assuming entirely new uses.</p>
+
+<p>Meanwhile, the success of Kahului Airport created a transportation problem. Maui's postwar population was growing, automobile ownership was increasing, and more visitors were arriving by air every year. The old network of plantation roads had never been designed to handle the volume of cars traveling between the airport and surrounding communities. Dairy Road occupied an increasingly valuable corridor connecting the airport area with the highways leading across Central Maui.</p>
+
+<p>In 1971, the State of Hawaiʻi acquired an easement over the privately owned plantation road as part of the process of upgrading the transportation network into a public highway. Dairy Road was paved, widened, and modernized as the surrounding transportation network expanded. By the early 1980s, the modern four-lane corridor appeared on maps as part of <strong>Hawaiʻi Route 380</strong>.</p>
+
+<p>The transformation of Dairy Road occurred alongside the transformation of Kahului itself. Former agricultural and plantation lands became increasingly valuable for commercial and industrial development. Warehouses, stores, restaurants, offices, and shopping centers replaced the open landscape that had once surrounded the road. What began as a route through HC&S property gradually became one of Maui's principal commercial corridors and an important gateway for travelers leaving Kahului Airport.</p>
+
+<p>The modern road serves a transportation system and economy almost completely different from the plantation network that created it. Very little remains along Dairy Road to explain why it carries that name. The dairy is gone. Its worker community is gone. The surrounding pastures and much of the agricultural landscape have been replaced by commercial development.</p>
+
+<p>The name is the sole survivor of that era. <strong>Dairy Road</strong> is therefore a small piece of historical memory embedded in modern Maui's street map. A name that now sounds almost generic preserves the story of Puʻunēnē Dairy, HC&S, plantation communities, the rise of Kahului Airport, and the transformation of Central Maui from an agriculturian community to one based on commercial development and transportation.</p>
+
+<p><a href="../pnp-kaahumanu.html">Related: Queen Kaʻahumanu Center →</a></p>
+  
+<div class="return-links">
+  <a href="../index.html?lat=20.88153&lng=-156.45563&zoom=14">← Return to Map</a>
+  <a href="../index.html#map">← Explore More Places</a>
+</div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
