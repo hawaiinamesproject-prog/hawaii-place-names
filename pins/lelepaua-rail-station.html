@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lelepaua Rail Station | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Learn about Lelepaua Rail Station at Honolulu's airport, named for an ancient Moanalua fishpond once prized for its fish, shellfish, and mother-of-pearl pāua.">
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+
+<h1>Lelepaua Rail Station</h1>
+<div class="island">Oʻahu — Honolulu Airport</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Lelepaua Rail Station, Daniel K. Inouye International Airport, Oʻahu</p>
+  <p><strong>Type:</strong> Skyline rail station / airport station</p>
+  <p><strong>Namesake:</strong> Lelepaua (“the choice mother-of-pearl inside the pāua bivalve”), an ancient fishpond and traditional place name within Moanalua</p>
+  <p><strong>Story it tells:</strong> How a modern rail station at Honolulu's airport preserves the name of a centuries-old Hawaiian fishpond that once supported fishing, aquaculture, and shellfish gathering before being buried beneath the expanding airport.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/lelepaua-rail-station.jpg" alt="A Skyline train at Lelepaua Rail Station (Daniel K. Inouye International Airport).">
+  <div class="caption">
+    A Skyline train at Lelepaua Rail Station (Daniel K. Inouye International Airport). Photo by JMusashi1600 via Wikimedia Commons, CC4.0.
+  </div>
+</div>
+
+<p>Lelepaua Rail Station serves <a href="../pnp-hnl.html">Daniel K. Inouye International Airport</a>, standing beside Terminal 2. The elevated Skyline's name is derived from a place that has almost completely disappeared from the landscape. Before runways, parking garages, airplanes, and rail lines occupied this area, <strong>Lelepaua</strong> was the name of a large Hawaiian fishpond along the coast of Moanalua.</p>
+
+<p>The name <strong>Lelepaua</strong> is interpreted as “the choice mother-of-pearl inside the pāua bivalve.” Pāua shell produced a smooth, reflective layer of mother-of-pearl that could be tooled into fishing equipment, including the bright shell used in traditional lures. The name preserves a connection to the marine resources that defined this part of Oʻahu's southern shoreline.</p>
+
+<p>The construction of Lelepaua Fishpond occured under the reign and direction of <strong>Kaʻihikapu-a-Manuia</strong>, an aliʻi who ruled Oʻahu during the late sixteenth century. The pond covered roughly 300 acres and formed part of a much larger coastal system of fishponds, wetlands, reefs, and salt-production around the Moanalua coast. For generations, these waters supported ʻamaʻama, or mullet, awa, shellfish, and other marine resources.</p>
+
+<p>Lelepaua was a carefully managed aquaculture systems designed to take advantage of tides and the movement of juvenile fish between the ocean and protected waters. Stone walls and controlled openings allowed small fish to enter and grow within the productive pond while larger fish could be harvested for surrounding communities. Lelepaua supported Moanalua for approximately three centuries.</p>
+
+<p>During the nineteenth century, the lands and fishponds of Moanalua were inherited by the estate of Samuel Mills Damon. Lelepaua continued operating into the modern era even as Honolulu expanded westward and the surrounding shoreline was increasingly transformed by industry, transportation, and military development. The same shallow coastal environment that had supported Hawaiian aquaculture would eventually attract a dramatically different use: aviation.</p>
+
+<p>In 1927, John Rodgers Airport opened on nearby lands as Honolulu's first major civilian airport. As aviation expanded, the Territorial Government acquired additional property around the airport, gradually pushing transportation infrastructure into the wetlands and fishing grounds surrounding Lelepaua. The transition from wetland to commercial aviation space accelerated enormously after the attack on Pearl Harbor in 1941, when the military assumed control of the airport and expanded it for wartime operations using emergency powers.</p>
+
+<p>During the 1940s, dredging and filling projects dramatically altered the shoreline. Coral and other material dredged from nearby waters were deposited across wetlands and fishpond areas as engineers created the broad, level terrain required for runways, taxiways, and other military facilities. Lelepaua Fishpond disappeared beneath this expanding airport landscape, ending centuries of aquaculture at the site.</p>
+
+<p>The transformation was enormous. A landscape once defined by shallow water, fishpond walls, shellfish, salt production, and fishing became one of Hawaiʻi's busiest transportation centers. John Rodgers Airport evolved into Honolulu International Airport and eventually Daniel K. Inouye International Airport, while almost every visible trace of Lelepaua vanished beneath pavement and airport infrastructure.</p>
+
+<p>More than seventy years after the fishpond disappeared, construction of Honolulu's rail system created an opportunity to return its name to the landscape. The Hawaiian Station Naming Working Group researched traditional place names along the Skyline corridor, seeking names that connected each station with the history and geography of its surrounding area. For the airport station, <strong>Lelepaua</strong> restored the name of the fishpond that had once occupied this part of Moanalua.</p>
+
+<p>Today, Lelepaua Rail Station places that older landscape directly beside one of the most modern transportation environments in Hawaiʻi. Travelers arriving by airplane can transfer to an automated electric railway at a station carrying the name of a Hawaiian fishpond buried during the airport's own expansion.</p>
+
+<p><strong>Lelepaua</strong> preserves the memory of the fishpond, marine resources, and generations of Hawaiian aquaculture that occupied this site.</p>
+
+<p><a href="kualakai-rail-station.html">Related: Kualaka‘i Rail Station →</a></p>
+<p><a href="alapai-street.html">Related: Alapaʻi Street →</a></p>
+
+<div class="return-links">
+  <a href="../index.html?lat=21.3456&lng=-157.0511&zoom=15">← Return to Map</a>
+  <a href="../index.html#map">← Explore More Places</a>
+</div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
