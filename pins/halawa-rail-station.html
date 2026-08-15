@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lelepaua Rail Station | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Learn about Hālawa Rail Station on Oʻahu, named for the historic Hālawa ahupuaʻa and a landscape shaped by Hawaiian agriculture, warfare, and Aloha Stadium.">
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+
+<h1>Hālawa Rail Station</h1>
+<div class="island">Oʻahu — Hālawa</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Hālawa Rail Station, Hālawa, Oʻahu</p>
+  <p><strong>Type:</strong> Skyline rail station / Aloha Stadium station</p>
+  <p><strong>Namesake:</strong> Hālawa, the historic ahupuaʻa extending from the Koʻolau mountains toward the waters of Pearl Harbor</p>
+  <p><strong>Story it tells:</strong> How an ancient Hawaiian place name survives within a locale transformed from loʻi and wetlands to warfare, military development, highways, Aloha Stadium, and one of Oʻahu's major modern transportation hubs.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/halawa-rail-station.jpg" alt="Hālawa Rail Station as viewed from the parking lot.">
+  <div class="caption">
+    Hālawa Rail Station as viewed from the parking lot. Photo by Pacamah via Wikimedia Commons, CC4.0.
+  </div>
+</div>
+
+<p>Hālawa Rail Station stands at the intersection of Kamehameha Highway and Salt Lake Boulevard beside <a href="../pwl-aloha-stadium.html">Aloha Stadium</a>. When Skyline opened on June 30, 2023, Hālawa served as the system's eastern terminus until the line was extended through the airport and to Middle Street in October 2025. Today, the station is surrounded by rail infrastructure, highways, parking lots, nearby military facilities, and the redevelopment of the stadium district, but the name <strong>Hālawa</strong> belongs to a much older landscape.</p>
+
+<p><strong>Hālawa</strong>, meaning “curve” or “bend,” is the name of the traditional ahupuaʻa extending from the Koʻolau Mountains through Hālawa Valley to the waters of Pearl Harbor, traditionally known as Puʻuloa. Hālawa is also the easternmost ahupuaʻa of the ʻEwa District. Immediately beyond it lies the Moanalua ahupuaʻa and the beginning of the Kona District. The name Hālawa describes the curving geography of the valley and surrounding lands.</p>
+
+<p>Water shaped Hālawa for centuries. Hālawa Stream carried rain from the Koʻolau Mountains and fresh water from springs through the valley and across the broad coastal plain before emptying into Pearl Harbor. Its freshwater supported <em>loʻi kalo</em>, while the wet lowlands  would later supported rice, watercress, and other crops. Near the shoreline, freshwater mixing with the ocean created productive wetlands and brackish fishponds, including Loko Kumumaʻu near the mouth of Hālawa Stream.</p>
+
+<p>Hālawa was also the setting for one of the final struggles for control of Oʻahu before the arrival of Kamehameha I's army. After the death of Maui ruler <strong>Kahekili II</strong> in 1794, his former domain was divided between his son Kalanikūpule, who controlled Oʻahu, and his half-brother Kāʻeokūlani, who controlled Kauaʻi and Maui Nui (Maui, Molokaʻi, and Lānaʻi). The arrangement quickly collapsed into war, with Kāʻeokūlani bringing his forces to Oʻahu to challenge his nephew.</p>
+
+<p>The resulting <strong>Battle of Kukiʻiahu</strong> spread across the ʻAiea-Hālawa area in late 1794. Much of the land fighting occurred around the fertile lowlands near the boundary between the two ahupuaʻa, close to where Sumida Farm operates today. Kalanikūpule received an enormous advantage from British Captain William Brown, who provided naval support from the waters of Pearl Harbor. Cannon fire targeted Kāʻeokūlani's forces from offshore as fighting continued across the plains. His army eventually collapsed and retreated toward Hālawa Valley, where Kāʻeokūlani was killed.</p>
+
+<p>During the nineteenth and early twentieth centuries, Hālawa's fertile lower lands were farmed. Native Hawaiian, Chinese, Japanese, and other farmers cultivated taro, rice, watercress, and other crops across the wet plain. Significant portions of Hālawa were inherited by Queen Emma and later passed to the Queen's Hospital after her death in 1885. Over time, leases and land sales, to support the hospital, divided parts of the lower plain among plantations and many individual farmers.</p>
+
+<p>The attack on Pearl Harbor on December 7, 1941, almost immediately changed the trajecotry for the area. Hālawa's location beside the harbor made the area strategically important to the United States military, which acquired and occupied land for wartime defense and logistics. Agricultural lands were seized using emergency powers and farmers displaced while fuel lines, communications systems, utilities, and other military infrastructure spread through the area. Along the shoreline, wetlands and fishponds were filled as Pearl Harbor expanded into a heavily fortified military complex.</p>
+
+<p>After the war, portions of the military-controlled land remained under federal control until being declared surplus. In 1967, the City and County of Honolulu acquired approximately 58 acres near Hālawa for a new public stadium. The property was later transferred to the State of Hawaiʻi, and construction of <strong>Aloha Stadium</strong> began in the early 1970s. When the stadium opened in 1975, it opened a new chapter for the area focused on recreation and entertainment.</p>
+
+<p>Nearly half a century later, transportation again reshaped Hālawa. Construction of Honolulu's elevated rail system brought concrete columns and guideways alongside the highways and stadium. During development of Skyline, the Hawaiian Station Naming Working Group researched traditional names along the route and recommended <strong>Hālawa</strong> for the station originally identified as Aloha Stadium Station. The name was formally adopted in 2018 as part of a broader effort to return traditional Hawaiian place names to everyday use.</p>
+
+<p>Hālawa Rail Station opened in 2023 beside a stadium that had already hosted its final major events and was awaiting demolition. The surrounding property is now undergoing another transformation as the old stadium is demolished and plans move forward for a new stadium and mixed-use sports and entertainment district.</p>
+
+<p><strong>Hālawa</strong> has survived a landscape transformed from loʻi, fishponds, and battlefields into military infrastructure, highways, a stadium, and an automated railway. Today, Hālawa Station places one of the area's oldest names on a major modern transportation hub, even as neighboring Aloha Stadium and the surrounding area are being redefined.</p>
+
+<p><a href="kualakai-rail-station.html">Related: Kualaka‘i Rail Station →</a></p>
+<p><a href="lelepaua-rail-station.html">Related: Lelepaua Rail Station →</a></p>
+
+<div class="return-links">
+  <a href="../index.html?lat=21.3709&lng=-157.9338&zoom=15">← Return to Map</a>
+  <a href="../index.html#map">← Explore More Places</a>
+</div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
