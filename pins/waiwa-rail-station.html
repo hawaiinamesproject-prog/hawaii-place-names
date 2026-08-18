@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waiawa Rail Station | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Learn about Waiawa (Pearl Highlands) Rail Station in Pearl City, named for Waiawa ('milkfish water') and the area's historic streams, loʻi kalo, and Hawaiian fishponds.">
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+
+<h1>Waiawa Rail Station</h1>
+<div class="island">Oʻahu — Pearl Highlands</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Waiawa Rail Station, Pearl Highlands, Pearl City, Oʻahu</p>
+  <p><strong>Type:</strong> Skyline rail station / transit hub</p>
+  <p><strong>Namesake:</strong> Waiawa (“milkfish water”), the traditional ahupuaʻa and stream flowing into Puʻuloa, or Pearl Harbor</p>
+  <p><strong>Story it tells:</strong> How a modern rail station preserves the name of a landscape once shaped by Waiawa Stream, loʻi kalo, and productive fishponds before sugar cultivation, military development, highways, and suburban growth transformed the area.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/waiawa-rail-station.jpg" alt="Entrance to Waiawa (Pearl Highlands) Rail Station in Pearl City, Oʻahu.">
+  <div class="caption">
+    Waiawa (Pearl Highlands) Rail Station in Pearl City, Oʻahu. Photo by Eli Fessler via Wikimedia Commons, CC BY-SA 4.0.
+  </div>
+</div>
+
+<p>Waiawa Rail Station, also known as Pearl Highlands Station, stands along Kamehameha Highway in Pearl City near the junction of the H-1 and H-2 freeways. The elevated station opened on June 30, 2023, as part of Skyline's first operating segment and was intended to serve as an important connection between the rail system and communities across Central Oʻahu.</p>
+
+<p><strong>Waiawa</strong> means “milkfish water,” combining <em>wai</em>, or fresh water, with <em>awa</em>, the Hawaiian name for milkfish. The name is associated with Waiawa Stream and the surrounding ahupuaʻa, which extended from the Koʻolau Mountains toward the waters of Puʻuloa, or Pearl Harbor. Waiawa Stream drains one of Oʻahu's largest watersheds, carrying freshwater from the mountains into the broad estuarine environment below.</p>
+
+<p>Where that freshwater met the saltwater of Puʻuloa, a rich, brackish habitat for <strong>awa</strong> developed. Loʻi kalo lined portions of the stream and surrounding wetlands, while loko iʻa (fishponds) along the lower reaches, near the present rail station, captured and raised fish moving between the harbor and protected waters.</p>
+
+<p>Milkfish were particularly well suited to this environment. Young awa could enter productive brackish ponds and feed within the protected waters of the pond. As the fish grew, carefully constructed <em>mākāhā</em>, or sluice gates, allowed pond keepers to control their movement and harvest as needed. The abundance of awa in these waters became important enough to survive in the name <strong>Waiawa</strong> itself.</p>
+
+<p>Families cultivated kalo and other crops along the stream while gathering resources from the uplands and harvesting fish and shellfish closer to Puʻuloa. Water connected these different environments, flowing from the mountains through agricultural lands and eventually into the fishponds and ocean.</p>
+
+<p>During the mid to late nineteenth century, this landscape began to change. Commercial agriculture spread throughout Central Oʻahu, and sugar eventually became the dominant industry surrounding Waiawa. The Oahu Sugar Company leased land from Bishop Estate and cultivated the Waiawa region, replacing much of the earlier agricultural landscape with cane fields, plantation irrigation systems, roads, and railways. Water that had supported loʻi, wetlands, and fishponds was redirected to industrial agriculture.</p>
+
+<p>The transformation continued during the twentieth century, but looked different. Military development around Puʻuloa, suburban growth in Pearl City, new highways, commercial centers, and other infrastructure gradually replaced the plantation landscape. After Oahu Sugar Company closed in 1995, former cane lands surrounding Waiawa entered another period of transition as agriculture gave way to commercial and residential development.</p>
+
+<p>One remnant of the plantation transportation network survives immediately below the modern station. The Oahu Railway & Land Company's railroad once passed through the Waiawa corridor, carrying agricultural products and passengers between Honolulu and communities across western Oʻahu. Portions of that former railroad corridor later became the Pearl Harbor Historic Trail. More than a century later, an automated electric railway again carries passengers through Waiawa, creating an unusual overlap between two generations of Oʻahu transportation.</p>
+
+<p>The modern station was originally envisioned as an even larger transportation hub. Plans for Pearl Highlands included a roughly 1,600-stall park-and-ride garage and direct connections intended to support ridership from Mililani, Wahiawā, and the North Shore. Rising construction costs pushed the proposed garage and freeway connections outside the rail project's reduced construction scope.</p>
+
+<p>Instead, the station functions primarily through rail, bus, bicycle, and pedestrian connections while serving the surrounding Pearl City area. Pearl Highlands Center and other commercial development now occupy portions of a landscape once dominated by agriculture, wetlands, and transportation corridors.</p>
+
+<p>Despite those changes, pieces of Waiawa's older agricultural identity are being revived nearby. Community organizations have worked to restore loʻi, native plants, and ʻāina-based education within the lower Waiawa corridor, returning traditional cultivation to small portions of a watershed altered by plantation agriculture and urban development.</p>
+
+<p>The history represented by the station's name is also built directly into its architecture. Low-relief columns designed by architect <strong>Daniel Kanekuni of WCIT Architecture</strong> tell Waiawa's story in the masonry. Images of mountain rains and the Koʻolau watershed descend toward agricultural lands, fishponds, waves, and schools of awa. The station entrance turns the meaning of “milkfish water” into a visual narrative, connecting the modern structure with the environment that used to support this community and produced its name.</p>
+
+<p>Today, Waiawa Stream continues flowing through the valley toward Puʻuloa. It was redirected, polluted, and survived many iterations of the surrounding landscape.  It persists. </p>
+
+<p><strong>Waiawa</strong> preserves the memory of that relationship between fresh water and sea: the stream, loʻi, fishponds, and abundant awa that once made “milkfish water” an obvious name for this place. The modern station places that name back into daily use, allowing thousands of passengers to encounter a fragment of history every time they ride Skyline.</p>
+
+<p><a href="ahua-rail-station.html">Related: Āhua Rail Station →</a></p>
+<p><a href="halawa-rail-station.html">Related: Hālawa Rail Station →</a></p>
+
+
+<div class="return-links">
+  <a href="../index.html?lat=21.3967&lng=-157.9800&zoom=15">← Return to Map</a>
+  <a href="../index.html#map">← Explore More Places</a>
+</div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
