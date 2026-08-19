@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pouhala Rail Station | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Explore Pouhala Rail Station (Waipahu Transit Center), named for historic Pouhala and its fishpond, now preserved in part as Pouhala Marsh beside Pearl Harbor.">
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+
+<h1>Pouhala Rail Station</h1>
+<div class="island">Oʻahu — Waipahu</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Pouhala Rail Station, Waipahu, Oʻahu</p>
+  <p><strong>Type:</strong> Skyline rail station / transit hub</p>
+  <p><strong>Namesake:</strong> Pouhala (“pandanus post or pillar”), a historic ʻili and fishpond within the ahupuaʻa of Waikele</p>
+  <p><strong>Story it tells:</strong> How a modern rail station preserves the name of a historic Hawaiian landscape of hala, fishponds, wetlands, and agriculture, part of which survives today as Pouhala Marsh near Waipahu.</p>
+</div>
+
+<div class="figure">
+ <img src="../images/pins/pouhala-marsh.jpg" alt="Pouhala Marsh wildlife sanctuary in Waipahu, part of the historic Pouhala landscape that gives Pouhala Rail Station its name.">
+  <div class="caption">
+    Pouhala Marsh in Waipahu during a wetland restoration project in 2010. The surviving wetland preserves part of the historic Pouhala landscape and provides habitat for endangered Hawaiian waterbirds. U.S. Navy photo by Mass Communication Specialist 2nd Class Eric J. Cutright, 2010. Public domain.
+  </div>
+</div>
+
+<p>Pouhala Rail Station, also known as Waipahu Transit Center Station, stands near Farrington Highway in the heart of Waipahu. The elevated station opened on June 30, 2023, as part of Skyline's first operating segment and connects directly with one of West Oʻahu's busiest bus hubs. Its name comes from an older landscape that survives just beyond the station.</p>
+
+<p><strong>Pouhala</strong> means “pandanus post or pillar,” combining <em>pou</em>, meaning post or pillar, with <em>hala</em>, the Hawaiian pandanus. Pouhala was the name of an ʻili within the larger ahupuaʻa of Waikele and was also the name of an important fishpond and wetland along the West Loch of Puʻuloa, or Pearl Harbor.</p>
+
+<p>Before Western contact, the vicinity of Pouhala Rail Station was an exceptionally productive landscape, primarily due to an abundance of fresh water. Waikele Stream carried freshwater toward Puʻuloa, while numerous springs emerged across the lowlands. Loʻi kalo, fishponds, wetlands, and brackish waterways supported a substantial Hawaiian population.</p>
+
+<p>Hala also thrived in the wet coastal environment around Pouhala. The tree tolerates sandy and brackish conditions, while its extensive root system stabilizes shorelines. For Native Hawaiians, hala was an enormously useful plant. Its leaves could be woven into mats, baskets, and sails, while its wood, roots, fruit, and flowers had additional practical and cultural uses. The name <strong>Pouhala</strong> preserves the plant that was once a conspicuous part of this environment.</p>
+
+<p>During the nineteenth century, the water-intensive landscape began to change. Population decline, introduced livestock, changing land ownership, and plantation agriculture disrupted the area. The Great Māhele further transformed patterns of landholding, with leasing of land driving more significant infrastructure investments.</p>
+
+<p>By the end of the century, sugar had become the dominant force and in many regards dictated life in Waipahu. The Oahu Sugar Company began operations in 1897 and developed thousands of acres surrounding the community. Much of its plantation land was leased from large estates, including Bishop Estate, while enormous quantities of groundwater were pumped and redirected to irrigate cane. Fields, plantation camps, roads, irrigation works, and rail lines increasingly replaced the older agricultural landscape.</p>
+
+<p>The Oahu Railway & Land Company also passed through Waipahu, carrying passengers and freight along the Pearl Harbor shoreline. Plantation railroads connected surrounding cane fields with the Waipahu Sugar Mill, creating a transportation corridor that Skyline generally follows today.</p>
+
+<p>During World War II, the nearby sugar mill and transportation network became increasingly militarized after the attack of December 7, 1941. Rail lines became strategically important for moving military personnel, equipment, and supplies around Oʻahu.</p>
+
+<p>After the war, Waipahu increasingly transformed from a plantation town into a suburban community. Housing, shopping centers, roads, and other development spread across former agricultural lands. Oahu Sugar Company ceased operations in 1995, ending nearly a century of large-scale sugar cultivation around Waipahu.</p>
+
+<p>Throughout all this shiftin in the landscape, one piece of the older Pouhala landscape survived. Immediately makai of the modern rail corridor lies <strong>Pouhala Marsh</strong>, a remnant of the wetlands and fishpond environment that once extended across this portion of the West Loch shoreline.</p>
+
+<p>As traditional fishpond management disappeared and the surrounding area urbanized, the wetland became choked with invasive vegetation and accumulated trash and other debris. Portions were filled, and the marsh was at one point considered to be a landfill in the 1970s. Recognition of its ecological importance and the proteting of local wildlife biologists and conservationists eventually changed its future.</p>
+
+<p>Restoration efforts removed invasive mangrove, cleared debris, and reopened portions of the wetland. Today, roughly 70 acres are protected as Pouhala Marsh Wildlife Sanctuary, providing habitat for some of Hawaiʻi's endangered native waterbirds, including aeʻo, or Hawaiian stilts; ʻalae ʻula, or Hawaiian gallinules; and ʻalae keʻokeʻo, or Hawaiian coots.</p>
+
+<p>When Honolulu's rail stations were given Hawaiian names, the Hawaiian Station Naming Working Group selected <strong>Pouhala</strong> for the station serving Waipahu Transit Center. The station returned an older name associated with the land, fishpond, wetland, and hala that preceded the plantation town around it.</p>
+
+<p><strong>Pouhala</strong> survives both as a name and as a place. The modern rail station carries the name above Waipahu while the marsh below preserves a fragment of the wetland landscape from which that name emerged.</p>
+
+<p><a href="waiawa-rail-station.html">Related: Waiawa Rail Station →</a></p>
+<p><a href="halawa-rail-station.html">Related: Hālawa Rail Station →</a></p>
+
+
+<div class="return-links">
+  <a href="../index.html?lat=21.3841&lng=-158.0039&zoom=15">← Return to Map</a>
+  <a href="../index.html#map">← Explore More Places</a>
+</div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
