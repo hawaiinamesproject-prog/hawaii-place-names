@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hygienic Store | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Discover Hygienic Store in ʻĀhuimanu, the Windward Oʻahu landmark named for Hygienic Dairy, whose former cattle pastures became today's Temple Valley and surrounding neighborhoods.">
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+
+<h1>Hygienic Store</h1>
+<div class="island">Oʻahu — ʻĀhuimanu</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Hygienic Store, ʻĀhuimanu, Windward Oʻahu</p>
+  <p><strong>Type:</strong> Historic general store / neighborhood landmark</p>
+  <p><strong>Namesake:</strong> Hygienic Dairy, a major Windward Oʻahu dairy operation that grew from the Ahuimanu Stock Farm established in 1924</p>
+  <p><strong>Story it tells:</strong> How a small neighborhood store preserves the name of a dairy and surrounding cattle pastures of ʻĀhuimanu that were later developed into Temple Valley, subdivisions, and modern suburban development.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/hygienic-store.jpg" alt="The historic Hygienic Store in Kahaluʻu on Windward Oʻahu, originally associated with Hygienic Dairy.">
+  <div class="caption">
+    The Hygienic Store in Kahaluʻu, a longtime Windward Oʻahu landmark that originated as the company store for Hygienic Dairy. Photo by The Eloquent Peasant via Wikimedia Commons, CC BY-SA 4.0.
+  </div>
+</div>
+
+<p>Hygienic Store is a landmark in Kahaluʻu at the entrance to ʻĀhuimanu Valley. Today it operates as a neighborhood convenience store, but its unusual name is a surviving piece of a very different Windward Oʻahu. Many decades ago hundreds of dairy cows grazed across the surrounding valley.</p>
+
+<p>In 1924, <strong>Mr. Young</strong> established the Ahuimanu Stock Farm. The operation began with about 90 milking cows and moved closer to the present store location in 1927 (from a little deeper in the valley). In 1931, the business adopted the name that would outlive the dairy itself: <strong>Hygienic Dairy</strong>.</p>
+
+<p>The word “Hygienic” sounds peculiar but it made considerably more sense as the name of a dairy during the early twentieth century. Before modern refrigeration, pasteurization, and sanitary controls became widespread, contaminated milk was a serious public health problem. Dairy companies emphasized cleanliness to reassure customers that their products were safe. Calling the operation <strong>Hygienic Dairy</strong> advertised exactly what families wanted to hear about the milk they were buying.</p>
+
+<p>The dairy grew with its herd reaching as many as 450 cows, while grazing lands used by the operation extended across thousands of acres of ʻĀhuimanu Valley. At its height, Hygienic was reportedly among the largest dairy operations in Hawaiʻi.</p>
+
+<p>The small store along the road served the dairy and surrounding rural community. Residents could purchase fresh meat, produce, hardware, rubber boots, groceries, and other necessities without traveling into Kāneʻohe. The store also sold gasoline and became an informal gathering place for families scattered throughout ʻĀhuimanu and the surrounding countryside. For some residents, even the mail came through the store.</p>
+
+<p>By 1950, however, Hawaiʻi's dairy industry was changing. Hygienic Dairy and Campos Dairy in Kailua broke with the Hawaii Dairymen's Association (which would eventually become Meadow Gold) during a dispute over milk prices. The two Windward dairies attempted to market and process their milk independently, challenging the cooperative that dominated much of the local milk industry.</p>
+
+<p>That independence did not last long. Foremost Dairies entered the Hawaiʻi market and acquired Hygienic and Campos in 1952. Hygienic's cattle and dairy operations were consolidated to Waimānalo.</p>
+
+<p>The storefront had a different trajectory. In 1950, <strong>Simon Chong</strong> took over the small company store, separating it from the dairy operation whose name remained painted across the storefront. As the cows disappeared, the Hygienic Store continued serving the neighborhood.</p>
+
+<p>During the 1960s and 1970s, former grazing lands throughout ʻĀhuimanu were developed into residential neighborhoods and what became known as Temple Valley.</p>
+
+<p>Other portions of the former rural landscape took different forms. The Valley of the Temples Memorial Park opened in 1963 on the slopes farther into the valley, followed by the Byodo-In Temple in 1968. Commercial development spread through the lower valley, including the Temple Valley Shopping Center, while new roads and subdivisions tied ʻĀhuimanu more closely with Kāneʻohe and the rest of Windward Oʻahu.</p>
+
+<p>What had once been a full-service rural general store and gas station gradually became the convenience store familiar to generations of modern residents.</p>
+
+<p>Today, Hygienic Store is an easy landmark to pass without realizing what its name represents. The small roadside building is one of the few obvious reminders that ʻĀhuimanu Valley was once dairy country. Nearly a century after Hygienic Dairy adopted its memorable name, the store continues to preserve it amid the neighborhoods that replaced the pastures.</p>
+
+<div class="return-links">
+  <a href="../index.html?lat=21.4575&lng=-157.8386&zoom=13">← Return to Map</a>
+  <a href="../index.html#map">← Explore More Places</a>
+</div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
