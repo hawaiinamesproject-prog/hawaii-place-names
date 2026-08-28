@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hōʻaeʻae Rail Station | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Discover Hōʻaeʻae Rail Station (West Loch Station) in Waipahu, named for an ancient ʻEwa ahupuaʻa shaped by freshwater springs, loʻi kalo, sugar, and railroads.">  
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+
+<h1>Hōʻaeʻae Rail Station</h1>
+<div class="island">Oʻahu — Waipahu</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Hōʻaeʻae Rail Station, Waipahu, Oʻahu</p>
+  <p><strong>Type:</strong> Skyline rail station / West Loch station</p>
+  <p><strong>Namesake:</strong> Hōʻaeʻae (“to make soft or fine”), the historic ahupuaʻa whose freshwater springs and fertile soils supported loʻi kalo</p>
+  <p><strong>Story it tells:</strong> How an ʻEwa landscape of springs, ʻauwai, and loʻi kalo was transformed by sugar and urban development, while a modern Skyline station revives both the traditional name Hōʻaeʻae and the legacy of an earlier railroad station in the same corridor.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/hoaeae-rail-station.jpg" alt="View from Skyline train as you approach Hō‘ae‘ae/West Loch Skyline station.">
+  <div class="caption">
+    View from Skyline train as you approach Hō‘ae‘ae/West Loch Skyline station. Photo by RickyCourtney via Wikimedia Commons, CC4.0.
+  </div>
+</div>
+
+<p>Hōʻaeʻae Rail Station, also known as West Loch Station, stands above Farrington Highway in Waipahu between Leoku and Leoole streets. The elevated station opened on June 30, 2023, as part of Skyline's first operating segment.</p>
+
+<p><strong>Hōʻaeʻae</strong>, meaning “to make soft or fine,” is the name of the traditional ahupuaʻa situated between Honouliuli and Waikele. The name has been connected with the preparation of its fertile soils, where abundant freshwater supported wetland agriculture. Springs bubbling across the lower lands near Puʻuloa (Pearl Harbor) provided water which was directed through ʻauwai into <em>loʻi kalo</em>.</p>
+
+<p>The relationship between soil and water was fundamental to Hōʻaeʻae. Farmers worked the earth of the loʻi into the soft mud needed for kalo while maintaining a continuous, steady flow of water through the fields. Cultivated wetlands extended across portions of the lowlands surrounding the West Loch of Puʻuloa.</p>
+
+<p>Hōʻaeʻae was also connected to the older geography of ʻEwa through places such as <strong>Huliwai Gulch</strong>. Hawaiian traditions describe Pōhaku-pili, or “clinging rock,” as a landmark along the boundary between Hōʻaeʻae and neighboring Waikele. The stone was associated with the gods Kāne and Kanaloa, connecting the physical boundary between the two lands with Hawaiian moʻolelo.</p>
+
+<p>During the late nineteenth century, transportation and plantation agriculture began reshaping the area. In 1890, Benjamin Dillingham's <strong>Oʻahu Railway and Land Company</strong> extended its railroad through ʻEwa. A station named Hōʻaeʻae was established along the route, carrying the same place name used by today's Skyline station more than a century later.</p>
+
+<p>The railroad supported the expanding sugar economy of the surrounding area. The Oahu Sugar Company began operations in nearby Waipahu in the late nineteenth century, and sugarcane increasingly replaced older agricultural landscapes across the surrounding ʻEwa plain. Plantation camps developed around the fields and mill as workers arrived from Japan, China, Portugal, the Philippines, and elsewhere, helping reshape the community that became modern Waipahu.</p>
+
+<p>The OR&L railroad became particularly important during World War II, carrying military personnel, workers, equipment, and supplies through the Pearl Harbor region. After the war, automobiles and highways increasingly replaced rail transportation. OR&L abandoned its main line in 1947, ending railroad service through Hōʻaeʻae. Portions of the former right-of-way later became part of the Pearl Harbor Historic Trail.</p>
+
+<p>Oahu Sugar Company continued operating until 1995, but development was already transforming Waipahu. Former agricultural lands became neighborhoods, roads, shopping centers, and businesses, leaving little visible evidence of the springs, loʻi, sugar fields, and railroad that had occupied the area.</p>
+
+<p>More than a century after the first railroad reached Hōʻaeʻae, construction of Honolulu's elevated rail system returned trains to the corridor. During development of Skyline, the Hawaiian Station Naming Working Group researched traditional names associated with the route and recommended <strong>Hōʻaeʻae</strong> for the station originally identified as West Loch Station. The name was formally adopted in 2018.</p>
+
+<p>When Hōʻaeʻae Rail Station opened in 2023, trains once again stopped at a place bearing the name Hōʻaeʻae. The technology had changed from narrow-gauge steam locomotives to an automated elevated railway, and the agricultural landscape surrounding it had largely disappeared, but the old name returned to Oʻahu's transportation network.</p>
+
+<p><strong>Hōʻaeʻae</strong> preserves the memory of a landscape shaped by freshwater, soft cultivated earth, and loʻi kalo before sugar, railroads, highways, and urban Waipahu repeatedly transformed the land. More than 130 years after the first Hōʻaeʻae railroad station, its name makes a return to the ʻEwa plains.</p>
+
+<p><a href="pouhala-rail-station.html">Related: Pouhala Rail Station →</a></p>
+<p><a href="keoneae-rail-station.html">Related: Keoneʻae Rail Station →</a></p>
+
+<div class="return-links">
+  <a href="../index.html?lat=21.37817&lng=-158.02267&zoom=15">← Return to Map</a>
+  <a href="../index.html#map">← Explore More Places</a>
+</div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
