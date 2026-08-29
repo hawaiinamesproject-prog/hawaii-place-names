@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Honouliuli Rail Station | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Learn about Honouliuli Rail Station, named for Oʻahu's largest ahupuaʻa, a vast ʻEwa landscape shaped by farming, sugar, war, and modern development.">
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+<h1>Honouliuli Rail Station</h1>
+<div class="island">Oʻahu — East Kapolei</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Honouliuli Rail Station, East Kapolei, Oʻahu</p>
+  <p><strong>Type:</strong> Skyline rail station / Hoʻopili station</p>
+  <p><strong>Namesake:</strong> Honouliuli (“dark bay”), the largest traditional ahupuaʻa on Oʻahu, extending from the ʻEwa plain into the Waiʻanae Mountains</p>
+  <p><strong>Story it tells:</strong> How a modern rail station preserves the name of a vast Hawaiian land division transformed by farming, artesian water, sugar cultivation, wartime internment, and the development of modern East Kapolei.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/honouliuli-rail-station.jpg" alt="Skyline artwork at Honouliuli Rail Station, ʻUlu Day and ʻUlu Night.">
+  <div class="caption">
+    <em>Skyline artwork at Honouliuli Rail Station, ʻUlu Day and ʻUlu Night. Photo by eli fessler, Wikimedia Commmons 4.0.
+  </div>
+</div>
+
+<p>Honouliuli Rail Station, also known as Hoʻopili Station, stands above Farrington Highway in East Kapolei, surrounded today by new homes, roads, and the growing Hoʻopili community. The station opened on June 30, 2023, as part of Skyline's first operating segment. Its name, however, belongs to a much larger and older landscape stretching from the shores of Puʻuloa (Pearl Harbor) into the Waiʻanae Mountains.</p>
+
+<p><strong>Honouliuli</strong> is commonly translated as “dark bay”. The name belongs to the largest ahupuaʻa on Oʻahu, covering most of the ʻEwa district. Its lands extended from the dry coastal plains and wetlands surrounding the West Loch of Puʻuloa through the interior valleys and into the Waiʻanae range.</p>
+
+<p>Hawaiian traditions also associate the name with <strong>Honouliuli</strong>, an aliʻi and husband of the chiefess Kapālama. The couple appear in the moʻolelo of their granddaughter Lepeamoa, a supernatural <em>kupua</em> who could take the form of a woman or bird.</p>
+
+<p>The enormous size of the ahupuaʻa encompassed several different environments. Although much of the interior ʻEwa plain was dry, Native Hawaiians cultivated ʻuala and other crops where conditions allowed. Closer to Puʻuloa, freshwater and wetlands supported <em>loʻi kalo</em>, while coastal communities managed fishponds and harvested fish, limu, shellfish, and other resources from the protected waters of the harbor.</p>
+
+<p>In 1877, businessman <strong>James Campbell</strong> purchased approximately 41,000 acres of land in the ʻEwa plain. He drilled deep artesian wells that brought groundwater to the surface, allowing previously dry areas to support large-scale commercial agriculture. Campbell leased large tracts of his property for sugar cultivation, and cane fields spread.</p>
+
+<p>Other portions of the enormous ahupuaʻa underwent a very different transformation. During the early twentieth century, the United States military acquired large areas around Puʻuloa as Pearl Harbor developed into a major naval base. Military installations, roads, airfields, and other infrastructure increasingly occupied former agricultural and coastal lands.</p>
+
+<p>During World War II, the name <strong>Honouliuli</strong> became connected with one of the darkest chapters in the area's modern history. Hidden within a gulch farther inland, the Honouliuli Internment Camp opened in 1943. The camp confined hundreds of Hawaiʻi residents, primarily Japanese Americans detained under martial law, as well as thousands of prisoners of war. Japanese internees called the isolated location <em>Jigoku-Dani</em>, or “Hell Valley.”</p>
+
+<p>After the camp closed following the war, its buildings were removed and vegetation gradually concealed much of the site. The former camp largely disappeared from public view until researchers and community organizations helped relocate and document it decades later. The site was federally protected in 2015 and today preserves the history of wartime incarceration within the larger Honouliuli landscape.</p>
+
+<p>Meanwhile, sugar continued shaping the plains closer to the future rail station until the industry declined late in the twentieth century. Former plantation lands increasingly became part of plans to develop Kapolei as Oʻahu's “Second City.” Roads, schools, businesses, government facilities, and new neighborhoods spread across the former cane fields.</p>
+
+<p><strong>Hoʻopili</strong> represents one of the newest stages of that transformation. Thousands of homes and new streets are being built across land that only recently supported sugarcane. Honouliuli Rail Station was constructed beside the growing community, placing rapid transit through a landscape that has repeatedly shifted from Hawaiian agriculture to plantation fields and now suburban development.</p>
+
+<p>During development of Skyline, the Hawaiian Station Naming Working Group researched traditional names associated with the rail corridor and recommended <strong>Honouliuli</strong> for the station originally identified as Hoʻopili Station. The traditional name places the modern station within the much larger geography of the ahupuaʻa rather than identifying it solely with the new community surrounding it.</p>
+
+<p><strong>Honouliuli</strong> has encompassed dry plains, loʻi, fishponds, sugar fields, military lands, a wartime confinement camp, and now some of Oʻahu's fastest-growing communities. The rail station represents another transformation of this vast landscape while returning one of ʻEwa's oldest names to everyday use.</p>
+
+<p><a href="keoneae-rail-station.html">Related: Keoneʻae Rail Station →</a></p>
+<p><a href="hoaeae-rail-station.html">Related: Hōʻaeʻae Rail Station →</a></p>
+
+
+<div class="return-links">
+  <a href="../index.html?lat=21.3669&lng=-158.04529&zoom=15">← Return to Map</a>
+  <a href="../index.html#map">← Explore More Places</a>
+</div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
