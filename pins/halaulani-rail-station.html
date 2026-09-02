@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hālaulani Rail Station | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Learn about Hālaulani Rail Station (Leeward Community College Station), named for a historic Waipiʻo ʻili once surrounded by fishponds and sacred sites.">
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+
+<h1>Hālaulani Rail Station</h1>
+<div class="island">Oʻahu — Pearl City</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Hālaulani Rail Station, Leeward Community College, Pearl City, Oʻahu</p>
+  <p><strong>Type:</strong> Skyline rail station / college station</p>
+  <p><strong>Namesake:</strong> Hālaulani (“heavenly hālau” or “chief's house”), a historic ʻili within the ahupuaʻa of Waipiʻo</p>
+  <p><strong>Story it tells:</strong> How a modern rail station preserves the name of a Waipiʻo landscape once defined by fishponds, fishing, and sacred sites before sugar plantations and the development of Leeward Community College transformed the land.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/halaulani-rail-station.jpg" alt="Hālaulani/Leeward Community College Skyline station">
+  <div class="caption">
+    <em>Hālaulani/Leeward Community College Skyline station. Photo by Ricky Courtney, Wikimedia Commons 4.0.</em>
+  </div>
+</div>
+
+<p>Hālaulani Rail Station stands on the grounds of Leeward Community College in Pearl City, near the shoreline of Puʻuloa (Pearl Harbor). Unlike the elevated stations throughout Skyline, Hālaulani sits at ground level, with passengers walking through the station using an underground pedestrian passage. It opened on June 30, 2023, as part of Skyline's first operating segment.</p>
+
+<p><strong>Hālaulani</strong> is the name of a historic ʻili within the larger ahupuaʻa of Waipiʻo. The name has been translated as “heavenly hālau” or “chief's house,” connecting today's college and rail station with a much older division of the land.</p>
+
+<p>Before educational facilities dominated this area, Hālaulani belonged to a remarkably productive landscape along Puʻuloa. Nearby were the large fishponds of <strong>Hanaloa, ʻEō, and Hanapouli</strong>, part of an extensive system of Hawaiian aquaculture around the harbor. These loko iʻa supported ʻanae, or mullet, and other fish that helped sustain the communities of Waipiʻo.</p>
+
+<p>Hālaulani was also connected with <strong>Ahuʻena Heiau</strong>, an important religious site. Historical surveys placed Ahuʻena within the ʻili of Hālaulani, close to the lands that would eventually become Leeward Community College.</p>
+
+<p>Ahuʻena was closely connected with the surrounding fishing landscape. Historical accounts identify the site as a <em>kūʻula</em> of Waipiʻo, a sacred place associated with fishing and the rituals intended to ensure abundance from the nearby waters.</p>
+
+<p>The heiau also survived into the era of <strong>Kamehameha I</strong>. Traditions describe changes in its religious function as Oʻahu passed through warfare, famine, and eventually Kamehameha's conquest of the island. The name Ahuʻena would later also become associated with Kamehameha's royal compound at Kamakahonu in Kailua-Kona, where another Ahuʻena Heiau became one of the most important sites of his final years.</p>
+
+<p>The older landscape surrounding Hālaulani gradually disappeared as plantation agriculture started dominating Waipiʻo. By the late nineteenth and early twentieth centuries, sugarcane occupied much of the flat land surrounding Puʻuloa. The Oahu Sugar Company developed fields across the region, while the Oʻahu Railway & Land Company carried sugar, freight, workers, and passengers across the plains near the coast.</p>
+
+<p>Plantation agriculture took a heavy toll on older Hawaiian sites. By the time archaeologists documented Ahuʻena Heiau during the twentieth century, the site was heavily disturbed and little of the original structure remained. The fishpond landscape along Puʻuloa was also altered by changing land use and development.</p>
+
+<p>A major new chapter began in the 1960s when former agricultural land was selected for a new community college serving Leeward Oʻahu. <strong>Leeward Community College opened in 1968</strong>, replacing sugarcane with classrooms, workshops, parking lots, and other educational facilities. A landscape that had supported Hawaiian aquaculture and sacred sites, and later plantation agriculture, became a place devoted to higher education.</p>
+
+<p>More than fifty years later, another major piece of public infrastructure arrived on the campus. During development of Honolulu's rail system, the traditional name <strong>Hālaulani</strong> was selected for the station serving Leeward Community College, reconnecting the modern campus with the ʻili upon which it was built.</p>
+
+<p>The station's public art makes that connection especially visible. <em>He Kauhulu ʻAnae (A Gathering of Mullets)</em>, a sculpture by Donald Lipski suspended above the station entrance, depicts a school of ʻanae. The fish recall the productive loko iʻa that once surrounded Hālaulani and turn the entrance to a modern rail station into a reminder of the landscape that existed here before the college.</p>
+
+<p>Today, students arrive at Leeward Community College aboard a driverless train, passing beneath a gathering of fish that recalls the aquaculture of ancient Waipiʻo. Nearby, little remains visible of Ahuʻena Heiau or the extensive fishpond system that once defined this shoreline. </p><strong>Hālaulani</strong> preserves their place on the landscape. </p>
+
+<p><a href="waiawa-rail-station.html">Related: Waiawa Rail Station →</a></p>
+<p><a href="pouhala-rail-station.html">Related: Pouhala Rail Station →</a></p>
+
+
+<div class="return-links">
+  <a href="../index.html?lat=21.3944&lng=-157.9856&zoom=15">← Return to Map</a>
+  <a href="../index.html#map">← Explore More Places</a>
+</div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
