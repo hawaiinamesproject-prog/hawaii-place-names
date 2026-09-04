@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kahauiki Rail Station | Hawaiʻi Names Project</title>
+
+<link rel="icon" href="../clean-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../clean-favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../clean-favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../clean-favicon-180.png">
+
+<meta name="description" content="Learn about Kahauiki Rail Station (Middle Street–Kalihi Transit Center), named for a historic Oʻahu ahupuaʻa transformed by military and urban development.">
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-41NCGZLGNJ');
+</script>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav{
+  background:#fff;
+  border-bottom:1px solid #ddd;
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+  font-weight:600;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+}
+
+nav a:hover{ color:#2b6cb0; }
+
+.nav-toggle{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+}
+
+.hamburger{
+  display:none;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  background:transparent;
+  border:0;
+  padding:10px;
+}
+
+.hamburger span{
+  display:block;
+  width:24px;
+  height:2px;
+  background:#222;
+  margin:5px 0;
+}
+
+.mobile-menu{
+  display:none;
+  border-top:1px solid #eee;
+  background:#fff;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #f0f0f0;
+  font-weight:600;
+}
+
+.mobile-menu a:last-child{ border-bottom:none; }
+
+#nav-toggle:checked ~ .mobile-menu{ display:block; }
+
+@media (max-width:768px){
+  .nav-inner{ justify-content:flex-start; }
+  .nav-links{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* =========================
+BANNER
+========================= */
+
+.hero-banner{
+  background:white;
+  display:flex;
+  justify-content:center;
+  padding:30px 0;
+}
+
+.hero-banner img{
+  width:420px;
+  max-width:88%;
+  height:auto;
+}
+
+/* =========================
+PAGE LAYOUT
+========================= */
+
+.profile{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 20px 60px;
+}
+
+.profile h1{
+  margin:10px 0 6px;
+  font-size:2.2rem;
+}
+
+.island{
+  font-weight:600;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.quick-facts{
+  background:#fff;
+  border-radius:10px;
+  padding:18px 20px;
+  margin:0 0 28px;
+  border:1px solid #e4e4e4;
+}
+
+.quick-facts p{
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.profile p{
+  line-height:1.75;
+  font-size:1.05rem;
+  margin:18px 0;
+}
+
+/* =========================
+IMAGES
+========================= */
+
+.figure{
+  margin:32px auto;
+  text-align:center;
+}
+
+.figure img{
+  width:100%;
+  max-width:450px;
+  height:auto;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;
+}
+
+.caption{
+  font-size:0.95rem;
+  color:#555;
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* =========================
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+  background:white;
+  text-align:center;
+  padding:40px 0;
+  border-top:1px solid #ddd;
+  margin-top:60px;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.footer a{
+  text-decoration:none;
+  color:#222;
+  margin:0 20px;
+}
+
+.footer a:hover{ color:#2b6cb0; }
+
+@media (max-width:768px){
+  .profile{ padding:32px 24px 60px; }
+  .profile p{ font-size:1rem; line-height:1.85; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <input class="nav-toggle" type="checkbox" id="nav-toggle">
+
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../places-we-lost.html">Places We Lost</a>
+      <a href="../place-name-profiles.html">Place Name Profiles</a>
+      <a href="../stories.html">Stories</a>
+    </div>
+
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../places-we-lost.html">Places We Lost</a>
+    <a href="../place-name-profiles.html">Place Name Profiles</a>
+    <a href="../stories.html">Stories</a>
+  </div>
+</nav>
+
+<div class="hero-banner">
+  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
+</div>
+
+<main class="profile">
+
+
+<h1>Kahauiki Rail Station</h1>
+<div class="island">Oʻahu — Kalihi</div>
+
+<div class="quick-facts">
+  <p><strong>Place:</strong> Kahauiki Rail Station, Middle Street–Kalihi Transit Center, Honolulu, Oʻahu</p>
+  <p><strong>Type:</strong> Skyline rail station / transit hub</p>
+  <p><strong>Namesake:</strong> Kahauiki (“the little hau tree”), the historic ahupuaʻa between Moanalua and Kalihi</p>
+  <p><strong>Story it tells:</strong> How a modern rail station restores the name of an ahupuaʻa once shaped by Kahauiki Stream, irrigated agriculture, wetlands, and coastal resources before military and urban development transformed the landscape.</p>
+</div>
+
+<div class="figure">
+  <img src="../images/pins/kahauiki-rail-station.jpg" alt="Platform for Track 1 at Kahauiki Station, looking West.">
+  <div class="caption">
+    <em>Platform for Track 1 at Kahauiki Station, looking west. Photo by Musashi1600 via Wikimedia Commons 4.0.</em>
+  </div>
+</div>
+
+<p>Kahauiki Rail Station stands at the intersection of Kamehameha Highway and Middle Street, beside one of Oʻahu's busiest bus hubs and beneath the approaches to the H-1 Freeway. The surrounding area is dominated today by highways, military facilities, warehouses, and transportation infrastructure. The station's name, however, restores an older identity to a place long known simply as Middle Street: <strong>Kahauiki</strong>.</p>
+
+<p><strong>Kahauiki</strong>, meaning “the little hau tree,” was an ahupuaʻa situated between Moanalua and Kalihi. Its lands extended from the uplands toward the coastal flats of Keʻehi Lagoon, linking very different environments through the waters of Kahauiki Stream.</p>
+
+<p>Fresh water made the lower valley particularly productive. Native Hawaiians diverted water from Kahauiki Stream through irrigation systems that supported agricultural terraces. Wetlands, mudflats, fishponds, and the shallow waters of Keʻehi provided fish, limu, shellfish, and other marine resources.</p>
+
+<p>The hau remembered in the name grew near streams and wet areas, and its wood and fibers provided material for cordage, canoe parts, and numerous other purposes.</p>
+
+<p>The most dramatic transformation of Kahauiki came much later. By the nineteenth century, lands within Kahauiki were held among the Crown and Government Lands of the Hawaiian Kingdom. Following the overthrow of the Hawaiian monarchy and annexation of Hawaiʻi, control of those lands passed through the Republic of Hawaiʻi to the United States.</p>
+
+<p>The federal government quickly identified the value of the site and reserved portions of Kahauiki for military use. In 1899, land in the area was set aside for the U.S. Army, and construction of <strong>Fort Shafter</strong> began several years later. Established in 1905, Fort Shafter became the first permanent U.S. Army post on Oʻahu.</p>
+
+<p>The arrival of the Army radically altered the upper portions of the old ahupuaʻa. Military buildings, roads, utilities, and other infrastructure replaced portions of the earlier agricultural landscape. Fort Shafter expanded further as the strategic importance of both Honolulu and nearby Pearl Harbor increased during the first half of the twentieth century.</p>
+
+<p>World War II accelerated the transformation. Kahauiki sat along the critical corridor between Honolulu, Fort Shafter, Pearl Harbor, and other military installations west of the city. Middle Street and the surrounding roads became increasingly important for moving people and material through an expanding military and industrial landscape.</p>
+
+<p>After the war, transportation infrastructure continued to reshape the lower lands. The H-1 Freeway crossed the old boundaries of Kahauiki, streams were channelized, and much of the coastal plain became occupied by highways, warehouses, industrial yards, and government facilities. The area became one of Honolulu's most heavily engineered transportation corridors.</p>
+
+<p>Middle Street eventually became important to public transportation as well. The <strong>Kalihi Transit Center</strong> developed into a major hub for TheBus, concentrating numerous routes at the same geographic bottleneck that had carried travelers between Honolulu and points west for generations.</p>
+
+<p>When Honolulu's rail system, Skyline, reached Middle Street, the station naming process looked for a traditional name to reconnect to the land. In 2019, the Hawaiian Station Naming Working Group selected <strong>Kahauiki</strong>, returning the name of the ahupuaʻa to everyday use rather than allowing the familiar ‘Middle Street’ to become the station's primary identity.</p>
+
+<p><strong>Kahauiki Rail Station</strong> opened in 2025 as the eastern terminus of Skyline's second operating segment. Its role as a transfer point is immediately visible in one of the station's most distinctive features: a massive elevated pedestrian bridge carries passengers across seven lanes of Kamehameha Highway directly between Skyline and the Kalihi Transit Center.</p>
+
+<p>The bridge may eventually be joined by another. Long-range transit-oriented development plans include an additional elevated pedestrian connection extending makai across Nimitz Highway, linking the station area more directly with Keʻehi Lagoon. If constructed, the crossing would reconnect pedestrians with the shoreline side of an ahupuaʻa that highways and industrial development have isolated from the uplands.</p>
+
+<p>Today, Kahauiki is again a gateway. Instead of agricultural paths and waterways connecting the uplands with Keʻehi, trains, buses, freeways, and pedestrian bridges move thousands of people through the same narrow corridor.</p>
+
+<p><strong>Kahauiki</strong> restores the name of the land beneath that infrastructure: an ahupuaʻa of streams, agriculture, wetlands, and coastal resources that became a military stronghold and one of Honolulu's busiest public transit hubs.</p>
+
+<p><a href="ahua-rail-station.html">Related: Āhua Rail Station →</a></p>
+<p><a href="alapai-street.html">Related: Alapaʻi Street →</a></p>
+
+
+<div class="return-links">
+  <a href="../index.html?lat=21.33280&lng=-157.8887&zoom=15">← Return to Map</a>
+  <a href="../index.html#map">← Explore More Places</a>
+</div>
+
+</main>
+
+<footer class="footer">
+  <a href="../about.html">About</a> |
+  <a href="../contact.html">Contact Us</a>
+</footer>
+
+</body>
+</html>
