@@ -314,6 +314,26 @@ nav{
   }
   .more-link:hover{ text-decoration:underline; }
 
+
+/* New pins: static gold halo */
+.new-pin-icon{
+  filter:drop-shadow(0 0 4px #e3b341)
+         drop-shadow(0 0 2px #e3b341);
+}
+
+/* Gold indicator for clusters containing new pins */
+.cluster-new-dot{
+  position:absolute;
+  top:-5px;
+  right:-5px;
+  width:12px;
+  height:12px;
+  background:#e3b341;
+  border:2px solid white;
+  border-radius:50%;
+  z-index:2;
+}
+ 
   /* Clusters */
   .marker-cluster,
   .marker-cluster div{
@@ -836,6 +856,29 @@ if (!isNaN(lat) && !isNaN(lng)) {
     L.DomEvent.disableScrollPropagation(tb);
   })();
 
+
+function isNewPin(added){
+  if(!added) return false;
+
+  const parts = added.split("-").map(Number);
+  if(parts.length !== 3 || parts.some(n => !Number.isInteger(n))) return false;
+
+  const addedDate = new Date(parts[0], parts[1] - 1, parts[2]);
+  if(addedDate.getFullYear() !== parts[0] ||
+     addedDate.getMonth() !== parts[1] - 1 ||
+     addedDate.getDate() !== parts[2]) return false;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const daysOld = Math.round(
+    (Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()) -
+     Date.UTC(parts[0], parts[1] - 1, parts[2])) / 86400000
+  );
+
+  return daysOld >= 0 && daysOld < 15;
+}
+ 
   function svgPinDataURI(color){
     var svg = `
       <svg xmlns="http://www.w3.org/2000/svg" width="30" height="44" viewBox="0 0 30 44">
@@ -859,23 +902,30 @@ if (!isNaN(lat) && !isNaN(lng)) {
     popupAnchor: [0, -38]
   });
 
-  function clusterIconCreateFunction(colorClass){
-    return function(cluster){
-      var count = cluster.getChildCount();
-      var html = `
-        <div class="cluster-pin ${colorClass}">
-          <div class="head">${count}</div>
-          <div class="tip"></div>
-        </div>
-      `;
-      return L.divIcon({
-        html: html,
-        className: "cluster-pin-wrap",
-        iconSize: [34, 44],
-        iconAnchor: [17, 44]
-      });
-    };
-  }
+ 
+function clusterIconCreateFunction(colorClass){
+  return function(cluster){
+    var count = cluster.getChildCount();
+
+    var containsNew = cluster.getAllChildMarkers()
+      .some(marker => marker.isNewPin === true);
+
+    var html = `
+      <div class="cluster-pin ${colorClass}">
+        <div class="head">${count}</div>
+        <div class="tip"></div>
+        ${containsNew ? '<span class="cluster-new-dot"></span>' : ''}
+      </div>
+    `;
+
+    return L.divIcon({
+      html: html,
+      className: "cluster-pin-wrap",
+      iconSize: [34, 44],
+      iconAnchor: [17, 44]
+    });
+  };
+}
 
  const regularClusters = L.markerClusterGroup({
   clusterPane: 'placePane',
@@ -2723,6 +2773,7 @@ link: "pins/rice-street.html"
 {
   name: "Tip Top Motel, Cafe, & Bakery",
   island: "Kauaʻi",
+  added: "2026-11-02",
   coords: [21.97912, -159.3673],
   who: "Named after the original Tip Top Building in Līhuʻe, where Japanese immigrant Denjiro Ota opened his café in 1916",
   relevance:
@@ -2745,11 +2796,23 @@ link: "pins/rice-street.html"
   places.forEach(p => {
     if(!p || !p.coords) return;
 
-    var isPWL = (String(p.type || "").toUpperCase() === "PWL");
-    var marker = L.marker(p.coords, { 
+   
+var isPWL = (String(p.type || "").toUpperCase() === "PWL");
+var isNew = isNewPin(p.added);
+
+var marker = L.marker(p.coords, {
   icon: isPWL ? iconBlack : iconBlue,
   pane: isPWL ? 'pwlPane' : 'placePane'
 });
+
+marker.isNewPin = isNew;
+
+if(isNew){
+  marker.on('add', function(){
+    var el = marker.getElement();
+    if(el) el.classList.add('new-pin-icon');
+  });
+}
 
     marker.bindPopup(popupHTML(p), { autoPan: true, closeButton: true });
 
