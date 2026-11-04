@@ -210,11 +210,17 @@ IMAGES
 
 .figure img{
   width:100%;
-  max-width:560px;
+  max-width:420px;
   height:auto;
   border-radius:8px;
   display:block;
   margin:0 auto;
+}
+
+@media (max-width:768px){
+  .figure img{
+    max-width:85%;
+  }
 }
 
 .caption{
