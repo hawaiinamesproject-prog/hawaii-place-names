@@ -32,7 +32,7 @@ body{
 }
 
 /* =========================
-NAVIGATION
+NAVIGATION / COMPACT HEADER
 ========================= */
 
 nav{
@@ -43,25 +43,29 @@ nav{
 .nav-inner{
   max-width:1200px;
   margin:0 auto;
-  padding:14px 18px;
+  padding:8px 18px;
   display:flex;
   align-items:center;
-  justify-content:center;
-  position:relative;
+  justify-content:space-between;
+  min-height:56px;
 }
 
-.nav-links{
+/* Clickable logo */
+
+.nav-logo{
   display:flex;
-  gap:40px;
-  font-weight:600;
-}
-
-nav a{
+  align-items:center;
   text-decoration:none;
-  color:#222;
 }
 
-nav a:hover{ color:#2b6cb0; }
+.nav-logo img{
+  display:block;
+  width:155px;
+  max-width:100%;
+  height:auto;
+}
+
+/* Hide checkbox but keep it functional */
 
 .nav-toggle{
   position:absolute;
@@ -70,65 +74,84 @@ nav a:hover{ color:#2b6cb0; }
   height:1px;
 }
 
+/* Hamburger on right */
+
 .hamburger{
-  display:none;
-  position:absolute;
-  right:18px;
-  top:50%;
-  transform:translateY(-50%);
+  display:block;
   cursor:pointer;
-  background:transparent;
-  border:0;
   padding:10px;
+  margin-left:auto;
 }
 
 .hamburger span{
   display:block;
-  width:24px;
-  height:2px;
-  background:#222;
+  width:26px;
+  height:3px;
+  background:#555;
   margin:5px 0;
+  border-radius:2px;
 }
+
+/* Expandable navigation */
+
 
 .mobile-menu{
   display:none;
-  border-top:1px solid #eee;
   background:#fff;
+  border-top:1px solid #eee;
 }
+
+@media (min-width:769px){
+  .mobile-menu{
+    text-align:center;
+  }
+}
+
 
 .mobile-menu a{
   display:block;
-  padding:14px 18px;
-  border-bottom:1px solid #f0f0f0;
+  padding:14px 22px;
+  border-bottom:1px solid #eee;
   font-weight:600;
+  color:#222;
+  text-decoration:none;
 }
 
-.mobile-menu a:last-child{ border-bottom:none; }
+.mobile-menu a:hover{
+  background:#f7f7f7;
+  color:#2b6cb0;
+}
 
-#nav-toggle:checked ~ .mobile-menu{ display:block; }
+.mobile-menu a:last-child{
+  border-bottom:none;
+}
+
+/* Show menu when checkbox is checked */
+
+#nav-toggle:checked ~ .mobile-menu{
+  display:block;
+}
+
+/* Keyboard accessibility */
+
+.nav-toggle:focus-visible ~ .nav-inner .hamburger{
+  outline:2px solid #2b6cb0;
+  outline-offset:3px;
+}
+
+/* Mobile sizing */
 
 @media (max-width:768px){
-  .nav-inner{ justify-content:flex-start; }
-  .nav-links{ display:none; }
-  .hamburger{ display:block; }
+  .nav-inner{
+    padding:6px 14px;
+    min-height:52px;
+  }
+
+  .nav-logo img{
+    width:125px;
+  }
 }
 
-/* =========================
-BANNER
-========================= */
-
-.hero-banner{
-  background:white;
-  display:flex;
-  justify-content:center;
-  padding:30px 0;
-}
-
-.hero-banner img{
-  width:420px;
-  max-width:88%;
-  height:auto;
-}
 
 /* =========================
 PAGE LAYOUT
@@ -137,7 +160,7 @@ PAGE LAYOUT
 .profile{
   max-width:900px;
   margin:0 auto;
-  padding:40px 20px 60px;
+  padding:24px 20px 60px;
 }
 
 .profile h1{
@@ -181,11 +204,17 @@ IMAGES
 
 .figure img{
   width:100%;
-  max-width:450px;
+  max-width:420px;
   height:auto;
   border-radius:8px;
   display:block;
   margin:0 auto;
+}
+
+@media (max-width:768px){
+  .figure img{
+    max-width:85%;
+  }
 }
 
 .caption{
@@ -246,7 +275,7 @@ FOOTER
 .footer a:hover{ color:#2b6cb0; }
 
 @media (max-width:768px){
-  .profile{ padding:32px 24px 60px; }
+  .profile{ padding:20px 24px 60px; }
   .profile p{ font-size:1rem; line-height:1.85; }
 }
 </style>
@@ -258,34 +287,28 @@ FOOTER
   <input class="nav-toggle" type="checkbox" id="nav-toggle">
 
   <div class="nav-inner">
-    <div class="nav-links">
-      <a href="../index.html">Home</a>
-      <a href="../places-we-lost.html">Places We Lost</a>
-      <a href="../place-name-profiles.html">Place Name Profiles</a>
-      <a href="../stories.html">Stories</a>
-    </div>
+
+    <a class="nav-logo" href="../index.html" aria-label="Hawaiʻi Names Project — Return to Map">
+      <img src="../Banner.jpg" alt="Hawaiʻi Names Project">
+    </a>
 
     <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
       <span></span>
       <span></span>
       <span></span>
     </label>
+
   </div>
 
   <div class="mobile-menu">
-    <a href="../index.html">Home</a>
+    <a href="../index.html">Home / Map</a>
     <a href="../places-we-lost.html">Places We Lost</a>
     <a href="../place-name-profiles.html">Place Name Profiles</a>
     <a href="../stories.html">Stories</a>
   </div>
 </nav>
 
-<div class="hero-banner">
-  <img src="../Banner.jpg" alt="Hawaiʻi Names Project Banner">
-</div>
-
 <main class="profile">
-
 
 <h1>Alakaʻi Wilderness Preserve</h1>
 <div class="island">Kauaʻi — Interior Highlands</div>
