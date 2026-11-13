@@ -1,13 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Place Name Profiles | Hawaiʻi Names Project</title>
 
 <meta name="description" content="Browse Hawaiʻi Names Project place name profiles exploring the origins, meanings, and layered histories of names across Hawaiʻi.">
 
-<link rel="canonical" href="https://www.hawaiinamesproject.com/place-name-profiles.html">
+<link rel="canonical" href="https://hawaiinamesproject.com/place-name-profiles.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hawaiʻi Names Project">
+<meta property="og:title" content="Place Name Profiles | Hawaiʻi Names Project">
+<meta property="og:description" content="Explore the origins, meanings, and histories of places across Hawaiʻi through in-depth place name profiles.">
+<meta property="og:url" content="https://hawaiinamesproject.com/place-name-profiles.html">
+<meta property="og:image" content="https://hawaiinamesproject.com/Banner.jpg">
+<meta property="og:image:alt" content="Hawaiʻi Names Project banner">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Place Name Profiles | Hawaiʻi Names Project">
+<meta name="twitter:description" content="Discover the stories behind the names of Hawaiʻi's places, landmarks, and communities.">
+<meta name="twitter:image" content="https://hawaiinamesproject.com/Banner.jpg">
 
 <link rel="icon" href="clean-favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="clean-favicon-32.png">
@@ -24,16 +40,21 @@
 </script>
 
 <style>
-  body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f7f7f7;
-    color:#222;
+
+/* =========================
+GENERAL
+========================= */
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
 }
 
 /* =========================
-   NAVIGATION (Option A)
-   ========================= */
+NAVIGATION / COMPACT HEADER
+========================= */
 
 nav{
   background:#fff;
@@ -43,29 +64,26 @@ nav{
 .nav-inner{
   max-width:1200px;
   margin:0 auto;
-  padding:14px 18px;
+  padding:8px 18px;
   display:flex;
   align-items:center;
-  justify-content:center;
-  position:relative;
+  justify-content:space-between;
+  min-height:56px;
 }
 
-.nav-links{
+.nav-logo{
   display:flex;
-  gap:40px;
-  font-weight:600;
-}
-
-nav a{
+  align-items:center;
   text-decoration:none;
-  color:#222;
 }
 
-nav a:hover{
-  color:#2b6cb0;
+.nav-logo img{
+  display:block;
+  width:155px;
+  max-width:100%;
+  height:auto;
 }
 
-/* Hidden checkbox toggle */
 .nav-toggle{
   position:absolute;
   opacity:0;
@@ -73,38 +91,46 @@ nav a:hover{
   height:1px;
 }
 
-/* Hamburger */
 .hamburger{
-  display:none;
-  position:absolute;
-  right:18px;
-  top:50%;
-  transform:translateY(-50%);
+  display:block;
   cursor:pointer;
-  background:transparent;
-  border:0;
   padding:10px;
+  margin-left:auto;
 }
 
 .hamburger span{
   display:block;
-  width:24px;
-  height:2px;
-  background:#222;
+  width:26px;
+  height:3px;
+  background:#555;
   margin:5px 0;
+  border-radius:2px;
 }
 
 .mobile-menu{
   display:none;
-  border-top:1px solid #eee;
   background:#fff;
+  border-top:1px solid #eee;
+}
+
+@media (min-width:769px){
+  .mobile-menu{
+    text-align:center;
+  }
 }
 
 .mobile-menu a{
   display:block;
-  padding:14px 18px;
-  border-bottom:1px solid #f0f0f0;
+  padding:14px 22px;
+  border-bottom:1px solid #eee;
   font-weight:600;
+  color:#222;
+  text-decoration:none;
+}
+
+.mobile-menu a:hover{
+  background:#f7f7f7;
+  color:#2b6cb0;
 }
 
 .mobile-menu a:last-child{
@@ -115,51 +141,36 @@ nav a:hover{
   display:block;
 }
 
+.nav-toggle:focus-visible ~ .nav-inner .hamburger{
+  outline:2px solid #2b6cb0;
+  outline-offset:3px;
+}
+
 @media (max-width:768px){
   .nav-inner{
-    justify-content:flex-start;
+    padding:6px 14px;
+    min-height:52px;
   }
 
-  .nav-links{
-    display:none;
-  }
-
-  .hamburger{
-    display:block;
+  .nav-logo img{
+    width:125px;
   }
 }
 
 /* =========================
-   BANNER
-   ========================= */
-
-.hero-banner{
-  background:white;
-  display:flex;
-  justify-content:center;
-  padding:30px 0;
-}
-
-.hero-banner img{
-  width:420px;
-  max-width:88%;
-  height:auto;
-}
-
-/* =========================
-   PAGE WRAP
-   ========================= */
+PAGE LAYOUT
+========================= */
 
 .container{
   max-width:1100px;
   margin:0 auto;
-  padding:40px 20px 80px;
+  padding:30px 20px 80px;
 }
 
 h1{
   text-align:center;
-  margin:10px 0 10px;
-  font-size:2rem;
+  margin:10px 0 12px;
+  font-size:2.2rem;
 }
 
 .subhead{
@@ -167,21 +178,22 @@ h1{
   margin:0 auto 40px;
   max-width:900px;
   color:#444;
-  line-height:1.6;
+  line-height:1.7;
+  font-size:1.05rem;
 }
 
 /* =========================
-   GRID + CARDS
-   ========================= */
+GRID + CARDS
+========================= */
 
 .grid{
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
   gap:28px;
 }
 
 .card{
-  background:white;
+  background:#fff;
   border-radius:10px;
   overflow:hidden;
   box-shadow:0 2px 10px rgba(0,0,0,0.06);
@@ -235,15 +247,36 @@ h1{
 }
 
 /* =========================
-   FOOTER
-   ========================= */
+RETURN LINKS
+========================= */
+
+.return-links{
+  max-width:1100px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+FOOTER
+========================= */
 
 .footer{
-  background:white;
+  background:#fff;
   text-align:center;
   padding:40px 0;
   border-top:1px solid #ddd;
-  margin-top:80px;
+  margin-top:60px;
   font-weight:600;
   font-size:1.1rem;
 }
@@ -257,46 +290,61 @@ h1{
 .footer a:hover{
   color:#2b6cb0;
 }
+
+@media (max-width:768px){
+  .container{
+    padding:24px 20px 60px;
+  }
+
+  .subhead{
+    font-size:1rem;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- =========================
+NAVIGATION
+========================= -->
+
 <nav>
   <input class="nav-toggle" type="checkbox" id="nav-toggle">
 
   <div class="nav-inner">
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="places-we-lost.html">Places We Lost</a>
-      <a href="place-name-profiles.html">Place Name Profiles</a>
-      <a href="stories.html">Stories</a>
-    </div>
+
+    <a class="nav-logo" href="index.html" aria-label="Hawaiʻi Names Project — Return to Map">
+      <img src="Banner.jpg" alt="Hawaiʻi Names Project">
+    </a>
 
     <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
       <span></span>
       <span></span>
       <span></span>
     </label>
+
   </div>
 
   <div class="mobile-menu">
-    <a href="index.html">Home</a>
+    <a href="index.html">Home / Map</a>
     <a href="places-we-lost.html">Places We Lost</a>
     <a href="place-name-profiles.html">Place Name Profiles</a>
     <a href="stories.html">Stories</a>
   </div>
 </nav>
 
-<div class="hero-banner">
-  <img src="Banner.jpg" alt="Hawaiʻi Names Project Banner">
-</div>
+<!-- =========================
+MAIN CONTENT
+========================= -->
 
-<div class="container">
+<main class="container">
+
   <h1>Place Name Profiles</h1>
+
   <div class="subhead">
-    Individual profiles that further explain a name’s origin, meaning, and why it matters today.
+    Individual profiles that further explain a name's origin, meaning, and why it matters today.
     This section will expand as more places are documented.
   </div>
 
@@ -304,7 +352,7 @@ h1{
 
     <div class="card">
       <div class="thumb">
-        <img src="images/pnp/iolani-palace.jpg" alt="ʻIolani Palace">
+        <img src="images/pnp/iolani-palace.jpg" alt="ʻIolani Palace" loading="lazy">
       </div>
       <div class="card-inner">
         <h2>ʻIolani Palace</h2>
@@ -315,7 +363,7 @@ h1{
 
     <div class="card">
       <div class="thumb">
-        <img src="images/pnp/nahuku-lava-tube.jpg" alt="Nāhuku lava tube interior">
+        <img src="images/pnp/nahuku-lava-tube.jpg" alt="Nāhuku lava tube interior" loading="lazy">
       </div>
       <div class="card-inner">
         <h2>Nāhuku (Thurston Lava Tube)</h2>
@@ -326,7 +374,7 @@ h1{
 
     <div class="card">
       <div class="thumb">
-        <img src="images/pnp/parker-ranch.jpg" alt="Parker Ranch">
+        <img src="images/pnp/parker-ranch.jpg" alt="Parker Ranch" loading="lazy">
       </div>
       <div class="card-inner">
         <h2>Parker Ranch</h2>
@@ -337,7 +385,7 @@ h1{
 
     <div class="card">
       <div class="thumb">
-        <img src="images/pnp/byodo-in-temple.jpg" alt="Byodo-In Temple">
+        <img src="images/pnp/byodo-in-temple.jpg" alt="Byodo-In Temple" loading="lazy">
       </div>
       <div class="card-inner">
         <h2>Byodo-In Temple</h2>
@@ -346,9 +394,9 @@ h1{
       </div>
     </div>
 
-       <div class="card">
+    <div class="card">
       <div class="thumb">
-        <img src="images/pnp/menehune-ditch.jpg" alt="Menehune Ditch">
+        <img src="images/pnp/menehune-ditch.jpg" alt="Menehune Ditch" loading="lazy">
       </div>
       <div class="card-inner">
         <h2>Menehune Ditch / Kīkīaola</h2>
@@ -359,7 +407,7 @@ h1{
 
     <div class="card">
       <div class="thumb">
-        <img src="images/pnp/waimea.jpg" alt="Waimea / Kamuela">
+        <img src="images/pnp/waimea.jpg" alt="Waimea / Kamuela" loading="lazy">
       </div>
       <div class="card-inner">
         <h2>Waimea / Kamuela</h2>
@@ -370,7 +418,7 @@ h1{
 
     <div class="card">
       <div class="thumb">
-        <img src="images/pnp/hnl.jpg" alt="HNL">
+        <img src="images/pnp/hnl.jpg" alt="HNL" loading="lazy">
       </div>
       <div class="card-inner">
         <h2>Daniel K. Inouye International Airport</h2>
@@ -381,7 +429,7 @@ h1{
 
     <div class="card">
       <div class="thumb">
-        <img src="images/pnp/ogg.jpg" alt="Kahului Airport">
+        <img src="images/pnp/ogg.jpg" alt="Kahului Airport" loading="lazy">
       </div>
       <div class="card-inner">
         <h2>Kahului Airport (OGG)</h2>
@@ -392,7 +440,7 @@ h1{
 
     <div class="card">
       <div class="thumb">
-         <img src="images/pnp/mamalahoa-highway.jpg" alt="Māmalahoa Highway">
+        <img src="images/pnp/mamalahoa-highway.jpg" alt="Māmalahoa Highway" loading="lazy">
       </div>
       <div class="card-inner">
         <h2>Māmalahoa Highway</h2>
@@ -403,7 +451,7 @@ h1{
 
     <div class="card">
       <div class="thumb">
-      <img src="images/pnp/fort-weaver-road.jpg" alt="Fort Weaver Road">
+        <img src="images/pnp/fort-weaver-road.jpg" alt="Fort Weaver Road" loading="lazy">
       </div>
       <div class="card-inner">
         <h2>Fort Weaver Road</h2>
@@ -413,8 +461,8 @@ h1{
     </div>
 
     <div class="card">
-       <div class="thumb">
-      <img src="images/pnp/corp.jpg" alt="Central O‘ahu Regional Park">
+      <div class="thumb">
+        <img src="images/pnp/corp.jpg" alt="Central Oʻahu Regional Park" loading="lazy">
       </div>
       <div class="card-inner">
         <h2>Patsy T. Mink Central Oʻahu Regional Park (CORP)</h2>
@@ -423,9 +471,9 @@ h1{
       </div>
     </div>
 
-     <div class="card">
+    <div class="card">
       <div class="thumb">
-        <img src="images/pnp/kalapana3.jpg" alt="Kalapana Coconut Grove">
+        <img src="images/pnp/kalapana3.jpg" alt="Kalapana Coconut Grove" loading="lazy">
       </div>
       <div class="card-inner">
         <h2>Kalapana</h2>
@@ -436,7 +484,7 @@ h1{
 
     <div class="card">
       <div class="thumb">
-      <img src="images/pnp/kaahumanu.jpg" alt="Queen Ka‘ahumanu Center">
+        <img src="images/pnp/kaahumanu.jpg" alt="Queen Kaʻahumanu Center" loading="lazy">
       </div>
       <div class="card-inner">
         <h2>Queen Kaʻahumanu Center</h2>
@@ -446,7 +494,16 @@ h1{
     </div>
 
   </div>
-</div>
+
+  <div class="return-links">
+    <a href="index.html#map">← Return to Map</a>
+  </div>
+
+</main>
+
+<!-- =========================
+FOOTER
+========================= -->
 
 <footer class="footer">
   <a href="about.html">About</a>
