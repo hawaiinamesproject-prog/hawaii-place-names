@@ -1,59 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Parker Ranch | Place Name Profiles | Hawai‘i Names Project</title>
 
-<link rel="icon" href="clean-favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="clean-favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="clean-favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
+<meta name="description" content="Explore the history of Parker Ranch in Waimea, Hawaiʻi Island, from John Palmer Parker and the rise of Hawaiian paniolo culture to the ranch's enduring legacy.">
+<link rel="canonical" href="https://hawaiinamesproject.com/pnp-parker-ranch.html">
 
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ʻIolani Palace | Place Name Profiles | Hawai‘i Names Project</title>
+<meta property="og:title" content="Parker Ranch | Place Name Profiles | Hawaiʻi Names Project">
+<meta property="og:description" content="Discover Parker Ranch in Waimea, its namesake John Palmer Parker, the origins of Hawaiian ranching, and the enduring traditions of the paniolo.">
+<meta property="og:url" content="https://hawaiinamesproject.com/pnp-parker-ranch.html">
+<meta property="og:type" content="article">
 
 <link rel="icon" href="clean-favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="clean-favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="clean-favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
 
-  <!-- Google tag (gtag.js) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-41NCGZLGNJ');
 </script>
 
 <style>
-
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f7f7f7;
-color:#222;
-}
-
-<style>
 body{
   margin:0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
   background:#f7f7f7;
   color:#222;
   -webkit-text-size-adjust:100%;
 }
 
 /* =========================
-   NAVIGATION (Option A)
-   Desktop: normal horizontal links
-   Mobile: hamburger menu
+   COMPACT NAVIGATION
    ========================= */
 
 nav{
@@ -64,27 +50,26 @@ nav{
 .nav-inner{
   max-width:1200px;
   margin:0 auto;
-  padding:14px 18px;
+  padding:8px 18px;
   display:flex;
   align-items:center;
-  justify-content:center;
-  position:relative;
+  justify-content:space-between;
+  min-height:56px;
 }
 
-.nav-links{
+.nav-logo{
   display:flex;
-  gap:40px;
-  font-weight:600;
-}
-
-nav a{
+  align-items:center;
   text-decoration:none;
-  color:#222;
 }
 
-nav a:hover{ color:#2b6cb0; }
+.nav-logo img{
+  display:block;
+  width:155px;
+  max-width:100%;
+  height:auto;
+}
 
-/* Hidden checkbox toggle */
 .nav-toggle{
   position:absolute;
   opacity:0;
@@ -92,90 +77,87 @@ nav a:hover{ color:#2b6cb0; }
   height:1px;
 }
 
-/* Hamburger */
 .hamburger{
-  display:none;
-  position:absolute;
-  right:18px;
-  top:50%;
-  transform:translateY(-50%);
+  display:block;
   cursor:pointer;
-  background:transparent;
-  border:0;
   padding:10px;
+  margin-left:auto;
 }
 
 .hamburger span{
   display:block;
-  width:24px;
-  height:2px;
-  background:#222;
+  width:26px;
+  height:3px;
+  background:#555;
   margin:5px 0;
+  border-radius:2px;
 }
 
 .mobile-menu{
   display:none;
-  border-top:1px solid #eee;
   background:#fff;
+  border-top:1px solid #eee;
+}
+
+@media(min-width:769px){
+  .mobile-menu{
+    text-align:center;
+  }
 }
 
 .mobile-menu a{
   display:block;
-  padding:14px 18px;
-  border-bottom:1px solid #f0f0f0;
+  padding:14px 22px;
+  border-bottom:1px solid #eee;
   font-weight:600;
+  color:#222;
+  text-decoration:none;
 }
 
-.mobile-menu a:last-child{ border-bottom:none; }
+.mobile-menu a:hover{
+  background:#f7f7f7;
+  color:#2b6cb0;
+}
 
-#nav-toggle:checked ~ .mobile-menu{ display:block; }
+.mobile-menu a:last-child{
+  border-bottom:none;
+}
 
-@media (max-width:768px){
-  .nav-inner{ justify-content:flex-start; }
-  .nav-links{ display:none; }
-  .hamburger{ display:block; }
+#nav-toggle:checked ~ .mobile-menu{
+  display:block;
+}
+
+.nav-toggle:focus-visible ~ .nav-inner .hamburger{
+  outline:2px solid #2b6cb0;
+  outline-offset:3px;
 }
 
 /* =========================
-   BANNER
+   RETURN LINKS
    ========================= */
 
-.hero-banner{
-  background:white;
-  display:flex;
-  justify-content:center;
-  padding:30px 0;
-}
-
-.hero-banner img{
-  width:420px;
-  max-width:88%;
-  height:auto;
-}
-
-/* RETURN LINKS */
-
 .return-links{
-max-width:900px;
-margin:40px auto 0;
-padding-top:20px;
-border-top:1px solid #ddd;
-display:flex;
-flex-direction:column;
-gap:10px;
-font-weight:700;
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
 }
 
 .return-links a{
-color:#2b6cb0;
-text-decoration:none;
+  color:#2b6cb0;
+  text-decoration:none;
 }
 
-.return-links a:hover{text-decoration:underline;}
+.return-links a:hover{
+  text-decoration:underline;
+}
 
-  
 /* =========================
-   BREADCRUMB + PROFILE
+   PROFILE LAYOUT
    ========================= */
 
 .breadcrumb{
@@ -192,7 +174,9 @@ text-decoration:none;
   font-weight:700;
 }
 
-.breadcrumb a:hover{ text-decoration:underline; }
+.breadcrumb a:hover{
+  text-decoration:underline;
+}
 
 .profile{
   max-width:900px;
@@ -217,7 +201,10 @@ text-decoration:none;
   margin:18px 0;
 }
 
-/* Images */
+/* =========================
+   IMAGES
+   ========================= */
+
 .figure{
   margin:32px auto;
   text-align:center;
@@ -243,12 +230,15 @@ text-decoration:none;
   margin-right:auto;
 }
 
-/* Pull quote */
+/* =========================
+   PULL QUOTE
+   ========================= */
+
 .pull-quote{
   margin:40px 0;
   padding:18px 22px;
   border-left:5px solid #2b6cb0;
-  background:#ffffff;
+  background:#fff;
   border-radius:10px;
   font-size:1.15rem;
   line-height:1.6;
@@ -256,19 +246,12 @@ text-decoration:none;
   color:#333;
 }
 
-/* Mobile readability tweaks */
-@media (max-width:768px){
-  .profile{ padding:32px 24px 60px; }
-  .profile p{ font-size:1rem; line-height:1.85; }
-  .pull-quote{ font-size:1.08rem; }
-}
-
 /* =========================
-   FOOTER (matches other pages)
+   FOOTER
    ========================= */
 
 .footer{
-  background:white;
+  background:#fff;
   text-align:center;
   padding:40px 0;
   border-top:1px solid #ddd;
@@ -283,41 +266,67 @@ text-decoration:none;
   margin:0 20px;
 }
 
-.footer a:hover{ color:#2b6cb0; }
+.footer a:hover{
+  color:#2b6cb0;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:768px){
+  .nav-inner{
+    padding:6px 14px;
+    min-height:52px;
+  }
+
+  .nav-logo img{
+    width:125px;
+  }
+
+  .profile{
+    padding:32px 24px 60px;
+  }
+
+  .profile p{
+    font-size:1rem;
+    line-height:1.85;
+  }
+
+  .pull-quote{
+    font-size:1.08rem;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAVIGATION -->
 <nav>
   <input class="nav-toggle" type="checkbox" id="nav-toggle">
 
   <div class="nav-inner">
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="places-we-lost.html">Places We Lost</a>
-      <a href="place-name-profiles.html">Place Name Profiles</a>
-      <a href="stories.html">Stories</a>
-    </div>
+    <a class="nav-logo" href="index.html" aria-label="Hawaiʻi Names Project — Return to Map">
+      <img src="Banner.jpg" alt="Hawaiʻi Names Project">
+    </a>
 
     <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </label>
   </div>
 
   <div class="mobile-menu">
-    <a href="index.html">Home</a>
+    <a href="index.html">Home / Map</a>
     <a href="places-we-lost.html">Places We Lost</a>
     <a href="place-name-profiles.html">Place Name Profiles</a>
     <a href="stories.html">Stories</a>
   </div>
 </nav>
 
-<div class="hero-banner">
-  <img src="Banner.jpg" alt="Hawai‘i Names Project Banner">
-</div>
-
+<!-- PROFILE -->
 <main class="profile">
 
 <h1>Parker Ranch</h1>
@@ -326,7 +335,7 @@ text-decoration:none;
 <div class="figure">
   <img src="images/pnp/parker-ranch.jpg" alt="Parker Ranch Heritage Center, Waimea">
   <div class="caption">
-   Parker Ranch Heritage Center, Waimea, Hawaiʻi Island (Photo: Blake Handley – CC BY 2.0)
+    Parker Ranch Heritage Center, Waimea, Hawaiʻi Island (Photo: Blake Handley – CC BY 2.0)
   </div>
 </div>
 
@@ -339,7 +348,7 @@ text-decoration:none;
 <p>When the kapu was lifted, hunters and ranchers were needed. Parker became one of the most effective. He married Kipikane, granddaughter of Kamanawa II, and through these aliʻi connections gained access to land and legitimacy within Hawaiian communities. Land grants associated with Kamehameha I and later Kamehameha III formed the ranch’s foundation.</p>
 
 <div class="pull-quote">
-Hawaiians adopted the term “paniolo” from the Spanish español, shaped through Hawaiian pronunciation, and made ranching distinctly their own, creating Hawaiian-language ranching terms, slack-key guitar traditions, saddle styles, and rodeo culture.
+  Hawaiians adopted the term “paniolo” from the Spanish español, shaped through Hawaiian pronunciation, and made ranching distinctly their own, creating Hawaiian-language ranching terms, slack-key guitar traditions, saddle styles, and rodeo culture.
 </div>
 
 <p>Ranching culture expanded further in 1832 when Mexican vaqueros were brought to Hawaiʻi to teach horse handling and roping. Hawaiians adapted those skills quickly, and paniolo identity became central to Waimea. Over time, ranching shaped music, language, work life, and community memory across the region.</p>
@@ -353,17 +362,18 @@ Hawaiians adopted the term “paniolo” from the Spanish español, shaped throu
 <div class="figure">
   <img src="images/pnp/parker-ranch-1.jpg" alt="Parker Ranch pastures near Waimea">
   <div class="caption">
-  Parker Ranch pastures, Waimea, Hawaiʻi Island (Photo: Blake Handley – CC BY 2.0)
+    Parker Ranch pastures, Waimea, Hawaiʻi Island (Photo: Blake Handley – CC BY 2.0)
   </div>
 </div>
 
 <div class="return-links">
-<a href="place-name-profiles.html">← Return to Place Name Profiles</a>
-<a href="index.html#map">← Return to Map</a>
+  <a href="place-name-profiles.html">← Return to Place Name Profiles</a>
+  <a href="index.html#map">← Return to Map</a>
 </div>
-  
+
 </main>
 
+<!-- FOOTER -->
 <footer class="footer">
   <a href="about.html">About</a> |
   <a href="contact.html">Contact Us</a>
