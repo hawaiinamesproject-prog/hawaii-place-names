@@ -1,37 +1,41 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Queen Kaʻahumanu Broke the Mold | Stories | Hawai‘i Names Project</title>
+
+<title>Queen Kaʻahumanu Broke the Mold | Stories | Hawaiʻi Names Project</title>
 
 <meta name="description" content="Queen Kaʻahumanu transformed the Hawaiian Kingdom after Kamehameha's death, reshaping religion, government, and Hawaiian society through one of the most consequential political careers in Hawaiʻi's history.">
-  
+<meta property="og:title" content="Queen Kaʻahumanu Broke the Mold | Hawaiʻi Names Project">
+<meta property="og:description" content="The story of Queen Kaʻahumanu, whose political power transformed the Hawaiian Kingdom, its religion, government, and society.">
+<meta property="og:type" content="article">
+
 <link rel="icon" href="clean-favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="clean-favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="clean-favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
 
-  <!-- Google tag (gtag.js) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
+  window.dataLayer=window.dataLayer||[];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-41NCGZLGNJ');
+  gtag('js',new Date());
+  gtag('config','G-41NCGZLGNJ');
 </script>
 
 <style>
 body{
   margin:0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
   background:#f7f7f7;
   color:#222;
-  -webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust:100%;
 }
 
-/* NAV */
+/* NAVIGATION */
 nav{
   background:#fff;
   border-bottom:1px solid #ddd;
@@ -40,25 +44,25 @@ nav{
 .nav-inner{
   max-width:1200px;
   margin:0 auto;
-  padding:14px 18px;
+  padding:8px 18px;
   display:flex;
   align-items:center;
-  justify-content:center;
-  position:relative;
+  justify-content:space-between;
+  min-height:56px;
 }
 
-.nav-links{
+.nav-logo{
   display:flex;
-  gap:40px;
-  font-weight:600;
-}
-
-nav a{
+  align-items:center;
   text-decoration:none;
-  color:#222;
 }
 
-nav a:hover{ color:#2b6cb0; }
+.nav-logo img{
+  display:block;
+  width:155px;
+  max-width:100%;
+  height:auto;
+}
 
 .nav-toggle{
   position:absolute;
@@ -68,60 +72,56 @@ nav a:hover{ color:#2b6cb0; }
 }
 
 .hamburger{
-  display:none;
-  position:absolute;
-  right:18px;
-  top:50%;
-  transform:translateY(-50%);
+  display:block;
   cursor:pointer;
-  background:transparent;
-  border:0;
   padding:10px;
+  margin-left:auto;
 }
 
 .hamburger span{
   display:block;
-  width:24px;
-  height:2px;
-  background:#222;
+  width:26px;
+  height:3px;
+  background:#555;
   margin:5px 0;
+  border-radius:2px;
 }
 
 .mobile-menu{
   display:none;
-  border-top:1px solid #eee;
   background:#fff;
+  border-top:1px solid #eee;
+}
+
+@media(min-width:769px){
+  .mobile-menu{text-align:center;}
 }
 
 .mobile-menu a{
   display:block;
-  padding:14px 18px;
-  border-bottom:1px solid #f0f0f0;
+  padding:14px 22px;
+  border-bottom:1px solid #eee;
   font-weight:600;
+  color:#222;
+  text-decoration:none;
 }
 
-.mobile-menu a:last-child{ border-bottom:none; }
-
-#nav-toggle:checked ~ .mobile-menu{ display:block; }
-
-@media (max-width:768px){
-  .nav-inner{ justify-content:flex-start; }
-  .nav-links{ display:none; }
-  .hamburger{ display:block; }
+.mobile-menu a:hover{
+  background:#f7f7f7;
+  color:#2b6cb0;
 }
 
-/* BANNER */
-.hero-banner{
-  background:white;
-  display:flex;
-  justify-content:center;
-  padding:30px 0;
+.mobile-menu a:last-child{
+  border-bottom:none;
 }
 
-.hero-banner img{
-  width:420px;
-  max-width:88%;
-  height:auto;
+#nav-toggle:checked ~ .mobile-menu{
+  display:block;
+}
+
+.nav-toggle:focus-visible ~ .nav-inner .hamburger{
+  outline:2px solid #2b6cb0;
+  outline-offset:3px;
 }
 
 /* ARTICLE */
@@ -129,17 +129,24 @@ nav a:hover{ color:#2b6cb0; }
   max-width:900px;
   margin:0 auto;
   padding:22px 20px 0;
-  font-size:0.95rem;
+  font-size:.95rem;
   color:#555;
 }
 
-.breadcrumb a{
+.breadcrumb a,
+.article a{
   color:#2b6cb0;
   text-decoration:none;
+}
+
+.breadcrumb a{
   font-weight:700;
 }
 
-.breadcrumb a:hover{ text-decoration:underline; }
+.breadcrumb a:hover,
+.article a:hover{
+  text-decoration:underline;
+}
 
 .article{
   max-width:900px;
@@ -158,6 +165,7 @@ nav a:hover{ color:#2b6cb0; }
   margin:18px 0;
 }
 
+/* SECTION HEADINGS */
 .section{
   margin:44px 0 14px;
   padding:16px 18px;
@@ -169,7 +177,7 @@ nav a:hover{ color:#2b6cb0; }
   color:#111;
 }
 
-/* Images */
+/* IMAGES */
 .figure{
   margin:32px auto;
   text-align:center;
@@ -184,28 +192,22 @@ nav a:hover{ color:#2b6cb0; }
   margin:0 auto;
 }
 
-.figure.portrait img{ max-width:360px; }
+.figure.portrait img{
+  max-width:360px;
+}
 
 .caption{
-  font-size:0.95rem;
+  font-size:.95rem;
   color:#555;
-  margin-top:10px;
+  margin:10px auto 0;
   line-height:1.5;
   text-align:left;
   max-width:550px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-@media (max-width:768px){
-  .article{ padding:32px 24px 10px; }
-  .article p{ font-size:1rem; line-height:1.85; }
-  .section{ font-size:1.22rem; margin:38px 0 12px; }
 }
 
 /* FOOTER */
 .footer{
-  background:white;
+  background:#fff;
   text-align:center;
   padding:40px 0;
   border-top:1px solid #ddd;
@@ -220,7 +222,35 @@ nav a:hover{ color:#2b6cb0; }
   margin:0 20px;
 }
 
-.footer a:hover{ color:#2b6cb0; }
+.footer a:hover{
+  color:#2b6cb0;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav-inner{
+    padding:6px 14px;
+    min-height:52px;
+  }
+
+  .nav-logo img{
+    width:125px;
+  }
+
+  .article{
+    padding:32px 24px 10px;
+  }
+
+  .article p{
+    font-size:1rem;
+    line-height:1.85;
+  }
+
+  .section{
+    font-size:1.22rem;
+    margin:38px 0 12px;
+  }
+}
 </style>
 </head>
 
@@ -230,12 +260,9 @@ nav a:hover{ color:#2b6cb0; }
   <input class="nav-toggle" type="checkbox" id="nav-toggle">
 
   <div class="nav-inner">
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="places-we-lost.html">Places We Lost</a>
-      <a href="place-name-profiles.html">Place Name Profiles</a>
-      <a href="stories.html">Stories</a>
-    </div>
+    <a class="nav-logo" href="index.html" aria-label="Hawaiʻi Names Project — Return to Map">
+      <img src="Banner.jpg" alt="Hawaiʻi Names Project">
+    </a>
 
     <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
@@ -243,267 +270,265 @@ nav a:hover{ color:#2b6cb0; }
   </div>
 
   <div class="mobile-menu">
-    <a href="index.html">Home</a>
+    <a href="index.html">Home / Map</a>
     <a href="places-we-lost.html">Places We Lost</a>
     <a href="place-name-profiles.html">Place Name Profiles</a>
     <a href="stories.html">Stories</a>
   </div>
 </nav>
 
-<div class="hero-banner">
-  <img src="Banner.jpg" alt="Hawai‘i Names Project Banner">
-</div>
-
 <div class="breadcrumb">
   <a href="stories.html">← Stories</a>
 </div>
 
 <main class="article">
-  <h1>Kaʻahumanu Broke the Mold</h1>
 
-  <p>You’d think chess was designed based on how Kaʻahumanu lived.  The Queen moves all over the board, in every direction, seizing any pieces it desires, outmaneuvering everyone, even the king.  She went into overdrive once Kamehameha died with an opening salvo that changed the game.</p>
+<h1>Kaʻahumanu Broke the Mold</h1>
 
-  <div class="figure portrait">
-    <img src="images/stories/kaahumanu-portrait.jpg" alt="Kaʻahumanu portrait">
-    <div class="caption">Kaʻahumanu, retouched portrait by J. J. Williams with charcoal work by J. Ewing, based on an original drawing by Louis Choris.</div>
-  </div>
+<p>You’d think chess was designed based on how Kaʻahumanu lived. The Queen moves all over the board, in every direction, seizing any pieces it desires, outmaneuvering everyone, even the king. She went into overdrive once Kamehameha died with an opening salvo that changed the game.</p>
 
-  <p>The Conqueror had died in 1819, leaving his kingdom, the unified islands to his son Liholiho (Kamehameha II).  Imagine a young man, twenty-two years old, raised for the role since he was a young child, groomed for leadership in a world built entirely around his father’s authority.  Every aliʻi, every kahuna, every attendant in the royal court understood what was supposed to happen next.</p>
+<div class="figure portrait">
+  <img src="images/stories/kaahumanu-portrait.jpg" alt="Kaʻahumanu portrait">
+  <div class="caption">Kaʻahumanu, retouched portrait by J. J. Williams with charcoal work by J. Ewing, based on an original drawing by Louis Choris.</div>
+</div>
 
-  <p>As Liholiho sailed to the shores of <a href="../pins/kona.html">Kailua-Kona</a>, he saw Kaʻahumanu wearing Kamehameha’s royal red feather cloak and then she announced on the beach and to the surprise of everyone, “O heavenly one! I speak to you the commands of your grandfather [Kamehameha]… Here are your chiefs, here are the people of your ancestors; here are your guns; here are your lands. But we two shall share the rule over the land.”</p>
+<p>The Conqueror had died in 1819, leaving his kingdom, the unified islands to his son Liholiho (Kamehameha II). Imagine a young man, twenty-two years old, raised for the role since he was a young child, groomed for leadership in a world built entirely around his father’s authority. Every aliʻi, every kahuna, every attendant in the royal court understood what was supposed to happen next.</p>
 
-  <p>It wasn’t a suggestion.<br>
-  It wasn’t a negotiation.<br>
-  It was a declaration of fact, believed to be from the Conqueror himself, that rechartered the course of the entire Kingdom.</p>
+<p>As Liholiho sailed to the shores of <a href="pins/kona.html">Kailua-Kona</a>, he saw Kaʻahumanu wearing Kamehameha’s royal red feather cloak and then she announced on the beach and to the surprise of everyone, “O heavenly one! I speak to you the commands of your grandfather [Kamehameha]… Here are your chiefs, here are the people of your ancestors; here are your guns; here are your lands. But we two shall share the rule over the land.”</p>
 
-  <p>For Liholiho, it must have been jarring. For the aliʻi surrounding him, shocking. No woman in the line of succession had ever done anything like this. The role she claimed, Kuhina Nui, essentially a co-ruler with full legal power, didn't even exist until that very moment.</p>
+<p>It wasn’t a suggestion.<br>
+It wasn’t a negotiation.<br>
+It was a declaration of fact, believed to be from the Conqueror himself, that rechartered the course of the entire Kingdom.</p>
 
-  <p>This was not tradition.<br>
-  This was not protocol.<br>
-  This was not normal.</p>
+<p>For Liholiho, it must have been jarring. For the aliʻi surrounding him, shocking. No woman in the line of succession had ever done anything like this. The role she claimed, Kuhina Nui, essentially a co-ruler with full legal power, didn't even exist until that very moment.</p>
 
-  <p>This was Kaʻahumanu, an intelligent, clever, political savant reading the moment better than anyone and stepping into a vacuum before it closed.</p>
+<p>This was not tradition.<br>
+This was not protocol.<br>
+This was not normal.</p>
 
-  <p>Some historians view it as a power grab. It was something more calculated, a political instinct sharpened over decades, a certainty that the Kingdom needed a stabilizing force as it entered a world changing far faster than anyone could understand. She also knew that her gravitas was at its height at this moment.  She had power, respect, and if she withheld her support, other ali‘i could challenge Liholiho’s rule and fracture the kingdom.</p>
+<p>This was Kaʻahumanu, an intelligent, clever, political savant reading the moment better than anyone and stepping into a vacuum before it closed.</p>
 
-  <p>Whatever people thought in that moment, one truth became immediately clear:</p>
+<p>Some historians view it as a power grab. It was something more calculated, a political instinct sharpened over decades, a certainty that the Kingdom needed a stabilizing force as it entered a world changing far faster than anyone could understand. She also knew that her gravitas was at its height at this moment. She had power, respect, and if she withheld her support, other ali‘i could challenge Liholiho’s rule and fracture the kingdom.</p>
 
-  <h2 class="section">The Kingdom of Hawaiʻi would not be ruled the way it had been ruled before.  Everyone was playing checkers and Queen Kaʻahumanu was playing chess.</h2>
+<p>Whatever people thought in that moment, one truth became immediately clear:</p>
 
-  <p>Kaʻahumanu was raised in a world where power was not just inherited. It was negotiated, maneuvered, and held through intelligence, alliances, and presence. If her family didn’t manage their power and influence, it could’ve cost them their lives.</p>
+<h2 class="section">The Kingdom of Hawaiʻi would not be ruled the way it had been ruled before. Everyone was playing checkers and Queen Kaʻahumanu was playing chess.</h2>
 
-  <p>Born near <a href="../pins/hana.html">Hāna</a> around 1768, she was the daughter of high-ranking aliʻi with deep roots on Maui and Hawaiʻi Island. From childhood she was exposed to the political currents of chiefly life: rivalry, alliance-building, and the weight of genealogy.</p>
+<p>Kaʻahumanu was raised in a world where power was not just inherited. It was negotiated, maneuvered, and held through intelligence, alliances, and presence. If her family didn’t manage their power and influence, it could’ve cost them their lives.</p>
 
-  <p>When she became one of Kamehameha I’s wives, and quickly his favorite, she entered the game and surveyed the chess pieces. Many remember her as Kamehameha’s “favorite wife,” but that factoid undersells her actual role and importance to Kamehameha and his conquests. She was his closest political partner. She advised him through the unification campaigns and wielded real power. She was respected among the aliʻi due to her bloodline and boldness as the only woman on Kamehameha’s council of chiefs.</p>
+<p>Born near <a href="pins/hana.html">Hāna</a> around 1768, she was the daughter of high-ranking aliʻi with deep roots on Maui and Hawaiʻi Island. From childhood she was exposed to the political currents of chiefly life: rivalry, alliance-building, and the weight of genealogy.</p>
 
-  <p>She understood war, diplomacy, and strategy from watching seasoned players, waiting her turn, and preparing for her opportunity.</p>
+<p>When she became one of Kamehameha I’s wives, and quickly his favorite, she entered the game and surveyed the chess pieces. Many remember her as Kamehameha’s “favorite wife,” but that factoid undersells her actual role and importance to Kamehameha and his conquests. She was his closest political partner. She advised him through the unification campaigns and wielded real power. She was respected among the aliʻi due to her bloodline and boldness as the only woman on Kamehameha’s council of chiefs.</p>
 
-  <p>She also had something far more useful than charm or lineage:<br>
-  she had the ability to read people and situations, and know when to strike.</p>
+<p>She understood war, diplomacy, and strategy from watching seasoned players, waiting her turn, and preparing for her opportunity.</p>
 
-  <p>By the time Kamehameha died, she wasn’t just the Conqueror’s widow. She was the most politically experienced person in the Kingdom, male or female.</p>
+<p>She also had something far more useful than charm or lineage:<br>
+she had the ability to read people and situations, and know when to strike.</p>
 
-  <p>When she stepped onto the beach at Kailua-Kona wearing Kamehameha’s ʻahu ʻula, she wasn’t improvising. She knew the board, knew her opponents, and knew the game. She took what she believed was hers, claiming the authority she had spent her life building.</p>
+<p>By the time Kamehameha died, she wasn’t just the Conqueror’s widow. She was the most politically experienced person in the Kingdom, male or female.</p>
 
-  <p>Before she ever stood on the beach in Kailua-Kona declaring co-rule, Kaʻahumanu had already spent years navigating the court of Kamehameha I.</p>
+<p>When she stepped onto the beach at Kailua-Kona wearing Kamehameha’s ʻahu ʻula, she wasn’t improvising. She knew the board, knew her opponents, and knew the game. She took what she believed was hers, claiming the authority she had spent her life building.</p>
 
-  <p>Her influence came from proximity to power, the trust she earned, and her ability to understand the stakes of every decision. Kaʻahumanu watched Kamehameha conquer island after island, deposing rival after rival. She understood the logic behind each alliance, battle, and negotiation. Perhaps most importantly, she started to understand how foreign advisers were managed and what value they brought to the campaign and more broadly to the Kingdom.</p>
+<p>Before she ever stood on the beach in Kailua-Kona declaring co-rule, Kaʻahumanu had already spent years navigating the court of Kamehameha I.</p>
 
-  <p>While other chiefs saw pieces of the board, Kaʻahumanu learned to see the landscape in its entirety.<br>
-  She saw firsthand how fragile unity could be.<br>
-  She saw how quickly rival chiefs could splinter alliances.<br>
-  She witnessed allies betray them.</p>
+<p>Her influence came from proximity to power, the trust she earned, and her ability to understand the stakes of every decision. Kaʻahumanu watched Kamehameha conquer island after island, deposing rival after rival. She understood the logic behind each alliance, battle, and negotiation. Perhaps most importantly, she started to understand how foreign advisers were managed and what value they brought to the campaign and more broadly to the Kingdom.</p>
 
-  <p>After the conquest, she understood how important it was to project stability when the islands were finally unified, especially in Kauaʻi where geography made diplomacy far more important than warfare.  This is a lesson she learned and had to manage on her own in the future.</p>
+<p>While other chiefs saw pieces of the board, Kaʻahumanu learned to see the landscape in its entirety.<br>
+She saw firsthand how fragile unity could be.<br>
+She saw how quickly rival chiefs could splinter alliances.<br>
+She witnessed allies betray them.</p>
 
-  <p>She understood, better than anyone, how dangerous the vacuum after Kamehameha’s death could be.  She witnessed Kahekili’s empire fracture after a violent civil war between Kalanikūpule (Kahekili’s son) and Kāʻeokūlani (Kahekili’s brother). Kamehameha exploited this collapse and defeated what was left of Kalanikūpule’s forces and united the Kingdom.</p>
+<p>After the conquest, she understood how important it was to project stability when the islands were finally unified, especially in Kauaʻi where geography made diplomacy far more important than warfare. This is a lesson she learned and had to manage on her own in the future.</p>
 
-  <h2 class="section">By the time Kamehameha the Great died, Kaʻahumanu had built the social and political clout needed to make decisive, powerful moves, and she put that clout to the test.</h2>
+<p>She understood, better than anyone, how dangerous the vacuum after Kamehameha’s death could be. She witnessed Kahekili’s empire fracture after a violent civil war between Kalanikūpule (Kahekili’s son) and Kāʻeokūlani (Kahekili’s brother). Kamehameha exploited this collapse and defeated what was left of Kalanikūpule’s forces and united the Kingdom.</p>
 
-  <p>She positioned her piece and put the young king in check. She forced him to choose from a place of weakness, a choice that empowered her and diminished him.</p>
+<h2 class="section">By the time Kamehameha the Great died, Kaʻahumanu had built the social and political clout needed to make decisive, powerful moves, and she put that clout to the test.</h2>
 
-  <p>Kaʻahumanu didn’t just inherit power.<br>
-  She learned it.<br>
-  She observed it.<br>
-  She practiced it.<br>
-  Then, at the right moment, wielded it without hesitation or warning.</p>
+<p>She positioned her piece and put the young king in check. She forced him to choose from a place of weakness, a choice that empowered her and diminished him.</p>
 
-  <p>When Kaʻahumanu secured her position as Kuhina Nui, she didn’t waste time. She took direct aim at the heart of the traditional system, the kapu.</p>
+<p>Kaʻahumanu didn’t just inherit power.<br>
+She learned it.<br>
+She observed it.<br>
+She practiced it.<br>
+Then, at the right moment, wielded it without hesitation or warning.</p>
 
-  <p>As long as anyone could remember, the kapu had structured Hawaiian life. What could be eaten. Where men and women could sit. How chiefs were approached. It was social order, law, religion, and identity merged together. To dismantle it was to rewrite the values of a new, modern Hawaiian society.</p>
+<p>When Kaʻahumanu secured her position as Kuhina Nui, she didn’t waste time. She took direct aim at the heart of the traditional system, the kapu.</p>
 
-  <p>Kaʻahumanu made the case directly to Liholiho, the kapu system was outdated, burdensome, and incompatible with the changing kingdom.  Liholiho was reluctant, as he felt loyalty to the old ways.  He had been trained to perform the rituals of the heiau and wanted to maintain the kapu as his father had.  He walked to Ahuʻena Heiau (near Kamakahonu in Kailua-Kona) and prayed for guidance.</p>
+<p>As long as anyone could remember, the kapu had structured Hawaiian life. What could be eaten. Where men and women could sit. How chiefs were approached. It was social order, law, religion, and identity merged together. To dismantle it was to rewrite the values of a new, modern Hawaiian society.</p>
 
-  <div class="figure">
-    <img src="images/stories/kaahumanu-ahuena-heiau.jpg" alt="Ahuʻena Heiau">
-    <div class="caption">Ahuʻena Heiau in Kailua-Kona. Photo by Jared — Ahuʻena Heiau (2010). CC BY-SA 3.0. Wikimedia Commons, cropped by author.</div>
-  </div>
+<p>Kaʻahumanu made the case directly to Liholiho, the kapu system was outdated, burdensome, and incompatible with the changing kingdom. Liholiho was reluctant, as he felt loyalty to the old ways. He had been trained to perform the rituals of the heiau and wanted to maintain the kapu as his father had. He walked to Ahuʻena Heiau (near Kamakahonu in Kailua-Kona) and prayed for guidance.</p>
 
-  <p>For the moment, Liholiho stood his ground but Kaʻahumanu was about to introduce a second queen (mother) into the equation.</p>
+<div class="figure">
+  <img src="images/stories/kaahumanu-ahuena-heiau.jpg" alt="Ahuʻena Heiau">
+  <div class="caption">Ahuʻena Heiau in Kailua-Kona. Photo by Jared — Ahuʻena Heiau (2010). CC BY-SA 3.0. Wikimedia Commons, cropped by author.</div>
+</div>
 
-  <p>Keōpūolani, the mother of Liholiho, held the highest known chiefly rank in Hawaiian history. Her genealogy placed her so far above most aliʻi that even high chiefs had to yield in her presence. If she said the kapu system should end, many would listen. Her support made Kaʻahumanu’s position on the kapu a viable reality.  To weaken his resolve further, even the kahuna nui, Hewahewa, favored ending the kapu.</p>
+<p>For the moment, Liholiho stood his ground but Kaʻahumanu was about to introduce a second queen (mother) into the equation.</p>
 
-  <p>Together, the two most powerful women in the kingdom primed the young king, a living god, and they awaited his decision.</p>
+<p>Keōpūolani, the mother of Liholiho, held the highest known chiefly rank in Hawaiian history. Her genealogy placed her so far above most aliʻi that even high chiefs had to yield in her presence. If she said the kapu system should end, many would listen. Her support made Kaʻahumanu’s position on the kapu a viable reality. To weaken his resolve further, even the kahuna nui, Hewahewa, favored ending the kapu.</p>
 
-  <div class="figure portrait">
-    <img src="images/stories/kaahumanu-liholiho.jpg" alt="Liholiho (Kamehameha II)">
-    <div class="caption">Kamehameha II (Liholiho), King of Hawaiʻi. Courtesy of the Hawaiʻi State Archives.</div>
-  </div>
+<p>Together, the two most powerful women in the kingdom primed the young king, a living god, and they awaited his decision.</p>
 
-  <p>At a feast in Kailua-Kona in November 1819, two tables were set, one for men and one for women.  Chiefs and foreigners were present, including John Young and John Parker. Liholiho walked around both tables, then sat at the women’s table and began eating. It was a direct violation of one of the most fundamental kapu. In that moment, without a word, he declared the old religious system over.</p>
+<div class="figure portrait">
+  <img src="images/stories/kaahumanu-liholiho.jpg" alt="Liholiho (Kamehameha II)">
+  <div class="caption">Kamehameha II (Liholiho), King of Hawaiʻi. Courtesy of the Hawaiʻi State Archives.</div>
+</div>
 
-  <p>The shock was immediate. Many chiefs were horrified. Priests protested.</p>
+<p>At a feast in Kailua-Kona in November 1819, two tables were set, one for men and one for women. Chiefs and foreigners were present, including John Young and John Parker. Liholiho walked around both tables, then sat at the women’s table and began eating. It was a direct violation of one of the most fundamental kapu. In that moment, without a word, he declared the old religious system over.</p>
 
-  <p>The ʻAi Noa (free eating) was the turning point and there was no going back.  Liholiho sent orders across the islands to destroy the heiau and burn the images of the old gods.  A few heiau, such as Hale o Keawe at Puʻuhonua o Hōnaunau, survived due to their association with royal burials. Others, like Moʻokini Heiau in Kohala, were so revered that people feared the consequences of destroying them.</p>
+<p>The shock was immediate. Many chiefs were horrified. Priests protested.</p>
 
-  <p>In one act, Kaʻahumanu, through influence and manipulation, helped dismantle the entire religious and societal framework that had existed for generations.</p>
+<p>The ʻAi Noa (free eating) was the turning point and there was no going back. Liholiho sent orders across the islands to destroy the heiau and burn the images of the old gods. A few heiau, such as Hale o Keawe at Puʻuhonua o Hōnaunau, survived due to their association with royal burials. Others, like Moʻokini Heiau in Kohala, were so revered that people feared the consequences of destroying them.</p>
 
-  <h2 class="section">The board had been reset. The old rules were gone. Kaʻahumanu was preparing to rewrite the new rulebook.</h2>
+<p>In one act, Kaʻahumanu, through influence and manipulation, helped dismantle the entire religious and societal framework that had existed for generations.</p>
 
-  <p>The ʻAi Noa didn’t end with a meal.<br>
-  It erupted.<br>
-  Following orders, many tore down temples and burned images and symbols. The religious backbone of society collapsed almost immediately.</p>
+<h2 class="section">The board had been reset. The old rules were gone. Kaʻahumanu was preparing to rewrite the new rulebook.</h2>
 
-  <p>When a world collapses, people look for someone to blame.</p>
+<p>The ʻAi Noa didn’t end with a meal.<br>
+It erupted.<br>
+Following orders, many tore down temples and burned images and symbols. The religious backbone of society collapsed almost immediately.</p>
 
-  <p>Kekuaokalani, a respected chief and keeper of Kamehameha’s war gods, refused to comply with his king’s wishes. He blamed Kaʻahumanu and others for forcing the young king to end the kapu. He believed Liholiho had betrayed his father. Kaʻahumanu insisted that Kekuaokalani come to Kailua-Kona for a peaceful meeting with Liholiho. She was trying to avert a war—important context, because the last man who held the war god conquered the Kingdom in its entirety.</p>
+<p>When a world collapses, people look for someone to blame.</p>
 
-  <p>Kekuaokalani agreed to march from Kaʻawaloa (near Kealakekua) to meet the king. But Keōpūolani, Liholiho’s mother, quickly suspected Kekuaokalani’s intentions. She feared he meant to rise up. She advised Kalanimōkū, commander of the king’s warriors, to prepare for war.</p>
+<p>Kekuaokalani, a respected chief and keeper of Kamehameha’s war gods, refused to comply with his king’s wishes. He blamed Kaʻahumanu and others for forcing the young king to end the kapu. He believed Liholiho had betrayed his father. Kaʻahumanu insisted that Kekuaokalani come to Kailua-Kona for a peaceful meeting with Liholiho. She was trying to avert a war—important context, because the last man who held the war god conquered the Kingdom in its entirety.</p>
 
-  <p>Kekuaokalani’s resistance flared into the Battle of Kuamoʻo, the old world making its last stand, taking its last breaths. Kalanimōkū led warriors through Keauhou, and Kaʻahumanu commanded the war canoes along the shore to support them. Her double-hulled canoe carried a swivel gun, which helped defeat Kekuaokalani and ended the conflict.</p>
+<p>Kekuaokalani agreed to march from Kaʻawaloa (near Kealakekua) to meet the king. But Keōpūolani, Liholiho’s mother, quickly suspected Kekuaokalani’s intentions. She feared he meant to rise up. She advised Kalanimōkū, commander of the king’s warriors, to prepare for war.</p>
 
-  <div class="figure">
-    <img src="images/stories/kaahumanu-kuamoo.png" alt="Kuamoʻo">
-    <div class="caption">Kuamoʻo Burial Memorial, Hawaiʻi Island — final resting ground for defenders of the old kapu system. Photo by W. Nowicki — cropped by author (CC BY 3.0, via Wikimedia Commons)</div>
-  </div>
+<p>Kekuaokalani’s resistance flared into the Battle of Kuamoʻo, the old world making its last stand, taking its last breaths. Kalanimōkū led warriors through Keauhou, and Kaʻahumanu commanded the war canoes along the shore to support them. Her double-hulled canoe carried a swivel gun, which helped defeat Kekuaokalani and ended the conflict.</p>
 
-  <p>Kaʻahumanu’s fingerprints were everywhere.<br>
-  She had pushed the king.<br>
-  She had assembled the political coalition.<br>
-  She had prepared the ground.<br>
-  And now she ensured the uprising was done.</p>
+<div class="figure">
+  <img src="images/stories/kaahumanu-kuamoo.png" alt="Kuamoʻo">
+  <div class="caption">Kuamoʻo Burial Memorial, Hawaiʻi Island — final resting ground for defenders of the old kapu system. Photo by W. Nowicki — cropped by author (CC BY 3.0, via Wikimedia Commons)</div>
+</div>
 
-  <p>The kapu system ended with blood, guns, and cannon fire.</p>
+<p>Kaʻahumanu’s fingerprints were everywhere.<br>
+She had pushed the king.<br>
+She had assembled the political coalition.<br>
+She had prepared the ground.<br>
+And now she ensured the uprising was done.</p>
 
-  <p>Kaʻahumanu stepped even further into power. Liholiho drifted, struggling with alcohol and increasingly detached, while Kaʻahumanu governed.</p>
+<p>The kapu system ended with blood, guns, and cannon fire.</p>
 
-  <p>Many Hawaiians were confused, with no clear rules to live by. Some continued worshipping the old gods and ʻaumākua in private. A void had opened, and something across the Pacific was about to fill it.</p>
+<p>Kaʻahumanu stepped even further into power. Liholiho drifted, struggling with alcohol and increasingly detached, while Kaʻahumanu governed.</p>
 
-  <p>Missionaries arrived months later, in 1820, stepping into a kingdom with an identity crisis. They expected resistance, but in Kaʻahumanu they found a woman with authority, a sharp mind, and a need for structure, literacy, and reform. She sized them up, assessed their usefulness, and integrated their ideas into her political program to stabilize the kingdom.</p>
+<p>Many Hawaiians were confused, with no clear rules to live by. Some continued worshipping the old gods and ʻaumākua in private. A void had opened, and something across the Pacific was about to fill it.</p>
 
-  <p>As Kaʻahumanu evaluated the missionaries and folded them into her political agenda, she had another threat to neutralize, perhaps her most dangerous adversary yet, Kauaʻi.</p>
+<p>Missionaries arrived months later, in 1820, stepping into a kingdom with an identity crisis. They expected resistance, but in Kaʻahumanu they found a woman with authority, a sharp mind, and a need for structure, literacy, and reform. She sized them up, assessed their usefulness, and integrated their ideas into her political program to stabilize the kingdom.</p>
 
-  <p>The one island Kamehameha had never conquered, failing twice.<br>
-  The island whose aliʻi had only submitted in 1810.<br>
-  The island that had recently flirted with Russian influence, <a href="../pins/russian-fort-elizabeth.html">building forts</a> and negotiating for weapons.<br>
-  They committed a pledge of loyalty to Kamehameha I but not necessarily to his heirs.</p>
+<p>As Kaʻahumanu evaluated the missionaries and folded them into her political agenda, she had another threat to neutralize, perhaps her most dangerous adversary yet, Kauaʻi.</p>
 
-  <p>Kaʻahumanu understood the risk better than anyone. After the ʻAi Noa, after the destruction of the old religious order, the kingdom was unstable. If rebellion were going to rise from anywhere, it would rise from Kauaʻi and could fracture the entire kingdom. She was not going to let that happen.</p>
+<p>The one island Kamehameha had never conquered, failing twice.<br>
+The island whose aliʻi had only submitted in 1810.<br>
+The island that had recently flirted with Russian influence, <a href="pins/russian-fort-elizabeth.html">building forts</a> and negotiating for weapons.<br>
+They committed a pledge of loyalty to Kamehameha I but not necessarily to his heirs.</p>
 
-  <p>In 1821, Kaʻahumanu and Liholiho sailed to Kauaʻi under the banner of diplomacy. Kaumualiʻi greeted them with ceremony, unaware that the “visit” had already been decided. For forty-two nights they sailed around the island with Kaumualiʻi giving the young king and his party a tour of the island. One night Kaumualiʻi was taken aboard their vessel and quietly removed from the island.  Kaʻahumanu and Liholiho in a strategic act of treachery kidnapped Kaumualiʻi.</p>
+<p>Kaʻahumanu understood the risk better than anyone. After the ʻAi Noa, after the destruction of the old religious order, the kingdom was unstable. If rebellion were going to rise from anywhere, it would rise from Kauaʻi and could fracture the entire kingdom. She was not going to let that happen.</p>
 
-  <div class="figure">
-    <img src="images/stories/kaahumanu-fort-elizabeth.png" alt="Fort Elizabeth">
-    <div class="caption">Fort Elizabeth, Kauaʻi — the Russian fortification symbolizing the lingering external threats to the kingdom’s unity. Reconstruction view by Dr. Alexander Molodin & Dr. Peter R. Mills (2015). CC BY-SA 4.0. Source: Wikimedia Commons, cropped by author.</div>
-  </div>
+<p>In 1821, Kaʻahumanu and Liholiho sailed to Kauaʻi under the banner of diplomacy. Kaumualiʻi greeted them with ceremony, unaware that the “visit” had already been decided. For forty-two nights they sailed around the island with Kaumualiʻi giving the young king and his party a tour of the island. One night Kaumualiʻi was taken aboard their vessel and quietly removed from the island. Kaʻahumanu and Liholiho in a strategic act of treachery kidnapped Kaumualiʻi.</p>
 
-  <p>Once on Oʻahu, Kaumualiʻi could not lead a rebellion. His chiefs could not rally around him. Upon their arrival, Kaumualiʻi was forced to marry Kaʻahumanu.  It was pure strategy, Kauaʻi, the last independent kingdom, was now tethered to Kaʻahumanu and thus the Kingdom.  Kaumualiʻi never returned home and died on Oʻahu in 1824.</p>
+<div class="figure">
+  <img src="images/stories/kaahumanu-fort-elizabeth.png" alt="Fort Elizabeth">
+  <div class="caption">Fort Elizabeth, Kauaʻi — the Russian fortification symbolizing the lingering external threats to the kingdom’s unity. Reconstruction view by Dr. Alexander Molodin &amp; Dr. Peter R. Mills (2015). CC BY-SA 4.0. Source: Wikimedia Commons, cropped by author.</div>
+</div>
 
-  <p>Kaʻahumanu would repeat the strategy with his son Kealiʻiahonui, marrying him as well, and absorbing an entire rival royal line into her own sphere of influence within a few years.  Checkmating a rival that even Kamehameha did not directly conquer.</p>
+<p>Once on Oʻahu, Kaumualiʻi could not lead a rebellion. His chiefs could not rally around him. Upon their arrival, Kaumualiʻi was forced to marry Kaʻahumanu. It was pure strategy, Kauaʻi, the last independent kingdom, was now tethered to Kaʻahumanu and thus the Kingdom. Kaumualiʻi never returned home and died on Oʻahu in 1824.</p>
 
-  <p>With Kauaʻi neutralized and the kingdom stabilized, Kaʻahumanu’s focus returned to governance. But stability would not last. Liholiho (and his wife Queen Kamāmalu) died in 1824 while visiting Great Britain in an effort to strengthen political ties.</p>
+<p>Kaʻahumanu would repeat the strategy with his son Kealiʻiahonui, marrying him as well, and absorbing an entire rival royal line into her own sphere of influence within a few years. Checkmating a rival that even Kamehameha did not directly conquer.</p>
 
-  <p>His younger brother Kauikeaouli became King Kamehameha III at the age of ten or eleven (sources vary). With a new young king on the throne, Kaʻahumanu lined up her pieces and continued governing as Kuhina Nui.</p>
+<p>With Kauaʻi neutralized and the kingdom stabilized, Kaʻahumanu’s focus returned to governance. But stability would not last. Liholiho (and his wife Queen Kamāmalu) died in 1824 while visiting Great Britain in an effort to strengthen political ties.</p>
 
-  <div class="figure portrait">
-    <img src="images/stories/kaahumanu-kamehameha-iii.jpg" alt="Kamehameha III (Kauikeaouli)">
-    <div class="caption">Kamehameha III (Kauikeaouli), painted in 1825. Portrait by Robert Dampier, 1825 — Honolulu Museum of Art. Public Domain, via Wikimedia Commons.</div>
-  </div>
+<p>His younger brother Kauikeaouli became King Kamehameha III at the age of ten or eleven (sources vary). With a new young king on the throne, Kaʻahumanu lined up her pieces and continued governing as Kuhina Nui.</p>
 
-  <p>By the mid-1820s, she had declared herself a Christian. Some say she was a convert. Others say the choice was political. Regardless of her motivation, the new faith gave her moral authority, written law, and an ideological basis to govern more effectively and maintain social order.</p>
+<div class="figure portrait">
+  <img src="images/stories/kaahumanu-kamehameha-iii.jpg" alt="Kamehameha III (Kauikeaouli)">
+  <div class="caption">Kamehameha III (Kauikeaouli), painted in 1825. Portrait by Robert Dampier, 1825 — Honolulu Museum of Art. Public Domain, via Wikimedia Commons.</div>
+</div>
 
-  <p>She outlawed alcohol, regulated sexuality, and cracked down on behaviors she believed weakened the kingdom. She also, by oral proclamation, banned hula, chant (oli), and songs (mele) in 1830. Christianity viewed hula as a “pagan ritual,” and Kaʻahumanu used her power to forbid public performances. This was an unforced error; she likely surrendered her rook. Enforcement was inconsistent, and Kauikeaouli openly defied the ban. He felt the same tug toward the old ways that his brother had, and Governor Boki encouraged him to push back against his partial Christian upbringing.</p>
+<p>By the mid-1820s, she had declared herself a Christian. Some say she was a convert. Others say the choice was political. Regardless of her motivation, the new faith gave her moral authority, written law, and an ideological basis to govern more effectively and maintain social order.</p>
 
-  <p>Kaʻahumanu’s embrace of Christianity had lines in the sand. Her loyalty was to the Protestant missionaries, not to Christianity as a whole. When Catholic teachers and priests began arriving in the late 1820s, she saw them as political rivals that might introduce instability to the kingdom by possibly splintering her people into two, competing religious camps. She restricted Catholic teaching, expelled priests, and punished Hawaiian converts. It was another example of her contradictions: she supported one foreign faith while resisting another.</p>
+<p>She outlawed alcohol, regulated sexuality, and cracked down on behaviors she believed weakened the kingdom. She also, by oral proclamation, banned hula, chant (oli), and songs (mele) in 1830. Christianity viewed hula as a “pagan ritual,” and Kaʻahumanu used her power to forbid public performances. This was an unforced error; she likely surrendered her rook. Enforcement was inconsistent, and Kauikeaouli openly defied the ban. He felt the same tug toward the old ways that his brother had, and Governor Boki encouraged him to push back against his partial Christian upbringing.</p>
 
-  <p>Kaʻahumanu encouraged literacy and established schools to ensure Hawaiians were some of the most literate on the planet. She used missionary influence to support legal reforms that could be enforced through writing rather than ritual. She truly understood power—how to gain it, wield it, and fight to retain it.</p>
+<p>Kaʻahumanu’s embrace of Christianity had lines in the sand. Her loyalty was to the Protestant missionaries, not to Christianity as a whole. When Catholic teachers and priests began arriving in the late 1820s, she saw them as political rivals that might introduce instability to the kingdom by possibly splintering her people into two, competing religious camps. She restricted Catholic teaching, expelled priests, and punished Hawaiian converts. It was another example of her contradictions: she supported one foreign faith while resisting another.</p>
 
-  <p>Kaʻahumanu quickly built a new framework based on written laws, literacy, and a moral code shaped by her convictions and tools, which were influenced by her missionary allies.</p>
+<p>Kaʻahumanu encouraged literacy and established schools to ensure Hawaiians were some of the most literate on the planet. She used missionary influence to support legal reforms that could be enforced through writing rather than ritual. She truly understood power—how to gain it, wield it, and fight to retain it.</p>
 
-  <p>She began by forcing clarity into places where uncertainty existed. Chiefs were reminded of their obligations to the crown and, by proxy, Kaʻahumanu. Councils were held across the islands to explain the new order, which generally consolidated power up towards the monarchy and away from the aliʻi. She put her opponents in check again, having them surrender pieces to continue playing.</p>
+<p>Kaʻahumanu quickly built a new framework based on written laws, literacy, and a moral code shaped by her convictions and tools, which were influenced by her missionary allies.</p>
 
-  <p>For the first time in Hawaiian history, laws began to live on paper. Kaʻahumanu leaned heavily on the missionaries. They knew how to write, print, codify, translate, and most importantly, teach. She was already a political savant and the missionaries plugged gaps where she was weakest, strengthening not only her position, but in many regards, the Kingdom’s as well.</p>
+<p>She began by forcing clarity into places where uncertainty existed. Chiefs were reminded of their obligations to the crown and, by proxy, Kaʻahumanu. Councils were held across the islands to explain the new order, which generally consolidated power up towards the monarchy and away from the aliʻi. She put her opponents in check again, having them surrender pieces to continue playing.</p>
 
-  <p>Under this new system, Hawaiian literacy skyrocketed. Chiefs were expected to learn to read and commoners followed suit. By the late 1820s and early 1830s, Hawaiian-language schools multiplied, and the printing press at Lahainaluna was busy, printing laws, hymns, histories, newspapers, and lessons many of them written by great Hawaiian scholars like <a href="story-david-malo.html">David Malo</a>. Hawaiʻi became one of the most literate societies in the Pacific, not because her people asked for it, but because Kaʻahumanu forced it.</p>
+<p>For the first time in Hawaiian history, laws began to live on paper. Kaʻahumanu leaned heavily on the missionaries. They knew how to write, print, codify, translate, and most importantly, teach. She was already a political savant and the missionaries plugged gaps where she was weakest, strengthening not only her position, but in many regards, the Kingdom’s as well.</p>
 
-  <div class="figure">
-    <img src="images/stories/kaahumanu-lahainaluna-press.jpg" alt="Lahainaluna printing press">
-    <div class="caption">Lahainaluna Seminary’s printing press, where early Hawaiian-language laws, newspapers, and textbooks were produced. Public domain, via Wikimedia Commons.</div>
-  </div>
+<p>Under this new system, Hawaiian literacy skyrocketed. Chiefs were expected to learn to read and commoners followed suit. By the late 1820s and early 1830s, Hawaiian-language schools multiplied, and the printing press at Lahainaluna was busy, printing laws, hymns, histories, newspapers, and lessons many of them written by great Hawaiian scholars like <a href="story-david-malo.html">David Malo</a>. Hawaiʻi became one of the most literate societies in the Pacific, not because her people asked for it, but because Kaʻahumanu forced it.</p>
 
-  <p>Many of her reforms came with contradictions which today complicates her legacy.<br>
-  She imposed Christian ethics and overall morality with a severity that many believed too extreme. Alcohol was restricted. Gambling was punished. Sexual behavior was legislated. In 1830, she banned public hula, mele, and ʻoli. The ban on cultural practices was poorly enforced and widely ignored, pushing up against the limits of her power and authority. It reaffirmed her priorities as a ruler: power first, stability second, culture third; first with the abolition of the kapu and now the attempts to undermine the broader culture.</p>
+<div class="figure">
+  <img src="images/stories/kaahumanu-lahainaluna-press.jpg" alt="Lahainaluna printing press">
+  <div class="caption">Lahainaluna Seminary’s printing press, where early Hawaiian-language laws, newspapers, and textbooks were produced. Public domain, via Wikimedia Commons.</div>
+</div>
 
-  <p>Not everyone complied.<br>
-  Young King Kauikeaouli openly defied the hula ban and challenging her authority. Kaʻahumanu won the political battles, but she couldn’t win the cultural ones.</p>
+<p>Many of her reforms came with contradictions which today complicates her legacy.<br>
+She imposed Christian ethics and overall morality with a severity that many believed too extreme. Alcohol was restricted. Gambling was punished. Sexual behavior was legislated. In 1830, she banned public hula, mele, and ʻoli. The ban on cultural practices was poorly enforced and widely ignored, pushing up against the limits of her power and authority. It reaffirmed her priorities as a ruler: power first, stability second, culture third; first with the abolition of the kapu and now the attempts to undermine the broader culture.</p>
 
-  <p>She remained the Kingdom’s center of gravity and executive power.<br>
-  She negotiated with foreign captains.<br>
-  She signed the earliest treaties.<br>
-  She executed trade agreements.<br>
-  She tempered foreign demands while elevating Hawaiian law.</p>
+<p>Not everyone complied.<br>
+Young King Kauikeaouli openly defied the hula ban and challenging her authority. Kaʻahumanu won the political battles, but she couldn’t win the cultural ones.</p>
 
-  <p>For more than a decade after Kamehameha I’s death, Kaʻahumanu reshaped the kingdom as she saw fit. The Hawaiʻi that emerged in the 1820s and 1830s was a hybrid of sorts. Hawaiian in leadership, Western in structure, and shaped significantly by one woman, the Kingdom’s chess master.</p>
+<p>She remained the Kingdom’s center of gravity and executive power.<br>
+She negotiated with foreign captains.<br>
+She signed the earliest treaties.<br>
+She executed trade agreements.<br>
+She tempered foreign demands while elevating Hawaiian law.</p>
 
-  <p>By the late 1820s, Kaʻahumanu remained the most powerful figure in the Hawaiian Kingdom, but her authority had begun to fray. The changes she orchestrated including the abolition of the kapu, the rise of Christian law, the continued arrival of foreign influences, and the efforts to restrict cultural practices created a society that no one fully understood, including her.</p>
+<p>For more than a decade after Kamehameha I’s death, Kaʻahumanu reshaped the kingdom as she saw fit. The Hawaiʻi that emerged in the 1820s and 1830s was a hybrid of sorts. Hawaiian in leadership, Western in structure, and shaped significantly by one woman, the Kingdom’s chess master.</p>
 
-  <p>Kauikeaouli, the young Kamehameha III, had grown through young adulthood under her shadow. Their relationship was complicated. He respected her authority and the stability she created, but he also felt the pull of older traditions and the desire to rule alone. He tested boundaries, exerted authority of his own, and resisted her bans on cultural practices. He saw what she did, what she wanted to happen, but believed the cost to his people and culture was too high.</p>
+<p>By the late 1820s, Kaʻahumanu remained the most powerful figure in the Hawaiian Kingdom, but her authority had begun to fray. The changes she orchestrated including the abolition of the kapu, the rise of Christian law, the continued arrival of foreign influences, and the efforts to restrict cultural practices created a society that no one fully understood, including her.</p>
 
-  <p>Kaʻahumanu was aging, often ill, and aware that the Kingdom’s future would continue to evolve. She traveled the islands frequently with missionary advisers, promoting Christianity, issuing laws, and inspecting schools. She could sense the young king was moving in a different direction and getting stronger.</p>
+<p>Kauikeaouli, the young Kamehameha III, had grown through young adulthood under her shadow. Their relationship was complicated. He respected her authority and the stability she created, but he also felt the pull of older traditions and the desire to rule alone. He tested boundaries, exerted authority of his own, and resisted her bans on cultural practices. He saw what she did, what she wanted to happen, but believed the cost to his people and culture was too high.</p>
 
-  <p>In 1832, Kaʻahumanu’s health declined rapidly. She spent her final weeks near Honolulu, attended by chiefs, missionaries, and family. Accounts describe her as reflective, sometimes restless, revisiting her decisions and contemplating Hawaiʻi’s future. Her death on June 5, 1832 marked the end of an era. In many regards the bridge between the old and the new was severed and those with the political influence were all of the new era going forward. Some of that was due to Kaʻahumanu’s own dismantling of older rivals, but much of it was just time passing and with it, new players emerging for future games with the monarchy.</p>
+<p>Kaʻahumanu was aging, often ill, and aware that the Kingdom’s future would continue to evolve. She traveled the islands frequently with missionary advisers, promoting Christianity, issuing laws, and inspecting schools. She could sense the young king was moving in a different direction and getting stronger.</p>
 
-  <div class="figure">
-    <img src="images/stories/kaahumanu-kingdom-flag.jpg" alt="Hawaiian Kingdom flag">
-    <div class="caption">Ka Hae Nani o Hawaiʻi — the Hawaiian Kingdom flag in use during the mid-19th century. Public domain image via Wikimedia Commons. File: Ka Hae Nani o Hawaii, 1869.</div>
-  </div>
+<p>In 1832, Kaʻahumanu’s health declined rapidly. She spent her final weeks near Honolulu, attended by chiefs, missionaries, and family. Accounts describe her as reflective, sometimes restless, revisiting her decisions and contemplating Hawaiʻi’s future. Her death on June 5, 1832 marked the end of an era. In many regards the bridge between the old and the new was severed and those with the political influence were all of the new era going forward. Some of that was due to Kaʻahumanu’s own dismantling of older rivals, but much of it was just time passing and with it, new players emerging for future games with the monarchy.</p>
 
-  <p>With her passing, the office of Kuhina Nui shifted to her longtime ally, Kīnaʻu, but no one would ever wield authority with the tenacity, confidence, and fire of Kaʻahumanu.  She broke the mold.</p>
+<div class="figure">
+  <img src="images/stories/kaahumanu-kingdom-flag.jpg" alt="Hawaiian Kingdom flag">
+  <div class="caption">Ka Hae Nani o Hawaiʻi — the Hawaiian Kingdom flag in use during the mid-19th century. Public domain image via Wikimedia Commons. File: Ka Hae Nani o Hawaii, 1869.</div>
+</div>
 
-  <h2 class="section">The Kingdom that Kaʻahumanu left behind was fundamentally different from the one she seized.</h2>
+<p>With her passing, the office of Kuhina Nui shifted to her longtime ally, Kīnaʻu, but no one would ever wield authority with the tenacity, confidence, and fire of Kaʻahumanu. She broke the mold.</p>
 
-  <p>Hawaiian religion had been dismantled, literacy was widespread, foreign influence (desired or otherwise) was rampant, and governance had shifted toward written law and constitutional authority. She helped create stability during upheaval, but she had also created profound tensions between old and new, culture and religion, monarchy and foreign power. Tensions we still feel today and have never fully reckoned with.</p>
+<h2 class="section">The Kingdom that Kaʻahumanu left behind was fundamentally different from the one she seized.</h2>
 
-  <p>She modernized the kingdom, but she also erased parts of it. She protected Hawaiian sovereignty, yet strengthened the influence of foreigners. She was revered, feared, admired, and resented, often at the same time by even the same people.</p>
+<p>Hawaiian religion had been dismantled, literacy was widespread, foreign influence (desired or otherwise) was rampant, and governance had shifted toward written law and constitutional authority. She helped create stability during upheaval, but she had also created profound tensions between old and new, culture and religion, monarchy and foreign power. Tensions we still feel today and have never fully reckoned with.</p>
 
-  <p>Kaʻahumanu’s imprint on Hawaiʻi was undeniable. The era after her death belonged to Kauikeaouli, who would attempt to rebuild cultural life while steering the kingdom toward constitutional government. Much of his agenda was further pursuing some of her goals and unwinding the damage inflicted on the culture from the woman who had reshaped the islands before he came of age.</p>
+<p>She modernized the kingdom, but she also erased parts of it. She protected Hawaiian sovereignty, yet strengthened the influence of foreigners. She was revered, feared, admired, and resented, often at the same time by even the same people.</p>
 
-  <p>Kaʻahumanu left behind a kingdom remade in her image, transformed, conflicted, and permanently altered. Her legacy lives in contradictions. Like most people, she was nuanced. Yet many try to define her in strict black-and-white terms: right or wrong, savior or destroyer.  That wasn’t her, and that isn’t her legacy. The truth is far more complicated.</p>
+<p>Kaʻahumanu’s imprint on Hawaiʻi was undeniable. The era after her death belonged to Kauikeaouli, who would attempt to rebuild cultural life while steering the kingdom toward constitutional government. Much of his agenda was further pursuing some of her goals and unwinding the damage inflicted on the culture from the woman who had reshaped the islands before he came of age.</p>
 
-  <p>She helped dismantle the old religion, yet believed she was saving her people.<br>
-  She empowered literacy and written law, yet curbed Hawaiian cultural practices.<br>
-  She strengthened the monarchy, yet consolidated power in herself.<br>
-  She invited foreign influence, yet fought to keep Hawaiʻi independent.</p>
+<p>Kaʻahumanu left behind a kingdom remade in her image, transformed, conflicted, and permanently altered. Her legacy lives in contradictions. Like most people, she was nuanced. Yet many try to define her in strict black-and-white terms: right or wrong, savior or destroyer. That wasn’t her, and that isn’t her legacy. The truth is far more complicated.</p>
 
-  <p>Some believe Kaʻahumanu’s actions protected Hawaiian sovereignty and others believe she was protecting her own authority — it was probably a mix of the two.</p>
+<p>She helped dismantle the old religion, yet believed she was saving her people.<br>
+She empowered literacy and written law, yet curbed Hawaiian cultural practices.<br>
+She strengthened the monarchy, yet consolidated power in herself.<br>
+She invited foreign influence, yet fought to keep Hawaiʻi independent.</p>
 
-  <p>For every person who sees her as a visionary modernizer, another sees her as the destroyer of an ancestral world. Both are right and incomplete. Hawaiʻi’s public education often teaches her in broad strokes: favorite wife → ends the kapu → converts to Christianity → move on.</p>
+<p>Some believe Kaʻahumanu’s actions protected Hawaiian sovereignty and others believe she was protecting her own authority — it was probably a mix of the two.</p>
 
-  <p>History rarely allows Hawaiian leaders the space to be complicated. Kaʻahumanu deserves that space, and her story deserves to breathe.</p>
+<p>For every person who sees her as a visionary modernizer, another sees her as the destroyer of an ancestral world. Both are right and incomplete. Hawaiʻi’s public education often teaches her in broad strokes: favorite wife → ends the kapu → converts to Christianity → move on.</p>
 
-  <p>She lived at a time when the population was collapsing. Estimates vary, but most scholars believe Hawaiʻi’s population declined 40–80% due to foreign diseases. The exact number is less important than the scale: any society losing that many people enters a state of collapse. You see this throughout history — the Aztecs, Aboriginal peoples in Australia, even Europe after the Bubonic Plague.</p>
+<p>History rarely allows Hawaiian leaders the space to be complicated. Kaʻahumanu deserves that space, and her story deserves to breathe.</p>
 
-  <p>In that collapse, people begin asking why their gods are not protecting them. When missionaries arrived, healthy and carrying a different god, it created doubt, fear, and curiosity. It’s easy for us, two hundred years later, to armchair-quarterback Kaʻahumanu’s choices. But in her moment, her world — her people’s world — was collapsing, and she could not stop it. Power, the ability to command, to direct, to enforce, was the only tool she believed could stabilize the kingdom. </p>
-   <h2 class="section">Cultural values mean little if no one is alive to practice them. Her choices were consequential because she believed the stakes were existential.</h2>
-  
-  <p>Keep in mind: at the time of Kaʻahumanu’s death, only fifty-four years had passed since Captain Cook sighted Hawaiʻi. In that half-century, the islands went from independent warring chiefdoms → to a unified kingdom → to a literate society → to an internationally recognized state navigating diplomacy with global powers, all while the population was being devastated by disease. That is an impossible amount of change in one lifetime. And through much of that time, Kaʻahumanu was either at the helm or at the table, guiding her husband, guiding her kings, and preparing the next line of rulers to survive the storm.</p>
+<p>She lived at a time when the population was collapsing. Estimates vary, but most scholars believe Hawaiʻi’s population declined 40–80% due to foreign diseases. The exact number is less important than the scale: any society losing that many people enters a state of collapse. You see this throughout history — the Aztecs, Aboriginal peoples in Australia, even Europe after the Bubonic Plague.</p>
 
-  <div class="figure">
-    <img src="images/stories/kaahumanu-vancouver-chart.jpg" alt="Chart of the Sandwich Islands">
-    <div class="caption">“A Chart of the Sandwich Islands,” surveyed 1792–1794 by George Vancouver. Public domain, Wikimedia Commons.</div>
-  </div>
+<p>In that collapse, people begin asking why their gods are not protecting them. When missionaries arrived, healthy and carrying a different god, it created doubt, fear, and curiosity. It’s easy for us, two hundred years later, to armchair-quarterback Kaʻahumanu’s choices. But in her moment, her world — her people’s world — was collapsing, and she could not stop it. Power, the ability to command, to direct, to enforce, was the only tool she believed could stabilize the kingdom.</p>
 
-  <p>You cannot understand Hawaiian history without her. She shaped the monarchy, the legal system, diplomacy, religion, foreign relations, and the social expectations that defined Hawaiian life for generations. Kaʻahumanu broke the mold. She did not live quietly, and she did not lead gently. Hawaiʻi is still living in the world she helped create, contradictions and all.</p>
+<h2 class="section">Cultural values mean little if no one is alive to practice them. Her choices were consequential because she believed the stakes were existential.</h2>
+
+<p>Keep in mind: at the time of Kaʻahumanu’s death, only fifty-four years had passed since Captain Cook sighted Hawaiʻi. In that half-century, the islands went from independent warring chiefdoms → to a unified kingdom → to a literate society → to an internationally recognized state navigating diplomacy with global powers, all while the population was being devastated by disease. That is an impossible amount of change in one lifetime. And through much of that time, Kaʻahumanu was either at the helm or at the table, guiding her husband, guiding her kings, and preparing the next line of rulers to survive the storm.</p>
+
+<div class="figure">
+  <img src="images/stories/kaahumanu-vancouver-chart.jpg" alt="Chart of the Sandwich Islands">
+  <div class="caption">“A Chart of the Sandwich Islands,” surveyed 1792–1794 by George Vancouver. Public domain, Wikimedia Commons.</div>
+</div>
+
+<p>You cannot understand Hawaiian history without her. She shaped the monarchy, the legal system, diplomacy, religion, foreign relations, and the social expectations that defined Hawaiian life for generations. Kaʻahumanu broke the mold. She did not live quietly, and she did not lead gently. Hawaiʻi is still living in the world she helped create, contradictions and all.</p>
 
 </main>
 
