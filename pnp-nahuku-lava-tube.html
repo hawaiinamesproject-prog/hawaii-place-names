@@ -1,41 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Nāhuku (Thurston Lava Tube) | Place Name Profiles | Hawai‘i Names Project</title>
 
 <meta name="description" content="Discover Nāhuku (Thurston Lava Tube), its Hawaiian name, volcanic origins, and the history of Lorrin A. Thurston in Hawaiʻi Volcanoes National Park.">
-<link rel="canonical" href="https://hawaiinamesproject.com/pnp-nahuku.html">
+<link rel="canonical" href="https://hawaiinamesproject.com/pnp-nahuku-lava-tube.html">
+
+<meta property="og:title" content="Nāhuku (Thurston Lava Tube) | Place Name Profiles | Hawaiʻi Names Project">
+<meta property="og:description" content="Explore Nāhuku, its Hawaiian name, volcanic origins, and the history behind its association with Lorrin A. Thurston.">
+<meta property="og:url" content="https://hawaiinamesproject.com/pnp-nahuku-lava-tube.html">
+<meta property="og:type" content="article">
 
 <link rel="icon" href="clean-favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="clean-favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="clean-favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
 
-  <!-- Google tag (gtag.js) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-41NCGZLGNJ');
 </script>
 
 <style>
 body{
   margin:0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
   background:#f7f7f7;
   color:#222;
   -webkit-text-size-adjust:100%;
 }
 
 /* =========================
-   NAVIGATION (Option A)
-   Desktop: normal horizontal links
-   Mobile: hamburger menu
+   COMPACT NAVIGATION
    ========================= */
 
 nav{
@@ -46,27 +50,26 @@ nav{
 .nav-inner{
   max-width:1200px;
   margin:0 auto;
-  padding:14px 18px;
+  padding:8px 18px;
   display:flex;
   align-items:center;
-  justify-content:center;
-  position:relative;
+  justify-content:space-between;
+  min-height:56px;
 }
 
-.nav-links{
+.nav-logo{
   display:flex;
-  gap:40px;
-  font-weight:600;
-}
-
-nav a{
+  align-items:center;
   text-decoration:none;
-  color:#222;
 }
 
-nav a:hover{ color:#2b6cb0; }
+.nav-logo img{
+  display:block;
+  width:155px;
+  max-width:100%;
+  height:auto;
+}
 
-/* Hidden checkbox toggle */
 .nav-toggle{
   position:absolute;
   opacity:0;
@@ -74,86 +77,64 @@ nav a:hover{ color:#2b6cb0; }
   height:1px;
 }
 
-/* Hamburger */
 .hamburger{
-  display:none;
-  position:absolute;
-  right:18px;
-  top:50%;
-  transform:translateY(-50%);
+  display:block;
   cursor:pointer;
-  background:transparent;
-  border:0;
   padding:10px;
+  margin-left:auto;
 }
 
 .hamburger span{
   display:block;
-  width:24px;
-  height:2px;
-  background:#222;
+  width:26px;
+  height:3px;
+  background:#555;
   margin:5px 0;
+  border-radius:2px;
 }
 
 .mobile-menu{
   display:none;
-  border-top:1px solid #eee;
   background:#fff;
+  border-top:1px solid #eee;
+}
+
+@media(min-width:769px){
+  .mobile-menu{
+    text-align:center;
+  }
 }
 
 .mobile-menu a{
   display:block;
-  padding:14px 18px;
-  border-bottom:1px solid #f0f0f0;
+  padding:14px 22px;
+  border-bottom:1px solid #eee;
   font-weight:600;
-}
-
-.mobile-menu a:last-child{ border-bottom:none; }
-
-#nav-toggle:checked ~ .mobile-menu{ display:block; }
-
-@media (max-width:768px){
-  .nav-inner{ justify-content:flex-start; }
-  .nav-links{ display:none; }
-  .hamburger{ display:block; }
-}
-
-/* =========================
-   BANNER
-   ========================= */
-
-.hero-banner{
-  background:white;
-  display:flex;
-  justify-content:center;
-  padding:30px 0;
-}
-
-.hero-banner img{
-  width:420px;
-  max-width:88%;
-  height:auto;
-}
-
-/* =========================
-   BREADCRUMB + PROFILE
-   ========================= */
-
-.breadcrumb{
-  max-width:900px;
-  margin:0 auto;
-  padding:22px 20px 0;
-  font-size:0.95rem;
-  color:#555;
-}
-
-.breadcrumb a{
-  color:#2b6cb0;
+  color:#222;
   text-decoration:none;
-  font-weight:700;
 }
 
-.breadcrumb a:hover{ text-decoration:underline; }
+.mobile-menu a:hover{
+  background:#f7f7f7;
+  color:#2b6cb0;
+}
+
+.mobile-menu a:last-child{
+  border-bottom:none;
+}
+
+#nav-toggle:checked ~ .mobile-menu{
+  display:block;
+}
+
+.nav-toggle:focus-visible ~ .nav-inner .hamburger{
+  outline:2px solid #2b6cb0;
+  outline-offset:3px;
+}
+
+/* =========================
+   PROFILE LAYOUT
+   ========================= */
 
 .profile{
   max-width:900px;
@@ -178,7 +159,10 @@ nav a:hover{ color:#2b6cb0; }
   margin:18px 0;
 }
 
-/* Images */
+/* =========================
+   IMAGES
+   ========================= */
+
 .figure{
   margin:32px auto;
   text-align:center;
@@ -204,12 +188,15 @@ nav a:hover{ color:#2b6cb0; }
   margin-right:auto;
 }
 
-/* Pull quote */
+/* =========================
+   PULL QUOTES
+   ========================= */
+
 .pull-quote{
   margin:40px 0;
   padding:18px 22px;
   border-left:5px solid #2b6cb0;
-  background:#ffffff;
+  background:#fff;
   border-radius:10px;
   font-size:1.15rem;
   line-height:1.6;
@@ -217,19 +204,36 @@ nav a:hover{ color:#2b6cb0; }
   color:#333;
 }
 
-/* Mobile readability tweaks */
-@media (max-width:768px){
-  .profile{ padding:32px 24px 60px; }
-  .profile p{ font-size:1rem; line-height:1.85; }
-  .pull-quote{ font-size:1.08rem; }
+/* =========================
+   RETURN LINKS
+   ========================= */
+
+.return-links{
+  max-width:900px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid #ddd;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:700;
+}
+
+.return-links a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.return-links a:hover{
+  text-decoration:underline;
 }
 
 /* =========================
-   FOOTER (matches other pages)
+   FOOTER
    ========================= */
 
 .footer{
-  background:white;
+  background:#fff;
   text-align:center;
   padding:40px 0;
   border-top:1px solid #ddd;
@@ -244,45 +248,67 @@ nav a:hover{ color:#2b6cb0; }
   margin:0 20px;
 }
 
-.footer a:hover{ color:#2b6cb0; }
+.footer a:hover{
+  color:#2b6cb0;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:768px){
+  .nav-inner{
+    padding:6px 14px;
+    min-height:52px;
+  }
+
+  .nav-logo img{
+    width:125px;
+  }
+
+  .profile{
+    padding:32px 24px 60px;
+  }
+
+  .profile p{
+    font-size:1rem;
+    line-height:1.85;
+  }
+
+  .pull-quote{
+    font-size:1.08rem;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAVIGATION -->
 <nav>
   <input class="nav-toggle" type="checkbox" id="nav-toggle">
 
   <div class="nav-inner">
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="places-we-lost.html">Places We Lost</a>
-      <a href="place-name-profiles.html">Place Name Profiles</a>
-      <a href="stories.html">Stories</a>
-    </div>
+    <a class="nav-logo" href="index.html" aria-label="Hawaiʻi Names Project — Return to Map">
+      <img src="Banner.jpg" alt="Hawaiʻi Names Project">
+    </a>
 
     <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </label>
   </div>
 
   <div class="mobile-menu">
-    <a href="index.html">Home</a>
+    <a href="index.html">Home / Map</a>
     <a href="places-we-lost.html">Places We Lost</a>
     <a href="place-name-profiles.html">Place Name Profiles</a>
     <a href="stories.html">Stories</a>
   </div>
 </nav>
 
-<div class="hero-banner">
-  <img src="Banner.jpg" alt="Hawai‘i Names Project Banner">
-</div>
-
-<div class="breadcrumb">
-  <a href="place-name-profiles.html">← Place Name Profiles</a>
-</div>
-
+<!-- PROFILE -->
 <main class="profile">
 
 <h1>Nāhuku (Thurston Lava Tube)</h1>
@@ -318,9 +344,15 @@ For most locals, “Thurston Lava Tube” is still the common reference, but “
 <p>Nāhuku endures as a meeting point of geology, culture, and memory, a Hawaiian name still spoken inside a place carved by fire and shaped by time. By restoring and using its traditional name, we continue a connection to the land that predates the park itself.</p>
 
 <p><a href="../pins/uealoha-byrons-ledge-trail.html">Related: Uēaloha (Byron's Ledge) Trail →</a></p>
-  
+
+<div class="return-links">
+  <a href="place-name-profiles.html">← Return to Place Name Profiles</a>
+  <a href="index.html#map">← Return to Map</a>
+</div>
+
 </main>
 
+<!-- FOOTER -->
 <footer class="footer">
   <a href="about.html">About</a> |
   <a href="contact.html">Contact Us</a>
