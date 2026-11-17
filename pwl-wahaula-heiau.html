@@ -1,39 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Wahaʻula Heiau | Places We Lost | Hawai‘i Names Project</title>
+
+<meta name="description" content="Discover the history of Wahaʻula Heiau in Puna, Hawaiʻi Island, a sacred Hawaiian temple buried by lava from Kīlauea's Puʻu ʻŌʻō eruption in 1997.">
+<link rel="canonical" href="https://hawaiinamesproject.com/pwl-wahaula-heiau.html">
+
+<meta property="og:title" content="Wahaʻula Heiau | Places We Lost | Hawaiʻi Names Project">
+<meta property="og:description" content="The history of Wahaʻula Heiau, a sacred Hawaiian temple on the Puna coast that was buried by lava in 1997.">
+<meta property="og:url" content="https://hawaiinamesproject.com/pwl-wahaula-heiau.html">
+<meta property="og:type" content="article">
 
 <link rel="icon" href="clean-favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="clean-favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="clean-favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
 
-<meta name="description" content="Discover the history of Wahaʻula Heiau in Puna, Hawaiʻi Island, a sacred Hawaiian temple buried by lava from Kīlauea's Puʻu ʻŌʻō eruption in 1997.">
-<link rel="canonical" href="https://hawaiinamesproject.com/pwl-wahaula-heiau.html">
-
-  <!-- Google tag (gtag.js) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-41NCGZLGNJ');
 </script>
 
 <style>
-
 body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f7f7f7;
-color:#222;
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  -webkit-text-size-adjust:100%;
 }
 
 /* =========================
-   NAVIGATION (Option A)
+   COMPACT NAVIGATION
    ========================= */
 
 nav{
@@ -44,29 +50,26 @@ nav{
 .nav-inner{
   max-width:1200px;
   margin:0 auto;
-  padding:14px 18px;
+  padding:8px 18px;
   display:flex;
   align-items:center;
-  justify-content:center;
-  position:relative;
+  justify-content:space-between;
+  min-height:56px;
 }
 
-.nav-links{
+.nav-logo{
   display:flex;
-  gap:40px;
-  font-weight:600;
-}
-
-nav a{
+  align-items:center;
   text-decoration:none;
-  color:#222;
 }
 
-nav a:hover{
-  color:#2b6cb0;
+.nav-logo img{
+  display:block;
+  width:155px;
+  max-width:100%;
+  height:auto;
 }
 
-/* Hidden checkbox toggle */
 .nav-toggle{
   position:absolute;
   opacity:0;
@@ -74,38 +77,46 @@ nav a:hover{
   height:1px;
 }
 
-/* Hamburger */
 .hamburger{
-  display:none;
-  position:absolute;
-  right:18px;
-  top:50%;
-  transform:translateY(-50%);
+  display:block;
   cursor:pointer;
-  background:transparent;
-  border:0;
   padding:10px;
+  margin-left:auto;
 }
 
 .hamburger span{
   display:block;
-  width:24px;
-  height:2px;
-  background:#222;
+  width:26px;
+  height:3px;
+  background:#555;
   margin:5px 0;
+  border-radius:2px;
 }
 
 .mobile-menu{
   display:none;
-  border-top:1px solid #eee;
   background:#fff;
+  border-top:1px solid #eee;
+}
+
+@media(min-width:769px){
+  .mobile-menu{
+    text-align:center;
+  }
 }
 
 .mobile-menu a{
   display:block;
-  padding:14px 18px;
-  border-bottom:1px solid #f0f0f0;
+  padding:14px 22px;
+  border-bottom:1px solid #eee;
   font-weight:600;
+  color:#222;
+  text-decoration:none;
+}
+
+.mobile-menu a:hover{
+  background:#f7f7f7;
+  color:#2b6cb0;
 }
 
 .mobile-menu a:last-child{
@@ -116,33 +127,9 @@ nav a:hover{
   display:block;
 }
 
-@media (max-width:768px){
-  .nav-inner{
-    justify-content:flex-start;
-  }
-  .nav-links{
-    display:none;
-  }
-  .hamburger{
-    display:block;
-  }
-}
-
-/* =========================
-   BANNER
-   ========================= */
-
-.hero-banner{
-  background:white;
-  display:flex;
-  justify-content:center;
-  padding:30px 0;
-}
-
-.hero-banner img{
-  width:420px;
-  max-width:88%;
-  height:auto;
+.nav-toggle:focus-visible ~ .nav-inner .hamburger{
+  outline:2px solid #2b6cb0;
+  outline-offset:3px;
 }
 
 /* =========================
@@ -198,18 +185,30 @@ nav a:hover{
   margin:18px 0;
 }
 
+.article p a{
+  color:#2b6cb0;
+  text-decoration:none;
+}
+
+.article p a:hover{
+  text-decoration:underline;
+}
+
 .pull{
   margin:22px 0;
   padding:16px 18px;
   border-left:4px solid #2b6cb0;
-  background:#ffffff;
+  background:#fff;
   border-radius:8px;
   box-shadow:0 2px 10px rgba(0,0,0,0.04);
   font-style:italic;
   color:#333;
 }
 
-/* Image blocks */
+/* =========================
+   IMAGE BLOCKS
+   ========================= */
+
 .figure{
   margin:26px 0;
   background:#fff;
@@ -225,8 +224,7 @@ nav a:hover{
   display:block;
 }
 
-/* Desktop image size control (match your Aloha Stadium tweak) */
-@media (min-width:769px){
+@media(min-width:769px){
   .figure{
     max-width:550px;
     margin:26px auto;
@@ -245,7 +243,7 @@ nav a:hover{
    ========================= */
 
 .footer{
-  background:white;
+  background:#fff;
   text-align:center;
   padding:40px 0;
   border-top:1px solid #ddd;
@@ -263,22 +261,38 @@ nav a:hover{
 .footer a:hover{
   color:#2b6cb0;
 }
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:768px){
+  .nav-inner{
+    padding:6px 14px;
+    min-height:52px;
+  }
+
+  .nav-logo img{
+    width:125px;
+  }
+
+  .article{
+    padding:32px 24px 20px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAVIGATION -->
 <nav>
   <input class="nav-toggle" type="checkbox" id="nav-toggle">
 
   <div class="nav-inner">
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="places-we-lost.html">Places We Lost</a>
-      <a href="place-name-profiles.html">Place Name Profiles</a>
-      <a href="stories.html">Stories</a>
-    </div>
+    <a class="nav-logo" href="index.html" aria-label="Hawaiʻi Names Project — Return to Map">
+      <img src="Banner.jpg" alt="Hawaiʻi Names Project">
+    </a>
 
     <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
       <span></span>
@@ -288,22 +302,21 @@ nav a:hover{
   </div>
 
   <div class="mobile-menu">
-    <a href="index.html">Home</a>
+    <a href="index.html">Home / Map</a>
     <a href="places-we-lost.html">Places We Lost</a>
     <a href="place-name-profiles.html">Place Name Profiles</a>
     <a href="stories.html">Stories</a>
   </div>
 </nav>
 
-<div class="hero-banner">
-  <img src="Banner.jpg" alt="Hawai‘i Names Project Banner">
-</div>
-
+<!-- BREADCRUMB -->
 <div class="breadcrumb">
   <a href="places-we-lost.html">← Places We Lost</a>
 </div>
 
+<!-- ARTICLE -->
 <main class="article">
+
   <h1>Wahaʻula Heiau</h1>
   <div class="subtitle">Hawaiʻi Island — Puna</div>
 
@@ -348,10 +361,10 @@ nav a:hover{
       National Park Service photo, public domain.
     </div>
   </div>
-  
- <p>
+
+  <p>
     Then came <a href="../pins/kilauea.html">Kīlauea</a>, more specifically, Puʻu ʻŌʻō.
-</p>
+  </p>
 
   <p>
     In 1989, lava flows advanced toward the heiau. Witnesses reported that the lava reached the outer walls and then split, flowing around the structure and leaving it temporarily untouched. Many saw meaning in the pause, a moment where the volcano seemed to acknowledge the sacred ground. The Wahaʻula Visitor Center wasn't so fortunate and was claimed by lava in June 1989.
@@ -378,18 +391,21 @@ nav a:hover{
     Wahaʻula represents a kind of loss unique to Hawaiʻi. It was not erased by conquest. It was overtaken by the same volcanic forces that created the island, forces tied to the gods the temple was built to appease.
   </p>
 
- <div class="pull">
-    In a landscape shaped by fire, permanence is never guaranteed. 
-   </div>
-    
-   <p>
+  <div class="pull">
+    In a landscape shaped by fire, permanence is never guaranteed.
+  </div>
+
+  <p>
     Yet names endure longer than stone. Wahaʻula Heiau is no longer visible, but it has not vanished. It survives in memory, language, and story, a reminder that some places are lost not to time or people, but to the land itself.
   </p>
 
-<p><a href="../pins/mookini-heiau.html">Related: Moʻokini Heiau →</a></p>
+  <p>
+    <a href="../pins/mookini-heiau.html">Related: Moʻokini Heiau →</a>
+  </p>
 
 </main>
 
+<!-- FOOTER -->
 <footer class="footer">
   <a href="about.html">About</a>
   <a href="contact.html">Contact Us</a>
