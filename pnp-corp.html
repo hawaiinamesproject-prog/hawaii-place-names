@@ -1,40 +1,46 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Patsy T. Mink Central Oʻahu Regional Park (CORP) | Place Name Profiles | Hawai‘i Names Project</title>
 
 <meta name="description" content="Explore the history behind Patsy T. Mink Central Oʻahu Regional Park (CORP), from its development as Central Oʻahu’s premier recreation complex to its renaming in honor of Congresswoman Patsy T. Mink and her legacy of equality.">
 <link rel="canonical" href="https://hawaiinamesproject.com/pnp-corp.html">
-  
+
+<meta property="og:title" content="Patsy T. Mink Central Oʻahu Regional Park (CORP) | Hawaiʻi Names Project">
+<meta property="og:description" content="Discover the history of Central Oʻahu Regional Park and its renaming in honor of Congresswoman Patsy T. Mink, a pioneer of Title IX and educational equality.">
+<meta property="og:url" content="https://hawaiinamesproject.com/pnp-corp.html">
+<meta property="og:type" content="article">
+
 <link rel="icon" href="clean-favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="clean-favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="clean-favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="clean-favicon-180.png">
 
-<!-- Google tag (gtag.js) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-41NCGZLGNJ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-41NCGZLGNJ');
 </script>
 
 <style>
 body{
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
   background:#f7f7f7;
   color:#222;
   -webkit-text-size-adjust:100%;
 }
 
 /* =========================
-NAVIGATION
-========================= */
+   COMPACT NAVIGATION
+   ========================= */
 
 nav{
   background:#fff;
@@ -44,25 +50,25 @@ nav{
 .nav-inner{
   max-width:1200px;
   margin:0 auto;
-  padding:14px 18px;
+  padding:8px 18px;
   display:flex;
   align-items:center;
-  justify-content:center;
-  position:relative;
+  justify-content:space-between;
+  min-height:56px;
 }
 
-.nav-links{
+.nav-logo{
   display:flex;
-  gap:40px;
-  font-weight:600;
-}
-
-nav a{
+  align-items:center;
   text-decoration:none;
-  color:#222;
 }
 
-nav a:hover{ color:#2b6cb0; }
+.nav-logo img{
+  display:block;
+  width:155px;
+  max-width:100%;
+  height:auto;
+}
 
 .nav-toggle{
   position:absolute;
@@ -72,68 +78,63 @@ nav a:hover{ color:#2b6cb0; }
 }
 
 .hamburger{
-  display:none;
-  position:absolute;
-  right:18px;
-  top:50%;
-  transform:translateY(-50%);
+  display:block;
   cursor:pointer;
-  background:transparent;
-  border:0;
   padding:10px;
+  margin-left:auto;
 }
 
 .hamburger span{
   display:block;
-  width:24px;
-  height:2px;
-  background:#222;
+  width:26px;
+  height:3px;
+  background:#555;
   margin:5px 0;
+  border-radius:2px;
 }
 
 .mobile-menu{
   display:none;
-  border-top:1px solid #eee;
   background:#fff;
+  border-top:1px solid #eee;
+}
+
+@media(min-width:769px){
+  .mobile-menu{
+    text-align:center;
+  }
 }
 
 .mobile-menu a{
   display:block;
-  padding:14px 18px;
-  border-bottom:1px solid #f0f0f0;
+  padding:14px 22px;
+  border-bottom:1px solid #eee;
   font-weight:600;
+  color:#222;
+  text-decoration:none;
 }
 
-.mobile-menu a:last-child{ border-bottom:none; }
-
-#nav-toggle:checked ~ .mobile-menu{ display:block; }
-
-@media (max-width:768px){
-  .nav-inner{ justify-content:flex-start; }
-  .nav-links{ display:none; }
-  .hamburger{ display:block; }
+.mobile-menu a:hover{
+  background:#f7f7f7;
+  color:#2b6cb0;
 }
 
-/* =========================
-BANNER
-========================= */
-
-.hero-banner{
-  background:white;
-  display:flex;
-  justify-content:center;
-  padding:30px 0;
+.mobile-menu a:last-child{
+  border-bottom:none;
 }
 
-.hero-banner img{
-  width:420px;
-  max-width:88%;
-  height:auto;
+#nav-toggle:checked ~ .mobile-menu{
+  display:block;
+}
+
+.nav-toggle:focus-visible ~ .nav-inner .hamburger{
+  outline:2px solid #2b6cb0;
+  outline-offset:3px;
 }
 
 /* =========================
-PROFILE LAYOUT
-========================= */
+   PROFILE LAYOUT
+   ========================= */
 
 .profile{
   max-width:900px;
@@ -159,8 +160,8 @@ PROFILE LAYOUT
 }
 
 /* =========================
-IMAGES
-========================= */
+   IMAGES
+   ========================= */
 
 .figure{
   margin:32px auto;
@@ -175,7 +176,8 @@ IMAGES
   display:block;
   margin:0 auto;
 }
-  @media (min-width:900px){
+
+@media(min-width:900px){
   .figure img{
     max-width:420px;
   }
@@ -192,9 +194,9 @@ IMAGES
   margin-right:auto;
 }
 
-  /* =========================
-PULL QUOTE
-========================= */
+/* =========================
+   PULL QUOTE
+   ========================= */
 
 .pull-quote{
   margin:40px 0;
@@ -209,8 +211,8 @@ PULL QUOTE
 }
 
 /* =========================
-RETURN LINKS
-========================= */
+   RETURN LINKS
+   ========================= */
 
 .return-links{
   max-width:900px;
@@ -233,11 +235,11 @@ RETURN LINKS
 }
 
 /* =========================
-FOOTER
-========================= */
+   FOOTER
+   ========================= */
 
 .footer{
-  background:white;
+  background:#fff;
   text-align:center;
   padding:40px 0;
   border-top:1px solid #ddd;
@@ -252,29 +254,48 @@ FOOTER
   margin:0 20px;
 }
 
-.footer a:hover{ color:#2b6cb0; }
+.footer a:hover{
+  color:#2b6cb0;
+}
 
-@media (max-width:768px){
-  .profile{ padding:32px 24px 60px; }
-  .profile p{ font-size:1rem; line-height:1.85; }
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:768px){
+  .nav-inner{
+    padding:6px 14px;
+    min-height:52px;
+  }
+
+  .nav-logo img{
+    width:125px;
+  }
+
+  .profile{
+    padding:32px 24px 60px;
+  }
+
+  .profile p{
+    font-size:1rem;
+    line-height:1.85;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
 <nav>
   <input class="nav-toggle" type="checkbox" id="nav-toggle">
 
   <div class="nav-inner">
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="places-we-lost.html">Places We Lost</a>
-      <a href="place-name-profiles.html">Place Name Profiles</a>
-      <a href="stories.html">Stories</a>
-    </div>
+    <a class="nav-logo" href="index.html" aria-label="Hawaiʻi Names Project — Return to Map">
+      <img src="Banner.jpg" alt="Hawaiʻi Names Project">
+    </a>
 
-    <label class="hamburger" for="nav-toggle">
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
       <span></span>
       <span></span>
       <span></span>
@@ -282,62 +303,60 @@ FOOTER
   </div>
 
   <div class="mobile-menu">
-    <a href="index.html">Home</a>
+    <a href="index.html">Home / Map</a>
     <a href="places-we-lost.html">Places We Lost</a>
     <a href="place-name-profiles.html">Place Name Profiles</a>
     <a href="stories.html">Stories</a>
   </div>
 </nav>
 
-<div class="hero-banner">
-  <img src="Banner.jpg" alt="Hawai‘i Names Project Banner">
-</div>
-
+<!-- PROFILE -->
 <main class="profile">
 
-  <h1>Patsy T. Mink Central Oʻahu Regional Park (CORP)</h1>
-  <div class="island">Oʻahu — Waipiʻo</div>
+<h1>Patsy T. Mink Central Oʻahu Regional Park (CORP)</h1>
+<div class="island">Oʻahu — Waipiʻo</div>
 
-  <div class="figure">
-    <img src="images/pnp/corp.jpg" alt="Map and entrance signage at Patsy T. Mink Central Oʻahu Regional Park in Waipio">
-    <div class="caption">
-      Map and entrance signage at Patsy T. Mink Central Oʻahu Regional Park in Waipio. Photo by author.
-    </div>
+<div class="figure">
+  <img src="images/pnp/corp.jpg" alt="Map and entrance signage at Patsy T. Mink Central Oʻahu Regional Park in Waipio">
+  <div class="caption">
+    Map and entrance signage at Patsy T. Mink Central Oʻahu Regional Park in Waipio. Photo by author.
   </div>
+</div>
 
-  <p>Patsy T. Mink Central Oʻahu Regional Park, commonly called CORP, sits in the middle of the island, both geographically and symbolically. The park’s long name reflects its purpose: a large, shared public space serving Central Oʻahu, drawing people from Waipahu, Mililani, Wahiawā, and beyond. The name carries the legacy of one of Hawaiʻi’s most significant, and often glossed over political figures.</p>
+<p>Patsy T. Mink Central Oʻahu Regional Park, commonly called CORP, sits in the middle of the island, both geographically and symbolically. The park’s long name reflects its purpose: a large, shared public space serving Central Oʻahu, drawing people from Waipahu, Mililani, Wahiawā, and beyond. The name carries the legacy of one of Hawaiʻi’s most significant, and often glossed over political figures.</p>
 
-  <p>The sprawling, 269-acre park was opened in 2001 with major facilities completed in 2003. It includes tennis courts, an aquatic center, baseball fields, softball fields, multipurpose fields and an archery range. Patsy T. Mink Central Oahu Regional Park regularly hosts youth sports including swimming, soccer, baseball, football, archery, tennis and of course…pickleball. The park also hosts collegiate athletics, including baseball games for Hawaiʻi Pacific University and Chaminade University. As Central Oʻahu grew rapidly in the decades surrounding its construction, the park became a critical outdoor space for recreation across age groups and communities.</p>
+<p>The sprawling, 269-acre park was opened in 2001 with major facilities completed in 2003. It includes tennis courts, an aquatic center, baseball fields, softball fields, multipurpose fields and an archery range. Patsy T. Mink Central Oahu Regional Park regularly hosts youth sports including swimming, soccer, baseball, football, archery, tennis and of course…pickleball. The park also hosts collegiate athletics, including baseball games for Hawaiʻi Pacific University and Chaminade University. As Central Oʻahu grew rapidly in the decades surrounding its construction, the park became a critical outdoor space for recreation across age groups and communities.</p>
 
-  <p>In 2006, the park was renamed in honor of Patsy Takemoto Mink, a trailblazing congresswoman who represented Hawaiʻi for decades and helped shape modern civil rights law. Mink was the first woman of color elected to the U.S. House of Representatives and a principal author of Title IX, the landmark legislation prohibiting sex-based discrimination in federally funded education. While Title IX is often associated with athletics, its impact extends far beyond sports, reshaping access to education and opportunity. Naming a regional park after Mink ties a place of everyday recreation to a broader national legacy rooted in equity and public service.</p>
+<p>In 2006, the park was renamed in honor of Patsy Takemoto Mink, a trailblazing congresswoman who represented Hawaiʻi for decades and helped shape modern civil rights law. Mink was the first woman of color elected to the U.S. House of Representatives and a principal author of Title IX, the landmark legislation prohibiting sex-based discrimination in federally funded education. While Title IX is often associated with athletics, its impact extends far beyond sports, reshaping access to education and opportunity. Naming a regional park after Mink ties a place of everyday recreation to a broader national legacy rooted in equity and public service.</p>
 
-  <div class="figure">
-    <img src="images/pnp/corp-1.jpg" alt="Patsy T. Mink in the 1970s">
-    <div class="caption">
-      Patsy T. Mink in the 1970s, U.S. Congresswoman and namesake of Patsy T. Mink Central Oʻahu Regional Park.
-      Public domain photo courtesy of Wikimedia Commons (Patsy_Mink_1970s.jpg).
-    </div>
+<div class="figure">
+  <img src="images/pnp/corp-1.jpg" alt="Patsy T. Mink in the 1970s">
+  <div class="caption">
+    Patsy T. Mink in the 1970s, U.S. Congresswoman and namesake of Patsy T. Mink Central Oʻahu Regional Park.
+    Public domain photo courtesy of Wikimedia Commons (Patsy_Mink_1970s.jpg).
   </div>
+</div>
 
-  <p>Before the renaming, the park was known simply as Central Oʻahu Regional Park, a functional name describing location and use. The addition of Mink’s name did not change how people use the space. Families still gather for soccer games, picnics, community events, and weekend practices. It did change what the park represents, adding a layer of meaning to a place already woven into the daily life of the communities it serves.</p>
+<p>Before the renaming, the park was known simply as Central Oʻahu Regional Park, a functional name describing location and use. The addition of Mink’s name did not change how people use the space. Families still gather for soccer games, picnics, community events, and weekend practices. It did change what the park represents, adding a layer of meaning to a place already woven into the daily life of the communities it serves.</p>
 
 <div class="pull-quote">
 For some, the name CORP remains the default, a practical shorthand that reflects how the park is experienced rather than commemorated.
 </div>
 
-  <p>That coexistence of formal and informal naming is common, where official names regularly sit alongside the names people actually use. Over time, whether Mink’s full name is spoken aloud or abbreviated, the association between the place and her legacy continues to settle.</p>
+<p>That coexistence of formal and informal naming is common, where official names regularly sit alongside the names people actually use. Over time, whether Mink’s full name is spoken aloud or abbreviated, the association between the place and her legacy continues to settle.</p>
 
-  <p>Patsy T. Mink CORP is not a monument. It is an active, living space. Its name connects policy to place, reminding park users that public spaces are shaped not just by land and infrastructure, but by the people whose work expanded who gets to participate in them.</p>
+<p>Patsy T. Mink CORP is not a monument. It is an active, living space. Its name connects policy to place, reminding park users that public spaces are shaped not just by land and infrastructure, but by the people whose work expanded who gets to participate in them.</p>
 
 <p><a href="../pins/hans-lorange-neighborhood-park.html">Related: Hans L'Orange Neighborhood Park →</a></p>
-  
-  <div class="return-links">
-    <a href="place-name-profiles.html">← Return to Place Name Profiles</a>
-    <a href="index.html#map">← Return to Map</a>
-  </div>
+
+<div class="return-links">
+  <a href="place-name-profiles.html">← Return to Place Name Profiles</a>
+  <a href="index.html#map">← Return to Map</a>
+</div>
 
 </main>
 
+<!-- FOOTER -->
 <footer class="footer">
   <a href="about.html">About</a> |
   <a href="contact.html">Contact Us</a>
