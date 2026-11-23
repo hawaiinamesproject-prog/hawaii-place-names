@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
 <title>Queen Kaʻahumanu Center | Place Name Profiles | Hawai‘i Names Project</title>
 
 <meta name="description" content="Discover the history behind Queen Kaʻahumanu Center in Kahului, named for the powerful kuhina nui who helped reshape the Hawaiian Kingdom after Kamehameha I.">
-<link rel="canonical" href="https://hawaiinamesproject.com/pnp-kaahumanu.html">
+<link rel="canonical" href="https://www.hawaiinamesproject.com/pnp-kaahumanu.html">
 
 <link rel="icon" href="clean-favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="clean-favicon-32.png">
@@ -33,7 +34,7 @@ body{
 }
 
 /* =========================
-NAVIGATION
+COMPACT NAVIGATION
 ========================= */
 
 nav{
@@ -44,25 +45,25 @@ nav{
 .nav-inner{
   max-width:1200px;
   margin:0 auto;
-  padding:14px 18px;
+  padding:8px 18px;
   display:flex;
   align-items:center;
-  justify-content:center;
-  position:relative;
+  justify-content:space-between;
+  min-height:56px;
 }
 
-.nav-links{
+.nav-logo{
   display:flex;
-  gap:40px;
-  font-weight:600;
-}
-
-nav a{
+  align-items:center;
   text-decoration:none;
-  color:#222;
 }
 
-nav a:hover{ color:#2b6cb0; }
+.nav-logo img{
+  display:block;
+  width:155px;
+  max-width:100%;
+  height:auto;
+}
 
 .nav-toggle{
   position:absolute;
@@ -72,63 +73,69 @@ nav a:hover{ color:#2b6cb0; }
 }
 
 .hamburger{
-  display:none;
-  position:absolute;
-  right:18px;
-  top:50%;
-  transform:translateY(-50%);
+  display:block;
   cursor:pointer;
-  background:transparent;
-  border:0;
   padding:10px;
+  margin-left:auto;
 }
 
 .hamburger span{
   display:block;
-  width:24px;
-  height:2px;
-  background:#222;
+  width:26px;
+  height:3px;
+  background:#555;
   margin:5px 0;
+  border-radius:2px;
 }
 
 .mobile-menu{
   display:none;
-  border-top:1px solid #eee;
   background:#fff;
+  border-top:1px solid #eee;
+}
+
+@media(min-width:769px){
+  .mobile-menu{
+    text-align:center;
+  }
 }
 
 .mobile-menu a{
   display:block;
-  padding:14px 18px;
-  border-bottom:1px solid #f0f0f0;
+  padding:14px 22px;
+  border-bottom:1px solid #eee;
   font-weight:600;
+  color:#222;
+  text-decoration:none;
 }
 
-.mobile-menu a:last-child{ border-bottom:none; }
-
-#nav-toggle:checked ~ .mobile-menu{ display:block; }
-
-@media (max-width:768px){
-  .nav-inner{ justify-content:flex-start; }
-  .nav-links{ display:none; }
-  .hamburger{ display:block; }
+.mobile-menu a:hover{
+  background:#f7f7f7;
+  color:#2b6cb0;
 }
 
-/* =========================
-BANNER
-========================= */
-
-.hero-banner{
-  background:white;
-  display:flex;
-  justify-content:center;
-  padding:30px 0;
+.mobile-menu a:last-child{
+  border-bottom:none;
 }
 
-.hero-banner img{
-  width:420px;
-  max-width:88%;
-  height:auto;
+#nav-toggle:checked ~ .mobile-menu{
+  display:block;
+}
+
+.nav-toggle:focus-visible ~ .nav-inner .hamburger{
+  outline:2px solid #2b6cb0;
+  outline-offset:3px;
+}
+
+@media(max-width:768px){
+  .nav-inner{
+    padding:6px 14px;
+    min-height:52px;
+  }
+
+  .nav-logo img{
+    width:125px;
+  }
 }
 
 /* =========================
@@ -258,18 +265,16 @@ FOOTER
 
 <body>
 
+<!-- NAVIGATION -->
 <nav>
   <input class="nav-toggle" type="checkbox" id="nav-toggle">
 
   <div class="nav-inner">
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="places-we-lost.html">Places We Lost</a>
-      <a href="place-name-profiles.html">Place Name Profiles</a>
-      <a href="stories.html">Stories</a>
-    </div>
+    <a class="nav-logo" href="index.html" aria-label="Hawaiʻi Names Project — Return to Map">
+      <img src="Banner.jpg" alt="Hawaiʻi Names Project">
+    </a>
 
-    <label class="hamburger" for="nav-toggle">
+    <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
       <span></span>
       <span></span>
       <span></span>
@@ -277,16 +282,12 @@ FOOTER
   </div>
 
   <div class="mobile-menu">
-    <a href="index.html">Home</a>
+    <a href="index.html">Home / Map</a>
     <a href="places-we-lost.html">Places We Lost</a>
     <a href="place-name-profiles.html">Place Name Profiles</a>
     <a href="stories.html">Stories</a>
   </div>
 </nav>
-
-<div class="hero-banner">
-  <img src="Banner.jpg" alt="Hawai‘i Names Project Banner">
-</div>
 
 <main class="profile">
 
